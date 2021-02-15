@@ -6,11 +6,11 @@
 
 #### Table of Contents
 
-* [About the Project]
-* [BuiltWith]
-* [Getting Started]
-* [Pre-requisites]
-* [Installation]
+* About the Project
+* BuiltWith
+* Getting Started
+* Pre-requisites
+* Installation
     
     
     
@@ -22,7 +22,7 @@
  
  * [Python](https://www.python.org/)
  * [Selenium](https://www.selenium.dev/)
- * [Appium]
+ * Appium
  
  #### Getting Started
  To start with this tool, some prerequisites has to be made, which are described below 👇.
@@ -38,10 +38,9 @@
  *  robotframework-jsonvalidator
  *  Chromedriver/Geckodriver
  
- #### Installation
+ #### Installation Web Application Automation
  
  * [To install python3 for Ubuntu](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)
-   
      * To check the version of python installed
        cmd : **python --version**
        
@@ -71,13 +70,19 @@
 * [Install Json Validator](https://pypi.org/project/robotframework-jsonvalidator/)
   cmd : **pip install robotframework-jsonvalidator**
   
+#### Installation Web Application Automation
+
+* [Appium Library](https://pypi.org/project/robotframework-appiumlibrary/)
+  cmd: **pip install robotframework-appiumlibrary**
+  
 #### Run Command Details
 
   Upon installing the above-required software. Follow the below steps to trigger the execution for web :
   
   * Navigate to the respective project directory folde where the project has been cloned using **(git clone <projecturl.git>)** and placed from GitHub.
   * Launch command prompt
-  * Provide the command as **robot -d Results  Tests/Web/Tests.robot**
+  * Provide the command as **robot -d Results  Tests/Web/Tests.robot** for web app
+  * Provide the command as **robot -d Results  Tests/Android/Tests.robot**. for android app
   
  #### Execution Results 
  Find the Execution result under ../results/report.html
