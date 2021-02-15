@@ -6,12 +6,11 @@
 
 #### Table of Contents
 
-* [About the Project](https://github.com/MoolyaSoftwareTesting/Kuvera_RF/blob/KU_RF_PE_PHASE1/README.md#about-the-project)
-     * [BuiltWith](https://github.com/MoolyaSoftwareTesting/Kuvera_RF/blob/KU_RF_PE_PHASE1/README.md#built-with)
-* [Getting Started](https://github.com/MoolyaSoftwareTesting/Kuvera_RF/blob/KU_RF_PE_PHASE1/README.md#getting-started) 
-
-    * [Pre-requisites](https://github.com/MoolyaSoftwareTesting/Kuvera_RF/blob/KU_RF_PE_PHASE1/README.md#pre-requisites)
-    * [Installation](https://github.com/MoolyaSoftwareTesting/Kuvera_RF/blob/KU_RF_PE_PHASE1/README.md#installation)
+* [About the Project]
+* [BuiltWith]
+* [Getting Started]
+* [Pre-requisites]
+* [Installation]
     
     
     
@@ -23,6 +22,7 @@
  
  * [Python](https://www.python.org/)
  * [Selenium](https://www.selenium.dev/)
+ * [Appium]
  
  #### Getting Started
  To start with this tool, some prerequisites has to be made, which are described below 👇.
