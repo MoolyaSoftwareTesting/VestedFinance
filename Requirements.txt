@@ -1,0 +1,12 @@
+Pyhton Installation Guide - https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
+    To check the version of python installed cmd : python --version
+    If not python 3.x.x, Where to find my python location which python (Copy location) export PATH= /your/python-location.
+Pip Installation guide - https://www.tutorialspoint.com/robot_framework/robot_framework_unix_linux_installation.htm
+    python3 get-pip.py
+    To check the version of pip installed cmd : pip3 --version
+robotframework-appiumlibrary==1.5.0.4
+robotframework-jsonlibrary 0.3.1
+robotframework-jsonvalidator 2.0.0
+robotframework-seleniumlibrary
+pip install webdrivermanager
+webdrivermanager firefox chrome --linkpath /usr/local/bin

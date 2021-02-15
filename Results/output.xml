@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on darwin)" generated="20210215 14:45:34.384" rpa="false">
+<suite id="s1" name="Tests" source="/Users/prathijamoolya/VestedFinance/Automation/VestedFinance/Tests/Android/Tests.robot">
+<kw name="Open Kuvera App On Real Device" library="A_Common" type="setup">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${server}</arg>
+<arg>platformName=${platform}</arg>
+<arg>platformVersion=${platform_version}</arg>
+<arg>deviceName=${device}</arg>
+<arg>automationName=${appium}</arg>
+<arg>appActivity=${app_activity}</arg>
+<arg>appPackage=${app_package}</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:34.874" endtime="20210215 14:45:43.791"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:34.874" endtime="20210215 14:45:43.791"></status>
+</kw>
+<test id="s1-t1" name="Landing Page Widgets Verification And Login">
+<kw name="Verify Landing Page On Mobile" library="A_LandingPage">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Landing Page</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:43.792" endtime="20210215 14:45:43.792"></status>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_screenHeader}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:43.793" endtime="20210215 14:45:51.979"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:43.793" endtime="20210215 14:45:51.979"></status>
+</kw>
+<kw name="Verify Element And Text On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_screenHeader}</arg>
+<arg>${e_screenHeader}</arg>
+</arguments>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Element Should Contain Text</arg>
+<arg>${element}</arg>
+<arg>${text}</arg>
+</arguments>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210215 14:45:51.982" level="INFO">Verifying element 'xpath=//*[@text='Welcome to Vested!']' contains text 'Welcome to Vested!'.</msg>
+<status status="PASS" starttime="20210215 14:45:51.980" endtime="20210215 14:45:52.260"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:51.980" endtime="20210215 14:45:52.260"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:51.979" endtime="20210215 14:45:52.260"></status>
+</kw>
+<kw name="Wait And Click Element On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_startInvestingBtn}</arg>
+</arguments>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:52.261" endtime="20210215 14:45:52.505"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:52.260" endtime="20210215 14:45:52.505"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210215 14:45:52.507" level="INFO">Clicking element 'xpath=//*[@text='Start Investing']'.</msg>
+<status status="PASS" starttime="20210215 14:45:52.505" endtime="20210215 14:45:52.801"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:52.260" endtime="20210215 14:45:52.801"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:43.792" endtime="20210215 14:45:52.801"></status>
+</kw>
+<kw name="Sigin To Mobile Application" library="A_LandingPage">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Signin</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:52.802" endtime="20210215 14:45:52.802"></status>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_userName}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:52.803" endtime="20210215 14:45:58.932"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:52.802" endtime="20210215 14:45:58.932"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${vf_A_userName}</arg>
+<arg>${e_userName}</arg>
+</arguments>
+<msg timestamp="20210215 14:45:58.935" level="INFO">Typing text 'indrajit+9377@vestedfinance.co' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
+<status status="PASS" starttime="20210215 14:45:58.933" endtime="20210215 14:45:59.241"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${vf_A_password}</arg>
+<arg>${e_password}</arg>
+</arguments>
+<msg timestamp="20210215 14:45:59.243" level="INFO">Typing text 'iTestUser1!' into text field 'xpath=//*[@class='android.widget.EditText'][2]'</msg>
+<status status="PASS" starttime="20210215 14:45:59.241" endtime="20210215 14:45:59.818"></status>
+</kw>
+<kw name="Wait And Click Element On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_submitBtn}</arg>
+</arguments>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:45:59.819" endtime="20210215 14:46:01.191"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:59.819" endtime="20210215 14:46:01.191"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210215 14:46:01.193" level="INFO">Clicking element 'xpath=//*[@text='submit']'.</msg>
+<status status="PASS" starttime="20210215 14:46:01.191" endtime="20210215 14:46:01.447"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:59.818" endtime="20210215 14:46:01.447"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210215 14:46:03.448" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210215 14:46:01.447" endtime="20210215 14:46:03.449"></status>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_pin}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:46:03.449" endtime="20210215 14:46:09.626"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:46:03.449" endtime="20210215 14:46:09.627"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${vf_A_pin}</arg>
+<arg>${e_pin}</arg>
+</arguments>
+<msg timestamp="20210215 14:46:09.629" level="INFO">Typing text '111111' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
+<status status="PASS" starttime="20210215 14:46:09.627" endtime="20210215 14:46:10.279"></status>
+</kw>
+<kw name="Wait And Click Element On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_continueBtn}</arg>
+</arguments>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:46:10.280" endtime="20210215 14:46:10.940"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:46:10.280" endtime="20210215 14:46:10.940"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210215 14:46:10.942" level="INFO">Clicking element 'xpath=//*[@text='Continue']'.</msg>
+<status status="PASS" starttime="20210215 14:46:10.940" endtime="20210215 14:46:11.077"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:46:10.279" endtime="20210215 14:46:11.077"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210215 14:46:16.080" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210215 14:46:11.077" endtime="20210215 14:46:16.080"></status>
+</kw>
+<status status="PASS" starttime="20210215 14:45:52.802" endtime="20210215 14:46:16.080"></status>
+</kw>
+<kw name="Verify Buy Sell Stock On Mobile" library="A_LandingPage">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>BUY</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:46:16.080" endtime="20210215 14:46:16.081"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210215 14:46:21.082" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210215 14:46:16.081" endtime="20210215 14:46:21.083"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>70</arg>
+<arg>70</arg>
+<arg>20</arg>
+<arg>20</arg>
+<arg>5000</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:46:21.083" endtime="20210215 14:46:24.256"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210215 14:46:25.259" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210215 14:46:24.257" endtime="20210215 14:46:25.259"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>70</arg>
+<arg>70</arg>
+<arg>20</arg>
+<arg>20</arg>
+<arg>5000</arg>
+</arguments>
+<status status="PASS" starttime="20210215 14:46:25.259" endtime="20210215 14:46:28.418"></status>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arguments>
+<arg>${vf_A_stockTwo}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>timeout=30</arg>
+</arguments>
+<msg timestamp="20210215 14:46:59.084" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1798"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1798]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1798]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                          &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                                            &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1020]" displayed="true"&gt;
+                                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[464,138][617,291]" displayed="true" /&gt;
+                                              &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Hi Indrajit Palit," checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[362,329][719,395]" displayed="true" /&gt;
+                                              &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Enter your 6 digit pin to access Vested" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[247,421][833,467]" displayed="true" /&gt;
+                                              &lt;android.widget.EditText index="3" package="com.vested.investing.android.staging" class="android.widget.EditText" text="••••••" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" long-clickable="true" password="true" scrollable="false" selected="false" bounds="[51,556][1029,693]" displayed="true" /&gt;
+                                              &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Switch account" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[51,732][292,778]" displayed="true" /&gt;
+                                              &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Forgot Pin?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[859,732][1029,778]" displayed="true" /&gt;
+                                            &lt;/android.view.ViewGroup&gt;
+                                          &lt;/android.widget.ScrollView&gt;
+                                          &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1063][1080,1191]" displayed="true"&gt;
+                                            &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Continue" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[41,1104][1039,1150]" displayed="true" /&gt;
+                                          &lt;/android.view.ViewGroup&gt;
+                                        &lt;/android.view.ViewGroup&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+                &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[438,524][642,728]" displayed="true"&gt;
+                    &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[494,580][586,672]" displayed="true"&gt;
+                      &lt;android.widget.ProgressBar index="0" package="com.vested.investing.android.staging" class="android.widget.ProgressBar" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[494,580][586,672]" displayed="true" /&gt;
+                    &lt;/android.widget.FrameLayout&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,61][1080,1191]" displayed="true" /&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210215 14:47:00.949" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210215 14:46:59.085" endtime="20210215 14:47:00.950"></status>
+</kw>
+<msg timestamp="20210215 14:47:00.950" level="FAIL">Element locator 'xpath=//*[@text='Apple, Inc.']' did not match any elements after 30 seconds</msg>
+<status status="FAIL" starttime="20210215 14:46:28.419" endtime="20210215 14:47:00.950"></status>
+</kw>
+<status status="FAIL" starttime="20210215 14:46:28.418" endtime="20210215 14:47:00.950"></status>
+</kw>
+<status status="FAIL" starttime="20210215 14:46:16.080" endtime="20210215 14:47:00.950"></status>
+</kw>
+<tags>
+<tag>TC01</tag>
+</tags>
+<status status="FAIL" starttime="20210215 14:45:43.791" endtime="20210215 14:47:00.951" critical="yes">Element locator 'xpath=//*[@text='Apple, Inc.']' did not match any elements after 30 seconds</status>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="teardown">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210215 14:47:00.952" endtime="20210215 14:47:01.211"></status>
+</kw>
+<status status="FAIL" starttime="20210215 14:45:34.386" endtime="20210215 14:47:01.211"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">TC01</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Tests">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
