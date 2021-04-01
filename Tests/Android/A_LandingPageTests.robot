@@ -6,7 +6,6 @@ Resource    ../../Tests/Android/A_Import.robot
 
 Suite Setup  Open Vested App On Emulator
 #Suite Teardown  Quit Vested Application
-#NOTE: UNABLE TO CLOSE APP
 
 # robot -d Results Tests/Android/A_LandingPageTests.robot
 # robot -d Results -L Debug -i order Tests
@@ -29,7 +28,7 @@ Points on Security, Compliance and Recommendations in Landing page
 Start Investing button is clickable in Landing page
     [Tags]  SL03
     Landing page is loaded completely
-    Click on 'Start Investing' button
+    Click on Start Investing button
     Sign in page is displayed
 
     

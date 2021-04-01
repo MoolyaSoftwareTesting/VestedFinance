@@ -2,7 +2,7 @@
 #Desired Capabilities
 ${server}              http://localhost:4723/wd/hub
 ${platform}            Android
-${platform_version}    11
+${platform_version}    10
 ${emulator}            emulator-5554
 ${device}              7cd17526
 ${app_package} =       com.vested.investing.android.staging

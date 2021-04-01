@@ -8,6 +8,8 @@ ${e_incorrectUserName} =  abcd@gmail.com
 ${e_incorrectPwd} =  Abcd@123
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
 ${e_emptyFieldErrorTxt} = Please fill out this field
+${e_signInAsDiffUserLinkTxt} =  Sign in as a different user?
+${e_signInPageTxt} =  Sign in with your email and password
 
 #Singin
 ${vf_A_signInBtn} =  xpath=//*[@name='signInSubmitButton']
@@ -18,7 +20,14 @@ ${vf_A_signinFrame} =  xpath=//body/div[1]/div/div[2]
 ${vf_A_userName} =  xpath=//*[@class='android.widget.EditText'] 
 ${vf_A_password} =  xpath=//*[@class='android.widget.EditText'][2]
 ${vf_A_submitBtn} =  xpath=//*[@text='submit']
-${e_emptyFieldErrorMsg} =  xpath=//android.widget.Toast[1]
+#${e_emptyFieldErrorMsg} =  xpath=//android.widget.Toast[1]
+${vf_A_signInAsDiffUserLink} =  xpath=//*[@text='Sign in as a different user?']
+${vf_A_easySignInBtn} =  xpath=//*[contains(text(),'Sign In as ')]
+
+#DashboardPage
+${vf_A_profileBtn} =  xpath=//*[@text='Profile']
+${vf_A_LogoutLink} =  xpath=//*[@text='Profile']
+${vf_A_YesBtn} =  //*[@text='YES']
 
 ${vf_A_pin} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_continueBtn} =  xpath=//*[@text='Continue']

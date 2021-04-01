@@ -9,39 +9,46 @@ Resource   ../../../AppLocators/Android/LandingPageLocators.robot
 
 Landing page is loaded completely
     Wait Until Page Contains  ${e_startInvestingTxt}  timeout=20s
-    Log Source  loglevel=INFO
+    Log Source   
 
 Vested icon is displayed at the top
-    Element Should Be Visible  ${vf_A_vestedIcon}  loglevel=INFO
+    Element Should Be Visible  ${vf_A_vestedIcon}   
 
 Text about vested is displayed below the logo
-    Page Should Contain Text  ${e_welcomeTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_aboutVestedTxt}  loglevel=INFO
+    Page Should Contain Text  ${e_welcomeTxt}   
+    Page Should Contain Text  ${e_aboutVestedTxt}   
 
 Verify 3 points on Security, Compliance and Recommendations with icons are displayed
     Wait Until Page Contains  ${e_securityHeading}   timeout=40s
-    Page Should Contain Text  ${e_securityTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_complianceTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_recommendationsTxt}  loglevel=INFO
+    Page Should Contain Text  ${e_securityTxt}   
+    Page Should Contain Text  ${e_complianceTxt}   
+    Page Should Contain Text  ${e_recommendationsTxt}   
     log to Console  Verified Text part
-    Element Should Be Visible  ${vf_A_securityIcon}  loglevel=INFO
-    Element Should Be Visible  ${vf_A_complianceIcon}  loglevel=INFO
-    Element Should Be Visible  ${vf_A_recommendationsIcon}  loglevel=INFO 
+    Element Should Be Visible  ${vf_A_securityIcon}   
+    Element Should Be Visible  ${vf_A_complianceIcon}   
+    Element Should Be Visible  ${vf_A_recommendationsIcon}    
     log to Console  Verified all Icons
     
 Verify Heading for each point is displayed
-    Page Should Contain Text  ${e_securityHeading}  loglevel=INFO
-    Page Should Contain Text  ${e_complianceHeading}  loglevel=INFO
-    Page Should Contain Text  ${e_recommendationsTxt}  loglevel=INFO
+    Page Should Contain Text  ${e_securityHeading}   
+    Page Should Contain Text  ${e_complianceHeading}   
+    Page Should Contain Text  ${e_recommendationsTxt}   
     log to Console  Verified all Headings
-    Log Source  loglevel=INFO
+    Log Source   
     
-Click on 'Start Investing' button
-    Click Text  Start Investing  exact_match=True
+Click on Start Investing button
+    Click Text  ${e_startInvestingTxt}  exact_match=True
     
 Sign in page is displayed
     Sleep  5s
-    Wait Until Page Contains  Sign in with your email and password
+    ${isElementVisible} =  Run Keyword And Return Status  Page Should Contain Text  ${e_signInAsDiffUserLinkTxt}   
+    IF  ${isElementVisible}
+        Wait And Click Element On Android  ${vf_A_signInAsDiffUserLink}
+    ELSE
+       Log to Console  Continued
+    END
+    Sleep  10s
+    Wait Until Page Contains  ${e_signInPageTxt}
     Log to Console  Sign-in Page Verified!
 
 Verify Landing Page On Mobile

@@ -7,7 +7,6 @@ Resource    ../../Tests/Android/A_Import.robot
 
 Suite Setup  Open Vested App On Emulator
 #Suite Teardown  Close Application
-#UNABLE TO CLOSE APP?
 
 # robot -d Results Tests/Android/SL_08.robot
 # robot -d Results --loglevel TRACE Tests/Android/SL_08.robot
@@ -18,7 +17,8 @@ Error message- "Please fill in this field", When the empty field is passed by en
     [Tags]  SL08
     User is navigated to Sign In page
     User enters only email id in Email field
-    Clicked on 'Sign in' button
-    "Please fill out this field" message is displayed
+    Clicked on Sign in button
+    Please fill out this field message is displayed
 
-#NOTE: THIS IS A BLOCKER- UNABLE TO INSPECT THE ERROR MSG FROM POP UP
+
+#TODO: SL06-Directed to Dashboard

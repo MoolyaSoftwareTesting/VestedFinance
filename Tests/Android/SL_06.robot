@@ -6,7 +6,6 @@ Resource    ../../Tests/Android/A_Import.robot
 
 Suite Setup  Open Vested App On Emulator
 #Suite Teardown  Close Application
-#UNABLE TO CLOSE APP?
 
 # robot -d Results Tests/Android/SL_06.robot
 # robot -d Results -L Debug -i order Tests
@@ -19,5 +18,3 @@ Sign in with valid login credentials
     User is navigated to Sign In page
     Sign-in with valid Credentials
     User is logged-in and directed to Dashboard page
-
-# NOTE: CLEAR CACHE TO BE DONE BEFORE EVERY RUN

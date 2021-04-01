@@ -1,176 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.2 on darwin)" generated="20210331 10:13:17.270" rpa="false">
-<suite id="s1" name="SL 07" source="/Users/apple/Tools/Git/GitRepo/Tests/Android/SL_07.robot">
-<kw name="Open Vested App On Emulator" library="A_Common" type="setup">
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210401 17:59:04.997" rpa="false" schemaversion="2">
+<suite id="s1" name="SL 10" source="/Users/apple/Tools/Git/GitRepo/Tests/Android/SL_10.robot">
+<kw name="Open Vested App On Real Device" library="A_Common" type="SETUP">
 <kw name="Open Application" library="AppiumLibrary">
+<arg>${server}</arg>
+<arg>platformName=${platform}</arg>
+<arg>platformVersion=${platform_version}</arg>
+<arg>deviceName=${device}</arg>
+<arg>automationName=${appium}</arg>
+<arg>appActivity=${app_activity}</arg>
+<arg>appPackage=${app_package}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<arguments>
-<arg>http://localhost:4723/wd/hub</arg>
-<arg>platformName=${platform}</arg>
-<arg>deviceName=${emulator}</arg>
-<arg>appPackage=${app_package}</arg>
-<arg>appActivity=${app_activity}</arg>
-<arg>noReset=${noReset}</arg>
-<arg>automationName=Uiautomator2</arg>
-</arguments>
-<status status="PASS" starttime="20210331 10:13:17.842" endtime="20210331 10:13:26.133"></status>
-</kw>
-<status status="PASS" starttime="20210331 10:13:17.842" endtime="20210331 10:13:26.133"></status>
-</kw>
-<test id="s1-t1" name="Sign in with invalid login credentials">
-<kw name="User is navigated to Sign In page" library="A_SignIn">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>5s</arg>
-</arguments>
-<msg timestamp="20210331 10:13:31.136" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20210331 10:13:26.135" endtime="20210331 10:13:31.137"></status>
-</kw>
-<kw name="Wait And Click Element On Android" library="A_Common">
-<arguments>
-<arg>${vf_A_startInvestingBtn}</arg>
-</arguments>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>${element}</arg>
-<arg>timeout=30</arg>
-</arguments>
-<status status="PASS" starttime="20210331 10:13:31.138" endtime="20210331 10:13:31.286"></status>
-</kw>
-<status status="PASS" starttime="20210331 10:13:31.138" endtime="20210331 10:13:31.286"></status>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<msg timestamp="20210331 10:13:31.289" level="INFO">Clicking element 'xpath=//*[@text='Start Investing']'.</msg>
-<status status="PASS" starttime="20210331 10:13:31.286" endtime="20210331 10:13:31.456"></status>
-</kw>
-<status status="PASS" starttime="20210331 10:13:31.137" endtime="20210331 10:13:31.456"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>5s</arg>
-</arguments>
-<msg timestamp="20210331 10:13:36.457" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20210331 10:13:31.457" endtime="20210331 10:13:36.457"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<doc>Waits until `text` appears on current page.</doc>
-<arguments>
-<arg>Sign in with your email and password</arg>
-</arguments>
-<msg timestamp="20210331 10:13:41.832" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
-&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1977"&gt;
-  &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
-    &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
-      &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-        &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-          &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-            &lt;android.view.ViewGroup index="0" package="com.android.chrome" class="android.view.ViewGroup" text="" resource-id="com.android.chrome:id/coordinator" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-              &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/compositor_view_holder" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                  &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
-                &lt;/android.widget.FrameLayout&gt;
-                &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                  &lt;android.webkit.WebView index="0" package="com.android.chrome" class="android.webkit.WebView" text="Signin" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,325][1080,1977]" displayed="true"&gt;
-                    &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="  " checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[38,325][1080,971]" displayed="true" /&gt;
-                    &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,349][1014,943]" displayed="true"&gt;
-                      &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,349][1014,943]" displayed="true"&gt;
-                        &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,418][1014,506]" displayed="true"&gt;
-                          &lt;android.widget.Image index="0" package="com.android.chrome" class="android.widget.Image" text="logo" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[374,418][706,506]" displayed="true" /&gt;
-                        &lt;/android.view.View&gt;
-                        &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,569][1014,943]" displayed="true"&gt;
-                          &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,611][973,875]" displayed="true"&gt;
-                            &lt;android.widget.Button index="0" package="com.android.chrome" class="android.widget.Button" text="Sign In as indrajit+9377@vestedfinance.co" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,666][973,792]" displayed="true" /&gt;
-                            &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" resource-id="div-logout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,814][973,875]" displayed="true"&gt;
-                              &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,814][973,875]" displayed="true"&gt;
-                                &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" content-desc="Sign in as a different user?" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[308,820][775,869]" displayed="true"&gt;
-                                  &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Sign in as a different user?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[308,820][775,869]" displayed="true" /&gt;
-                                &lt;/android.view.View&gt;
-                              &lt;/android.view.View&gt;
-                            &lt;/android.view.View&gt;
-                          &lt;/android.view.View&gt;
-                        &lt;/android.view.View&gt;
-                      &lt;/android.view.View&gt;
-                    &lt;/android.view.View&gt;
-                  &lt;/android.webkit.WebView&gt;
-                &lt;/android.widget.FrameLayout&gt;
-              &lt;/android.widget.FrameLayout&gt;
-              &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/control_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,353]" displayed="true"&gt;
-                &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/toolbar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,353]" displayed="true"&gt;
-                  &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,325]" displayed="true"&gt;
-                    &lt;android.widget.ImageButton index="0" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="Close tab" resource-id="com.android.chrome:id/close_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[0,171][132,325]" displayed="true" /&gt;
-                    &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/location_bar_frame_layout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[132,196][964,299]" displayed="true"&gt;
-                      &lt;android.widget.ImageButton index="0" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="Connection is secure. Site information" resource-id="com.android.chrome:id/security_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[132,196][209,299]" displayed="true" /&gt;
-                      &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/title_url_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[209,196][964,299]" displayed="true"&gt;
-                        &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Signin" resource-id="com.android.chrome:id/title_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[209,196][352,255]" displayed="true" /&gt;
-                        &lt;android.widget.LinearLayout index="1" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[209,255][484,299]" displayed="true"&gt;
-                          &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="auth.vested.co.in" resource-id="com.android.chrome:id/url_bar" checkable="false" checked="false" clickable="true" enabled="false" focusable="false" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[209,255][484,299]" displayed="true" /&gt;
-                        &lt;/android.widget.LinearLayout&gt;
-                      &lt;/android.widget.FrameLayout&gt;
-                    &lt;/android.widget.FrameLayout&gt;
-                    &lt;android.widget.ImageButton index="2" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="More options" resource-id="com.android.chrome:id/menu_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[964,171][1080,325]" displayed="true" /&gt;
-                  &lt;/android.widget.FrameLayout&gt;
-                  &lt;android.widget.ImageView index="1" package="com.android.chrome" class="android.widget.ImageView" text="" resource-id="com.android.chrome:id/toolbar_shadow" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,325][1080,353]" displayed="true" /&gt;
-                &lt;/android.widget.FrameLayout&gt;
-              &lt;/android.widget.FrameLayout&gt;
-            &lt;/android.view.ViewGroup&gt;
-          &lt;/android.widget.FrameLayout&gt;
-        &lt;/android.widget.FrameLayout&gt;
-      &lt;/android.widget.FrameLayout&gt;
-    &lt;/android.widget.LinearLayout&gt;
-    &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
-  &lt;/android.widget.FrameLayout&gt;
-&lt;/hierarchy&gt;</msg>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20210331 10:13:42.180" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210331 10:13:41.833" endtime="20210331 10:13:42.180"></status>
+<msg timestamp="20210401 17:59:23.948" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210401 17:59:23.945" endtime="20210401 17:59:23.948"/>
 </kw>
-<msg timestamp="20210331 10:13:42.181" level="FAIL">Text 'Sign in with your email and password' did not appear in 5 seconds</msg>
-<status status="FAIL" starttime="20210331 10:13:36.458" endtime="20210331 10:13:42.181"></status>
+<msg timestamp="20210401 17:59:23.952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210401 17:59:23.954" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
+</msg>
+<status status="FAIL" starttime="20210401 17:59:05.345" endtime="20210401 17:59:23.954"/>
 </kw>
-<status status="FAIL" starttime="20210331 10:13:26.135" endtime="20210331 10:13:42.182"></status>
+<status status="FAIL" starttime="20210401 17:59:05.345" endtime="20210401 17:59:23.954"/>
 </kw>
-<tags>
-<tag>SL07</tag>
-</tags>
-<status status="FAIL" starttime="20210331 10:13:26.134" endtime="20210331 10:13:42.182" critical="yes">Text 'Sign in with your email and password' did not appear in 5 seconds</status>
+<test id="s1-t1" name="Previously logged in/data stored account is displayed in easy sign-in page.">
+<tag>SL10</tag>
+<status status="FAIL" starttime="20210401 17:59:23.954" endtime="20210401 17:59:23.955">Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
+</status>
 </test>
-<status status="FAIL" starttime="20210331 10:13:17.272" endtime="20210331 10:13:42.184"></status>
+<status status="FAIL" starttime="20210401 17:59:04.998" endtime="20210401 17:59:23.955">Suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
+</status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1">SL07</stat>
+<stat pass="0" fail="1" skip="0">SL10</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="SL 07">SL 07</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="SL 10">SL 10</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210331 10:13:17.562" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_SignIn.robot' on line 2: Non-existing setting 'from PIL import Image'.</msg>
-<msg timestamp="20210331 10:13:17.563" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_SignIn.robot' on line 3: Non-existing setting 'import'.</msg>
-<msg timestamp="20210331 10:13:17.563" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_SignIn.robot' on line 4: Non-existing setting 'import'.</msg>
-<msg timestamp="20210331 10:13:17.581" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/AppLocators/Android/SignInLocators.robot' on line 10: Invalid variable name '${e_emptyFieldErrorTxt} = Please fill out this field'.</msg>
-<msg timestamp="20210331 10:13:17.607" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing test library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+<msg timestamp="20210401 17:59:05.164" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/AppLocators/Android/SignInLocators.robot' on line 10: Setting variable '${e_emptyFieldErrorTxt} = Please fill out this field' failed: Invalid variable name '${e_emptyFieldErrorTxt} = Please fill out this field'.</msg>
+<msg timestamp="20210401 17:59:05.176" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
 Traceback (most recent call last):
   None
 PYTHONPATH:
@@ -179,5 +60,6 @@ PYTHONPATH:
   /usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9
   /usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload
   /usr/local/lib/python3.9/site-packages</msg>
+<msg timestamp="20210401 17:59:23.952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
