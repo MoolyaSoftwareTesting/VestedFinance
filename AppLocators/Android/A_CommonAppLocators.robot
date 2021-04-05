@@ -9,7 +9,7 @@ ${app_package} =       com.vested.investing.android.staging
 ${app_activity} =      com.vested.mobileclient.MainActivity
 ${appium}              appium
 ${apkPath}             Resources/APK/app-staging-release.apk
-${noReset}=            True
+${noReset} =            True
 
 #  Test data or expected values
 ${e_title} =  Home | Vested Finance
@@ -20,6 +20,6 @@ ${e_shareInputTxt} =  1
 
 
 # Application Locator < Locator Name >
-
-
-
+${vf_A_home} =  xpath=//*[@text='Home']
+${vf_A_portifolioOverview} =  xpath=//*[@text='Portfolio Overview']
+${vf_A_backBtn} =  xpath=//*[@class='android.widget.RelativeLayout' and ./*[@id='back']]

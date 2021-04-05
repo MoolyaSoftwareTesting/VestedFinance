@@ -12,6 +12,7 @@ ${e_startInvestingTxt} =  Start Investing
 
 #Landing page
 ${vf_A_vestedIcon} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*[@class='android.view.ViewGroup'])[1]
+${vf_A_startInvestingBtn} =  xpath=//*[@text='Start Investing']
 ${vf_A_securityIcon} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*[@class='android.view.ViewGroup'])[2]
 ${vf_A_complianceIcon} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*[@class='android.view.ViewGroup'])[3]
 ${vf_A_recommendationsIcon} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*[@class='android.view.ViewGroup'])[4]
