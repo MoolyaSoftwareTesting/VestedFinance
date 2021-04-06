@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210405 19:10:08.514" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210406 17:09:55.243" rpa="false" schemaversion="2">
 <suite id="s1" name="CurrentTest" source="/Users/apple/Tools/Git/GitRepo/Tests/Android/CurrentTest.robot">
 <kw name="Open App On Real Device" library="A_Common" type="SETUP">
 <kw name="Open Application" library="AppiumLibrary">
@@ -16,7 +16,7 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20210405 19:10:09.002" endtime="20210405 19:10:18.836"/>
+<status status="PASS" starttime="20210406 17:09:56.343" endtime="20210406 17:10:06.478"/>
 </kw>
 <kw name="Landing Page Is Loaded Completely" library="A_LandingPage">
 <kw name="Wait For Element Visibility On Android" library="A_Common">
@@ -25,13 +25,13 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${element}</arg>
 <arg>timeout=20</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:18.836" endtime="20210405 19:10:22.978"/>
+<status status="PASS" starttime="20210406 17:10:06.481" endtime="20210406 17:10:10.606"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:18.836" endtime="20210405 19:10:22.978"/>
+<status status="PASS" starttime="20210406 17:10:06.479" endtime="20210406 17:10:10.607"/>
 </kw>
 <kw name="Log Source" library="AppiumLibrary">
 <doc>Logs and returns the entire html source of the current page or frame.</doc>
-<msg timestamp="20210405 19:10:23.315" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+<msg timestamp="20210406 17:10:11.090" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
 &lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2132"&gt;
   &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2132]" displayed="true"&gt;
     &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2132]" displayed="true"&gt;
@@ -82,13 +82,13 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
     &lt;/android.widget.LinearLayout&gt;
   &lt;/android.widget.FrameLayout&gt;
 &lt;/hierarchy&gt;</msg>
-<status status="PASS" starttime="20210405 19:10:22.978" endtime="20210405 19:10:23.315"/>
+<status status="PASS" starttime="20210406 17:10:10.607" endtime="20210406 17:10:11.091"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:18.836" endtime="20210405 19:10:23.316"/>
+<status status="PASS" starttime="20210406 17:10:06.478" endtime="20210406 17:10:11.091"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:09.001" endtime="20210405 19:10:23.316"/>
+<status status="PASS" starttime="20210406 17:09:56.343" endtime="20210406 17:10:11.092"/>
 </kw>
-<test id="s1-t1" name="Error Message On Empty Email Entered">
+<test id="s1-t1" name="Signin With Social Account- Apple With Invalid Login Credentials">
 <kw name="User Navigates To Signin Screen" library="A_SignIn">
 <kw name="Click On Start Investing Button" library="A_LandingPage">
 <kw name="Click On Element If Visibile" library="A_Common">
@@ -106,19 +106,19 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${element}</arg>
 <arg>timeout=20</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:23.320" endtime="20210405 19:10:23.460"/>
+<status status="PASS" starttime="20210406 17:10:11.104" endtime="20210406 17:10:11.248"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.319" endtime="20210405 19:10:23.460"/>
+<status status="PASS" starttime="20210406 17:10:11.102" endtime="20210406 17:10:11.249"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
 <arg>${element}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:23.461" endtime="20210405 19:10:23.568"/>
+<status status="PASS" starttime="20210406 17:10:11.249" endtime="20210406 17:10:11.390"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.319" endtime="20210405 19:10:23.569"/>
+<status status="PASS" starttime="20210406 17:10:11.102" endtime="20210406 17:10:11.390"/>
 </kw>
-<msg timestamp="20210405 19:10:23.569" level="INFO">${isElementVisible} = True</msg>
-<status status="PASS" starttime="20210405 19:10:23.318" endtime="20210405 19:10:23.569"/>
+<msg timestamp="20210406 17:10:11.390" level="INFO">${isElementVisible} = True</msg>
+<status status="PASS" starttime="20210406 17:10:11.101" endtime="20210406 17:10:11.390"/>
 </kw>
 <if>
 <branch type="IF" condition="${isElementVisible}">
@@ -130,38 +130,38 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${element}</arg>
 <arg>timeout=20</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:23.570" endtime="20210405 19:10:23.688"/>
+<status status="PASS" starttime="20210406 17:10:11.393" endtime="20210406 17:10:11.590"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.570" endtime="20210405 19:10:23.689"/>
+<status status="PASS" starttime="20210406 17:10:11.392" endtime="20210406 17:10:11.590"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${element}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20210405 19:10:23.697" level="INFO">Clicking element 'xpath=//*[@text='Start Investing']'.</msg>
-<status status="PASS" starttime="20210405 19:10:23.689" endtime="20210405 19:10:23.879"/>
+<msg timestamp="20210406 17:10:11.608" level="INFO">Clicking element 'xpath=//*[@text='Start Investing']'.</msg>
+<status status="PASS" starttime="20210406 17:10:11.590" endtime="20210406 17:10:11.801"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.569" endtime="20210405 19:10:23.879"/>
+<status status="PASS" starttime="20210406 17:10:11.391" endtime="20210406 17:10:11.801"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Clicked on Element - ${element}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:10:23.880" endtime="20210405 19:10:23.880"/>
+<status status="PASS" starttime="20210406 17:10:11.801" endtime="20210406 17:10:11.802"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.569" endtime="20210405 19:10:23.880"/>
+<status status="PASS" starttime="20210406 17:10:11.391" endtime="20210406 17:10:11.802"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Continuing without element click</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20210405 19:10:23.880" endtime="20210405 19:10:23.880"/>
+<status status="NOT RUN" starttime="20210406 17:10:11.802" endtime="20210406 17:10:11.803"/>
 </kw>
-<status status="NOT RUN" starttime="20210405 19:10:23.880" endtime="20210405 19:10:23.880"/>
+<status status="NOT RUN" starttime="20210406 17:10:11.802" endtime="20210406 17:10:11.803"/>
 </branch>
-<status status="PASS" starttime="20210405 19:10:23.569" endtime="20210405 19:10:23.880"/>
+<status status="PASS" starttime="20210406 17:10:11.390" endtime="20210406 17:10:11.803"/>
 </if>
-<status status="PASS" starttime="20210405 19:10:23.318" endtime="20210405 19:10:23.881"/>
+<status status="PASS" starttime="20210406 17:10:11.100" endtime="20210406 17:10:11.803"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:23.317" endtime="20210405 19:10:23.881"/>
+<status status="PASS" starttime="20210406 17:10:11.097" endtime="20210406 17:10:11.804"/>
 </kw>
 <kw name="Verify Signin Screen" library="A_SignIn">
 <kw name="Click On Element If Visibile" library="A_Common">
@@ -181,48 +181,48 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <doc>Waits until element specified with `locator` is visible.</doc>
 <kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20210405 19:10:44.998" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210405 19:10:43.954" endtime="20210405 19:10:44.998"/>
+<msg timestamp="20210406 17:10:32.908" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210406 17:10:31.871" endtime="20210406 17:10:32.908"/>
 </kw>
-<msg timestamp="20210405 19:10:44.998" level="FAIL">Element locator 'xpath=//*[@text='Sign in as a different user?']' did not match any elements after 20 seconds</msg>
-<status status="FAIL" starttime="20210405 19:10:23.883" endtime="20210405 19:10:44.999"/>
+<msg timestamp="20210406 17:10:32.910" level="FAIL">Element locator 'xpath=//*[@text='Sign in as a different user?']' did not match any elements after 20 seconds</msg>
+<status status="FAIL" starttime="20210406 17:10:11.808" endtime="20210406 17:10:32.910"/>
 </kw>
-<status status="FAIL" starttime="20210405 19:10:23.883" endtime="20210405 19:10:44.999"/>
+<status status="FAIL" starttime="20210406 17:10:11.807" endtime="20210406 17:10:32.911"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
 <arg>${element}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<status status="NOT RUN" starttime="20210405 19:10:45.000" endtime="20210405 19:10:45.000"/>
+<status status="NOT RUN" starttime="20210406 17:10:32.912" endtime="20210406 17:10:32.912"/>
 </kw>
-<status status="FAIL" starttime="20210405 19:10:23.882" endtime="20210405 19:10:45.000"/>
+<status status="FAIL" starttime="20210406 17:10:11.807" endtime="20210406 17:10:32.913"/>
 </kw>
-<msg timestamp="20210405 19:10:45.000" level="INFO">${isElementVisible} = False</msg>
-<status status="PASS" starttime="20210405 19:10:23.882" endtime="20210405 19:10:45.001"/>
+<msg timestamp="20210406 17:10:32.913" level="INFO">${isElementVisible} = False</msg>
+<status status="PASS" starttime="20210406 17:10:11.806" endtime="20210406 17:10:32.913"/>
 </kw>
 <if>
 <branch type="IF" condition="${isElementVisible}">
 <kw name="Wait And Click Element On Android" library="A_Common">
 <arg>${element}</arg>
-<status status="NOT RUN" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.001"/>
+<status status="NOT RUN" starttime="20210406 17:10:32.914" endtime="20210406 17:10:32.915"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Clicked on Element - ${element}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.001"/>
+<status status="NOT RUN" starttime="20210406 17:10:32.916" endtime="20210406 17:10:32.916"/>
 </kw>
-<status status="NOT RUN" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.001"/>
+<status status="NOT RUN" starttime="20210406 17:10:32.913" endtime="20210406 17:10:32.916"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Continuing without element click</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.002"/>
+<status status="PASS" starttime="20210406 17:10:32.917" endtime="20210406 17:10:32.932"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.002"/>
+<status status="PASS" starttime="20210406 17:10:32.916" endtime="20210406 17:10:32.932"/>
 </branch>
-<status status="PASS" starttime="20210405 19:10:45.001" endtime="20210405 19:10:45.002"/>
+<status status="PASS" starttime="20210406 17:10:32.913" endtime="20210406 17:10:32.933"/>
 </if>
-<status status="PASS" starttime="20210405 19:10:23.881" endtime="20210405 19:10:45.002"/>
+<status status="PASS" starttime="20210406 17:10:11.805" endtime="20210406 17:10:32.933"/>
 </kw>
 <kw name="Wait For Page Conatin Element" library="A_Common">
 <arg>${e_signinTitle}</arg>
@@ -231,327 +231,412 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${element}</arg>
 <arg>${timeout}</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20210405 19:10:45.003" endtime="20210405 19:10:45.276"/>
+<status status="PASS" starttime="20210406 17:10:32.940" endtime="20210406 17:10:33.269"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:45.002" endtime="20210405 19:10:45.276"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Signin screen Verified!</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:10:45.276" endtime="20210405 19:10:45.277"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:23.881" endtime="20210405 19:10:45.277"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:23.317" endtime="20210405 19:10:45.278"/>
-</kw>
-<kw name="User Enters Only Password" library="A_SignIn">
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arg>${vf_A_userName}</arg>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>timeout=20</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:45.282" endtime="20210405 19:10:45.452"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:45.281" endtime="20210405 19:10:45.453"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>${vf_A_userName}</arg>
-<arg>${e_invalidUserName}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20210405 19:10:45.460" level="INFO">Typing text 'abcd@gmail.com' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
-<status status="PASS" starttime="20210405 19:10:45.453" endtime="20210405 19:10:45.658"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Entered only password</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:10:45.658" endtime="20210405 19:10:45.659"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:45.280" endtime="20210405 19:10:45.660"/>
-</kw>
-<kw name="Click On Signin Button" library="A_SignIn">
-<kw name="Swipe By Percent" library="AppiumLibrary">
-<arg>70</arg>
-<arg>70</arg>
-<arg>20</arg>
-<arg>20</arg>
-<arg>5000</arg>
-<doc>Swipe from one percent of the screen to another percent, for an optional duration.
-Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
-<status status="PASS" starttime="20210405 19:10:45.660" endtime="20210405 19:10:48.097"/>
-</kw>
-<kw name="Verify Element Visibility" library="A_Common">
-<arg>${vf_A_submitBtn}</arg>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>timeout=20</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:48.098" endtime="20210405 19:10:48.225"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:48.098" endtime="20210405 19:10:48.225"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:48.225" endtime="20210405 19:10:48.326"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:48.097" endtime="20210405 19:10:48.326"/>
-</kw>
-<kw name="Wait And Click Element On Android" library="A_Common">
-<arg>${vf_A_submitBtn}</arg>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>timeout=20</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20210405 19:10:48.327" endtime="20210405 19:10:48.435"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:48.327" endtime="20210405 19:10:48.435"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${element}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20210405 19:10:48.441" level="INFO">Clicking element 'xpath=//*[@text='submit']'.</msg>
-<status status="PASS" starttime="20210405 19:10:48.435" endtime="20210405 19:10:48.616"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:48.326" endtime="20210405 19:10:48.616"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Clicked Signin Button</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:10:48.616" endtime="20210405 19:10:48.617"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:45.660" endtime="20210405 19:10:48.617"/>
-</kw>
-<tag>Signin</tag>
-<tag>SL09</tag>
-<status status="PASS" starttime="20210405 19:10:23.316" endtime="20210405 19:10:48.617"/>
-</test>
-<test id="s1-t2" name="Signin With Social Account- Google With Valid Login Credentials">
-<kw name="User Navigates To Signin Screen" library="A_SignIn">
-<kw name="Click On Start Investing Button" library="A_LandingPage">
-<kw name="Click On Element If Visibile" library="A_Common">
-<arg>${vf_A_startInvestingBtn}</arg>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${isElementVisible}</var>
-<arg>Verify Element Visibility</arg>
-<arg>${element}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Verify Element Visibility" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>timeout=20</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20210405 19:11:09.340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210405 19:11:08.692" endtime="20210405 19:11:09.340"/>
-</kw>
-<msg timestamp="20210405 19:11:09.340" level="FAIL">Element locator 'xpath=//*[@text='Start Investing']' did not match any elements after 20 seconds</msg>
-<status status="FAIL" starttime="20210405 19:10:48.622" endtime="20210405 19:11:09.340"/>
-</kw>
-<status status="FAIL" starttime="20210405 19:10:48.622" endtime="20210405 19:11:09.340"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<status status="NOT RUN" starttime="20210405 19:11:09.340" endtime="20210405 19:11:09.340"/>
-</kw>
-<status status="FAIL" starttime="20210405 19:10:48.621" endtime="20210405 19:11:09.341"/>
-</kw>
-<msg timestamp="20210405 19:11:09.341" level="INFO">${isElementVisible} = False</msg>
-<status status="PASS" starttime="20210405 19:10:48.621" endtime="20210405 19:11:09.341"/>
-</kw>
-<if>
-<branch type="IF" condition="${isElementVisible}">
-<kw name="Wait And Click Element On Android" library="A_Common">
-<arg>${element}</arg>
-<status status="NOT RUN" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.341"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Clicked on Element - ${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.341"/>
-</kw>
-<status status="NOT RUN" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.341"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Continuing without element click</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.342"/>
-</kw>
-<status status="PASS" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.342"/>
-</branch>
-<status status="PASS" starttime="20210405 19:11:09.341" endtime="20210405 19:11:09.342"/>
-</if>
-<status status="PASS" starttime="20210405 19:10:48.620" endtime="20210405 19:11:09.342"/>
-</kw>
-<status status="PASS" starttime="20210405 19:10:48.619" endtime="20210405 19:11:09.342"/>
-</kw>
-<kw name="Verify Signin Screen" library="A_SignIn">
-<kw name="Click On Element If Visibile" library="A_Common">
-<arg>${vf_A_signInAsDiffUser}</arg>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${isElementVisible}</var>
-<arg>Verify Element Visibility</arg>
-<arg>${element}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Verify Element Visibility" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arg>${element}</arg>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>timeout=20</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20210405 19:11:30.129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210405 19:11:29.458" endtime="20210405 19:11:30.129"/>
-</kw>
-<msg timestamp="20210405 19:11:30.129" level="FAIL">Element locator 'xpath=//*[@text='Sign in as a different user?']' did not match any elements after 20 seconds</msg>
-<status status="FAIL" starttime="20210405 19:11:09.361" endtime="20210405 19:11:30.130"/>
-</kw>
-<status status="FAIL" starttime="20210405 19:11:09.344" endtime="20210405 19:11:30.130"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${element}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<status status="NOT RUN" starttime="20210405 19:11:30.131" endtime="20210405 19:11:30.131"/>
-</kw>
-<status status="FAIL" starttime="20210405 19:11:09.343" endtime="20210405 19:11:30.132"/>
-</kw>
-<msg timestamp="20210405 19:11:30.136" level="INFO">${isElementVisible} = False</msg>
-<status status="PASS" starttime="20210405 19:11:09.343" endtime="20210405 19:11:30.136"/>
-</kw>
-<if>
-<branch type="IF" condition="${isElementVisible}">
-<kw name="Wait And Click Element On Android" library="A_Common">
-<arg>${element}</arg>
-<status status="NOT RUN" starttime="20210405 19:11:30.137" endtime="20210405 19:11:30.137"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Clicked on Element - ${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20210405 19:11:30.138" endtime="20210405 19:11:30.138"/>
-</kw>
-<status status="NOT RUN" starttime="20210405 19:11:30.137" endtime="20210405 19:11:30.138"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Continuing without element click</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:11:30.138" endtime="20210405 19:11:30.139"/>
-</kw>
-<status status="PASS" starttime="20210405 19:11:30.138" endtime="20210405 19:11:30.139"/>
-</branch>
-<status status="PASS" starttime="20210405 19:11:30.136" endtime="20210405 19:11:30.139"/>
-</if>
-<status status="PASS" starttime="20210405 19:11:09.343" endtime="20210405 19:11:30.139"/>
-</kw>
-<kw name="Wait For Page Conatin Element" library="A_Common">
-<arg>${e_signinTitle}</arg>
-<arg>timeout=20s</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${element}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20210405 19:11:30.141" endtime="20210405 19:11:30.396"/>
-</kw>
-<status status="PASS" starttime="20210405 19:11:30.139" endtime="20210405 19:11:30.396"/>
+<status status="PASS" starttime="20210406 17:10:32.938" endtime="20210406 17:10:33.269"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Signin screen Verified!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210405 19:11:30.396" endtime="20210405 19:11:30.397"/>
+<status status="PASS" starttime="20210406 17:10:33.270" endtime="20210406 17:10:33.271"/>
 </kw>
-<status status="PASS" starttime="20210405 19:11:09.342" endtime="20210405 19:11:30.397"/>
+<status status="PASS" starttime="20210406 17:10:11.804" endtime="20210406 17:10:33.271"/>
 </kw>
-<status status="PASS" starttime="20210405 19:10:48.618" endtime="20210405 19:11:30.397"/>
+<status status="PASS" starttime="20210406 17:10:11.095" endtime="20210406 17:10:33.272"/>
 </kw>
-<kw name="Click On Continue With Google Button" library="A_SignIn">
+<kw name="Click On Continue With Apple Button" library="A_SignIn">
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210405 19:11:32.400" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210405 19:11:30.398" endtime="20210405 19:11:32.400"/>
-</kw>
-<kw name="Scroll Down On Android" library="A_Common">
-<arg>${vf_A_continueWithGoogleBtn}</arg>
-<kw name="Scroll Down" library="AppiumLibrary">
-<arg>${element}</arg>
-<doc>Scrolls down to element</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20210405 19:11:33.216" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210405 19:11:32.540" endtime="20210405 19:11:33.216"/>
-</kw>
-<msg timestamp="20210405 19:11:33.218" level="FAIL">ValueError: Element locator 'xpath=//*[@text='Continue with Google']' did not match any elements.</msg>
-<status status="FAIL" starttime="20210405 19:11:32.402" endtime="20210405 19:11:33.219"/>
-</kw>
-<status status="FAIL" starttime="20210405 19:11:32.401" endtime="20210405 19:11:33.219"/>
-</kw>
-<kw name="Click On Element If Visibile" library="A_Common">
-<arg>${vf_A_backBtn}</arg>
-<status status="NOT RUN" starttime="20210405 19:11:33.219" endtime="20210405 19:11:33.219"/>
+<msg timestamp="20210406 17:10:35.275" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210406 17:10:33.273" endtime="20210406 17:10:35.278"/>
 </kw>
 <kw name="Wait And Click Element On Android" library="A_Common">
-<arg>${vf_A_continueWithGoogleBtn}</arg>
-<status status="NOT RUN" starttime="20210405 19:11:33.219" endtime="20210405 19:11:33.219"/>
+<arg>${vf_A_continueWithAppleBtn}</arg>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:10:35.281" endtime="20210406 17:10:35.464"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:35.280" endtime="20210406 17:10:35.465"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210406 17:10:35.492" level="INFO">Clicking element 'xpath=//*[@text='Continue with Apple']'.</msg>
+<status status="PASS" starttime="20210406 17:10:35.465" endtime="20210406 17:10:35.703"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:35.279" endtime="20210406 17:10:35.703"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Clicked On Continue with Google button</arg>
+<arg>Clicked On Continue with Apple button</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20210405 19:11:33.219" endtime="20210405 19:11:33.219"/>
+<status status="PASS" starttime="20210406 17:10:35.704" endtime="20210406 17:10:35.705"/>
 </kw>
-<status status="FAIL" starttime="20210405 19:11:30.397" endtime="20210405 19:11:33.220"/>
+<status status="PASS" starttime="20210406 17:10:33.272" endtime="20210406 17:10:35.706"/>
 </kw>
-<kw name="Signin With Valid Credentials - Google" library="A_SignIn">
-<status status="NOT RUN" starttime="20210405 19:11:33.220" endtime="20210405 19:11:33.220"/>
+<kw name="Signin With Invalid Credentials - Apple" library="A_SignIn">
+<kw name="Navigate Back To Signin Screen If Element Visible" library="A_Common">
+<arg>${vf_A_appleContWithAccPage}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isElementVisible}</var>
+<arg>Verify Element Visibility</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verify Element Visibility" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210406 17:10:56.458" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210406 17:10:55.809" endtime="20210406 17:10:56.458"/>
 </kw>
-<kw name="Rest Android Application" library="A_Common" type="TEARDOWN">
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>Reset application. Open Application can be reset while Appium session is kept alive.</doc>
-<status status="PASS" starttime="20210405 19:11:33.221" endtime="20210405 19:11:34.902"/>
+<msg timestamp="20210406 17:10:56.459" level="FAIL">Element locator 'xpath=//*[@text='Continue with account']' did not match any elements after 20 seconds</msg>
+<status status="FAIL" starttime="20210406 17:10:35.713" endtime="20210406 17:10:56.459"/>
 </kw>
-<status status="PASS" starttime="20210405 19:11:33.220" endtime="20210405 19:11:34.902"/>
+<status status="FAIL" starttime="20210406 17:10:35.712" endtime="20210406 17:10:56.460"/>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="NOT RUN" starttime="20210406 17:10:56.460" endtime="20210406 17:10:56.460"/>
+</kw>
+<status status="FAIL" starttime="20210406 17:10:35.710" endtime="20210406 17:10:56.460"/>
+</kw>
+<msg timestamp="20210406 17:10:56.460" level="INFO">${isElementVisible} = False</msg>
+<status status="PASS" starttime="20210406 17:10:35.710" endtime="20210406 17:10:56.460"/>
+</kw>
+<if>
+<branch type="IF" condition="${isElementVisible}">
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="NOT RUN" starttime="20210406 17:10:56.461" endtime="20210406 17:10:56.461"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Came back to previous screen</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210406 17:10:56.461" endtime="20210406 17:10:56.461"/>
+</kw>
+<status status="NOT RUN" starttime="20210406 17:10:56.461" endtime="20210406 17:10:56.461"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Continuing without any action</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210406 17:10:56.461" endtime="20210406 17:10:56.461"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:56.461" endtime="20210406 17:10:56.461"/>
+</branch>
+<status status="PASS" starttime="20210406 17:10:56.460" endtime="20210406 17:10:56.462"/>
+</if>
+<status status="PASS" starttime="20210406 17:10:35.708" endtime="20210406 17:10:56.462"/>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${vf_A_userName}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:10:56.462" endtime="20210406 17:10:56.674"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:56.462" endtime="20210406 17:10:56.675"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${vf_A_userName}</arg>
+<arg>${e_appleUserId}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210406 17:10:56.683" level="INFO">Typing text 'abcd@dot.com' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
+<status status="PASS" starttime="20210406 17:10:56.675" endtime="20210406 17:10:56.874"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Username Entered!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210406 17:10:56.874" endtime="20210406 17:10:56.875"/>
+</kw>
+<kw name="Wait And Click Element On Android" library="A_Common">
+<arg>${vf_A_appleEnterBtn}</arg>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:10:56.876" endtime="20210406 17:10:57.674"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:56.876" endtime="20210406 17:10:57.675"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210406 17:10:57.684" level="INFO">Clicking element 'xpath=//*[@resource-id='sign-in']'.</msg>
+<status status="PASS" starttime="20210406 17:10:57.675" endtime="20210406 17:10:57.885"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:56.875" endtime="20210406 17:10:57.885"/>
+</kw>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${vf_A_applePwd}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:10:57.886" endtime="20210406 17:10:58.855"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:57.885" endtime="20210406 17:10:58.855"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${vf_A_applePwd}</arg>
+<arg>${e_applePwd}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210406 17:10:58.864" level="INFO">Typing text 'Moolya@123' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
+<status status="PASS" starttime="20210406 17:10:58.856" endtime="20210406 17:10:59.037"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Password Entered</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210406 17:10:59.037" endtime="20210406 17:10:59.038"/>
+</kw>
+<kw name="Navigate Back To Signin Screen If Element Visible" library="A_Common">
+<arg>${vf_A_appleContWithAccPage}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isElementVisible}</var>
+<arg>Verify Element Visibility</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verify Element Visibility" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:10:59.046" endtime="20210406 17:11:00.450"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:59.042" endtime="20210406 17:11:00.451"/>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" starttime="20210406 17:11:00.451" endtime="20210406 17:11:00.551"/>
+</kw>
+<status status="PASS" starttime="20210406 17:10:59.040" endtime="20210406 17:11:00.551"/>
+</kw>
+<msg timestamp="20210406 17:11:00.551" level="INFO">${isElementVisible} = True</msg>
+<status status="PASS" starttime="20210406 17:10:59.039" endtime="20210406 17:11:00.551"/>
+</kw>
+<if>
+<branch type="IF" condition="${isElementVisible}">
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20210406 17:11:00.552" endtime="20210406 17:11:00.606"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Came back to previous screen</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210406 17:11:00.607" endtime="20210406 17:11:00.607"/>
+</kw>
+<status status="PASS" starttime="20210406 17:11:00.552" endtime="20210406 17:11:00.607"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Continuing without any action</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210406 17:11:00.607" endtime="20210406 17:11:00.607"/>
+</kw>
+<status status="NOT RUN" starttime="20210406 17:11:00.607" endtime="20210406 17:11:00.607"/>
+</branch>
+<status status="PASS" starttime="20210406 17:11:00.551" endtime="20210406 17:11:00.608"/>
+</if>
+<status status="PASS" starttime="20210406 17:10:59.038" endtime="20210406 17:11:00.608"/>
+</kw>
+<kw name="Close Android Keyboard" library="A_Common">
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20210406 17:11:00.610" endtime="20210406 17:11:05.296"/>
+</kw>
+<status status="PASS" starttime="20210406 17:11:00.608" endtime="20210406 17:11:05.296"/>
+</kw>
+<kw name="Wait And Click Element On Android" library="A_Common">
+<arg>${vf_A_appleSigninBtn}</arg>
+<kw name="Wait For Element Visibility On Android" library="A_Common">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210406 17:11:05.298" endtime="20210406 17:11:05.478"/>
+</kw>
+<status status="PASS" starttime="20210406 17:11:05.297" endtime="20210406 17:11:05.479"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${element}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210406 17:11:05.485" level="INFO">Clicking element 'xpath=//*[@text=' Continue ']'.</msg>
+<status status="PASS" starttime="20210406 17:11:05.479" endtime="20210406 17:11:06.545"/>
+</kw>
+<status status="PASS" starttime="20210406 17:11:05.297" endtime="20210406 17:11:06.546"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logging in with Apple</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210406 17:11:06.546" endtime="20210406 17:11:06.546"/>
+</kw>
+<kw name="Verify Error Message Displayed" library="A_Common">
+<arg>${e_invalidFacebookLoginErrorTxt}</arg>
+<kw name="Wait For Page Conatin Element" library="A_Common">
+<arg>${errorMsg}</arg>
+<arg>30s</arg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20210406 17:11:37.053" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2132"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2132]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2132]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,96][1080,2132]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="com.android.chrome" class="android.view.ViewGroup" text="" resource-id="com.android.chrome:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,96][1080,2132]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,96][1080,264]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.android.chrome" class="android.view.ViewGroup" text="" resource-id="com.android.chrome:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,96][1080,264]" displayed="true"&gt;
+              &lt;android.widget.ImageButton index="0" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="Navigate up" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,96][168,264]" displayed="true" /&gt;
+              &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="Passwords" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[216,139][532,220]" displayed="true" /&gt;
+              &lt;androidx.appcompat.widget.LinearLayoutCompat index="2" package="com.android.chrome" class="androidx.appcompat.widget.LinearLayoutCompat" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[672,96][1080,264]" displayed="true"&gt;
+                &lt;androidx.appcompat.widget.LinearLayoutCompat index="0" package="com.android.chrome" class="androidx.appcompat.widget.LinearLayoutCompat" text="" resource-id="com.android.chrome:id/menu_id_search" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[672,108][816,252]" displayed="true"&gt;
+                  &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" resource-id="com.android.chrome:id/search_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[672,108][816,252]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="com.android.chrome" class="android.widget.ImageView" text="" content-desc="Search" resource-id="com.android.chrome:id/search_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[672,108][816,252]" displayed="true" /&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                &lt;/androidx.appcompat.widget.LinearLayoutCompat&gt;
+                &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="" content-desc="Help &amp;amp; feedback" resource-id="com.android.chrome:id/menu_id_targeted_help" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[816,108][960,252]" displayed="true" /&gt;
+                &lt;android.widget.ImageView index="2" package="com.android.chrome" class="android.widget.ImageView" text="" content-desc="More options" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[960,108][1080,252]" displayed="true" /&gt;
+              &lt;/androidx.appcompat.widget.LinearLayoutCompat&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+          &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,264][1080,2132]" displayed="true"&gt;
+            &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,264][1080,2132]" displayed="true"&gt;
+              &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="android:id/list_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,264][1080,2132]" displayed="true"&gt;
+                &lt;androidx.recyclerview.widget.RecyclerView index="0" package="com.android.chrome" class="androidx.recyclerview.widget.RecyclerView" text="" resource-id="com.android.chrome:id/recycler_view" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,264][1080,2132]" displayed="true"&gt;
+                  &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,264][1080,482]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,264][844,482]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Save passwords" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,312][397,377]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="On" resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,377][100,434]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                    &lt;android.widget.LinearLayout index="1" package="com.android.chrome" class="android.widget.LinearLayout" text="" resource-id="android:id/widget_frame" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[844,264][1032,482]" displayed="true"&gt;
+                      &lt;android.widget.Switch index="0" package="com.android.chrome" class="android.widget.Switch" text="ON" resource-id="com.android.chrome:id/switchWidget" checkable="true" checked="true" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[892,332][1032,413]" displayed="true" /&gt;
+                    &lt;/android.widget.LinearLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="1" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,485][1080,850]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,485][844,850]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Auto Sign-in" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,533][307,598]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="Automatically sign in to websites using stored credentials. When the feature is off, you’ll be asked for verification every time before signing in to a website." resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,598][844,802]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                    &lt;android.widget.LinearLayout index="1" package="com.android.chrome" class="android.widget.LinearLayout" text="" resource-id="android:id/widget_frame" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[844,485][1032,850]" displayed="true"&gt;
+                      &lt;android.widget.Switch index="0" package="com.android.chrome" class="android.widget.Switch" text="ON" resource-id="com.android.chrome:id/switchWidget" checkable="true" checked="true" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[892,627][1032,708]" displayed="true" /&gt;
+                    &lt;/android.widget.LinearLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="2" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,853][1080,1120]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,853][1032,1120]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Check passwords" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,901][425,966]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="Keep your passwords safe from data breaches and other security issues" resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,966][1032,1072]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.TextView index="3" package="com.android.chrome" class="android.widget.TextView" text="Passwords" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1123][1080,1228]" displayed="true" /&gt;
+                  &lt;android.widget.LinearLayout index="4" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1276][1080,1494]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1276][1032,1494]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="allengineerjob.com" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1324][454,1389]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="ashackharat@gmail.com" resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1389][514,1446]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="5" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1497][1080,1658]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1497][1032,1658]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="amazon.in" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1545][272,1610]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="6" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1661][1080,1879]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1661][1032,1879]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="appleid.apple.com" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1709][441,1774]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="asha.kharat@moolya.com" resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1774][537,1831]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="7" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1882][1080,2043]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1882][1032,2043]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="bayt.com" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,1930][247,1995]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                  &lt;android.widget.LinearLayout index="8" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2046][1080,2132]" displayed="true"&gt;
+                    &lt;android.widget.RelativeLayout index="0" package="com.android.chrome" class="android.widget.RelativeLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,2046][1032,2132]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="sjobs.brassring.com" resource-id="android:id/title" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,2094][483,2132]" displayed="true" /&gt;
+                      &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="ashackharat@gmail.com" resource-id="android:id/summary" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[48,2159][514,2208]" displayed="true" /&gt;
+                    &lt;/android.widget.RelativeLayout&gt;
+                  &lt;/android.widget.LinearLayout&gt;
+                &lt;/androidx.recyclerview.widget.RecyclerView&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.widget.LinearLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210406 17:11:37.660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210406 17:11:37.054" endtime="20210406 17:11:37.660"/>
+</kw>
+<msg timestamp="20210406 17:11:37.661" level="FAIL">Text 'Your Apple ID or password was incorrect' did not appear in 30 seconds</msg>
+<status status="FAIL" starttime="20210406 17:11:06.548" endtime="20210406 17:11:37.661"/>
+</kw>
+<status status="FAIL" starttime="20210406 17:11:06.547" endtime="20210406 17:11:37.661"/>
+</kw>
+<kw name="Verify Page Conatin Text" library="A_Common">
+<arg>${errorMsg}</arg>
+<status status="NOT RUN" starttime="20210406 17:11:37.661" endtime="20210406 17:11:37.661"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Verified Error Message</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20210406 17:11:37.662" endtime="20210406 17:11:37.662"/>
+</kw>
+<status status="FAIL" starttime="20210406 17:11:06.547" endtime="20210406 17:11:37.662"/>
+</kw>
+<status status="FAIL" starttime="20210406 17:10:35.707" endtime="20210406 17:11:37.662"/>
 </kw>
 <tag>Signin</tag>
-<tag>SL14</tag>
-<status status="FAIL" starttime="20210405 19:10:48.618" endtime="20210405 19:11:34.903">ValueError: Element locator 'xpath=//*[@text='Continue with Google']' did not match any elements.</status>
+<tag>SL13</tag>
+<status status="FAIL" starttime="20210406 17:10:11.092" endtime="20210406 17:11:37.662">Text 'Your Apple ID or password was incorrect' did not appear in 30 seconds</status>
 </test>
 <kw name="Quit Android Application" library="A_Common" type="TEARDOWN">
 <kw name="Quit Application" library="AppiumLibrary">
 <doc>Quit application. Application can be quit while Appium session is kept alive.
 This keyword can be used to close application during test case or between test cases.</doc>
-<status status="PASS" starttime="20210405 19:11:34.905" endtime="20210405 19:11:35.126"/>
+<status status="PASS" starttime="20210406 17:11:37.665" endtime="20210406 17:11:37.895"/>
 </kw>
-<status status="PASS" starttime="20210405 19:11:34.905" endtime="20210405 19:11:35.127"/>
+<status status="PASS" starttime="20210406 17:11:37.664" endtime="20210406 17:11:37.896"/>
 </kw>
-<status status="FAIL" starttime="20210405 19:10:08.515" endtime="20210405 19:11:35.127"/>
+<status status="FAIL" starttime="20210406 17:09:55.245" endtime="20210406 17:11:37.896"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="1" skip="0">Signin</stat>
-<stat pass="1" fail="0" skip="0">SL09</stat>
-<stat pass="0" fail="1" skip="0">SL14</stat>
+<stat pass="0" fail="1" skip="0">Signin</stat>
+<stat pass="0" fail="1" skip="0">SL13</stat>
 </tag>
 <suite>
-<stat pass="1" fail="1" skip="0" id="s1" name="CurrentTest">CurrentTest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="CurrentTest">CurrentTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210405 19:10:08.790" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+<msg timestamp="20210406 17:09:55.758" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
 Traceback (most recent call last):
   None
 PYTHONPATH:

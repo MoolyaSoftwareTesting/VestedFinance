@@ -22,4 +22,3 @@ ${e_shareInputTxt} =  1
 # Application Locator < Locator Name >
 ${vf_A_home} =  xpath=//*[@text='Home']
 ${vf_A_portifolioOverview} =  xpath=//*[@text='Portfolio Overview']
-${vf_A_backBtn} =  xpath=//*[@class='android.widget.RelativeLayout' and ./*[@id='back']]

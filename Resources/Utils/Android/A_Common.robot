@@ -92,11 +92,24 @@ Click On Element If Visibile
         Log To Console  Continuing without element click
     END
 
+Navigate Back To Signin Screen If Element Visible
+    [Arguments]  ${element}
+    ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${element}
+    IF   ${isElementVisible}  
+        Go Back
+        Log To Console  Came back to previous screen
+    ELSE   
+        Log To Console  Continuing without any action
+    END
+
 Verify Error Message Displayed
     [Arguments]  ${errorMsg}
     Wait For Page Conatin Element  ${errorMsg}  30s
     Verify Page Conatin Text  ${errorMsg}
     Log To Console  Verified Error Message
+
+Close Android Keyboard
+    Hide Keyboard
 
 Rest Android Application
     Reset Application

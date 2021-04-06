@@ -23,6 +23,7 @@ User Clicks On Signin Link
     
 Enter Email
     [Arguments]  ${email}
+    Navigate Back To Signin Screen If Element Visible  ${vf_A_googleChooseAccPage}
     Verify Element Visibility  ${vf_A_userName}
     Input Text  ${vf_A_userName}  ${email} 
     Log To Console  Email entered - ${email} 
@@ -59,10 +60,19 @@ Click On Continue Button
 
 Click On Continue With Google Button
     Sleep  2s
-    Scroll Down On Android  ${vf_A_continueWithGoogleBtn}
-    Click On Element If Visibile  ${vf_A_backBtn}
+    Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_continueWithGoogleBtn}
     Log To Console  Clicked On Continue with Google button
+
+Click On Continue With Apple Button
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_continueWithAppleBtn}
+    Log To Console  Clicked On Continue with Apple button
+
+Click On Continue With Facebook Button
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_continueWithFbBtn}
+    Log To Console  Clicked On Continue with Facebook button
 
 Click On Next Button
     Sleep  2s
@@ -130,9 +140,9 @@ Signin With Valid Credentials - Google
     Enter Email  ${e_validGoogleEmail}
     Click On Next Button
     Enter Google Password  ${e_validGooglePassword}
-    Click On Element If Visibile  ${vf_A_backBtn}
+    Close Android Keyboard
     Click On Next Button
-    Log To Console  Signed in with Valid Google Credentials
+    Log To Console  Signedin with Valid Google Credentials!
 
 Signin With Invalid Credentials - Google
     Click On Element If Visibile  ${vf_A_useAnotherAccBtn}
@@ -140,7 +150,34 @@ Signin With Invalid Credentials - Google
     Enter Email  ${e_validGoogleEmail}
     Click On Next Button
     Enter Google Password  ${e_invalidPwd}
-    Click On Element If Visibile  ${vf_A_backBtn}
+    Close Android Keyboard
     Log To Console  Entered invalid password
     Click On Next Button
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
+    Log To Console  Error message verified!
+
+Signin With Invalid Credentials - Apple
+    Navigate Back To Signin Screen If Element Visible  ${vf_A_appleContWithAccPage}
+    Wait For Element Visibility On Android  ${vf_A_userName}
+    Input Text  ${vf_A_userName}  ${e_appleUserId}
+    Log to Console  Username Entered!
+    Wait And Click Element On Android  ${vf_A_appleEnterBtn}
+    Wait For Element Visibility On Android  ${vf_A_applePwd}
+    Input Text  ${vf_A_applePwd}  ${e_applePwd}
+    Log to Console  Password Entered
+    Navigate Back To Signin Screen If Element Visible  ${vf_A_appleContWithAccPage}
+    Close Android Keyboard
+    Wait And Click Element On Android  ${vf_A_appleSigninBtn} 
+    Log to Console  Logging in with Apple
+    Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
+
+Signin With Valid Credentials - Facebook
+    Log to Console  Logging in with Facebook
+    Wait For Element Visibility On Android  ${vf_A_FbEmail}
+    Input Text  ${vf_A_FbEmail}  ${e_FbEmailId}
+    Log to Console  Username Entered!
+    Wait And Click Element On Android  ${vf_A_FbPwd}
+    Input Text  ${vf_A_FbPwd}  ${e_FbPwd}
+    Log to Console  Password Entered
+    Click Element  ${vf_A_FbSigninBtn}
+    Log to Console  Signed In!

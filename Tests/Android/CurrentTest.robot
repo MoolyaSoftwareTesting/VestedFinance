@@ -12,20 +12,17 @@ Suite Teardown  Quit Android Application
 
 *** Test Cases ***
 
-# Note: Error message is not verified, as discussed currently on low priority
-Error Message On Empty Email Entered
-    [Tags]  SL09  Signin
+# Note: Error msg needs to be verified
+Signin With Social Account- Apple With Invalid Login Credentials
+    [Tags]  SL13  Signin
     User Navigates To Signin Screen
-    User Enters Only Password
-    Click On Signin Button
-    #Please fill out this field message is displayed
+    Click On Continue With Apple Button
+    Signin With Invalid Credentials - Apple
 
-#Note: Issue- User is not navigating to Dashboard page. So, Dashboard screen is not verified
-Signin With Social Account- Google With Valid Login Credentials
-    [Tags]  SL14  Signin
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    #Scroll up required- as keypad remains open in SL09
-    Click On Continue With Google Button
-    Signin With Valid Credentials - Google
-    #Verify Dashboard Screen
+# Signin With Social Account- Facebook With Valid Login Credentials
+#     [Tags]  SL16  Signin
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Click On Continue With Facebook Button
+#     Signin With Valid Credentials - Facebook
+#     Verify Dashboard Screen
