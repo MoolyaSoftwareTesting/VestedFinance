@@ -94,6 +94,7 @@ Click On Element If Visibile
 
 Navigate Back To Signin Screen If Element Visible
     [Arguments]  ${element}
+    Sleep  2s
     ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${element}
     IF   ${isElementVisible}  
         Go Back

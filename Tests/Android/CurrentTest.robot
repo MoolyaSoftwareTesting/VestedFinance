@@ -12,17 +12,11 @@ Suite Teardown  Quit Android Application
 
 *** Test Cases ***
 
-# Note: Error msg needs to be verified
-Signin With Social Account- Apple With Invalid Login Credentials
-    [Tags]  SL13  Signin
+#
+Previously Loggedin Account Is Displayed In Apple Social Signin
+    [Tags]  SL22  Signin
     User Navigates To Signin Screen
     Click On Continue With Apple Button
-    Signin With Invalid Credentials - Apple
+    Choose An Apple Account From The Existing Accounts
+    #Verify Dashboard Screen
 
-# Signin With Social Account- Facebook With Valid Login Credentials
-#     [Tags]  SL16  Signin
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Click On Continue With Facebook Button
-#     Signin With Valid Credentials - Facebook
-#     Verify Dashboard Screen

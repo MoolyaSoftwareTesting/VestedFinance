@@ -3,7 +3,7 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Open App On Emulator
+Suite Setup  Open App On Real Device
 Suite Teardown  Quit Android Application
 
 #Complete Suite: robot -d Results Tests/Android/A_Tests.robot
@@ -43,7 +43,6 @@ Signin With Valid Login Credentials
 User Selects The Already Present Account In Easy Signin Page
     [Tags]  SL10  Signin
     [Teardown]  Rest Android Application
-    Open App On Real Device
     User Navigates To Easy Signin Screen
     User Selects The Already Present Account In Easy Signin
     Verify Dashboard Screen
@@ -73,7 +72,7 @@ Error Message On Empty Email Entered
     Click On Signin Button
     #Please fill out this field message is displayed
 
-# Note: Error msg needs to be verified
+# Note: Keyboard is not closing, before verifying error msg
 Signin With Social Account- Apple With Invalid Login Credentials
     [Tags]  SL13  Signin
     User Navigates To Signin Screen
@@ -89,12 +88,23 @@ Signin With Social Account- Google With Valid Login Credentials
     Signin With Valid Credentials - Google
     #Verify Dashboard Screen
 
+# Pre-req: To be executed after SL14[account to be saved in device], 
+# as TestVF account should be already signedin
+Previously Loggedin Account Is Displayed In Google Social Signin
+    [Tags]  SL18  Signin
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Choose An Gmail Account From The Existing Accounts
+    Verify Dashboard Screen
+
 Signin With Social Account- Google With Invalid Login Credentials
     [Tags]  SL15  Signin
+    [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
+#Note: Logout from Browser before every run
 Signin With Social Account- Facebook With Valid Login Credentials
     [Tags]  SL16  Signin
     [Teardown]  Rest Android Application
@@ -102,4 +112,21 @@ Signin With Social Account- Facebook With Valid Login Credentials
     Click On Continue With Facebook Button
     Signin With Valid Credentials - Facebook
     Verify Dashboard Screen
+
+#Note: Logout from FB Browser required before every run
+Signin With Social Account- Facebook With Invalid Login Credentials
+    [Tags]  SL17  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Facebook Button
+    Signin With Invalid Credentials - Facebook
+
+#Note: To be executed after SL12, as saved Apple account should be present
+#Issue: Verification not done, due to OTP sent everytime
+Previously Loggedin Account Is Displayed In Apple Social Signin
+    [Tags]  SL20  Signin
+    User Navigates To Signin Screen
+    Click On Continue With Apple Button
+    Choose An Apple Account From The Existing Accounts
+    #Verify Dashboard Screen
 
