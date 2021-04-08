@@ -16,7 +16,5 @@ Suite Teardown  Quit Android Application
 Previously Loggedin Account Is Displayed In Apple Social Signin
     [Tags]  SL22  Signin
     User Navigates To Signin Screen
-    Click On Continue With Apple Button
-    Choose An Apple Account From The Existing Accounts
-    #Verify Dashboard Screen
+    
 
