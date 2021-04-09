@@ -33,6 +33,7 @@ Verify Heading for each point is displayed
     Log Source
     
 Click On Start Investing Button
+    Sleep  5s
     Click On Element If Visibile  ${vf_A_startInvestingBtn}
 
 Verify Landing Page On Mobile

@@ -97,6 +97,9 @@ Verify Error Message Displayed
     Verify Page Conatin Text  ${errorMsg}
     Log To Console  Verified Error Message
 
+Close Android Keyboard
+    Hide Keyboard
+
 Rest Android Application
     Reset Application
 

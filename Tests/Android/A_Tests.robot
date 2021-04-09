@@ -58,3 +58,16 @@ Error Message On Empty Email Entered
     User Enters Only Password
     Click On Signin Button
     #"Please fill out this field" message is displayed
+
+Signin With Valid Facebook Credentials
+    [Tags]  SL16  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Valid Facebook Login
+
+Signin With Invalid Facebook Credentials
+    [Tags]  SL17  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Inalid Facebook Login
+# oose An Account To Continue - Facebook

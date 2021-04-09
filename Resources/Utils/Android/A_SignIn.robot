@@ -84,3 +84,54 @@ Please fill out this field message is displayed
     Capture Page Screenshot  filename=fieldError-Screenshot.png
     ocr_core("fieldError-Screenshot.png", "Please fill out this field")
     Log To Console  Verified error msg text
+
+Signin With Apple Social Account
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_apple_acc}
+    Sleep  5s
+    Wait For Element Visibility On Android  ${vf_A_userName}
+    Input Text  ${vf_A_userName}  ${e_apple_userid}
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_apple_enter}
+    Sleep  5s
+    Wait For Element Visibility On Android  ${vf_A_apple_password}
+    Input Text  ${vf_A_apple_password}  ${e_apple_pwd}
+    # Sleep  2s
+    Wait And Click Element On Android  ${vf_A_apple_signin}
+    Close Android Keyboard
+    Log to Console  Logging in with Apple
+
+Signin With Valid Facebook Login
+    Wait And Click Element On Android  ${vf_A_Fb_button}
+    Sleep  5s
+    Log to Console  Logging in with Facebook
+    Log Source
+    Wait For Element Visibility On Android  ${vf_A_userName}
+    Input Text  ${vf_A_userName}  ${e_Fb_validUsername}
+    Sleep  3s
+    Log to Console  Username Entered!
+    Wait And Click Element On Android  ${vf_A_Fb_pwd}
+    Input Text  ${vf_A_Fb_pwd}  ${e_Fb_validPassword}
+    Sleep  3s
+    Log to Console  Password Entered!
+    Click Element  ${vf_A_Fb_signinbutton}
+    Verify Dashboard Screen
+    Log to Console  Signing In!
+
+Signin With Invalid Facebook Login
+    Wait And Click Element On Android  ${vf_A_Fb_button}
+    Sleep  5s
+    Log to Console  Logging in with Facebook
+    Log Source
+    Wait For Element Visibility On Android  ${vf_A_userName}
+    Input Text  ${vf_A_userName}  ${e_Fb_invalidUsername}
+    Sleep  3s
+    Log to Console  Username Entered!
+    Wait And Click Element On Android  ${vf_A_Fb_pwd}
+    Input Text  ${vf_A_Fb_pwd}  ${e_Fb_invalidPassword}
+    Sleep  3s
+    Log to Console  Password Entered!
+    Click Element  ${vf_A_Fb_signinbutton}
+    Log to Console  Signing In!
+    Verify Error Message Displayed  ${e_invalidFbLoginMsg}
+    Log to Console  Error message verified!
