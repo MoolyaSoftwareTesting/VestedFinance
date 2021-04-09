@@ -1,27 +1,46 @@
 *** Settings ***
 Library     AppiumLibrary
+Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
+Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 
 
 *** Keywords ***
+Landing Page Is Loaded Completely
+    Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
+    Log Source
+
+App logo & text is displayed at the top
+    Verify Element Visibility  ${vf_A_vestedIcon}
+    Verify Page Conatin Text  ${e_welcomeTxt}
+    Verify Page Conatin Text  ${e_aboutVestedTxt}
+
+Verify 3 points on Security, Compliance and Recommendations with icons are displayed
+    Wait For Page Conatin Element  ${e_securityHeading}  timeout=40s
+    Verify Page Conatin Text  ${e_securityTxt}
+    Verify Page Conatin Text  ${e_complianceTxt}
+    Verify Page Conatin Text  ${e_recommendationsTxt}
+    Log to Console  Verified Text part
+    Verify Element Visibility  ${vf_A_securityIcon}
+    Verify Element Visibility  ${vf_A_complianceIcon}
+    Verify Element Visibility  ${vf_A_recommendationsIcon} 
+    Log to Console  Verified all Icons
+    
+Verify Heading for each point is displayed
+    Verify Page Conatin Text  ${e_securityHeading}
+    Verify Page Conatin Text  ${e_complianceHeading}
+    Verify Page Conatin Text  ${e_recommendationsTxt}
+    Log to Console  Verified all Headings
+    Log Source
+    
+Click On Start Investing Button
+    Sleep  5s
+    Click On Element If Visibile  ${vf_A_startInvestingBtn}
+
 Verify Landing Page On Mobile
     Log To Console  Landing Page 
     Wait For Element Visibility On Android  ${vf_A_screenHeader}
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
     Wait And Click Element On Android  ${vf_A_startInvestingBtn}
-
-Sigin To Mobile Application
-    # Signin
-    Log To Console  Signin
-    Wait For Element Visibility On Android  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${e_userName} 
-    Input Text  ${vf_A_password}  ${e_password}
-    Wait And Click Element On Android  ${vf_A_submitBtn} 
-    Sleep  2s
-    Wait For Element Visibility On Android  ${vf_A_pin}
-    Input Text  ${vf_A_pin}  ${e_pin}
-    Wait And Click Element On Android  ${vf_A_continueBtn}
-    Sleep  5s
-    
     
 Verify Buy Sell Stock On Mobile
     # Buy
@@ -70,7 +89,7 @@ Verify Buy Sell Stock On Mobile
 Logout Of Application
     Wait For Element Visibility On Android  ${vf_A_profile}
     Mouse Over  ${vf_A_profile}
-    Click Element  ${vf_A_logout}
+    Click Element  ${vf_A_Logout}
     Sleep  5s
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
     Sleep  5s
