@@ -6,8 +6,9 @@ Resource    ../../Tests/Android/A_Import.robot
 Suite Setup  Open App On Emulator
 Suite Teardown  Quit Android Application
 
-# robot -d Results Tests/Android/A_Tests.robot
-# robot -d Results -L Debug -i order Tests
+#Complete Suite: robot -d Results Tests/Android/A_Tests.robot
+#Debug: robot -d -i SL01 Results -L Debug -i order Tests
+#Executing Specific Tag: robot -d Results -i SL01 Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 
@@ -35,8 +36,20 @@ Switch between Sign In and Sign up by selecting provided links
 Signin With Valid Login Credentials 
     [Tags]  SL06  Signin
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    #User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
+
+# Pre-req: To be executed after SL06
+User Selects The Already Present Account In Easy Signin Page
+    [Tags]  SL10  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Easy Signin Screen
+    User Selects The Already Present Account In Easy Signin
+    Verify Dashboard Screen
+
+Signin As Different User Link In Easy Signin Page
+    [Tags]  SL11  Signin
+    User Navigates To Signin Screen
 
 Signin With Invalid Login Credentials
     [Tags]  SL07  Signin
@@ -45,16 +58,61 @@ Signin With Invalid Login Credentials
 
 # Note: Error message is not verified, as discussed currently on low priority
 Error Message On Empty Password Entered
-    [Tags]  SL08  Signin
+    [Tags]  SL08 
     User Navigates To Signin Screen
     User Enters Only Email
     Click On Signin Button
-    #"Please fill out this field" message is displayed
 
 # Note: Error message is not verified, as discussed currently on low priority
 Error Message On Empty Email Entered
-    [Tags]  SL09  Signin
+    [Tags]  SL09  
     User Navigates To Signin Screen
     User Enters Only Password
     Click On Signin Button
-    #"Please fill out this field" message is displayed
+
+# Note: Error msg needs to be verified
+Signin With Social Account - Apple With Invalid Login Credentials
+    [Tags]  SL13  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Apple Button
+    Signin With Invalid Credentials - Apple
+
+#Note: Issue- User is not navigating to Dashboard page. So, Dashboard screen is not verified
+Google With Valid Login Credentials
+    [Tags]  SL14  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Signin With Valid Credentials - Google
+    Verify Dashboard Screen
+
+Google With Invalid Login Credentials
+    [Tags]  SL15  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Signin With Invalid Credentials - Google
+
+Previously Loggedin Account Is Displayed In Google Social Signin
+    [Tags]  SL18  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Choose An Gmail Account From The Existing Accounts
+    Verify Dashboard Screen
+
+Facebook With Invalid Login Credentials
+    [Tags]  SL17  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Facebook Button
+    Signin With Invalid Credentials - Facebook
+
+Facebook With Valid Login Credentials
+    [Tags]  SL16  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Facebook Button
+    Signin With Valid Credentials - Facebook
+    Verify Dashboard Screen
