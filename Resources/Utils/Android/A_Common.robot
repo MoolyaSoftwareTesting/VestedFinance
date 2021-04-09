@@ -5,22 +5,25 @@ Library     JsonValidator
 Library     AppiumLibrary
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
+Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
+
 
 *** Keywords ***
 
-Launch Vested Android App
-    Run Keyword If    '${environmentToRunTest}'=='${e_realDevice}'  Open Kuvera App On Real Device
-    ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open Kuvera App On Browserstack
+Launch Android App
+    Run Keyword If    '${environmentToRunTest}'=='${e_realDevice}'  Open App On Real Device
+    ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=bs://c9ea03eb5649b488f8c692af206f916e40904608  name=PreloginTests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  
+    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML01_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  
+    Landing Page Is Loaded Completely
 
 Open App On Real Device
     Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
     Landing Page Is Loaded Completely
 
 Open App On Emulator
-    Open Application  http://localhost:4723/wd/hub  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
+    Open Application  ${server}  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
     Landing Page Is Loaded Completely
 
 Verify Element And Text On Android
@@ -106,6 +109,38 @@ Verify Error Message Displayed
     Wait For Page Conatin Element  ${errorMsg}  30s
     Verify Page Conatin Text  ${errorMsg}
     Log To Console  Verified Error Message
+
+Generate Random Number
+    [Arguments]  ${startingrange}  ${endingrange}
+    ${randomNum} =	Evaluate	random.randint(${startingrange}, ${endingrange})
+    [Return]   ${randomNum}
+
+Generate Email ID
+    ${randomNum} =	Generate Random Number  0  99999
+    ${newEmail} =   Catenate  ${e_emailPrefix}+${randomNum}${e_emailDomain}
+    Log To Console  New Email ID Generated - ${newEmail} 
+    [Return]  ${newEmail} 
+
+Generate Unique Mobile Number
+    ${randomMobileNum} =  Generate Random Number  0  99999
+    ${result1} =  Convert To Integer  ${randomMobileNum}
+    ${result2} =  Convert To Integer  ${e_ca_mobileNum}
+    ${actualMobileNumber} =  Evaluate  ${result1}+${result2}
+    ${actualMobileNumber1} =  Convert To String  ${actualMobileNumber}
+    ${expectedMobileNum} =  Replace Characters  ${actualMobileNumber1}  1  9
+
+Verify Setting Of Chrome Browser 
+    ${isElementVisible} =  Run Keyword And Return Status  Verify Open With Label
+    Run Keyword If   ${isElementVisible}  Choose Chrome Browser
+    ...    ELSE  Log To Console  Continue
+
+Choose Chrome Browser
+    Wait And Click Element On Android  ${vf_A_chromeOption}
+    Wait And Click Element On Android  ${vf_A_alwaysBtn}
+
+Verify Open With Label
+    Wait For Element Visibility On Android  ${vf_A_openWithLabel}
+    Element Should Be Visible  ${vf_A_openWithLabel}
 
 Close Android Keyboard
     Hide Keyboard

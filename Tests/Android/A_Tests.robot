@@ -3,16 +3,21 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Open App On Emulator
+Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
-#Complete Suite: robot -d Results Tests/Android/A_Tests.robot
-#Debug: robot -d -i SL01 Results -L Debug -i order Tests
-#Executing Specific Tag: robot -d Results -i SL01 Tests/Android/A_Tests.robot
+# Complete Suite: 
+# robot -d Results Tests/Android/A_Tests.robot
+ 
+# Executing Specific Tag: 
+# robot -d Results -i SL27 Tests/Android/A_Tests.robot
+ 
+# To run specific test on browserstack:    
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL06 Tests/Android/A_Tests.robot
+
 
 *** Test Cases ***
-
-# 
+# Verify Landing Screen
 Verify Landing Screen Widgets Logo & Text
     [Tags]  SL01  Welcome 
     App logo & text is displayed at the top
@@ -36,7 +41,7 @@ Switch between Sign In and Sign up by selecting provided links
 Signin With Valid Login Credentials 
     [Tags]  SL06  Signin
     [Teardown]  Rest Android Application
-    #User Navigates To Signin Screen
+    User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
 
 # Pre-req: To be executed after SL06
@@ -78,7 +83,7 @@ Signin With Social Account - Apple With Invalid Login Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-#Note: Issue- User is not navigating to Dashboard page. So, Dashboard screen is not verified
+# Note: Issue- User is not navigating to Dashboard page. So, Dashboard screen is not verified
 Google With Valid Login Credentials
     [Tags]  SL14  Signin
     [Teardown]  Rest Android Application
@@ -116,3 +121,36 @@ Facebook With Valid Login Credentials
     Click On Continue With Facebook Button
     Signin With Valid Credentials - Facebook
     Verify Dashboard Screen
+
+Signup With New Email & Password
+    [Tags]  SL27  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    User Enters New Email Password & Signups
+    Verify Dashboard Screen
+
+Signup With Invalid EmailID 
+    [Tags]  SL28  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    New User Enters Invalid Email & Verify Error Message
+
+Signup With Invalid EmailID - Only Domain Name
+    [Tags]  SL29  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    New User Enters Only Domain Name & Verify Error Message
+
+Signup - Resend Code
+    [Tags]  SL30  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    User Enters New Email Password & Signups
+    Click On Resend Code
+    Verify Dashboard Screen
+
+Signup With Existing Email & Verify Error Message
+    [Tags]  SL33  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    User Enters Existing Email Password & Signups
