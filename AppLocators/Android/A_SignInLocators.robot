@@ -6,6 +6,7 @@ ${e_validPassword} =  Test@123
 ${e_validPin} =  123456
 ${e_invalidUserName} =  abcd@gmail.com
 ${e_invalidPwd} =  Abcd@123
+${e_incorrectPassword} =  $$$$$
 
 # Google Credentials
 ${e_validGoogleEmail} =  vftest885@gmail.com

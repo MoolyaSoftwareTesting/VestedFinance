@@ -3,17 +3,18 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Launch Android App
+Suite Setup  Open App On Emulator
+# Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
 # Complete Suite: 
 # robot -d Results Tests/Android/A_Tests.robot
  
 # Executing Specific Tag: 
-# robot -d Results -i SL27 Tests/Android/A_Tests.robot
+# robot -d Results -i SL31 Tests/Android/A_Tests.robot
  
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL06 Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL34 Tests/Android/A_Tests.robot
 
 
 *** Test Cases ***
@@ -149,8 +150,21 @@ Signup - Resend Code
     Click On Resend Code
     Verify Dashboard Screen
 
+User Password Mismatches Password Criteria 
+    [Tags]  SL31  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    User Enters Invalid Password
+    Verify Password Combination Criteria 
+
 Signup With Existing Email & Verify Error Message
     [Tags]  SL33  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Email Password & Signups
+
+User Signups With Existing Google Account & Password  
+    [Tags]  SL34  Signup
+    [Teardown]  Rest Android Application
+    User Navigates To Signup Screen
+    User Enters Existing Google Account Password To Signup
