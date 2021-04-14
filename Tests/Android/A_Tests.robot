@@ -100,6 +100,7 @@ Google With Invalid Login Credentials
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
+#Pre-req: To be executed after SL15
 Previously Loggedin Account Is Displayed In Google Social Signin
     [Tags]  SL18  Signin
     [Teardown]  Rest Android Application
@@ -200,3 +201,5 @@ User Enters Only Code Without Password
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     User Enters Only Code
+
+Changed for committing
