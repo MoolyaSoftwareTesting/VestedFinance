@@ -9,7 +9,19 @@ ${app_package} =       com.vested.investing.android.staging
 ${app_activity} =      com.vested.mobileclient.MainActivity
 ${appium}              appium
 ${apkPath}             Resources/APK/app-staging-release.apk
-${noReset} =            True
+
+# Browserstack Credentials
+${e_realDevice} =  Local
+${e_browserstackDevice} =  Browserstack
+${browserstack_userName} =  username
+${browserstack_accessKey} =  accesskey
+${remote_URL}    http://${browserstack_userName}:${browserstack_accessKey}@hub.browserstack.com:80/wd/hub
+
+# Choose Chrome Browser
+${vf_A_openWithLabel} =  xpath=//*[@text='Open with']
+${vf_A_chromeOption} =  xpath=//*[@text='Chrome']
+${vf_A_alwaysBtn} =  xpath=//*[@text='Always']
+
 
 #  Test data or expected values
 ${e_title} =  Home | Vested Finance
