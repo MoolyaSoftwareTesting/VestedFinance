@@ -32,7 +32,7 @@ Enter Email
 Enter Password
     [Arguments]  ${password}
     Verify Element Visibility  ${vf_A_password}
-     Clear Text  ${vf_A_password}
+    Clear Text  ${vf_A_password}
     Input Text  ${vf_A_password}  ${password}
     Log To Console  Password entered - ${password}
 
