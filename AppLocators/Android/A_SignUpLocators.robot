@@ -3,8 +3,10 @@
 #Test data or expected values
 ${e_emailPrefix} =  moolya+auto_     
 ${e_emailDomain} =  @gmail.com 
-${e_invalidEmailID} =  $##$$*@gmail.com
+${e_signupInvalidEmailID} =  abc$gmail.com
 ${e_invalidEmailDomain} =  testabc
+${e_errMsgInvalidEmail} =  Please include an ‘@’ in the email address.
+${e_errMsgOnlyDomainName} =  The username or password you entered is invalid.
 ${e_existingAccErrMsg} =  An account with the given email already exists.
 ${e_existingGoogleAccErrMsg} =  PreSignUp failed with error | You already have an account created through Google Sign-In. Please login with Google by selecting "Continue with Google".
 ${e_pwdLowerCaseMsg} =  Password must contain a lower case letter

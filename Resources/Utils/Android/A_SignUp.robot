@@ -23,16 +23,16 @@ User Lands On Verficiation Code Screen
     Verify Element Visibility  ${vf_A_verficationCodeLabel}
 
 New User Enters Invalid Email & Verify Error Message
-    Enter Email  ${e_invalidUserName}
+    Enter Email  ${e_signupInvalidEmailID}
     Enter Password  ${e_validPassword}
     Click Element  ${vf_A_signUpLink}
-    Verify Error Message Displayed  ${e_errMsg_Invalid}
+    Verify Error Message Displayed  ${e_errMsgInvalidEmail}
 
 New User Enters Only Domain Name & Verify Error Message
     Enter Email  ${e_invalidUserName}
     Enter Password  ${e_validPassword}
     Click Element  ${vf_A_signUpLink}
-    Verify Error Message Displayed  errorMsg
+    Verify Error Message Displayed  ${e_errMsgOnlyDomainName}
 
 Click On Resend Code
     Wait For Element Visibility On Android  ${vf_A_resendCodeLink}
