@@ -1,8 +1,9 @@
 *** Variables ***
 
 #  Test data or expected values
-${e_validEmail} =  defney+Tes3@vestedfinance.co
-${e_validPassword} =  Test@123
+# Funded User
+${e_validEmail} =  testingkyc10@gmail.com
+${e_validPassword} =  Testing@123
 ${e_validPin} =  123456
 ${e_invalidUserName} =  abcd@gmail.com
 ${e_invalidPwd} =  Abcd@123
@@ -30,7 +31,7 @@ ${e_signInAsDiffUser} =  Sign in as a different user?
 ${e_signinTitle} =  Sign in with your email and password
 ${e_invalidFacebookLoginErrorTxt} =  The password that you've entered is incorrect
 
-#Singin
+#Singin Locators
 ${vf_A_signInBtn} =  xpath=//*[@name='signInSubmitButton']
 ${vf_A_signUpLink} =  xpath=//*[@text='Sign up']
 ${vf_A_signInLink} =  xpath=//*[@text='Sign in']

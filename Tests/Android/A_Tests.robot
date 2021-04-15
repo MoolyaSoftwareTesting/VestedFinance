@@ -219,3 +219,12 @@ User Enters Only Code Without Password
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Only Code
+
+# View all steps and Click on Start KYC under Dashboard- KYC incomplete  
+Start KYC Process
+    [Tags]  SL43  KYC
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Start KYC under Dashboard screen
+
+

@@ -16,10 +16,12 @@ Verify Signin Screen
 User Clicks On Signup Link
     Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_signUpLink}
+    Log to Console  Clicked on Signup Link
 
 User Clicks On Signin Link 
     Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_signInLink}
+    Log to Console  Clicked on Signin Link
     
 Enter Email
     [Arguments]  ${email}
@@ -59,6 +61,7 @@ Enter Pin
 Click On Continue Button
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_continueBtn}
+    Log to Console  Clicked on Continue Button
 
 Click On Continue With Google Button
     Sleep  2s
@@ -79,6 +82,7 @@ Click On Continue With Facebook Button
 Click On Next Button
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_googleSigninNextBtn}
+    Log to Console  Clicked on Next Button
 
 Signin With Valid Credentials - Funded Account
     Enter Email  ${e_validEmail}
