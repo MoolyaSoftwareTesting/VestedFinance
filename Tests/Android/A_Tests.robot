@@ -67,20 +67,6 @@ Signin With Invalid Login Credentials
     User Navigates To Signin Screen
     Signin With Invalid Credentials
 
-# Note: Error Message Not Verified, As Discussed Currently On Low Priority
-Error Message On Empty Password Entered
-    [Tags]  SL08 
-    User Navigates To Signin Screen
-    User Enters Only Email
-    Click On Signin Button
-
-# Note: Error Message Not Verified, As Discussed Currently On Low Priority
-Error Message On Empty Email Entered
-    [Tags]  SL09  
-    User Navigates To Signin Screen
-    User Enters Only Password
-    Click On Signin Button
-
 # Note: Error Msg Needs To Be Verified
 Signin With Social Account - Apple With Invalid Login Credentials
     [Tags]  SL13  Signin
@@ -139,20 +125,6 @@ Signup With New Email & Password
     User Navigates To Signup Screen
     User Enters New Email Password & Signups
     Verify Dashboard Screen
-
-# Signup With Invalid Credentials
-Signup With Invalid EmailID 
-    [Tags]  SL24  Signup
-    [Teardown]  Rest Android Application
-    User Navigates To Signup Screen
-    New User Enters Invalid Email & Verify Error Message
-
-# Signup With Invalid Email
-Signup With Invalid EmailID - Only Domain Name
-    [Tags]  SL25  Signup
-    [Teardown]  Rest Android Application
-    User Navigates To Signup Screen
-    New User Enters Only Domain Name & Verify Error Message
 
 # Verify Resend Code button
 Signup - Resend Code

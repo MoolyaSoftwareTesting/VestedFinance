@@ -99,16 +99,6 @@ Signin With Invalid Credentials
     Log To Console  Entered invalid email and password
     Verify Error Message Displayed  ${e_invalidLoginErrorTxt}
 
-User Enters Only Email
-    Wait For Element Visibility On Android  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${e_invalidUserName}
-    Log To Console  Entered only email
-
-User Enters Only Password
-    Wait For Element Visibility On Android  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${e_invalidUserName}
-    Log To Console  Entered only password
-
 Verify Dashboard Screen
     Verify Page Contains Element On Android  ${vf_A_home}
     Log To Console  User is directed to Dashboard screen
