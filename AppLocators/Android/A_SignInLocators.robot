@@ -95,9 +95,3 @@ ${vf_A_Fb_button} =  xpath=//*[@text='Continue with Facebook']
 # ${vf_A_Fb_login} =  xpath=//*[@id='m_login_email']
 ${vf_A_Fb_pwd} =  xpath=//*[@resource-id='m_login_password']
 ${vf_A_Fb_signinbutton} =  xpath=//*[@text='Log In']
-
-#Forgot Password
-${vf_A_ForgotPassword} =  Forgot your password?
-# //*[@id='username']
-${vf_A_ResetButton} =  xpath=//*[@text='Reset my password']
-${e_ResetError} =  Could not reset password for the account, please contact support or try again

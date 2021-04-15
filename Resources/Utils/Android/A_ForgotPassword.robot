@@ -4,44 +4,37 @@ Library     AppiumLibrary
 
 ***Keywords***
 
-Click On Forgot Password Link
+User Navigates To Forgot Password Screen
+    User Navigates To Signin Screen
     Sleep  2s
-    Verify Page Conatin Text  ${vf_A_ForgotPassword}
-    Click Text  ${vf_A_ForgotPassword}
-    Log To Console  Clicked on Forgot your Password link!
-
-Enter Email For Reset Password
-    [Arguments]  ${email}
-    Verify Element Visibility  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${email} 
-    Log To Console  Email entered - ${email} 
+    Verify Page Conatin Text  ${e_forgotPasswordLink}
+    Click Text  ${e_forgotPasswordLink}
+    Log To Console  Clicked on Forgot your Password link!    
 
 Enter Reset Code
-    [Arguments]  ${e_resetCode}
+    [Arguments]  ${resetCode}
     Verify Element Visibility  ${vf_A_resetCode}
     Wait And Click Element On Android  ${vf_A_resetCode}
-    Input Text  ${vf_A_resetCode}  ${e_resetCode} 
+    Input Text  ${vf_A_resetCode}  ${resetCode} 
     Log To Console  Code Entered
 
 Enter New Password
-    [Arguments]  ${e_newPwd}
+    [Arguments]  ${newPwd}
     Verify Element Visibility  ${vf_A_newPwd}
     Wait And Click Element On Android  ${vf_A_newPwd}
-    Input Text  ${vf_A_newPwd}  ${e_newPwd} 
+    Input Text  ${vf_A_newPwd}  ${newPwd} 
     Log To Console  New Password Entered
 
 Enter New Password Again
-    [Arguments]  ${e_newPwd}
+    [Arguments]  ${newPwdAgain}
     Verify Element Visibility  ${vf_A_confirmPwd}
     Wait And Click Element On Android  ${vf_A_confirmPwd}
-    Input Text  ${vf_A_confirmPwd}  ${e_newPwd} 
+    Input Text  ${vf_A_confirmPwd}  ${newPwdAgain} 
     Log To Console  New Password Entered Again
 
-# 31
 User Updates Password
-    Click On Forgot Password Link
     Sleep  3s
-    Enter Email For Reset Password  ${e_validEmail}
+    Enter Email  ${e_validEmail}
     Log to Console  Entered Email
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_ResetButton}
@@ -51,29 +44,24 @@ User Updates Password
     Enter New Password  ${e_newPwd}
     Sleep  1s
     Enter New Password Again  ${e_newPwd}
-    Log to Console  Entered Code and New Password
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_changePwd}
     Log to Console  Clicked on Change Password button
     Sleep  2s
     Verify Signin Screen
 
-# 32
 User Enters Invalid Email
-    Click On Forgot Password Link
     Sleep  3s
-    Enter Email For Reset Password  ${e_invalidUserName}
+    Enter Email  ${e_invalidUserName}
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_ResetButton}
     Sleep  3s
-    Verify Error Message Displayed  ${e_ResetError}
+    Verify Error Message Displayed  ${e_invalidEmailResetError}
     Log to Console  Error Message Verified!
 
-# 33
 User Enters Invalid Code For Password Reset
-    Click On Forgot Password Link
     Sleep  3s
-    Enter Email For Reset Password  ${e_validEmail}
+    Enter Email  ${e_validEmail}
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_ResetButton}
     Sleep  3s
@@ -86,14 +74,12 @@ User Enters Invalid Code For Password Reset
     Close Android Keyboard
     Click Element  ${vf_A_changePwd}
     Sleep  2s
-    Verify Error Message Displayed  ${e_resetErrorMsg}
+    Verify Error Message Displayed  ${e_invalidCodeErrorMsg}
     Log to Console  Error Message Verified!
 
-# 36
 User Enters Different Passwords In Both Fields
-    Click On Forgot Password Link
     Sleep  3s
-    Enter Email For Reset Password  ${e_validEmail}
+    Enter Email  ${e_validEmail}
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_ResetButton}
     Sleep  3s
@@ -108,11 +94,9 @@ User Enters Different Passwords In Both Fields
     Element Should Be Disabled  ${vf_A_changePwd}
     Log to Console  Change Password button remains disabled!
 
-# 37
 User Enters Only Code
-    Click On Forgot Password Link
     Sleep  3s
-    Enter Email For Reset Password  ${e_validEmail}
+    Enter Email  ${e_validEmail}
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_ResetButton}
     Sleep  3s

@@ -23,22 +23,25 @@ Verify Landing Screen Widgets Logo & Text
     [Tags]  SL01  Welcome 
     App logo & text is displayed at the top
 
-#
+# Verify Points On Landing Screen
 Points on Security, Compliance and Recommendations in Landing Screen
     [Tags]  SL02  Welcome 
     Verify 3 points on Security, Compliance and Recommendations with icons are displayed
     Verify Heading for each point is displayed
 
+# Verify Start Investing Button 
 Start Investing button is redirects to Sigin screen
     [Tags]  SL03  Welcome 
     User Navigates To Signin Screen
 
+# Verify Signin And Signup links
 Switch between Sign In and Sign up by selecting provided links
     [Tags]  SL05  Signin
     User Navigates To Signin Screen
     User Clicks On Signup Link
     User Clicks On Signin Link 
 
+# Valid Signin
 Signin With Valid Login Credentials 
     [Tags]  SL06  Signin
     [Teardown]  Rest Android Application
@@ -53,30 +56,32 @@ User Selects The Already Present Account In Easy Signin Page
     User Selects The Already Present Account In Easy Signin
     Verify Dashboard Screen
 
+# Verify Signin As Different User Link
 Signin As Different User Link In Easy Signin Page
     [Tags]  SL11  Signin
     User Navigates To Signin Screen
 
+# Invalid Signin
 Signin With Invalid Login Credentials
     [Tags]  SL07  Signin
     User Navigates To Signin Screen
     Signin With Invalid Credentials
 
-# Note: Error message is not verified, as discussed currently on low priority
+# Note: Error Message Not Verified, As Discussed Currently On Low Priority
 Error Message On Empty Password Entered
     [Tags]  SL08 
     User Navigates To Signin Screen
     User Enters Only Email
     Click On Signin Button
 
-# Note: Error message is not verified, as discussed currently on low priority
+# Note: Error Message Not Verified, As Discussed Currently On Low Priority
 Error Message On Empty Email Entered
     [Tags]  SL09  
     User Navigates To Signin Screen
     User Enters Only Password
     Click On Signin Button
 
-# Note: Error msg needs to be verified
+# Note: Error Msg Needs To Be Verified
 Signin With Social Account - Apple With Invalid Login Credentials
     [Tags]  SL13  Signin
     [Teardown]  Rest Android Application
@@ -84,7 +89,7 @@ Signin With Social Account - Apple With Invalid Login Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-# Note: Issue- User is not navigating to Dashboard page. So, Dashboard screen is not verified
+# Note: Issue- User Is Not Navigating To Dashboard. So, Dashboard Screen Is Not Verified
 Google With Valid Login Credentials
     [Tags]  SL14  Signin
     [Teardown]  Rest Android Application
@@ -93,6 +98,7 @@ Google With Valid Login Credentials
     Signin With Valid Credentials - Google
     Verify Dashboard Screen
 
+# Invalid Google Login
 Google With Invalid Login Credentials
     [Tags]  SL15  Signin
     [Teardown]  Rest Android Application
@@ -100,7 +106,7 @@ Google With Invalid Login Credentials
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
-#Pre-req: To be executed after SL15
+#Pre-req: To Be Executed After SL15
 Previously Loggedin Account Is Displayed In Google Social Signin
     [Tags]  SL18  Signin
     [Teardown]  Rest Android Application
@@ -109,6 +115,7 @@ Previously Loggedin Account Is Displayed In Google Social Signin
     Choose An Gmail Account From The Existing Accounts
     Verify Dashboard Screen
 
+# Invalid Facebook Login
 Facebook With Invalid Login Credentials
     [Tags]  SL17  Signin
     [Teardown]  Rest Android Application
@@ -116,6 +123,7 @@ Facebook With Invalid Login Credentials
     Click On Continue With Facebook Button
     Signin With Invalid Credentials - Facebook
 
+# Valid Facebook Login
 Facebook With Valid Login Credentials
     [Tags]  SL16  Signin
     [Teardown]  Rest Android Application
@@ -124,6 +132,7 @@ Facebook With Valid Login Credentials
     Signin With Valid Credentials - Facebook
     Verify Dashboard Screen
 
+# Signup With Valid Credentials
 Signup With New Email & Password
     [Tags]  SL23  Signup
     [Teardown]  Rest Android Application
@@ -131,18 +140,21 @@ Signup With New Email & Password
     User Enters New Email Password & Signups
     Verify Dashboard Screen
 
+# Signup With Invalid Credentials
 Signup With Invalid EmailID 
     [Tags]  SL24  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     New User Enters Invalid Email & Verify Error Message
 
+# Signup With Invalid Email
 Signup With Invalid EmailID - Only Domain Name
     [Tags]  SL25  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     New User Enters Only Domain Name & Verify Error Message
 
+# Verify Resend Code button
 Signup - Resend Code
     [Tags]  SL26  Signup
     [Teardown]  Rest Android Application
@@ -151,6 +163,7 @@ Signup - Resend Code
     Click On Resend Code
     Verify Dashboard Screen
 
+# Verify Password Combination Criteria 
 User Password Mismatches Password Criteria 
     [Tags]  SL27  Signup
     [Teardown]  Rest Android Application
@@ -158,48 +171,51 @@ User Password Mismatches Password Criteria
     User Enters Invalid Password
     Verify Password Combination Criteria 
 
+# Signup With Existing Email
 Signup With Existing Email & Verify Error Message
     [Tags]  SL29  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Email Password & Signups
 
+# Signup With Existing Google Social Credentials
 User Signups With Existing Google Account & Password  
     [Tags]  SL30  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Google Account Password To Signup
 
-#Blocker: OTP required
+# Blocker: OTP required
 User Resets The Password
-    [Tags]  SL_31  ForgotPassword
+    [Tags]  SL31  ForgotPassword
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    User Navigates To Forgot Password Screen
     User Updates Password
 
+# Forgot Password Validation- Invalid Email Id
 User Enters An Invalid Email Id In Forgot Password Validation Screen
-    [Tags]  SL_32  ForgotPassword
+    [Tags]  SL32  ForgotPassword
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    User Navigates To Forgot Password Screen
     User Enters Invalid Email
 
+# Reset Password- Ivalid Code With Valid Password
 User Enters Ivalid Code With Valid Password In Reset Password Screen
-    [Tags]  SL_33  ForgotPassword
+    [Tags]  SL33  ForgotPassword
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    User Navigates To Forgot Password Screen
     User Enters Invalid Code For Password Reset
 
+# Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
-    [Tags]  SL_36  ForgotPassword
+    [Tags]  SL36  ForgotPassword
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    User Navigates To Forgot Password Screen
     User Enters Different Passwords In Both Fields
 
-#Blocker: Unable to inspect error popup
+# Blocker: Unable to inspect error popup
 User Enters Only Code Without Password
-    [Tags]  SL_37  ForgotPassword
+    [Tags]  SL37  ForgotPassword
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
+    User Navigates To Forgot Password Screen
     User Enters Only Code
-
-Changed for committing

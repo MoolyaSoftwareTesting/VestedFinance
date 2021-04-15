@@ -6,7 +6,7 @@ Library     AppiumLibrary
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
-
+Resource   ../../../AppLocators/Android/A_ForgotPasswordLocators.robot
 
 *** Keywords ***
 
