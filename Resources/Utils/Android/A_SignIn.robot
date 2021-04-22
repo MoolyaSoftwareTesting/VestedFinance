@@ -34,7 +34,7 @@ Enter Email
 Enter Password
     [Arguments]  ${password}
     Verify Element Visibility  ${vf_A_password}
-     Clear Text  ${vf_A_password}
+    Clear Text  ${vf_A_password}
     Input Text  ${vf_A_password}  ${password}
     Log To Console  Password entered - ${password}
 
@@ -81,7 +81,7 @@ Click On Continue With Facebook Button
 
 Click On Next Button
     Sleep  2s
-    Wait And Click Element On Android  ${vf_A_googleSigninNextBtn}
+    Wait And Click Element On Android  ${vf_A_nextButton}
     Log to Console  Clicked on Next Button
 
 Signin With Valid Credentials - Funded Account
@@ -100,6 +100,7 @@ Signin With Invalid Credentials
     Verify Error Message Displayed  ${e_invalidLoginErrorTxt}
 
 Verify Dashboard Screen
+    Wait For Element Visibility On Android  ${vf_A_home}
     Verify Page Contains Element On Android  ${vf_A_home}
     Log To Console  User is directed to Dashboard screen
 

@@ -3,7 +3,8 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Open App On Emulator
+Suite Setup  Open App On Real Device
+# Suite Setup  Open App On Browserstack
 # Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
@@ -11,7 +12,7 @@ Suite Teardown  Quit Android Application
 # robot -d Results Tests/Android/A_Tests.robot
  
 # Executing Specific Tag: 
-# robot -d Results -i SL31 Tests/Android/A_Tests.robot
+# robot -d Results -i Upload Tests/Android/A_Tests.robot
  
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL34 Tests/Android/A_Tests.robot
@@ -35,7 +36,7 @@ Start Investing button is redirects to Sigin screen
     User Navigates To Signin Screen
 
 # Verify Signin And Signup links
-Switch between Sign In and Sign up by selecting provided links
+Switch between Sign in and Sign up by selecting provided links
     [Tags]  SL05  Signin
     User Navigates To Signin Screen
     User Clicks On Signup Link
@@ -75,13 +76,22 @@ Signin With Social Account - Apple With Invalid Login Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-# Note: Issue- User Is Not Navigating To Dashboard. So, Dashboard Screen Is Not Verified
+# Note: Fail- User Is Not Navigating To Dashboard. So, Dashboard Screen Is Not Verified
 Google With Valid Login Credentials
     [Tags]  SL14  Signin
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
     Signin With Valid Credentials - Google
+    Verify Dashboard Screen
+
+#Pre-req: To Be Executed After SL14
+Previously Loggedin Account Is Displayed In Google Social Signin
+    [Tags]  SL18  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Choose An Gmail Account From The Existing Accounts
     Verify Dashboard Screen
 
 # Invalid Google Login
@@ -92,15 +102,6 @@ Google With Invalid Login Credentials
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
-#Pre-req: To Be Executed After SL15
-Previously Loggedin Account Is Displayed In Google Social Signin
-    [Tags]  SL18  Signin
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Click On Continue With Google Button
-    Choose An Gmail Account From The Existing Accounts
-    Verify Dashboard Screen
-
 # Invalid Facebook Login
 Facebook With Invalid Login Credentials
     [Tags]  SL17  Signin
@@ -109,7 +110,7 @@ Facebook With Invalid Login Credentials
     Click On Continue With Facebook Button
     Signin With Invalid Credentials - Facebook
 
-# Valid Facebook Login
+# Valid Facebook Login: Fail- User is navigating back to Landing page
 Facebook With Valid Login Credentials
     [Tags]  SL16  Signin
     [Teardown]  Rest Android Application
@@ -192,11 +193,58 @@ User Enters Only Code Without Password
     User Navigates To Forgot Password Screen
     User Enters Only Code
 
-# View all steps and Click on Start KYC under Dashboard- KYC incomplete  
-Start KYC Process
-    [Tags]  SL43  KYC
-    User Navigates To Signin Screen
-    Signin With Non KYC Completed User
-    Start KYC under Dashboard screen
+# Happy Flow 1 E2E- POI: Aadhaar Front And Back side
+Aadhaar Front And Back side As Proof Of Identification
+    [Tags]  KYC  E2E1
+    Start KYC Process
+    Verify Back, Accept And Continue Button In KYC Introduction Screen
+    Verify Back Arrow And Previous Button In KYC Basic Details Screen
+    Fill All the Fields under KYC Basic Details Screen
+    Verify All Checkboxes
+    Click On Next Button
+    Verify Back Arrow And Previous Button In KYC Investment Profile Screen
+    Select Option Under Risk tolerance  ${e_riskToleranceOpt1Txt}
+    Select Option Under Investing Frequency  ${e_investingFrequencyOpt1Txt}
+    Select Option Under Investing Experience  ${e_investingExperienceOpt1Txt}
+    Select Option Under Yearly Income  ${e_yearlyIncomeOpt1Txt}
+    Select Option Under Liquid Net Worth  ${e_liquidNetWorthOpt1Txt}
+    Select Option Under Total Net Worth  ${e_totalNetWorthOpt1Txt}
+    Select Option Under Primary Source Dropdown  ${e_primarySourceOpt1Txt}
+    Select Option Under Number Of Deposits And Withdrawals  ${e_depositsAndWithdrawalsOpt1Txt}
+    Select Option Under Money Deposit  ${e_moneyDepositOpt1Txt}
+    Select Option Under Investments Made  ${e_investmentsMadeOpt1Txt}
+    Click On Next Button
+    Verify Identity Screen
+    Select All the Fields under KYC Identity Screen
+    Verify Document Upload In Proof Of Identification Popup
+    Select Aadhaar And Verify Popups
+    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+    Enter Valid PAN Number In PAN Field
+    Click On Next Button
+    Verify Plan Payment Screen
+    Verify Back Arrow And Previous Button In KYC Plan Payment Screen
+    Make Payment Using Card Information
 
+####################################################
+
+# Upload only Good Front side of Aadhaar as POI
+Upload Front Side Of Aadhaar As Proof Of Identification And Verify
+    [Tags]  SL71  KYC
+    Click On Upload Button
+    Upload Front Side Of Aadhaar And Verify Success Message
+    Click On Close Icon
+    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
+    Verify PAN field
+
+# Upload Good Back side Aadhaar as POA, after Front Aadhaar uploaded as POI
+Upload Back Side Of Aadhaar As Proof Of Address And Verify
+    [Tags]  SL73  KYC
+    Click On Upload Button
+    # Recheck
+    Verify Proof Of Address Popup After Front Aadhaar Uploaded As Proof Of Identification
+    Click On Aadhaar Back Side And Verify Popup
+    Click On Confirm Button And Verify Aadhaar Back Side Popup
+    Click On Upload Button
+    Upload Back Side Of Aadhaar And Verify Success Message
+    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
 

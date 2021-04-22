@@ -9,6 +9,7 @@ ${app_package} =       com.vested.investing.android.staging
 ${app_activity} =      com.vested.mobileclient.MainActivity
 ${appium}              appium
 ${apkPath}             Resources/APK/app-staging-release.apk
+${browserstack.uploadMedia}  ['media://93e37b79238a6f6fb2e1b1aab392b21e63232cbf','media://d9d34bdfb0cbb4c18c655ef3ef09ac0b60ce90a6']
 
 # Browserstack Credentials
 ${e_realDevice} =  Local

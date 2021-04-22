@@ -39,6 +39,7 @@ User Updates Password
     Enter Reset Code  ${e_resetCode}
     Enter New Password  ${e_newPwd}
     Enter New Password Again  ${e_newPwd}
+    Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_changePwd}
     Log to Console  Clicked on Change Password button
     Verify Signin Screen

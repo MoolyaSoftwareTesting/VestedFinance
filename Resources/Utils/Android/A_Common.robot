@@ -3,6 +3,7 @@
 Library     JSONLibrary
 Library     JsonValidator
 Library     AppiumLibrary
+Library     String
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
@@ -16,12 +17,13 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML01_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  
+    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML02_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3    browserstack.uploadMedia=${browserstack.uploadMedia}
     Landing Page Is Loaded Completely
 
 Open App On Real Device
-    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
-    Landing Page Is Loaded Completely
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  
+    #UncommentLater appActivity=${app_activity}  appPackage=${app_package}
+    #UncommentLater Landing Page Is Loaded Completely
 
 Open App On Emulator
     Open Application  ${server}  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
@@ -86,6 +88,11 @@ Wait For Page Conatin Element
     [Arguments]  ${element}  ${timeout}
     Wait Until Page Contains  ${element}  ${timeout}
 
+Replace Characters
+    [Arguments]  ${text}  ${char1}  ${char2}
+    ${replacedString} =  Replace String  ${text}  ${char1}  ${char2}
+    [Return]  ${replacedString}
+
 Click On Element If Visibile  
     [Arguments]  ${element}
     ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${element}
@@ -145,6 +152,9 @@ Verify Open With Label
 
 Close Android Keyboard
     Hide Keyboard
+
+Close Android Keyboard When Selected A Text Field 
+    Go Back
 
 Rest Android Application
     Reset Application

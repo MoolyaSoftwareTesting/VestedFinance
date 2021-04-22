@@ -23,6 +23,7 @@ User Lands On Verficiation Code Screen
     Verify Element Visibility  ${vf_A_verficationCodeLabel}
 
 Click On Resend Code
+    Close Android Keyboard    
     Wait For Element Visibility On Android  ${vf_A_resendCodeLink}
     Click Element  ${vf_A_resendCodeLink}
     User Lands On Verficiation Code Screen

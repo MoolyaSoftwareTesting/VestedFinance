@@ -1,11 +1,11 @@
 *** Variables ***
 
 #  Test data or expected values
-# Funded User
-${e_validEmail} =  testingkyc10@gmail.com
-${e_validPassword} =  Testing@123
+# Funded User Credentials
+${e_validEmail} =  defney+Tes3@vestedfinance.co
+${e_validPassword} =  Test@123
 ${e_validPin} =  123456
-${e_invalidUserName} =  abcd@gmail.com
+${e_invalidUserName} =  abcdxyz@gmail.com
 ${e_invalidPwd} =  Abcd@123
 ${e_incorrectPassword} =  $$$$$
 

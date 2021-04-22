@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.4 on darwin)" generated="20210421 12:59:30.842" rpa="false" schemaversion="2">
+<suite id="s1" name="A Tests" source="/Users/apple/workspace/VestedFinanceAutomation/VestedFinance/Tests/Android/A_Tests.robot">
+<kw name="Open App On Real Device" library="A_Common" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${server}</arg>
+<arg>platformName=${platform}</arg>
+<arg>platformVersion=${platform_version}</arg>
+<arg>deviceName=${device}</arg>
+<arg>automationName=${appium}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" starttime="20210421 12:59:33.175" endtime="20210421 12:59:33.175"/>
+</kw>
+<msg timestamp="20210421 12:59:33.198" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20210421 12:59:31.444" endtime="20210421 12:59:33.199"/>
+</kw>
+<status status="FAIL" starttime="20210421 12:59:31.444" endtime="20210421 12:59:33.201"/>
+</kw>
+<test id="s1-t1" name="Select Aadhaar And Verify Popup">
+<tag>KYC</tag>
+<tag>robot:exit</tag>
+<tag>SL63</tag>
+<tag>Upload</tag>
+<status status="FAIL" starttime="20210421 12:59:33.201" endtime="20210421 12:59:33.202">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t2" name="Upload Front And Back Side Of Aadhaar As POI">
+<tag>KYC</tag>
+<tag>robot:exit</tag>
+<tag>SL68</tag>
+<tag>Upload</tag>
+<status status="FAIL" starttime="20210421 12:59:33.202" endtime="20210421 12:59:33.203">Test execution stopped due to a fatal error.</status>
+</test>
+<kw name="Quit Android Application" library="A_Common" type="TEARDOWN">
+<kw name="Quit Application" library="AppiumLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210421 12:59:33.228" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210421 12:59:33.204" endtime="20210421 12:59:33.228"/>
+</kw>
+<msg timestamp="20210421 12:59:33.266" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210421 12:59:33.268" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210421 12:59:33.204" endtime="20210421 12:59:33.269"/>
+</kw>
+<status status="FAIL" starttime="20210421 12:59:33.203" endtime="20210421 12:59:33.269">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20210421 12:59:30.844" endtime="20210421 12:59:33.269">Suite setup failed:
+Execution terminated by signal
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="2" skip="0">KYC</stat>
+<stat pass="0" fail="2" skip="0">robot:exit</stat>
+<stat pass="0" fail="1" skip="0">SL63</stat>
+<stat pass="0" fail="1" skip="0">SL68</stat>
+<stat pass="0" fail="2" skip="0">Upload</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="A Tests">A Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210421 12:59:31.142" level="ERROR">Error in file '/Users/apple/workspace/VestedFinanceAutomation/VestedFinance/Resources/Utils/Android/A_Common.robot' on line 3: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /usr/local/Cellar/python@3.9/3.9.4/Frameworks/Python.framework/Versions/3.9/lib/python39.zip
+  /usr/local/Cellar/python@3.9/3.9.4/Frameworks/Python.framework/Versions/3.9/lib/python3.9
+  /usr/local/Cellar/python@3.9/3.9.4/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload
+  /usr/local/lib/python3.9/site-packages</msg>
+<msg timestamp="20210421 12:59:33.198" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg timestamp="20210421 12:59:33.266" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

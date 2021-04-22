@@ -16,4 +16,4 @@ ${e_pwd8CharMsg} =  Password must contain at least 8 characters
 #Locators 
 ${vf_A_verficationCodeLabel} =  xpath=//*[@text='Verification Code']
 ${vf_A_confirmAccBtn} =  xpath=//*[@text='Confirm Account']
-${vf_A_resendCodeLink} =  //*[@text='Resend it']
+${vf_A_resendCodeLink} =  xpath=//*[@text='Resend it']
