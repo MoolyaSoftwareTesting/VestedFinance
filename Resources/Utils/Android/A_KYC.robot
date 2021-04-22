@@ -338,7 +338,7 @@ Select Option Under Total Net Worth
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
-    #Ucomment Swipe By Percent  70  70  20  20  5000
+    Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text  ${e_primarySource}
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
     Sleep  3s
@@ -353,7 +353,6 @@ Select Option Under Primary Source Dropdown
 
 Select Option Under Number Of Deposits And Withdrawals
     [Arguments]  ${option}
-    #Swipe By Percent  80  70  20  20  5000
     Verify Page Conatin Text  ${e_depositsAndWithdrawals}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt1Txt}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt2Txt}
