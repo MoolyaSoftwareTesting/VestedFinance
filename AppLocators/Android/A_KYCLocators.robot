@@ -234,4 +234,4 @@ ${vf_A_pay399Btn} =  xpath=//*[@text='PAY ₹ 399']
 
 # Signature screen Locators
 
-# Dashboard Card KYC Completion Locators
+# Dashboard Card KYC Completion Locators 
