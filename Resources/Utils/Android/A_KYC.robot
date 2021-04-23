@@ -166,8 +166,7 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_chkBx4}
-    # Uncomment later- failing for me
-    #Verify All Checkboxes
+    Verify All Checkboxes
     Log To Console  Filled KYC Basic Details Screen!
     Click On Next Button
 
