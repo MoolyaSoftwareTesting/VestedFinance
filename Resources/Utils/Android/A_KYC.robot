@@ -392,21 +392,21 @@ Click On Upload Document Button
 # SL57
 Verify Options Under Marital Status
     Verify Page Conatin Text   ${e_maritalStatusTxt}
-    Wait And Click Element On Android  ${vf_A_stsSingle}
-    Wait And Click Element On Android  ${vf_A_stsDivorced}
-    Wait And Click Element On Android  ${vf_A_stsMarried}
-    Wait And Click Element On Android  ${vf_A_stsWidowed}
-    Wait And Click Element On Android  ${vf_A_stsDomPtnr}
+    Click Text  ${e_stsSingle}
+    Click Text  ${e_stsDivorced}
+    Click Text  ${e_stsMarried}
+    Click Text  ${e_stsWidowed}
+    Click Text  ${e_stsDomPtnr}
     Log to Console  Verified All options under Marital Status section!
 
 # SL59
 Verify Options Under Employment Type
     Verify Page Conatin Text   ${e_employmentTxt}
-    Wait And Click Element On Android  ${vf_A_empEmployed}
-    Wait And Click Element On Android  ${vf_A_empRtd}
-    Wait And Click Element On Android  ${vf_A_empStdnt}
-    Wait And Click Element On Android  ${vf_A_empSlfEmp}
-    Wait And Click Element On Android  ${vf_A_empUnemp}
+    Click Text  ${e_empEmployed}
+    Click Text  ${e_empRtd}
+    Click Text  ${e_empStdnt}
+    Click Text  ${e_empSlfEmp}
+    Click Text  ${e_empUnemp}
     Log to Console  Verified all options under Employment Type section!
 
 Select Option Under Marital status
@@ -433,7 +433,7 @@ Select Option Under Employment Type
 User Fill All the Fields under KYC Identity Screen And Verify
     Verify Identity Screen
     Verify Options Under Marital Status
-    Select Option Under Marital status  ${vf_A_stsSingle}
+    Select Option Under Marital status  ${e_stsSingle}
     Verify Page Conatin Text   ${e_countryTxt}
     Log to Console  Country Text Verified!
     Verify Page Conatin Text   ${e_India}
@@ -441,7 +441,7 @@ User Fill All the Fields under KYC Identity Screen And Verify
     Log to Console  Verified Country section and Options!
     Swipe By Percent  60  70  20  20  5000
     Verify Options Under Employment Type
-    Select Option Under Employment Type  ${vf_A_empStdnt}
+    Select Option Under Employment Type  ${e_empStdnt}
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text   ${e_docVerTxt}
     Log to Console  Document Verification section Text Verified!

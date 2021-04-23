@@ -201,7 +201,7 @@ Aadhaar Front And Back side As Proof Of Identification
     # Verify Account Status Screen
     # Click on Start/Complete KYC Button
     # Verify All Sections And Navigations Under KYC Introduction Screen
-    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    # User Fill All The Fields Under KYC Basic Details Screen And Verify
     # User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify  
     Upload Good Front And Back Side Of Aadhaar
