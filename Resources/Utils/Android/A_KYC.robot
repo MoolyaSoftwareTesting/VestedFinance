@@ -569,14 +569,14 @@ Click On Confirm Button And Verify Aadhaar Back Side Popup
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
-    Sleep  5s
+    Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
     Log To Console  Verified Front Side Aadhaar upload Success Message!
 
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
-    Sleep  3s
+    Wait Until Page Contains  ${e_docUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_docUploadSuccessMsg}
     Log To Console  Uploaded Back side of Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
