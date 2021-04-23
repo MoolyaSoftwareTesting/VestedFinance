@@ -100,7 +100,17 @@ ${e_investmentsMadeOpt3Txt} =  11+
 ${e_letsVerifyYourIdentity} =  Let’s verify your identity
 ${e_docVerTxt} =  The US Government requires Vested and its broker partner to collect your government ID and proof of address for identity verification purposes. Vested will use this information to open your Vested account. Your information will not be sold or used for advertisements. Read more here.
 ${e_maritalStatusTxt} =  Marital status
+${e_stsSingle} =  Single
+${e_stsDivorced} =  Divorced
+${e_stsMarried} =  Married
+${e_stsWidowed} =  Widowed
+${e_stsDomPtnr} =  Domestic partner
 ${e_employmentTxt} =  Employment
+${e_empEmployed} =  Employed
+${e_empRtd} =  Retired
+${e_empStdnt} =  Student
+${e_empSlfEmp} =  Self-Employed
+${e_empUnemp} =  Unemployed
 ${e_countryTxt} =  What country do you primarily file taxes in?
 ${e_India} =  India
 ${e_Other} =  Other
@@ -172,17 +182,7 @@ ${vf_A_chkBx4Txt} =  xpath=//*[@text='None of the these apply to me']
 ${vf_A_primarySrcDropdown} =  xpath=//*[@text='arrow_drop_down']
 
 # Identity Screen Locators
-${vf_A_stsSingle} =  xpath=//*[@text='Single']
-${vf_A_stsDivorced} =  xpath=//*[@text='Divorced']
-${vf_A_stsMarried} =  xpath=//*[@text='Married']
-${vf_A_stsWidowed} =  xpath=//*[@text='Widowed']
-${vf_A_stsDomPtnr} =  xpath=//*[@text='Domestic partner']
 ${vf_A_cntryIndia} =  xpath=//*[@text='India']
-${vf_A_empEmployed} =  xpath=//*[@text='Employed']
-${vf_A_empRtd} =  xpath=//*[@text='Retired']
-${vf_A_empStdnt} =  xpath=//*[@text='Student']
-${vf_A_empSlfEmp} =  xpath=//*[@text='Self-Employed']
-${vf_A_empUnemp} =  xpath=//*[@text='Unemployed']
 ${vf_A_verChkBx} =  xpath=//*[@text='']
 ${vf_A_upldDoc} =  xpath=//*[@text='UPLOAD DOCUMENT']
 

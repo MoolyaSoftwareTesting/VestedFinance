@@ -196,13 +196,13 @@ User Enters Only Code Without Password
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 Aadhaar Front And Back side As Proof Of Identification
     [Tags]  KYC  E2E1
-    Click On Start Investing Button
-    Wait And Click Element On Android  ${vf_A_easySignInBtn}
-    Verify Account Status Screen
-    Click on Start/Complete KYC Button
-    Verify All Sections And Navigations Under KYC Introduction Screen
+    # Click On Start Investing Button
+    # Wait And Click Element On Android  ${vf_A_easySignInBtn}
+    # Verify Account Status Screen
+    # Click on Start/Complete KYC Button
+    # Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
-    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    # User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify  
     Upload Good Front And Back Side Of Aadhaar
     Verify Sections And Navigations Under KYC Plan Payment Screen

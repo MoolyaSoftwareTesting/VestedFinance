@@ -411,21 +411,21 @@ Verify Options Under Employment Type
 
 Select Option Under Marital status
     [Arguments]  ${option}
-    Run Keyword If    '${option}'=='${vf_A_stsSingle}'  Click Text  ${vf_A_stsSingle}
-    ...     ELSE IF   '${option}'=='${vf_A_stsDivorced}'  Click Text  ${vf_A_stsDivorced}
-    ...     ELSE IF   '${option}'=='${vf_A_stsMarried}'  Click Text  ${vf_A_stsMarried}
-    ...     ELSE IF   '${option}'=='${vf_A_stsWidowed}'  Click Text  ${vf_A_stsWidowed}
-    ...     ELSE IF   '${option}'=='${vf_A_stsDomPtnr}'  Click Text  ${vf_A_stsDomPtnr}
+    Run Keyword If    '${option}'=='${e_stsSingle}'  Click Text  ${e_stsSingle}
+    ...     ELSE IF   '${option}'=='${e_stsDivorced}'  Click Text  ${e_stsDivorced}
+    ...     ELSE IF   '${option}'=='${e_stsMarried}'  Click Text  ${e_stsMarried}
+    ...     ELSE IF   '${option}'=='${e_stsWidowed}'  Click Text  ${e_stsWidowed}
+    ...     ELSE IF   '${option}'=='${e_stsDomPtnr}'  Click Text  ${e_stsDomPtnr}
     ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option} 
 
 Select Option Under Employment Type
     [Arguments]  ${option}
-    Run Keyword If    '${option}'=='${vf_A_empEmployed}'  Click Text  ${vf_A_empEmployed}
-    ...     ELSE IF   '${option}'=='${vf_A_empRtd}'  Click Text  ${vf_A_empRtd}
-    ...     ELSE IF   '${option}'=='${vf_A_empStdnt}'  Click Text  ${vf_A_empStdnt}
-    ...     ELSE IF   '${option}'=='${vf_A_empSlfEmp}'  Click Text  ${vf_A_empSlfEmp}
-    ...     ELSE IF   '${option}'=='${vf_A_empUnemp}'  Click Text  ${vf_A_empUnemp}
+    Run Keyword If    '${option}'=='${e_empEmployed}'  Click Text  ${e_empEmployed}
+    ...     ELSE IF   '${option}'=='${e_empRtd}'  Click Text  ${e_empRtd}
+    ...     ELSE IF   '${option}'=='${e_empStdnt}'  Click Text  ${e_empStdnt}
+    ...     ELSE IF   '${option}'=='${e_empSlfEmp}'  Click Text  ${e_empSlfEmp}
+    ...     ELSE IF   '${option}'=='${e_empUnemp}'  Click Text  ${e_empUnemp}
     ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option} 
 
