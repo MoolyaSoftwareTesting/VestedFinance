@@ -196,55 +196,30 @@ User Enters Only Code Without Password
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 Aadhaar Front And Back side As Proof Of Identification
     [Tags]  KYC  E2E1
-    Start KYC Process
-    Verify Back, Accept And Continue Button In KYC Introduction Screen
-    Verify Back Arrow And Previous Button In KYC Basic Details Screen
-    Fill All the Fields under KYC Basic Details Screen
-    Verify All Checkboxes
-    Click On Next Button
-    Verify Back Arrow And Previous Button In KYC Investment Profile Screen
-    Select Option Under Risk tolerance  ${e_riskToleranceOpt1Txt}
-    Select Option Under Investing Frequency  ${e_investingFrequencyOpt1Txt}
-    Select Option Under Investing Experience  ${e_investingExperienceOpt1Txt}
-    Select Option Under Yearly Income  ${e_yearlyIncomeOpt1Txt}
-    Select Option Under Liquid Net Worth  ${e_liquidNetWorthOpt1Txt}
-    Select Option Under Total Net Worth  ${e_totalNetWorthOpt1Txt}
-    Select Option Under Primary Source Dropdown  ${e_primarySourceOpt1Txt}
-    Select Option Under Number Of Deposits And Withdrawals  ${e_depositsAndWithdrawalsOpt1Txt}
-    Select Option Under Money Deposit  ${e_moneyDepositOpt1Txt}
-    Select Option Under Investments Made  ${e_investmentsMadeOpt1Txt}
-    Click On Next Button
-    Verify Identity Screen
-    Select All the Fields under KYC Identity Screen
-    Verify Document Upload In Proof Of Identification Popup
-    Select Aadhaar And Verify Popups
-    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
-    Enter Valid PAN Number In PAN Field
-    Click On Next Button
-    Verify Plan Payment Screen
-    Verify Back Arrow And Previous Button In KYC Plan Payment Screen
-    Make Payment Using Card Information
+    Click On Start Investing Button
+    Wait And Click Element On Android  ${vf_A_easySignInBtn}
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify  
+    Upload Good Front And Back Side Of Aadhaar
+    Verify Sections And Navigations Under KYC Plan Payment Screen
 
-####################################################
+# Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
+Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
+    [Tags]  KYC  E2E2
+    Click On Start Investing Button
+    Wait And Click Element On Android  ${vf_A_easySignInBtn}
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
+    Verify Sections And Navigations Under KYC Plan Payment Screen
 
-# Upload only Good Front side of Aadhaar as POI
-Upload Front Side Of Aadhaar As Proof Of Identification And Verify
-    [Tags]  SL71  KYC
-    Click On Upload Button
-    Upload Front Side Of Aadhaar And Verify Success Message
-    Click On Close Icon
-    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
-    Verify PAN field
 
-# Upload Good Back side Aadhaar as POA, after Front Aadhaar uploaded as POI
-Upload Back Side Of Aadhaar As Proof Of Address And Verify
-    [Tags]  SL73  KYC
-    Click On Upload Button
-    # Recheck
-    Verify Proof Of Address Popup After Front Aadhaar Uploaded As Proof Of Identification
-    Click On Aadhaar Back Side And Verify Popup
-    Click On Confirm Button And Verify Aadhaar Back Side Popup
-    Click On Upload Button
-    Upload Back Side Of Aadhaar And Verify Success Message
-    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
 

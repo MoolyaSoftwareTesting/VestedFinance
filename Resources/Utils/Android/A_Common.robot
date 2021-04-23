@@ -21,9 +21,8 @@ Open App On Browserstack
     Landing Page Is Loaded Completely
 
 Open App On Real Device
-    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  
-    #UncommentLater appActivity=${app_activity}  appPackage=${app_package}
-    #UncommentLater Landing Page Is Loaded Completely
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
+    Landing Page Is Loaded Completely
 
 Open App On Emulator
     Open Application  ${server}  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2

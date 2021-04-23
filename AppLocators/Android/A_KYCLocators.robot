@@ -27,6 +27,8 @@ ${e_whatElseNeedInfoTxt} =  The information you provide allows us to comply with
 # Basic Details Screen
 ${e_letsGetToKnowYou} =  Let’s get to know you.
 ${e_dummyPhoneNo} =  9998887770
+${e_maleGender} =  Male
+${e_femaleGender} =  Female
 ${e_chkBx1Txt} =  I work at a US brokerage firm, or am a family member of an individual who works at a US brokerage firm
 ${e_chkBx2Txt} =  I am a politically exposed person or public official, or am a family member of a politically exposed person or public official
 ${e_chkBx3Txt} =  I am a director, an officer, or own at least 10% of a US-listed public company’s equities
@@ -97,6 +99,7 @@ ${e_investmentsMadeOpt3Txt} =  11+
 # Identity Screen
 ${e_letsVerifyYourIdentity} =  Let’s verify your identity
 ${e_docVerTxt} =  The US Government requires Vested and its broker partner to collect your government ID and proof of address for identity verification purposes. Vested will use this information to open your Vested account. Your information will not be sold or used for advertisements. Read more here.
+${e_maritalStatusTxt} =  Marital status
 ${e_employmentTxt} =  Employment
 ${e_countryTxt} =  What country do you primarily file taxes in?
 ${e_India} =  India
@@ -123,7 +126,7 @@ ${e_docUploadSuccessMsg} =  Document Uploaded
 ${e_aadhaarPoiUploadedSuccessMsg} =  Proof of ID: Aadhaar Uploaded Successfully
 ${e_aadhaarPoaUploadedSuccessMsg} =  Proof of Address: Aadhaar Uploaded Successfully
 ${e_panNumber} =  PAN number
-${e_dummyPAN} =  FQRDH7894M
+${e_dummyPAN} =  9999789478
 ${e_docUploadPOAHeading} =  Document Upload: Proof of Address
 ${e_docUploadPOADesc1} =  Select a document to upload as proof of address.
 ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
@@ -158,8 +161,6 @@ ${vf_A_basicDetailsScreen} =  xpath=//*[@text='Let’s get to know you.']
 ${vf_A_previousButton} =  xpath=//*[@text='Previous']
 ${vf_A_nextButton} =  xpath=//*[@text='Next']
 ${vf_A_phoneNum} =  xpath=//*[@class='android.widget.EditText']
-${vf_A_maleGender} =  xpath=//*[@text='Male']
-${vf_A_femaleGender} =  xpath=//*[@text='Female']
 ${vf_A_chkBx1} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*/*[@text=''])[1]
 ${vf_A_chkBx2} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*/*[@text=''])[2]
 ${vf_A_chkBx3} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]/*/*[@text=''])[3]

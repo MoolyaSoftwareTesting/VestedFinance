@@ -30,9 +30,8 @@ Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_doneButton}
     Log To Console  Clicked on Done Button
     Verify Dashboard Screen
-    Log To Console  Verified Dashboard screen!
 
-Verify All Sections Under Introduction Screen
+Verify All Sections And Navigations Under KYC Introduction Screen
     Verify Page Conatin Text  ${e_headingKYC}
     Verify Page Conatin Text  ${e_headingKYCTxt}
     Verify Page Conatin Text  ${e_whatDoYouNeed}
@@ -46,16 +45,16 @@ Verify All Sections Under Introduction Screen
     Verify Page Conatin Text  ${e_whatElseNeedInfo}
     Verify Page Conatin Text  ${e_whatElseNeedInfoTxt}
     Log To Console  Verified all sections under KYC Introduction screen!
+    Verify Navigations Under KYC Introduction Screen
 
-Start KYC under Dashboard screen
+# SL43
+Verify Account Status Screen
     Verify Element Visibility  ${vf_A_viewAllStepsLink}
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
     Log To Console  Clicked on View All Steps Link
     Verify All Steps Under Account Status Screen
     Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
-    Click on Start/Complete KYC Button
-    Verify All Sections Under Introduction Screen
 
 Click On Back Arrow
     Verify Element Visibility  ${vf_A_backArrow}
@@ -63,6 +62,7 @@ Click On Back Arrow
     Log To Console  Clicked on Back arrow
 
 Verify KYC Introduction Screen
+    Sleep  3s
     Verify Page Conatin Text  ${e_headingKYC}
     Verify Page Conatin Text  ${e_headingKYCTxt}
     Log To Console  Verified KYC Introduction Screen!
@@ -79,14 +79,8 @@ Click On Accept And Continue Button And Verify Basic Details Screen
     Log To Console  Clicked on Accept and Continue Button
     Verify KYC Basic Details Screen
 
-# SL43: View all steps and Click on Start KYC under Dashboard- KYC incomplete  
-Start KYC Process
-    User Navigates To Signin Screen
-    Signin With Non KYC Completed User
-    Start KYC under Dashboard screen
-
 # SL44: Verify Back, Accept and Continue buttons works in KYC intro screen
-Verify Back, Accept And Continue Button In KYC Introduction Screen
+Verify Navigations Under KYC Introduction Screen
     Click On Back Arrow And Verify Dashboard Screen
     Click On Accept And Continue Button And Verify Basic Details Screen
 
@@ -103,7 +97,7 @@ Click On Previous Button
     Wait And Click Element On Android  ${vf_A_previousButton}
     Log To Console  Clicked on Previous Button
 
-Verify Back Arrow And Previous Button In KYC Basic Details Screen
+Verify Navigations Under KYC Basic Details Screen
     Close Android Keyboard When Selected A Text Field 
     Click On Back Arrow 
     Verify KYC Introduction Screen
@@ -112,50 +106,68 @@ Verify Back Arrow And Previous Button In KYC Basic Details Screen
     Close Android Keyboard When Selected A Text Field 
     Click On Previous Button
     Verify KYC Introduction Screen
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
+    Log To Console  Verified Back arrow And Previous button- Under KYC Basic Details Screen!
 
-# SL48- Verification not done
+
+Enter Phone Number
+    [Arguments]  ${text}
+    Wait And Click Element On Android  ${vf_A_phoneNum}
+    Close Android Keyboard When Selected A Text Field
+    Input Text  ${vf_A_phoneNum}  ${text}
+    Log to Console  Entered Phone number!
+    Close Android Keyboard
+
+Select A Gender
+    [Arguments]  ${gender}
+    Run Keyword If    '${gender}'=='${e_maleGender}'  Click Text  ${e_maleGender}
+    ...     ELSE IF   '${gender}'=='${e_femaleGender}'  Click Text  ${e_femaleGender}
+    ...     ELSE  Log To Console  Invalid Data
+    Log To Console  Clicked on - ${gender} 
+
+# SL48
 Verify All Checkboxes
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
     Verify Page Conatin Text   ${e_chkBx3Txt}
     Verify Page Conatin Text   ${e_chkBx4Txt}
     Wait And Click Element On Android  ${vf_A_chkBx1}
-    Log to Console  Selected Checkbox 1
     Wait And Click Element On Android  ${vf_A_chkBx2}
     Sleep  2s
-    Log to Console  Selected Checkbox 2
     Close Android Keyboard When Selected A Text Field 
     Wait And Click Element On Android  ${vf_A_chkBx3}
     Sleep  2s
-    Log to Console  Selected Checkbox 3
     Close Android Keyboard When Selected A Text Field 
+    Swipe By Percent  80  70  20  20  5000
+    Click Text  ${e_chkBx3Txt}
     Sleep  2s
-    Click Text  ${e_chkBx4Txt}
     Wait And Click Element On Android  ${vf_A_chkBx4}
-    Log to Console  Selected Checkbox 4
-    # Element Should Be Disabled  ${vf_A_chkBx1}
-    # Element Should Be Disabled  ${vf_A_chkBx2}
-    # Element Should Be Disabled  ${vf_A_chkBx3}
-    # Log to Console  First three Checkboxes are disabled on selecting 4th Checkbox
+    Log to Console  Verified All Checkboxes
+    Element Should Be Disabled  ${vf_A_chkBx1}
+    Element Should Be Disabled  ${vf_A_chkBx2}
+    Element Should Be Disabled  ${vf_A_chkBx3}
+    Log to Console  First three Checkboxes are disabled on selecting 4th Checkbox
 
 # SL45, SL50
-Fill All the Fields under KYC Basic Details Screen
-    Wait And Click Element On Android  ${vf_A_phoneNum}
-    Input Text  ${vf_A_phoneNum}  ${e_dummyPhoneNo}
-    Log to Console  Entered Phone number!
-    Close Android Keyboard
+User Fill All The Fields Under KYC Basic Details Screen And Verify
+    Verify Navigations Under KYC Basic Details Screen
+    Close Android Keyboard When Selected A Text Field
+    Enter Phone Number  ${e_dummyPAN}
     Sleep  2s
-    Click Element  ${vf_A_maleGender}
-    Log to Console  Male Selected!
+    Select A Gender  ${e_maleGender}
     Click On Next Button
     Sleep  2s
     Click On Previous Button
     Sleep  2s
+    Log to Console  Verified Checkboxes are optional!
     Close Android Keyboard
     Swipe By Percent  80  70  20  20  5000
+    Sleep  2s
     Wait And Click Element On Android  ${vf_A_chkBx4}
     Log to Console  Basic Identity Entered!
+    Verify All Checkboxes
+    Click On Next Button
 
 # SL47
 User Selects Enters Gender Phone Number
@@ -192,19 +204,12 @@ Select Option Under Risk tolerance
     ${e_riskToleranceOpt3Desc1} =  Replace Characters  ${e_riskToleranceOpt3Desc}  ’  ' 
     Verify Page Conatin Text  ${e_riskToleranceOpt3Desc1}
     Log To Console  Verified all options with Description under Risk Tolerance section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_riskToleranceOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_riskToleranceOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_riskToleranceOpt3Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_riskToleranceOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_riskToleranceOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_riskToleranceOpt3Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_riskToleranceOpt1Txt}'  Click Text  ${e_riskToleranceOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_riskToleranceOpt2Txt}'  Click Text  ${e_riskToleranceOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_riskToleranceOpt3Txt}'  Click Text  ${e_riskToleranceOpt3Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option} 
+
 
 Select Option Under Investing Frequency
     [Arguments]  ${option}
@@ -214,18 +219,10 @@ Select Option Under Investing Frequency
     Verify Page Conatin Text  ${e_investingFrequencyOpt2Txt}
     Verify Page Conatin Text  ${e_investingFrequencyOpt3Txt}
     Log To Console  Verified all options under Investing Frequency section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingFrequencyOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingFrequencyOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingFrequencyOpt3Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_investingFrequencyOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_investingFrequencyOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_investingFrequencyOpt3Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_investingFrequencyOpt1Txt}'  Click Text  ${e_investingFrequencyOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt2Txt}'  Click Text  ${e_investingFrequencyOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt3Txt}'  Click Text  ${e_investingFrequencyOpt3Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option} 
 
 Select Option Under Investing Experience
@@ -238,24 +235,12 @@ Select Option Under Investing Experience
     Verify Page Conatin Text  ${e_investingExperienceOpt4Txt}
     Verify Page Conatin Text  ${e_investingExperienceOpt5Txt}
     Log To Console  Verified all options under Investing Experience section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingExperienceOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingExperienceOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingExperienceOpt3Txt}  formatter=str
-    ${isEqualToOpt4} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingExperienceOpt4Txt}  formatter=str
-    ${isEqualToOpt5} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investingExperienceOpt5Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_investingExperienceOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_investingExperienceOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_investingExperienceOpt3Txt}
-    ELSE IF  ${isEqualToOpt4}
-        Click Text  ${e_investingExperienceOpt4Txt}
-    ELSE IF  ${isEqualToOpt5}
-        Click Text  ${e_investingExperienceOpt5Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_investingExperienceOpt1Txt}'  Click Text  ${e_investingExperienceOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_investingExperienceOpt2Txt}'  Click Text  ${e_investingExperienceOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_investingExperienceOpt3Txt}'  Click Text  ${e_investingExperienceOpt3Txt}
+    ...     ELSE IF   '${option}'=='${e_investingExperienceOpt4Txt}'  Click Text  ${e_investingExperienceOpt4Txt}
+    ...     ELSE IF   '${option}'=='${e_investingExperienceOpt5Txt}'  Click Text  ${e_investingExperienceOpt5Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Yearly Income 
@@ -267,21 +252,11 @@ Select Option Under Yearly Income
     Verify Page Conatin Text  ${e_yearlyIncomeOpt3Txt}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt4Txt}
     Log To Console  Verified all options under Yearly Income section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_yearlyIncomeOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_yearlyIncomeOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_yearlyIncomeOpt3Txt}  formatter=str
-    ${isEqualToOpt4} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_yearlyIncomeOpt4Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_yearlyIncomeOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_yearlyIncomeOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_yearlyIncomeOpt3Txt}
-    ELSE IF  ${isEqualToOpt4}
-        Click Text  ${e_yearlyIncomeOpt4Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_yearlyIncomeOpt1Txt}'  Click Text  ${e_yearlyIncomeOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt2Txt}'  Click Text  ${e_yearlyIncomeOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt3Txt}'  Click Text  ${e_yearlyIncomeOpt3Txt}
+    ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt4Txt}'  Click Text  ${e_yearlyIncomeOpt4Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
  
 Select Option Under Liquid Net Worth
@@ -293,21 +268,11 @@ Select Option Under Liquid Net Worth
     Verify Page Conatin Text  ${e_liquidNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt4Txt}
     Log To Console  Verified all options under Liquid Net Worth section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_liquidNetWorthOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_liquidNetWorthOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_liquidNetWorthOpt3Txt}  formatter=str
-    ${isEqualToOpt4} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_liquidNetWorthOpt4Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_liquidNetWorthOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_liquidNetWorthOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_liquidNetWorthOpt3Txt}
-    ELSE IF  ${isEqualToOpt4}
-        Click Text  ${e_liquidNetWorthOpt4Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_liquidNetWorthOpt1Txt}'  Click Text  ${e_liquidNetWorthOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt2Txt}'  Click Text  ${e_liquidNetWorthOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt3Txt}'  Click Text  ${e_liquidNetWorthOpt3Txt}
+    ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt4Txt}'  Click Text  ${e_liquidNetWorthOpt4Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Total Net Worth
@@ -319,27 +284,18 @@ Select Option Under Total Net Worth
     Verify Page Conatin Text  ${e_totalNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_totalNetWorthOpt4Txt}
     Log To Console  Verified all options under Total Net Worth section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_totalNetWorthOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_totalNetWorthOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_totalNetWorthOpt3Txt}  formatter=str
-    ${isEqualToOpt4} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_totalNetWorthOpt4Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_totalNetWorthOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_totalNetWorthOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_totalNetWorthOpt3Txt}
-    ELSE IF  ${isEqualToOpt4}
-        Click Text  ${e_totalNetWorthOpt4Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_totalNetWorthOpt1Txt}'  Click Text  ${e_totalNetWorthOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt2Txt}'  Click Text  ${e_totalNetWorthOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt3Txt}'  Click Text  ${e_totalNetWorthOpt3Txt}
+    ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt4Txt}'  Click Text  ${e_totalNetWorthOpt4Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text  ${e_primarySource}
+    Log To Console  Verified Primary Source section
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
     Sleep  3s
     Click Text  ${option}
@@ -358,18 +314,10 @@ Select Option Under Number Of Deposits And Withdrawals
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt2Txt}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt3Txt}
     Log To Console  Verified all options under Number Of Deposits And Withdrawals section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_depositsAndWithdrawalsOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_depositsAndWithdrawalsOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_depositsAndWithdrawalsOpt3Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_depositsAndWithdrawalsOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_depositsAndWithdrawalsOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_depositsAndWithdrawalsOpt3Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_depositsAndWithdrawalsOpt1Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt2Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt3Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt3Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Money Deposit
@@ -380,18 +328,10 @@ Select Option Under Money Deposit
     Verify Page Conatin Text  ${e_moneyDepositOpt2Txt}
     Verify Page Conatin Text  ${e_moneyDepositOpt3Txt}
     Log To Console  Verified all options under Money Deposit section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_moneyDepositOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_moneyDepositOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_moneyDepositOpt3Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_moneyDepositOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_moneyDepositOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_moneyDepositOpt3Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_moneyDepositOpt1Txt}'  Click Text  ${e_moneyDepositOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_moneyDepositOpt2Txt}'  Click Text  ${e_moneyDepositOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_moneyDepositOpt3Txt}'  Click Text  ${e_moneyDepositOpt3Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Investments Made
@@ -402,29 +342,35 @@ Select Option Under Investments Made
     Verify Page Conatin Text  ${e_investmentsMadeOpt2Txt}
     Verify Page Conatin Text  ${e_investmentsMadeOpt3Txt}
     Log To Console  Verified all options under Investments Made section
-    ${isEqualToOpt1} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investmentsMadeOpt1Txt}  formatter=str
-    ${isEqualToOpt2} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investmentsMadeOpt2Txt}  formatter=str
-    ${isEqualToOpt3} =  Run Keyword And Return Status  Should Be Equal As Strings  ${option}  ${e_investmentsMadeOpt3Txt}  formatter=str
-    IF  ${isEqualToOpt1}
-        Click Text  ${e_investmentsMadeOpt1Txt}
-    ELSE IF  ${isEqualToOpt2}
-        Click Text  ${e_investmentsMadeOpt2Txt}
-    ELSE IF  ${isEqualToOpt3}
-        Click Text  ${e_investmentsMadeOpt3Txt}
-    ELSE
-        Log To Console  Invalid Option
-    END
+    Run Keyword If    '${option}'=='${e_investmentsMadeOpt1Txt}'  Click Text  ${e_investmentsMadeOpt1Txt}
+    ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt2Txt}'  Click Text  ${e_investmentsMadeOpt2Txt}
+    ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt3Txt}'  Click Text  ${e_investmentsMadeOpt3Txt}
+    ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
 # SL51: Verify if Previous button and Back arrow works
-Verify Back Arrow And Previous Button In KYC Investment Profile Screen
+Verify Navigations Under KYC Investment Profile Screen
     Click On Back Arrow 
     Verify KYC Basic Details Screen
     Click On Next Button
     Click On Previous Button
     Verify KYC Basic Details Screen
     Click On Next Button
+    Log To Console  Verified Back arrow And Previous button- Under KYC Investment Profile Screen!
 
+User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    Verify Navigations Under KYC Investment Profile Screen
+    Select Option Under Risk tolerance  ${e_riskToleranceOpt1Txt}
+    Select Option Under Investing Frequency  ${e_investingFrequencyOpt1Txt}
+    Select Option Under Investing Experience  ${e_investingExperienceOpt1Txt}
+    Select Option Under Yearly Income  ${e_yearlyIncomeOpt1Txt}
+    Select Option Under Liquid Net Worth  ${e_liquidNetWorthOpt1Txt}
+    Select Option Under Total Net Worth  ${e_totalNetWorthOpt1Txt}
+    Select Option Under Primary Source Dropdown  ${e_primarySourceOpt1Txt}
+    Select Option Under Number Of Deposits And Withdrawals  ${e_depositsAndWithdrawalsOpt1Txt}
+    Select Option Under Money Deposit  ${e_moneyDepositOpt1Txt}
+    Select Option Under Investments Made  ${e_investmentsMadeOpt2Txt}
+    Click On Next Button
 
 # Identity Screen
 
@@ -443,46 +389,63 @@ Click On Upload Document Button
 
 # SL57
 Verify Options Under Marital Status
+    Verify Page Conatin Text   ${e_maritalStatusTxt}
     Wait And Click Element On Android  ${vf_A_stsSingle}
     Wait And Click Element On Android  ${vf_A_stsDivorced}
     Wait And Click Element On Android  ${vf_A_stsMarried}
     Wait And Click Element On Android  ${vf_A_stsWidowed}
     Wait And Click Element On Android  ${vf_A_stsDomPtnr}
-    Log to Console  Verified All options under Marital Status!
-    #Swipe By Percent  50  70  20  20  5000
+    Log to Console  Verified All options under Marital Status section!
 
 # SL59
 Verify Options Under Employment Type
+    Verify Page Conatin Text   ${e_employmentTxt}
     Wait And Click Element On Android  ${vf_A_empEmployed}
     Wait And Click Element On Android  ${vf_A_empRtd}
     Wait And Click Element On Android  ${vf_A_empStdnt}
     Wait And Click Element On Android  ${vf_A_empSlfEmp}
     Wait And Click Element On Android  ${vf_A_empUnemp}
-    Log to Console  Verified all options under Employment Type!
+    Log to Console  Verified all options under Employment Type section!
+
+Select Option Under Marital status
+    [Arguments]  ${option}
+    Run Keyword If    '${option}'=='${vf_A_stsSingle}'  Click Text  ${vf_A_stsSingle}
+    ...     ELSE IF   '${option}'=='${vf_A_stsDivorced}'  Click Text  ${vf_A_stsDivorced}
+    ...     ELSE IF   '${option}'=='${vf_A_stsMarried}'  Click Text  ${vf_A_stsMarried}
+    ...     ELSE IF   '${option}'=='${vf_A_stsWidowed}'  Click Text  ${vf_A_stsWidowed}
+    ...     ELSE IF   '${option}'=='${vf_A_stsDomPtnr}'  Click Text  ${vf_A_stsDomPtnr}
+    ...     ELSE  Log To Console  Invalid Option
+    Log To Console  Clicked on option - ${option} 
+
+Select Option Under Employment Type
+    [Arguments]  ${option}
+    Run Keyword If    '${option}'=='${vf_A_empEmployed}'  Click Text  ${vf_A_empEmployed}
+    ...     ELSE IF   '${option}'=='${vf_A_empRtd}'  Click Text  ${vf_A_empRtd}
+    ...     ELSE IF   '${option}'=='${vf_A_empStdnt}'  Click Text  ${vf_A_empStdnt}
+    ...     ELSE IF   '${option}'=='${vf_A_empSlfEmp}'  Click Text  ${vf_A_empSlfEmp}
+    ...     ELSE IF   '${option}'=='${vf_A_empUnemp}'  Click Text  ${vf_A_empUnemp}
+    ...     ELSE  Log To Console  Invalid Option
+    Log To Console  Clicked on option - ${option} 
 
 # SL61
-Select All the Fields under KYC Identity Screen
+User Fill All the Fields under KYC Identity Screen And Verify
+    Verify Identity Screen
     Verify Options Under Marital Status
-    Wait And Click Element On Android  ${vf_A_stsSingle}
-    Log to Console  Single Selected!
+    Select Option Under Marital status  ${vf_A_stsSingle}
     Verify Page Conatin Text   ${e_countryTxt}
     Log to Console  Country Text Verified!
     Verify Page Conatin Text   ${e_India}
-    Log to Console  India Present!
     Verify Page Conatin Text   ${e_Other}
-    Log to Console  Other Present!
+    Log to Console  Verified Country section and Options!
     Swipe By Percent  60  70  20  20  5000
-    Verify Page Conatin Text   ${e_employmentTxt}
     Verify Options Under Employment Type
-    Wait And Click Element On Android  ${vf_A_empStdnt}
-    Log to Console  Employed Selected!
+    Select Option Under Employment Type  ${vf_A_empStdnt}
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text   ${e_docVerTxt}
-    Log to Console  Document Verification Text Verified!
+    Log to Console  Document Verification section Text Verified!
     #Scroll Down On Android  ${vf_A_verChkBx}
     Wait And Click Element On Android  ${vf_A_verChkBx}
-    Log to Console  Checkbox Clicked!
-    
+    Log to Console  Confirm Checkbox Clicked!
 
 # Document Upload
 
@@ -631,7 +594,8 @@ Verify PAN field
     Verify Element Visibility  ${vf_A_panTextbox}
     Log To Console  PAN field displayed!
 
-Enter Valid PAN Number In PAN Field
+User Enter Valid PAN Number In PAN Field
+    Verify PAN field
     Input Text  ${vf_A_panTextbox}  ${e_dummyPAN}
     Log To Console  Entered PAN number!
 
@@ -649,7 +613,7 @@ Select Aadhaar And Verify Popups
     Click On Confirm Button And Verify Aadhaar Popup
 
 # SL68: Click on Upload button and Upload Front + Back side of Aadhaar card
-Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+User Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
     Click On Upload Button
     Upload Front Side Of Aadhaar And Verify Success Message
     Verify Upload Back Side Of Aadhaar Popup Under Proof Of Identification
@@ -659,6 +623,36 @@ Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
     Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
     Verify PAN field
 
+# SL71: Upload only Good Front side of Aadhaar as POI
+Upload Front Side Of Aadhaar As Proof Of Identification And Verify
+    Click On Upload Button
+    Upload Front Side Of Aadhaar And Verify Success Message
+    Click On Close Icon
+    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
+
+# SL73: Upload Good Back side Aadhaar as POA, after Front Aadhaar uploaded as POI
+Upload Back Side Of Aadhaar As Proof Of Address And Verify
+    Click On Upload Button
+    # Recheck
+    Verify Proof Of Address Popup After Front Aadhaar Uploaded As Proof Of Identification
+    Click On Aadhaar Back Side And Verify Popup
+    Click On Confirm Button And Verify Aadhaar Back Side Popup
+    Click On Upload Button
+    Upload Back Side Of Aadhaar And Verify Success Message
+    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
+
+Upload Good Front And Back Side Of Aadhaar
+    Verify Document Upload In Proof Of Identification Popup
+    Select Aadhaar And Verify Popups
+    User Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+    User Enter Valid PAN Number In PAN Field
+    Click On Next Button
+
+Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
+    Upload Front Side Of Aadhaar As Proof Of Identification And Verify
+    Upload Back Side Of Aadhaar As Proof Of Address And Verify
+    User Enter Valid PAN Number In PAN Field
+    Click On Next Button
 
 # Plan Payment screen
 
@@ -669,7 +663,8 @@ Verify Plan Payment Screen
 
 
 # SL114
-Verify Back Arrow And Previous Button In KYC Plan Payment Screen
+Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify Plan Payment Screen
     Click On Back Arrow 
     Sleep  2s
     Verify Identity Screen
@@ -681,6 +676,8 @@ Verify Back Arrow And Previous Button In KYC Plan Payment Screen
     Click On Next Button
     Sleep  2s
     Verify Plan Payment Screen
+    Log To Console  Verified Back arrow And Previous button- Under KYC Plan Payment Screen!
+    Make Payment Using Card Information
 
 # SL114
 Make Payment Using Card Information
