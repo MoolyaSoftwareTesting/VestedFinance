@@ -12,7 +12,7 @@ Suite Teardown  Quit Android Application
 # robot -d Results Tests/Android/A_Tests.robot
  
 # Executing Specific Tag: 
-# robot -d Results -i Upload Tests/Android/A_Tests.robot
+# robot -d Results -i E2E1 Tests/Android/A_Tests.robot
  
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL34 Tests/Android/A_Tests.robot
@@ -219,7 +219,6 @@ Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify
     Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
-    Verify Sections And Navigations Under KYC Plan Payment Screen
-
+    Verify Sections And Navigations Under KYC Plan Payment Scree
 
 
