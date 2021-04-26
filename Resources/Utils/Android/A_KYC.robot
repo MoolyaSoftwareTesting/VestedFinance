@@ -5,6 +5,7 @@ Library     AppiumLibrary
 
 *** Keywords ***
 # Before Completion & Instruction Screen
+
 Click on Start/Complete KYC Button
     Click On Element If Visibile  ${vf_A_startKYCBtn}
     Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
@@ -17,14 +18,14 @@ Signin With Non KYC Completed User
     # Pin should not be asked
     Verify Dashboard Screen
 
-Verify All Steps Under Account Status Screen
+Verify All Steps Under Account Status Screen Before KYC
     Verify Page Conatin Text  ${e_stepsHeading}
     Verify Page Conatin Text  ${e_step1Submit}
-    Verify Page Conatin Text  ${e_step1SubmitTxt}
+    Verify Page Conatin Text  ${e_step1SubmitTxtBeforeKYC}
     Verify Page Conatin Text  ${e_step2Approve}
-    Verify Page Conatin Text  ${e_step2ApproveTxt}
+    Verify Page Conatin Text  ${e_step2ApproveTxtBeforeKYC}
     Verify Page Conatin Text  ${e_step3FundAcc}
-    Log To Console  Verified all sections under Account Status screen!
+    Log To Console  Verified all sections under Account Status screen Before KYC!
 
 Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_doneButton}
@@ -52,7 +53,7 @@ Verify Account Status Screen
     Verify Element Visibility  ${vf_A_viewAllStepsLink}
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
     Log To Console  Clicked on View All Steps Link
-    Verify All Steps Under Account Status Screen
+    Verify All Steps Under Account Status Screen Before KYC
     Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
 
@@ -62,7 +63,7 @@ Click On Back Arrow
     Log To Console  Clicked on Back arrow
 
 Verify KYC Introduction Screen
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_headingKYC}  5s  
     Verify Page Conatin Text  ${e_headingKYC}
     Verify Page Conatin Text  ${e_headingKYCTxt}
     Log To Console  Verified KYC Introduction Screen!
@@ -88,7 +89,7 @@ Verify Navigations Under KYC Introduction Screen
 
 Verify KYC Basic Details Screen
     Sleep  2s
-    Close Android Keyboard When Selected A Text Field 
+    Go Back On Android
     ${e_letsGetToKnowYou1} =  Replace Characters  ${e_letsGetToKnowYou}  '  ’
     Verify Page Conatin Text  ${e_letsGetToKnowYou1}
     Log To Console  Verified KYC Basic Details Screen!
@@ -98,12 +99,12 @@ Click On Previous Button
     Log To Console  Clicked on Previous Button
 
 Verify Navigations Under KYC Basic Details Screen
-    Close Android Keyboard When Selected A Text Field 
+    Go Back On Android
     Click On Back Arrow 
     Verify KYC Introduction Screen
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Sleep  2s
-    Close Android Keyboard When Selected A Text Field 
+    Go Back On Android
     Click On Previous Button
     Verify KYC Introduction Screen
     Sleep  3s
@@ -114,9 +115,9 @@ Verify Navigations Under KYC Basic Details Screen
 Enter Phone Number
     [Arguments]  ${text}
     Sleep  2s
-    Close Android Keyboard When Selected A Text Field
+    Go Back On Android
     Wait And Click Element On Android  ${vf_A_phoneNum}
-    Close Android Keyboard When Selected A Text Field
+    Go Back On Android
     Input Text  ${vf_A_phoneNum}  ${text}
     Log to Console  Entered Phone number!
     Close Android Keyboard
@@ -126,7 +127,7 @@ Select A Gender
     Run Keyword If    '${gender}'=='${e_maleGender}'  Click Text  ${e_maleGender}
     ...     ELSE IF   '${gender}'=='${e_femaleGender}'  Click Text  ${e_femaleGender}
     ...     ELSE  Log To Console  Invalid Data
-    Log To Console  Clicked on - ${gender} 
+    Log To Console  Clicked on Gender- ${gender} 
 
 # SL48
 Verify All Checkboxes
@@ -137,13 +138,16 @@ Verify All Checkboxes
     Wait And Click Element On Android  ${vf_A_chkBx1}
     Wait And Click Element On Android  ${vf_A_chkBx2}
     Sleep  2s
-    Close Android Keyboard When Selected A Text Field 
+    Go Back On Android 
     Wait And Click Element On Android  ${vf_A_chkBx3}
     Sleep  2s
-    Close Android Keyboard When Selected A Text Field 
+    Go Back On Android
     Swipe By Percent  80  70  20  20  5000
+    Close Android Keyboard
     Click Text  ${e_chkBx3Txt}
+    Verify Element Visibility  ${vf_A_chkBx4} 
     Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_chkBx4} 
     Wait And Click Element On Android  ${vf_A_chkBx4}
     Log to Console  Verified All Checkboxes
     Element Should Be Disabled  ${vf_A_chkBx1}
@@ -165,8 +169,10 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Close Android Keyboard
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_chkBx4} 
     Wait And Click Element On Android  ${vf_A_chkBx4}
-    Verify All Checkboxes
+    # Pending: SL48
+    # Verify All Checkboxes
     Log To Console  Filled KYC Basic Details Screen!
     Click On Next Button
 
@@ -189,7 +195,7 @@ User Selects Enters Gender Phone Number
 
 Verify KYC Investment Profile Screen
     Sleep  2s
-    Verify Page Conatin Text  ${e_investProfileScreen}
+    Verify Page Conatin Text  ${e_investProfileScreenHeading}
     Log To Console  Verified KYC Investment Profile Screen!
 
 Select Option Under Risk tolerance
@@ -300,12 +306,7 @@ Select Option Under Primary Source Dropdown
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
     Sleep  3s
     Click Text  ${option}
-
     # Verify all options pending
-    # ${isOptionVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${option}
-    # IF  ${isOptionVisible}
-    #     Click Text  ${option}
-
     Log To Console  Clicked on option - ${option}
 
 Select Option Under Number Of Deposits And Withdrawals
@@ -378,7 +379,7 @@ User Fill All The Fields Under KYC Investment Profile Screen And Verify
 
 Verify Identity Screen
     Sleep  2s
-    Verify Page Conatin Text  ${e_letsVerifyYourIdentity}
+    Verify Page Conatin Text  ${e_identityScreenHeading}
     Log To Console  Verified KYC Identity Screen!
 
 Click On Upload Document Button
@@ -429,9 +430,19 @@ Select Option Under Employment Type
     ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option} 
 
+Verify Navigations Under KYC Identity Screen
+    Click On Back Arrow 
+    Verify KYC Investment Profile Screen
+    Click On Next Button
+    Click On Previous Button
+    Verify KYC Investment Profile Screen
+    Click On Next Button
+    Log To Console  Verified Back arrow And Previous button- Under KYC Identity Screen!
+
 # SL61
 User Fill All the Fields under KYC Identity Screen And Verify
     Verify Identity Screen
+    Verify Navigations Under KYC Identity Screen
     Verify Options Under Marital Status
     Select Option Under Marital status  ${e_stsSingle}
     Verify Page Conatin Text   ${e_countryTxt}
@@ -445,7 +456,6 @@ User Fill All the Fields under KYC Identity Screen And Verify
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text   ${e_docVerTxt}
     Log to Console  Document Verification section Text Verified!
-    #Scroll Down On Android  ${vf_A_verChkBx}
     Wait And Click Element On Android  ${vf_A_verChkBx}
     Log to Console  Confirm Checkbox Clicked!
 
@@ -474,7 +484,7 @@ Verify Description, Upload Options And Images Under Proof Of Identification Popu
     # Log To Console  Verified all Proof Of Identification upload options & their images!
 
 Click On Close Icon
-    Wait And Click Element On Android  ${vf_A_uploadDocCloseIcon}
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
     Log To Console  Clicked on Close icon
     ${isPopupVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_docUploadPOIHeading}
     IF   ${isPopupVisible}  
@@ -664,64 +674,166 @@ Verify Plan Payment Screen
     Verify Page Conatin Text  ${vf_A_payText}
     Log to Console  Verified Plan Payment Screen!
 
-
-# SL114
-Verify Sections And Navigations Under KYC Plan Payment Screen
-    Verify Plan Payment Screen
+# SL51: Verify if Previous button and Back arrow works
+Verify Navigations Under KYC Plan Payment Screen
     Click On Back Arrow 
     Sleep  2s
     Verify Identity Screen
     Click On Next Button
     Sleep  3s
     Click On Previous Button
-    Sleep  2s
+    Sleep  3s
     Verify Identity Screen
     Click On Next Button
     Sleep  2s
     Verify Plan Payment Screen
     Log To Console  Verified Back arrow And Previous button- Under KYC Plan Payment Screen!
-    Make Payment Using Card Information
 
-# SL114
-Make Payment Using Card Information
-    Swipe By Percent  50  70  20  20  5000
-    Wait And Click Element On Android  ${vf_A_slctBtn}
-    Log to Console  Select Button Clicked!
-    Sleep  5s
+Enter Phone Number And Email For Payment
+    Go Back On Android
+    Wait For Page Conatin Element  ${e_feeTxt}  10s
     Verify Page Conatin Text   ${e_feeTxt}
     Verify Page Conatin Text   ${e_399Txt}
+    Log To Console  Verified Account opening Fee!
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
-    Close Android Keyboard When Selected A Text Field
+    Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
     Log to Console  Phone Number Entered!
-    Close Android Keyboard
+    Sleep  5s
+    Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
-    Enter Email  ${e_newAccMailId}
-    Close Android Keyboard
+    Go Back On Android
+    Input Text  ${vf_A_mailFld}  ${e_newAccMailId}
     Log to Console  Email Id Entered!
+    Go Back On Android
     Wait And Click Element On Android  ${vf_A_proceedBtn}
-    Sleep  2s
-    Verify Page Conatin Text   ${e_cardPayment}
-    Verify Page Conatin Text   ${e_upiPayment}
-    Verify Page Conatin Text   ${e_netBankingPayment}
-    Verify Page Conatin Text   ${e_walletPayment}
-    Wait And Click Element On Android  ${vf_A_cardPayment}
+
+Enter Card Details For Payment
+    Verify Page Contains Element On Android  ${vf_A_cardPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_upiPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_netBankingPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_walletPaymentOpt}
+    Log to Console  Verified all Payment options!
+    Wait And Click Element On Android  ${vf_A_cardPaymentOpt}
+    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
+    Sleep  3s
+    Go Back On Android
     Input Text  ${vf_A_cardNumTxtFld}  ${e_cardNum}
     Log to Console  Card Number Entered!
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
     Log to Console  Expiry Entered!
     Wait And Click Element On Android  ${vf_A_nameTxt}
+    Sleep  3s
+    Go Back On Android
+    Sleep  2s
     Input Text  ${vf_A_nameTxtFld}  ${e_hldrName}
     Log to Console  Name Entered!
     Wait And Click Element On Android  ${vf_A_cvvTxt}
     Input Text  ${vf_A_cvvTxtFld}  ${e_cvv}
     Log to Console  CVV Entered!
+    Wait And Click Element On Android  ${vf_A_rememberCardCheckbox}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
     Log to Console  Pay Button Clicked!
-    Sleep  2s
-    Log Source
+
+# SL114
+Make Payment Using Card Information
+    Swipe By Percent  50  70  20  20  5000
+    Wait And Click Element On Android  ${vf_A_slctBtn}
+    Log to Console  Clicked on Select Button!
+    Sleep  5s
+    Enter Phone Number And Email For Payment
+    Enter Card Details For Payment
+    Sleep  5s
+    Click On Element If Visibile  ${vf_A_skipSavingCardLink}
+    Wait And Click Element On Android  ${vf_A_successBtn}
+    Log to Console  Successfully Completed the Payment Using Card!
+
+# SL114
+Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify Plan Payment Screen
+    Verify Navigations Under KYC Plan Payment Screen
+    Make Payment Using Card Information
 
 # Signature screen
 
-# Dashboard Card KYC Completion
+Verify Signature Screen
+    Sleep  5s
+    Verify Page Conatin Text  ${e_signatureScreenHeading}
+    Log to Console  Verified Signature Screen!
+
+Verify Navigations Under KYC Signature Screen
+    Click On Back Arrow 
+    Verify Plan Payment Screen
+    Click On Next Button
+    Sleep  3s
+    Click On Previous Button
+    Verify Plan Payment Screen
+    Click On Next Button
+    Log To Console  Verified Back arrow And Previous button- Under KYC Signature Screen!
+
+Verify Tax Form Information Section And Link
+    Verify Page Conatin Text  ${e_taxFormInfoHeading}
+    Verify Page Conatin Text  ${e_taxFormInfoDesc}
+    Click Text  ${e_taxFormInfoHeading}
+    Verify Page Conatin Text  ${e_taxFormInfoPopupHeading}
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Verified Tax Form Information Section And Link!
+
+Verify DriveWealths Agreements Section And Link
+    Verify Page Conatin Text  ${e_driveWealthHeading}
+    Verify Page Conatin Text  ${e_driveWealthDesc}
+    Click Text  ${e_driveWealthHeading}
+    Sleep  3s
+    Verify Page Conatin Text  ${e_driveWealthScreen}
+    Go Back On Android
+    Log to Console  Verified DriveWealths Agreements Section And Link!
+
+Verify Esign Agreement Link
+    Verify Page Conatin Text  ${e_esignAgreement}
+    Click Text  ${e_esignAgreement}
+    Verify Page Conatin Text  ${e_esignAgreementPopupHeading}
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Verified Esign Agreement Link!
+
+Verify Advisory Agreement Link
+    Verify Page Conatin Text  ${e_advisoryAgreement}
+    Click Text  ${e_advisoryAgreement}
+    Sleep  3s
+    Verify Page Conatin Text  ${e_advisoryAgreementPdf}
+    Go Back On Android
+    Log to Console  Verified Advisory Agreement Link!
+
+Verify DriveWealths Privacy Policy Section And Link
+    Verify Page Conatin Text  ${e_privacyPolicy}
+    Wait And Click Element On Android  ${vf_A_privacyCheckbox}
+    Log to Console  Verified and Clicked on DriveWealths Privacy Policy Checkbox!
+
+Verify Signature Acknowledge Section
+    Verify Page Conatin Text  ${e_signatureAcknowledge}
+    Input Text  ${vf_A_userName}  ${e_fullNameForSignature}
+    Log To Console  Verified and Entered full name as Signature!    
+
+Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Signature Screen
+    Verify Navigations Under KYC Signature Screen
+    Verify Element Visibility  ${vf_A_terms&ConditionsTxt}
+    Verify Tax Form Information Section And Link
+    Verify DriveWealths Agreements Section And Link
+    Verify Esign Agreement Link
+    Verify Advisory Agreement Link
+    Swipe By Percent  70  70  20  20  5000
+    Verify DriveWealths Privacy Policy Section And Link
+    Verify Signature Acknowledge Section
+    Click On Next Button
+
+# Dashboard Card- KYC Completion
+Verify Steps Under Account Status Screen After KYC Completion
+    Verify Page Conatin Text  ${e_stepsHeading}
+    Verify Page Conatin Text  ${e_step1Submit}
+    Verify Page Conatin Text  ${e_step1SubmitTxtAfterKYC}
+    Verify Page Conatin Text  ${e_step2Approve}
+    Verify Page Conatin Text  ${e_step2ApproveTxtAfterKYC}
+    Verify Page Conatin Text  ${e_step3FundAcc}
+    Log To Console  Verified all sections under Account Status screen After KYC Completion!
+    Click On Done Button And Verify Screen

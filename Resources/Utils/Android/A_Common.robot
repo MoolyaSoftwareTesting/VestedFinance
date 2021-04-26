@@ -152,7 +152,7 @@ Verify Open With Label
 Close Android Keyboard
     Hide Keyboard
 
-Close Android Keyboard When Selected A Text Field 
+Go Back On Android
     Go Back
 
 Rest Android Application

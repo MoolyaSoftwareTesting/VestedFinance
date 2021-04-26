@@ -7,9 +7,9 @@ ${e_validPasswordForKYC} =  Moolya@123
 # Before Completion & Instruction Screen
 ${e_stepsHeading} =  Complete 3 simple steps to start investing in US stocks and ETFs
 ${e_step1Submit} =  Submit your KYC
-${e_step1SubmitTxt} =  Have your government ID and proof of address accessible.
+${e_step1SubmitTxtBeforeKYC} =  Have your government ID and proof of address accessible.
 ${e_step2Approve} =  KYC Approved
-${e_step2ApproveTxt} =  It takes 1-3 business days to review.
+${e_step2ApproveTxtBeforeKYC} =  It takes 1-3 business days to review.
 ${e_step3FundAcc} =  Fund your account
 ${e_headingKYC} =  KYC
 ${e_headingKYCTxt} =  Complete the process in less than 5 minutes
@@ -35,7 +35,7 @@ ${e_chkBx3Txt} =  I am a director, an officer, or own at least 10% of a US-liste
 ${e_chkBx4Txt} =  None of the these apply to me
 
 # Investment Profile Screen
-${e_investProfileScreen} =  Let’s build your investment profile.
+${e_investProfileScreenHeading} =  Let’s build your investment profile.
 ${e_riskTolerance} =  Risk tolerance
 ${e_riskToleranceOpt1Txt} =  Low
 ${e_riskToleranceOpt1Desc} =  I’m comfortable accepting lower returns for more stability.
@@ -97,7 +97,7 @@ ${e_investmentsMadeOpt2Txt} =  6 to 10
 ${e_investmentsMadeOpt3Txt} =  11+
 
 # Identity Screen
-${e_letsVerifyYourIdentity} =  Let’s verify your identity
+${e_identityScreenHeading} =  Let’s verify your identity
 ${e_docVerTxt} =  The US Government requires Vested and its broker partner to collect your government ID and proof of address for identity verification purposes. Vested will use this information to open your Vested account. Your information will not be sold or used for advertisements. Read more here.
 ${e_maritalStatusTxt} =  Marital status
 ${e_stsSingle} =  Single
@@ -143,18 +143,35 @@ ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
 ${e_aadhaarBackSidePOADesc} =  I’ve verified that the name on my Aadhaar (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 
 # Plan Payment
-${e_cardPayment} =  Card Visa, MasterCard, RuPay & More
-${e_upiPayment} =  UPI Instant payment using UPI App
-${e_netBankingPayment} =  Netbanking All Indian banks
 ${e_walletPayment} =  Wallet Mobikwik & More
 ${e_cardNum} =  5104 0600 0000 0008
 ${e_cvv} =  123
 ${e_expiry} =  0223
-${e_hldrName} =  Thiru
+${e_hldrName} =  Abcxyz
 ${e_399Txt} =  ₹ 399
 ${e_feeTxt} =  Account Opening Fee
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
+
+# Signature screen
+${e_signatureScreenHeading} =  Let’s open your account
+${e_taxFormInfoHeading} =  Tax Form Information
+${e_taxFormInfoDesc} =  This document outlines information about the tax form created and filed when you open an account with Vested.
+${e_taxFormInfoPopupHeading} =  Tax Form Information about W8-BEN
+${e_driveWealthHeading} =  DriveWealth's Disclosures and Account Agreements
+${e_driveWealthDesc} =  These documents outline the terms and conditions of your relationship with DriveWealth, Vested’s broker partner.
+${e_driveWealthScreen} =  DriveWealth Disclosures
+${e_esignAgreement} =  ESIGN Agreement
+${e_esignAgreementPopupHeading} =  ESIGN Agreement: VESTED FINANCE INC.
+${e_advisoryAgreement} =  Advisory Agreement
+${e_advisoryAgreementPdf} =  vested-advisory
+${e_privacyPolicy} =  I agree to Drivewealth’s Privacy Policy
+${e_signatureAcknowledge} =  By signing below, I acknowledge that I have read and agree to the account agreement and disclosures.
+${e_fullNameForSignature} =  Abc Xyz
+
+# Dashboard Card- KYC Completion
+${e_step1SubmitTxtAfterKYC} =  Your KYC form is submitted
+${e_step2ApproveTxtAfterKYC} =  It takes 1-3 business days to review. We may reach out to you through email if we need additional information
 
 # LOCATORS
 # Before Completion & Instruction Screen Locators
@@ -188,7 +205,7 @@ ${vf_A_upldDoc} =  xpath=//*[@text='UPLOAD DOCUMENT']
 
 # Document Upload Locators
 ${vf_A_uploadDocBtn} =  xpath=//*[@text='UPLOAD DOCUMENT']
-${vf_A_uploadDocCloseIcon} =  xpath=//*[@text='close']
+${vf_A_CloseIcon} =  xpath=//*[@text='close']
 ${vf_A_aadhaarPOIOption} =  xpath=//*[@text='Aadhaar']
 ${vf_A_aadhaarPOIOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_driversLicensePOIOption} =  xpath=//*[@text=concat('Driver', "'", 's license')]
@@ -216,22 +233,32 @@ ${vf_A_driverLicenseFsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageVie
 ${vf_A_payText} =  Choose a plan that suits you best
 ${vf_A_slctBtn} =  xpath=//*[@text='Select']
 ${vf_A_chsPlanBtn} =  xpath=//*[@text='Choose Plan']
+${vf_A_accOpeningTxt} =  xpath=//*[@text='Account Opening Fee']
 ${vf_A_phnTxtFld} =  xpath=//*[@text='Phone']
 ${vf_A_phnFld} =  xpath=(//*[@class='android.widget.EditText'])[2]
 ${vf_A_mailTxtFld} =  xpath=//*[@text='Email']
 ${vf_A_mailFld} =  xpath=(//*[@class='android.widget.EditText'])[3]
 ${vf_A_proceedBtn} =  xpath=//*[@text='PROCEED']
-${vf_A_cardPayment} =  xpath=//*[@text='Card Visa, MasterCard, RuPay & More']
+${vf_A_cardPaymentOpt} =  xpath=//*[@text='Card Visa, MasterCard, RuPay & More']
+${vf_A_upiPaymentOpt} =  xpath=//*[@text='UPI Instant payment using UPI App']
+${vf_A_netBankingPaymentOpt} =  xpath=//*[@text='Netbanking All Indian banks']
+${vf_A_walletPaymentOpt} =  xpath=//*[@text='Wallet Mobikwik & More']
+${vf_A_skipSavedCardLink} =  xpath=//*[@text='Skip Saved Cards']
+${vf_A_skipSavingCardLink} =  xpath=//*[@//*[@text='Skip saving card']
 ${vf_A_cardNumTxt} =  xpath=//*[@text='Card Number']
 ${vf_A_cardNumTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[1]
-${vf_A_nameTxt} =  xpath=//*[@text=concat('Card Holder', "'", 's name')]
+${vf_A_nameTxt} =  xpath=//*[@text=concat('Card Holder's name')]
 ${vf_A_nameTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[3]
 ${vf_A_expiryTxt} =  xpath=//*[@text='Expiry']
 ${vf_A_expiryTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[2]
 ${vf_A_cvvTxt} =  xpath=//*[@text='CVV']
 ${vf_A_cvvTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[4]
+${vf_A_rememberCardCheckbox} =  xpath=//*[@text='Remember Card']
 ${vf_A_pay399Btn} =  xpath=//*[@text='PAY ₹ 399']
+${vf_A_successBtn} =  xpath=//*[@text='Success']
 
 # Signature screen Locators
+${vf_A_terms&ConditionsTxt} =  xpath=//*[@text='Terms & Conditions']
+${vf_A_privacyCheckbox} =  xpath=//*[@text='']
 
-# Dashboard Card KYC Completion Locators 
+# Dashboard Card- KYC Completion Locators 
