@@ -204,7 +204,7 @@ KYC: Aadhaar Front & Back - POI
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify  
-    Upload Good Front And Back Side Of Aadhaar
+    Upload Good Front And Back Side Of Aadhaar As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion

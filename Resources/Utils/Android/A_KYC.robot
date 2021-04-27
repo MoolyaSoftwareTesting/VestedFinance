@@ -656,7 +656,7 @@ Upload Back Side Of Aadhaar As Proof Of Address And Verify
     Upload Back Side Of Aadhaar And Verify Success Message
     Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
 
-Upload Good Front And Back Side Of Aadhaar
+Upload Good Front And Back Side Of Aadhaar As POI
     Verify Document Upload In Proof Of Identification Popup
     Select Aadhaar And Verify Popups
     User Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
