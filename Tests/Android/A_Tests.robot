@@ -200,21 +200,13 @@ KYC: Aadhaar Front & Back - POI
     Signin With Non KYC Completed User
     Verify Account Status Screen
     Click on Start/Complete KYC Button
-    Log to Console  DONE 1
     Verify All Sections And Navigations Under KYC Introduction Screen
-    Log to Console  DONE 2
     User Fill All The Fields Under KYC Basic Details Screen And Verify
-    Log to Console  DONE 3
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    Log to Console  DONE 4
     User Fill All the Fields under KYC Identity Screen And Verify  
-    Log to Console  DONE 5
     Upload Good Front And Back Side Of Aadhaar
-    Log to Console  DONE 6
     Verify Sections And Navigations Under KYC Plan Payment Screen
-    Log to Console  DONE 6
     Verify All Sections And Navigations Under KYC Signature Screen
-    Log to Console  DONE 7
     Verify Steps Under Account Status Screen After KYC Completion
 
 # Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
