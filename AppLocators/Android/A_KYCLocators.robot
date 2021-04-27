@@ -1,7 +1,7 @@
 *** Variables ***
 #  Test data or expected values
 # KYC Not Completed Credential
-${e_validEmailForKYC} =  asha.kharat+19@moolya.com
+${e_validEmailForKYC} =  testingVF111+9@gmail.com
 ${e_validPasswordForKYC} =  Moolya@123
 
 # Before Completion & Instruction Screen
@@ -132,7 +132,6 @@ ${e_aadhaarBackUploadPopupHeading} =  Document Upload: Please upload the back si
 ${e_aadhaarBackUploadPopupDesc} =  Document Requirements
 ${e_aadhaarBackUploadPopupP1} =  Full Address
 ${e_aadhaarBackUploadPopupP2} =  Aadhaar Number
-${e_docUploadSuccessMsg} =  Document Uploaded
 ${e_aadhaarPoiUploadedSuccessMsg} =  Proof of ID: Aadhaar Uploaded Successfully
 ${e_aadhaarPoaUploadedSuccessMsg} =  Proof of Address: Aadhaar Uploaded Successfully
 ${e_panNumber} =  PAN number
@@ -141,6 +140,7 @@ ${e_docUploadPOAHeading} =  Document Upload: Proof of Address
 ${e_docUploadPOADesc1} =  Select a document to upload as proof of address.
 ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
 ${e_aadhaarBackSidePOADesc} =  I’ve verified that the name on my Aadhaar (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_docUploadSuccessMsg} =  Document Uploaded
 
 # Plan Payment
 ${e_walletPayment} =  Wallet Mobikwik & More
@@ -228,6 +228,7 @@ ${vf_A_bankStmtPOAOption} =  xpath=//*[@text='Bank statement']
 ${vf_A_bankStmtPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Bank statement']]
 ${vf_A_driverLicenseFsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's license (front side)')]
 ${vf_A_driverLicenseFsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (front side)')]]
+${vf_A_docUploadSuccessMsg} =  xpath=//*[@text='Document Uploaded']
 
 # Plan Payment screen Locators
 ${vf_A_payText} =  Choose a plan that suits you best
@@ -247,7 +248,7 @@ ${vf_A_skipSavedCardLink} =  xpath=//*[@text='Skip Saved Cards']
 ${vf_A_skipSavingCardLink} =  xpath=//*[@//*[@text='Skip saving card']
 ${vf_A_cardNumTxt} =  xpath=//*[@text='Card Number']
 ${vf_A_cardNumTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[1]
-${vf_A_nameTxt} =  xpath=//*[@text=concat('Card Holder's name')]
+${vf_A_nameTxt} =  xpath=//*[@text=concat('Card Holder', "'", 's name')]
 ${vf_A_nameTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[3]
 ${vf_A_expiryTxt} =  xpath=//*[@text='Expiry']
 ${vf_A_expiryTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[2]

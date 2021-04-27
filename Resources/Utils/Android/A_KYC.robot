@@ -63,6 +63,7 @@ Click On Back Arrow
     Log To Console  Clicked on Back arrow
 
 Verify KYC Introduction Screen
+    Sleep  3s
     Wait For Page Conatin Element  ${e_headingKYC}  5s  
     Verify Page Conatin Text  ${e_headingKYC}
     Verify Page Conatin Text  ${e_headingKYCTxt}
@@ -194,7 +195,7 @@ User Selects Enters Gender Phone Number
 # Investment Profile Screen
 
 Verify KYC Investment Profile Screen
-    Sleep  2s
+    Sleep  5s
     Verify Page Conatin Text  ${e_investProfileScreenHeading}
     Log To Console  Verified KYC Investment Profile Screen!
 
@@ -355,6 +356,7 @@ Verify Navigations Under KYC Investment Profile Screen
     Click On Back Arrow 
     Verify KYC Basic Details Screen
     Click On Next Button
+    Sleep  2s
     Click On Previous Button
     Verify KYC Basic Details Screen
     Click On Next Button
@@ -434,6 +436,7 @@ Verify Navigations Under KYC Identity Screen
     Click On Back Arrow 
     Verify KYC Investment Profile Screen
     Click On Next Button
+    Sleep  3s
     Click On Previous Button
     Verify KYC Investment Profile Screen
     Click On Next Button
@@ -586,8 +589,8 @@ Upload Front Side Of Aadhaar And Verify Success Message
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
-    Wait Until Page Contains  ${e_docUploadSuccessMsg}  10s
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Back side of Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
 
@@ -670,7 +673,7 @@ Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Addres
 # Plan Payment screen
 
 Verify Plan Payment Screen
-    Sleep  2s
+    Sleep  5s
     Verify Page Conatin Text  ${vf_A_payText}
     Log to Console  Verified Plan Payment Screen!
 
@@ -690,16 +693,18 @@ Verify Navigations Under KYC Plan Payment Screen
     Log To Console  Verified Back arrow And Previous button- Under KYC Plan Payment Screen!
 
 Enter Phone Number And Email For Payment
+    Sleep  5s
     Go Back On Android
     Wait For Page Conatin Element  ${e_feeTxt}  10s
     Verify Page Conatin Text   ${e_feeTxt}
     Verify Page Conatin Text   ${e_399Txt}
     Log To Console  Verified Account opening Fee!
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
+    Sleep  3s
     Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
     Log to Console  Phone Number Entered!
-    Sleep  5s
+    Sleep  3s
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
     Go Back On Android
@@ -723,6 +728,8 @@ Enter Card Details For Payment
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
     Log to Console  Expiry Entered!
+    Sleep  2s
+    Go Back On Android
     Wait And Click Element On Android  ${vf_A_nameTxt}
     Sleep  3s
     Go Back On Android
@@ -751,6 +758,7 @@ Make Payment Using Card Information
 
 # SL114
 Verify Sections And Navigations Under KYC Plan Payment Screen
+    Sleep  2s
     Verify Plan Payment Screen
     Verify Navigations Under KYC Plan Payment Screen
     Make Payment Using Card Information
@@ -829,6 +837,7 @@ Verify All Sections And Navigations Under KYC Signature Screen
 
 # Dashboard Card- KYC Completion
 Verify Steps Under Account Status Screen After KYC Completion
+    Sleep  3s
     Verify Page Conatin Text  ${e_stepsHeading}
     Verify Page Conatin Text  ${e_step1Submit}
     Verify Page Conatin Text  ${e_step1SubmitTxtAfterKYC}
