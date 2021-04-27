@@ -194,7 +194,7 @@ User Enters Only Code Without Password
     User Enters Only Code
 
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
-KYC: Aadhaar Front & Back - POI
+KYC: Aadhaar Front & Back- POI
     [Tags]  KYC  E2E1
     User Navigates To Signin Screen
     Signin With Non KYC Completed User
@@ -204,7 +204,7 @@ KYC: Aadhaar Front & Back - POI
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify  
-    Upload Good Front And Back Side Of Aadhaar As POI
+    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
@@ -212,8 +212,8 @@ KYC: Aadhaar Front & Back - POI
 # Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
 KYC: Aadhaar Front- POI & Aadhaar Back- POA
     [Tags]  KYC  E2E2
-    Click On Start Investing Button
-    Wait And Click Element On Android  ${vf_A_easySignInBtn}
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
     Verify Account Status Screen
     Click on Start/Complete KYC Button
     Verify All Sections And Navigations Under KYC Introduction Screen
@@ -221,6 +221,22 @@ KYC: Aadhaar Front- POI & Aadhaar Back- POA
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify
     Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
-    Verify Sections And Navigations Under KYC Plan Payment Scree
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
 
-
+# Happy Flow 3 E2E- POI: Aadhaar Full
+KYC: Aadhaar Full- POI
+    [Tags]  KYC  E2E3
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Good Full Aadhaar As Proof Of Identification
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion

@@ -135,7 +135,7 @@ ${e_aadhaarBackUploadPopupP2} =  Aadhaar Number
 ${e_aadhaarPoiUploadedSuccessMsg} =  Proof of ID: Aadhaar Uploaded Successfully
 ${e_aadhaarPoaUploadedSuccessMsg} =  Proof of Address: Aadhaar Uploaded Successfully
 ${e_panNumber} =  PAN number
-${e_dummyPAN} =  9999789478
+${e_dummyPAN} =  FORHK6876A
 ${e_docUploadPOAHeading} =  Document Upload: Proof of Address
 ${e_docUploadPOADesc1} =  Select a document to upload as proof of address.
 ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
@@ -221,6 +221,7 @@ ${vf_A_uploadBtn} =  xpath=//*[@text='UPLOAD']
 ${vf_A_chooseFromLib} =  xpath=//*[@text='Choose from Library...']
 ${vf_A_aadhaarFrontImg} =  xpath=//*[@text='AadhaarFront.jpg']
 ${vf_A_aadhaarBackImg} =  xpath=//*[@text='AadhaarBack.jpg']
+${vf_A_aadhaarFullImg} =  xpath=//*[@text='AadhaarFull.jpg']
 ${vf_A_panTextbox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_backAadhaarPOAOption} =  xpath=//*[@text='Aadhaar (back side)']
 ${vf_A_backAadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar (back side)']]

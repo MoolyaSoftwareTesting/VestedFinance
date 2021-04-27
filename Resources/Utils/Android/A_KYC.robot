@@ -525,7 +525,6 @@ Click On Aadhaar And Verify Popup
     Log To Console  Verified Confirm and Select Another Document button!
 
 Click On Aadhaar Back Side And Verify Popup
-    Scroll Down On Android  ${vf_A_backAadhaarPOAOption}
     Wait And Click Element On Android  ${vf_A_backAadhaarPOAOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
     Verify Page Conatin Text  ${e_aadhaarBackSidePOADesc}
@@ -570,7 +569,7 @@ Verify Upload Back Side Of Aadhaar Popup Under Proof Of Address
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupDesc}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP1}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP2}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPOIpopup}
+    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
     Verify Element Visibility  ${vf_A_uploadBtn}
     Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
     Log To Console  Verified Description, Image and Upload buttons in Back side Aadhaar upload Popup!
@@ -594,6 +593,14 @@ Upload Back Side Of Aadhaar And Verify Success Message
     Log To Console  Uploaded Back side of Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
 
+Upload Full Aadhaar And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
+    Log To Console  Uploaded Full Aadhaar
+    Log To Console  Verified Document Uploaded Success Message!
+
 Verify POI Uploaded Success Message
     [Arguments]  ${poiSuccessMsg}
     Verify Page Conatin Text  ${poiSuccessMsg}
@@ -609,7 +616,7 @@ Verify PAN field
     Verify Element Visibility  ${vf_A_panTextbox}
     Log To Console  PAN field displayed!
 
-User Enter Valid PAN Number In PAN Field
+Enter Valid PAN Number In PAN Field
     Verify PAN field
     Input Text  ${vf_A_panTextbox}  ${e_dummyPAN}
     Log To Console  Entered PAN number!
@@ -628,7 +635,7 @@ Select Aadhaar And Verify Popups
     Click On Confirm Button And Verify Aadhaar Popup
 
 # SL68: Click on Upload button and Upload Front + Back side of Aadhaar card
-User Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
     Click On Upload Button
     Upload Front Side Of Aadhaar And Verify Success Message
     Verify Upload Back Side Of Aadhaar Popup Under Proof Of Identification
@@ -645,6 +652,14 @@ Upload Front Side Of Aadhaar As Proof Of Identification And Verify
     Click On Close Icon
     Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
 
+# SL65: Upload Full Good Aadhaar
+Upload Full Aadhaar As Proof Of Identification And Verify
+    Click On Upload Button
+    Upload Full Aadhaar And Verify Success Message
+    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
+    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
+    Verify PAN field
+
 # SL73: Upload Good Back side Aadhaar as POA, after Front Aadhaar uploaded as POI
 Upload Back Side Of Aadhaar As Proof Of Address And Verify
     Click On Upload Button
@@ -656,18 +671,27 @@ Upload Back Side Of Aadhaar As Proof Of Address And Verify
     Upload Back Side Of Aadhaar And Verify Success Message
     Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
 
-Upload Good Front And Back Side Of Aadhaar As POI
+
+Upload Good Front And Back Side Of Aadhaar As Proof Of Identification
     Verify Document Upload In Proof Of Identification Popup
     Select Aadhaar And Verify Popups
-    User Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
-    User Enter Valid PAN Number In PAN Field
+    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+    Enter Valid PAN Number In PAN Field
     Log To Console  Filled KYC Identity Screen!
     Click On Next Button
 
 Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
+    Select Aadhaar And Verify Popups
     Upload Front Side Of Aadhaar As Proof Of Identification And Verify
     Upload Back Side Of Aadhaar As Proof Of Address And Verify
     User Enter Valid PAN Number In PAN Field
+    Click On Next Button
+
+Upload Good Full Aadhaar As Proof Of Identification
+    Select Aadhaar And Verify Popups
+    Upload Full Aadhaar As Proof Of Identification And Verify
+    Enter Valid PAN Number In PAN Field
+    Log To Console  Filled KYC Identity Screen!
     Click On Next Button
 
 # Plan Payment screen
