@@ -204,7 +204,7 @@ KYC: Aadhaar Front & Back- POI
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify  
-    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification
+    Upload Front And Back Side Of Aadhaar As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
@@ -220,7 +220,7 @@ KYC: Aadhaar Front- POI & Aadhaar Back- POA
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify
-    Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
+    Upload Aadhaar Front As POI And Back side As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
@@ -236,7 +236,88 @@ KYC: Aadhaar Full- POI
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
     User Fill All the Fields under KYC Identity Screen And Verify
-    Upload Good Full Aadhaar As Proof Of Identification
+    Upload Full Aadhaar As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 4 E2E- POI: Aadhaar Front And POA: Bank Statement
+KYC: Aadhaar Front- POI & Bank Statement- POA
+    [Tags]  KYC  E2E4
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Aadhaar Front As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 5 E2E- POI: Drivers License Front And POA: Drivers License Back
+KYC: Drivers License Front- POI & Drivers License Back- POA
+    [Tags]  KYC  E2E5
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Drivers License Front As POI And Back side As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 6 E2E- POI: Drivers License Front And Back side
+KYC: Drivers License Front- POI & Drivers License Back- POA
+    [Tags]  KYC  E2E6
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Front And Back Side Of Drivers License As POI
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 7 E2E- POI: PAN Card And POA: Bank Statement
+KYC: PAN Card- POI & Bank Statement- POA
+    [Tags]  KYC  E2E7
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload PAN Card As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 8 E2E- POI: Passport And POA: Bank Statement
+KYC: Passport- POI & Bank Statement- POA
+    [Tags]  KYC  E2E8
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Passport As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+

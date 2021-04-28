@@ -15,7 +15,7 @@ Signin With Non KYC Completed User
     Enter Email  ${e_validEmailForKYC}
     Enter Password  ${e_validPasswordForKYC}
     Click On Signin Button
-    # Pin should not be asked
+    # Pin is not asked
     Verify Dashboard Screen
 
 Verify All Steps Under Account Status Screen Before KYC
@@ -464,27 +464,22 @@ User Fill All the Fields under KYC Identity Screen And Verify
 
 # Document Upload
 
-Verify Description, Upload Options And Images Under Proof Of Identification Popup
+Verify Description, Upload Options And Images Under POI Popup
     Verify Page Conatin Text  ${e_docUploadPOIHeading}
     Verify Page Conatin Text  ${e_docUploadPOIDesc1}
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Log To Console  Verified Heading and Description under Proof Of Identification Popup!
-    # Recheck- Unable to scroll
-    # Verify Element Visibility  ${vf_A_aadhaarPOIOption}
-    # Verify Element Visibility  ${vf_A_aadhaarPOIOptionImg}
-    # Log To Console  Verified Aadhar option
-    # Verify Element Visibility  ${vf_A_driversLicensePOIOption}
-    # Verify Element Visibility  ${vf_A_driversLicenseOptionImg}
-    # Log To Console  Verified Drivers License option
-    # Swipe By Percent  90  50  20  20  5000
-    # Verify Element Visibility  ${vf_A_panCardPOIOption}
-    # Verify Element Visibility  ${vf_A_panCardOptionImg}
-    # Log To Console  Verified PAN card option
-    # Swipe By Percent  90  70  20  20  5000
-    # Verify Element Visibility  ${vf_A_passportPOIOption}
-    # Verify Element Visibility  ${vf_A_passportOptionImg}
-    # Log To Console  Verified Passport option
-    # Log To Console  Verified all Proof Of Identification upload options & their images!
+    Verify Element Visibility  ${vf_A_aadhaarPOIOption}
+    Verify Element Visibility  ${vf_A_aadhaarPOIOptionImg}
+    Verify Element Visibility  ${vf_A_driversLicensePOIOption}
+    Verify Element Visibility  ${vf_A_driversLicenseOptionImg}
+    Swipe By Percent  85  85  30  30  5000
+    Verify Element Visibility  ${vf_A_panCardOption}
+    Verify Element Visibility  ${vf_A_panCardPOIOptionImg}
+    Swipe By Percent  85  85  30  30  5000
+    Verify Element Visibility  ${vf_A_passportOption}
+    Verify Element Visibility  ${vf_A_passportPOIOptionImg}
+    Log To Console  Verified all Proof Of Identification upload options & their images!
 
 Click On Close Icon
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -496,94 +491,245 @@ Click On Close Icon
         Log To Console  Proof Of Identification Popup Closed!
     END
 
-Verify Proof Of Address Popup After Front Aadhaar Uploaded As Proof Of Identification
+Verify POA Popup After Front Aadhaar Uploaded As POI
     Verify Page Conatin Text  ${e_docUploadPOAHeading}
     Verify Page Conatin Text  ${e_docUploadPOADesc1}
     Log To Console  Verified Heading and Description under Proof Of Address Popup!
-    # Recheck- Unable to scroll
-    # Verify Element Visibility  ${vf_A_backAadhaarPOAOption}
-    # Verify Element Visibility  ${vf_A_backAadhaarPOAOptionImg}
-    # Log To Console  Verified Aadhar Back side
-    # Verify Element Visibility  ${vf_A_bankStmtPOAOption}
-    # Verify Element Visibility  ${vf_A_bankStmtPOAOptionImg}
-    # Log To Console  Verified Bank statement
-    # Swipe By Percent  90  50  20  20  5000
-    # Verify Element Visibility  ${vf_A_driverLicenseFsPOAOption}
-    # Verify Element Visibility  ${vf_A_driverLicenseFsPOAOptionImg}
-    # Log To Console  Verified all Proof Of Address upload options & their images!
+    Verify Element Visibility  ${vf_A_backAadhaarPOAOption}
+    Verify Element Visibility  ${vf_A_backAadhaarPOAOptionImg}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOption}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOptionImg}
+    Swipe By Percent  85  85  30  30  5000
+    Verify Element Visibility  ${vf_A_driverLicenseFsPOAOption}
+    Verify Element Visibility  ${vf_A_driverLicenseFsPOAOptionImg}
+    Log To Console  Verified all Proof Of Address upload options & their images!
 
-Click On Aadhaar And Verify Popup
+Verify POA Popup After Front Drivers License Uploaded As POI
+    Verify Page Conatin Text  ${e_docUploadPOAHeading}
+    Verify Page Conatin Text  ${e_docUploadPOADesc1}
+    Log To Console  Verified Heading and Description under Proof Of Address Popup!
+    Verify Element Visibility  ${vf_A_AadhaarPOAOption}
+    Verify Element Visibility  ${vf_A_AadhaarPOAOptionImg}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOption}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOptionImg}
+    Swipe By Percent  85  85  30  30  5000
+    Verify Element Visibility  ${vf_A_driverLicenseBsPOAOption}
+    Verify Element Visibility  ${vf_A_driverLicenseBsPOAOptionImg}
+    Log To Console  Verified all Proof Of Address upload options & their images!
+
+Verify Confirm Button Is Displayed
+    Verify Element Visibility  ${vf_A_confirmBtn}
+
+Verify Select Another Document Button Is Displayed
+    Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
+
+Verify Image Is Displayed In Popup
+    Verify Element Visibility  ${vf_A_imgInPopUp}
+
+Verify Upload Button Is Displayed
+    Verify Element Visibility  ${vf_A_uploadBtn}
+
+Click On Confirm Button
+    Wait And Click Element On Android  ${vf_A_confirmBtn}
+    
+Click On Upload Button
+    Wait And Click Element On Android  ${vf_A_uploadBtn}
+    Log To Console  Clicked on Upload Button
+
+Click On Aadhaar As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_aadhaarPOIOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
     Verify Page Conatin Text  ${e_aadhaarPOIDesc}
     Log To Console  Proof Of Identification Popup for Aadhaar id displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
+    Verify Image Is Displayed In Popup
     Log To Console  Verified Heading, Image and Description!
-    Verify Element Visibility  ${vf_A_confirmBtn}
-    Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
     Log To Console  Verified Confirm and Select Another Document button!
 
-Click On Aadhaar Back Side And Verify Popup
+Click On Drivers License As POI And Verify Popup
+    Wait And Click Element On Android  ${vf_A_driversLicensePOIOption}
+    Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
+    Verify Page Conatin Text  ${e_driversLicensePOIDesc}
+    Log To Console  Proof Of Identification Popup for Drivers License displayed
+    Verify Page Conatin Text  ${e_docUploadDesc2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Description!
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Confirm and Select Another Document button!
+
+Click On PAN Card As POI And Verify Popup
+    Wait And Click Element On Android  ${vf_A_panCardOption}
+    Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
+    Verify Page Conatin Text  ${e_panCardPOIDesc}
+    Log To Console  Proof Of Identification Popup for Drivers License displayed
+    Verify Page Conatin Text  ${e_docUploadDesc2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Description!
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Confirm and Select Another Document button!
+
+Click On Passport As POI And Verify Popup
+    Wait And Click Element On Android  ${vf_A_passportOption}
+    Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
+    Verify Page Conatin Text  ${e_passportPOIDesc}
+    Log To Console  Proof Of Identification Popup for Passport displayed
+    Verify Page Conatin Text  ${e_docUploadDesc2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Description!
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Confirm and Select Another Document button!
+
+Click On Aadhaar Back Side As POA And Verify Popup
     Wait And Click Element On Android  ${vf_A_backAadhaarPOAOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
     Verify Page Conatin Text  ${e_aadhaarBackSidePOADesc}
     Log To Console  Proof Of Address Popup for Aadhaar back side displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
+    Verify Image Is Displayed In Popup
     Log To Console  Verified Heading, Image and Description!
-    Verify Element Visibility  ${vf_A_confirmBtn}
-    Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Confirm and Select Another Document button!
+
+Click On Bank Statement As POA And Verify Popup
+    Wait And Click Element On Android  ${vf_A_bankStmtPOAOption}
+    Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
+    Verify Page Conatin Text  ${e_bankStmtPOADesc}
+    Log To Console  Proof Of Address Popup for Bank Statement displayed
+    Verify Page Conatin Text  ${e_docUploadDesc2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Description!
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Confirm and Select Another Document button!
+
+Click On Back Side Of Drivers License As POA And Verify Popup
+    Wait And Click Element On Android  ${vf_A_driverLicenseBsPOAOption}
+    Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
+    Verify Page Conatin Text  ${e_driversLicenseBsPOADesc}
+    Log To Console  Proof Of Address Popup for Bank Statement displayed
+    Verify Page Conatin Text  ${e_docUploadDesc2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Description!
+    Verify Confirm Button Is Displayed
+    Verify Select Another Document Button Is Displayed
     Log To Console  Verified Confirm and Select Another Document button!
 
 Click On Confirm Button And Verify Aadhaar Popup
-    Wait And Click Element On Android  ${vf_A_confirmBtn}
+    Click On Confirm Button
     Verify Page Conatin Text  ${e_aadhaarPOIPopupHeading}
     Log To Console  Document Upload- Please upload your Aadhaar Popup is displayed
-    Verify Page Conatin Text  ${e_aadhaarPOIPopupDesc}
-    Verify Page Conatin Text  ${e_aadhaarPOIPopupP1}
-    Verify Page Conatin Text  ${e_aadhaarPOIPopupP2}
-    Verify Page Conatin Text  ${e_aadhaarPOIPopupP3}
-    Verify Page Conatin Text  ${e_aadhaarPOIPopupP4}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP1}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP2}
+    Verify Page Conatin Text  ${e_aadhaarDocReqPOIPopupP3}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP3}
+    Verify Image Is Displayed In Popup
     Log To Console  Verified Heading, Image and Document Requirement Points!
-    Verify Element Visibility  ${vf_A_uploadBtn}
-    Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
     Log To Console  Verified Upload and Select Another Document button!
 
-Click On Upload Button
-    Wait And Click Element On Android  ${vf_A_uploadBtn}
-    Log To Console  Clicked on Upload Button
+Click On Confirm Button And Verify Drivers License Popup
+    Click On Confirm Button
+    Verify Page Conatin Text  ${e_driversLicensePOIPopupHeading}
+    Log To Console  Document Upload- Please upload Front side of Drivers License Popup is displayed
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP1}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP2}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP3}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Document Requirement Points!
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Upload and Select Another Document button!
 
-Verify Upload Back Side Of Aadhaar Popup Under Proof Of Identification
+Click On Confirm Button And Verify PAN Card Popup
+    Click On Confirm Button
+    Verify Page Conatin Text  ${e_panCardPOIPopupHeading}
+    Log To Console  Document Upload- Please upload your PAN Popup is displayed
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP1}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP2}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Document Requirement Points!
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Upload and Select Another Document button!
+
+Click On Confirm Button And Verify Passport Popup
+    Click On Confirm Button
+    Verify Page Conatin Text  ${e_passportPOIPopupHeading}
+    Log To Console  Document Upload- Please upload your Passport Popup is displayed
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP1}
+    Verify Page Conatin Text  ${e_docReqPOIPopupP2}
+    Verify Page Conatin Text  ${e_passportPOIPopupP3}
+    Verify Page Conatin Text  ${e_passportPOIPopupP4}
+    Verify Image Is Displayed In Popup
+    Log To Console  Verified Heading, Image and Document Requirement Points!
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Upload and Select Another Document button!
+
+Verify Upload Back Side Of Aadhaar Popup Under POI
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupHeading}
-    Verify Page Conatin Text  ${e_aadhaarBackUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP1}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP2}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
-    Verify Element Visibility  ${vf_A_uploadBtn}
+    Verify Image Is Displayed In Popup
+    Verify Upload Button Is Displayed
     Log To Console  Verified Description, Image and Upload button in Back side Aadhaar upload Popup!
 
-Verify Upload Back Side Of Aadhaar Popup Under Proof Of Address
+Verify Upload Back Side Of Drivers License Popup Under POI
+    Verify Page Conatin Text  ${e_driversLicenseBackUploadPopupHeading}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_clearPictureP1}
+    Verify Image Is Displayed In Popup
+    Verify Upload Button Is Displayed
+    Log To Console  Verified Description, Image and Upload button in Back side Drivers License upload Popup!
+
+Verify Upload Back Side Of Aadhaar Popup Under POA
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupHeading}
-    Verify Page Conatin Text  ${e_aadhaarBackUploadPopupDesc}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP1}
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP2}
-    Verify Element Visibility  ${vf_A_aadhaarImgInAadhaarPopup}
-    Verify Element Visibility  ${vf_A_uploadBtn}
-    Verify Element Visibility  ${vf_A_selectAnotherDocBtn}
+    Verify Image Is Displayed In Popup
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
     Log To Console  Verified Description, Image and Upload buttons in Back side Aadhaar upload Popup!
 
-Click On Confirm Button And Verify Aadhaar Back Side Popup
-    Wait And Click Element On Android  ${vf_A_confirmBtn}
-    Verify Upload Back Side Of Aadhaar Popup Under Proof Of Address
+Verify Upload Bank Statement Popup Under POA
+    Verify Page Conatin Text  ${e_bankStmtUploadPopupHeading}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_bankStmtUploadPopupP1}
+    Verify Page Conatin Text  ${e_bankStmtUploadPopupP2}
+    Verify Page Conatin Text  ${e_bankStmtUploadPopupP3}
+    Verify Image Is Displayed In Popup
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Description, Image and Upload buttons in Bank Statement upload Popup!
+
+Verify Upload Back Side Of Drivers License Popup Under POA
+    Verify Page Conatin Text  ${e_driversLicenseBsUploadPopupHeading}
+    Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
+    Verify Page Conatin Text  ${e_clearPictureP1}
+    Verify Image Is Displayed In Popup
+    Verify Upload Button Is Displayed
+    Verify Select Another Document Button Is Displayed
+    Log To Console  Verified Description, Image and Upload buttons in Back Side Of Drivers License upload Popup!
 
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
-    Log To Console  Verified Front Side Aadhaar upload Success Message!
+    Log To Console  Verified Front Side Aadhaar uploaded Success Message!
 
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
@@ -593,12 +739,53 @@ Upload Back Side Of Aadhaar And Verify Success Message
     Log To Console  Uploaded Back side of Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
 
-Upload Full Aadhaar And Verify Success Message
+Upload Front Side Of Drivers License And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_driversLicenseFrontImg}
+    Wait Until Page Contains  ${e_driversLicenseFrontUploadSuccessMsg}  5s
+    Verify Page Conatin Text  ${e_driversLicenseFrontUploadSuccessMsg}
+    Log To Console  Verified Front Side Drivers License uploaded Success Message!
+
+Upload PAN Card And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Swipe By Percent  70  70  20  20  5000
+    Wait And Click Element On Android  ${vf_A_panCardImg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
+    Log To Console  Uploaded PAN Card
+    Log To Console  Verified Document Uploaded Success Message!
+
+Upload Passport And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Swipe By Percent  70  70  20  20  5000
+    Wait And Click Element On Android  ${vf_A_passportImg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
+    Log To Console  Uploaded PAN Card
+    Log To Console  Verified Document Uploaded Success Message!
+
+Upload Full Aadhaar As POI And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Full Aadhaar
+    Log To Console  Verified Document Uploaded Success Message!
+
+Upload Bank Statement As POA And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_bankStmtImg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg}
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
+    Log To Console  Uploaded Bank Statement
+    Log To Console  Verified Document Uploaded Success Message!
+
+Upload Back Side Of Drivers License And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_driversLicenseBackImg}
+    Verify Page Conatin Text  ${e_docUploadSuccessMsg}
+    Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
+    Log To Console  Uploaded Back Side Of Drivers License
     Log To Console  Verified Document Uploaded Success Message!
 
 Verify POI Uploaded Success Message
@@ -621,77 +808,189 @@ Enter Valid PAN Number In PAN Field
     Input Text  ${vf_A_panTextbox}  ${e_dummyPAN}
     Log To Console  Entered PAN number!
 
-# SL62: Upload Document button under Document Verification section and Close pop up
-Verify Document Upload In Proof Of Identification Popup
+# SL62
+Verify Document Upload In POI Popup
     Click On Upload Document Button
     Click On Close Icon
 
-# SL63: Select Aadhaar to upload document as Proof Of Identification
-Select Aadhaar And Verify Popups
+# SL63
+Select Aadhaar As POI And Verify Popups
     Click On Upload Document Button
-    # Recheck
-    Verify Description, Upload Options And Images Under Proof Of Identification Popup
-    Click On Aadhaar And Verify Popup
+    Verify Description, Upload Options And Images Under POI Popup
+    Swipe By Percent  30  30  85  85  5000
+    Click On Aadhaar As POI And Verify Popup
     Click On Confirm Button And Verify Aadhaar Popup
 
-# SL68: Click on Upload button and Upload Front + Back side of Aadhaar card
-Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+# SL77 
+Select Drivers License As POI And Verify Popups
+    Click On Upload Document Button
+    Verify Description, Upload Options And Images Under POI Popup
+    Swipe By Percent  30  30  85  85  5000
+    Click On Drivers License As POI And Verify Popup
+    Click On Confirm Button And Verify Drivers License Popup
+
+# SL82
+Select PAN Card As POI And Verify Popups
+    Click On Upload Document Button
+    Verify Description, Upload Options And Images Under POI Popup
+    Click On PAN Card As POI And Verify Popup
+    Click On Confirm Button And Verify PAN Card Popup
+
+# SL88
+Select Passport As POI And Verify Popups
+    Click On Upload Document Button
+    Verify Description, Upload Options And Images Under POI Popup
+    Click On Passport As POI And Verify Popup
+    Click On Confirm Button And Verify Passport Popup
+
+# SL68
+Upload Front And Back Side Of Aadhaar As POI And Verify
     Click On Upload Button
     Upload Front Side Of Aadhaar And Verify Success Message
-    Verify Upload Back Side Of Aadhaar Popup Under Proof Of Identification
+    Verify Upload Back Side Of Aadhaar Popup Under POI
     Click On Upload Button
     Upload Back Side Of Aadhaar And Verify Success Message
-    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
-    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
+    Verify POI Uploaded Success Message  ${e_aadhaarPOIUploadedSuccessMsg}
+    Verify POA Uploaded Success Message  ${e_aadhaarPOAUploadedSuccessMsg}
     Verify PAN field
 
-# SL71: Upload only Good Front side of Aadhaar as POI
-Upload Front Side Of Aadhaar As Proof Of Identification And Verify
+# SL71
+Upload Front Side Of Aadhaar As POI And Verify
     Click On Upload Button
     Upload Front Side Of Aadhaar And Verify Success Message
     Click On Close Icon
-    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
+    Verify POI Uploaded Success Message  ${e_aadhaarPOIUploadedSuccessMsg}
 
-# SL65: Upload Full Good Aadhaar
-Upload Full Aadhaar As Proof Of Identification And Verify
+# SL79
+Upload Front Side Of Drivers License As POI And Verify
     Click On Upload Button
-    Upload Full Aadhaar And Verify Success Message
-    Verify POI Uploaded Success Message  ${e_aadhaarPoiUploadedSuccessMsg}
-    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
+    Upload Front Side Of Drivers License And Verify Success Message
+    Click On Close Icon
+    Verify POI Uploaded Success Message  ${e_driversLicensePOIUploadedSuccessMsg}
+
+# SL84
+Upload PAN Card As POI And Verify
+    Click On Upload Button
+    Upload PAN Card And Verify Success Message
+    Verify POI Uploaded Success Message  ${e_panCardPOIUploadedSuccessMsg}
+
+# SL90
+Upload Passport As POI And Verify
+    Click On Upload Button
+    Upload Passport And Verify Success Message
+    Verify POI Uploaded Success Message  ${e_passportPOIUploadedSuccessMsg}
+
+# SL81
+Upload Front And Back Side Of Drivers License As POI And Verify
+    Click On Upload Button
+    Upload Front Side Of Drivers License And Verify Success Message
+    Verify Upload Back Side Of Drivers License Popup Under POI
+    Click On Upload Button
+    Upload Back Side Of Drivers License And Verify Success Message
+    Verify POI Uploaded Success Message  ${e_driversLicensePOIUploadedSuccessMsg}
+    Verify POA Uploaded Success Message  ${e_driversLicensePOAUploadedSuccessMsg}
     Verify PAN field
 
-# SL73: Upload Good Back side Aadhaar as POA, after Front Aadhaar uploaded as POI
-Upload Back Side Of Aadhaar As Proof Of Address And Verify
+# SL65
+Upload Full Aadhaar As POI And Verify
     Click On Upload Button
-    # Recheck
-    Verify Proof Of Address Popup After Front Aadhaar Uploaded As Proof Of Identification
-    Click On Aadhaar Back Side And Verify Popup
-    Click On Confirm Button And Verify Aadhaar Back Side Popup
+    Upload Full Aadhaar As POI And Verify Success Message
+    Verify POI Uploaded Success Message  ${e_aadhaarPOIUploadedSuccessMsg}
+    Verify POA Uploaded Success Message  ${e_aadhaarPOAUploadedSuccessMsg}
+    Verify PAN field
+
+# SL73
+Upload Back Side Of Aadhaar As POA And Verify
+    Click On Upload Button
+    Verify POA Popup After Front Aadhaar Uploaded As POI
+    Swipe By Percent  30  30  85  85  5000
+    Click On Aadhaar Back Side As POA And Verify Popup
+    Click On Confirm Button
+    Verify Upload Back Side Of Aadhaar Popup Under POA
     Click On Upload Button
     Upload Back Side Of Aadhaar And Verify Success Message
-    Verify POA Uploaded Success Message  ${e_aadhaarPoaUploadedSuccessMsg}
+    Verify POA Uploaded Success Message  ${e_aadhaarPOAUploadedSuccessMsg}
+    Verify PAN field
 
+# SL76
+Upload Bank Statement As POA And Verify
+    Click On Upload Button
+    Verify POA Popup After Front Aadhaar Uploaded As POI
+    Click On Bank Statement As POA And Verify Popup
+    Click On Confirm Button
+    Verify Upload Bank Statement Popup Under POA
+    Click On Upload Button
+    Upload Bank Statement As POA And Verify Success Message
+    Verify POA Uploaded Success Message  ${e_bankStmtPOAUploadedSuccessMsg}
+    Verify PAN field
 
-Upload Good Front And Back Side Of Aadhaar As Proof Of Identification
-    Verify Document Upload In Proof Of Identification Popup
-    Select Aadhaar And Verify Popups
-    Upload Good Front And Back Side Of Aadhaar As Proof Of Identification And Verify
+# SL80
+Upload Back Side Of Drivers License As POA And Verify
+    Click On Upload Button
+    Verify POA Popup After Front Drivers License Uploaded As POI
+    Click On Back Side Of Drivers License As POA And Verify Popup
+    Click On Confirm Button
+    Verify Upload Back Side Of Drivers License Popup Under POA
+    Click On Upload Button
+    Upload Back Side Of Drivers License And Verify Success Message
+    Verify POA Uploaded Success Message  ${e_driversLicensePOAUploadedSuccessMsg}
+    Verify PAN field
+
+Upload Front And Back Side Of Aadhaar As POI
+    Verify Document Upload In POI Popup
+    Select Aadhaar As POI And Verify Popups
+    Upload Front And Back Side Of Aadhaar As POI And Verify
     Enter Valid PAN Number In PAN Field
     Log To Console  Filled KYC Identity Screen!
     Click On Next Button
 
-Upload Aadhaar Front As Proof Of Identification And Back side As Proof Of Address
-    Select Aadhaar And Verify Popups
-    Upload Front Side Of Aadhaar As Proof Of Identification And Verify
-    Upload Back Side Of Aadhaar As Proof Of Address And Verify
+Upload Aadhaar Front As POI And Back side As POA
+    Select Aadhaar As POI And Verify Popups
+    Upload Front Side Of Aadhaar As POI And Verify
+    Upload Back Side Of Aadhaar As POA And Verify
     User Enter Valid PAN Number In PAN Field
     Click On Next Button
 
-Upload Good Full Aadhaar As Proof Of Identification
-    Select Aadhaar And Verify Popups
-    Upload Full Aadhaar As Proof Of Identification And Verify
+Upload Full Aadhaar As POI
+    Select Aadhaar As POI And Verify Popups
+    Upload Full Aadhaar As POI And Verify
     Enter Valid PAN Number In PAN Field
     Log To Console  Filled KYC Identity Screen!
+    Click On Next Button
+
+Upload Aadhaar Front As POI And Bank Statement As POA
+    Select Aadhaar As POI And Verify Popups
+    Upload Front Side Of Aadhaar As POI And Verify
+    Upload Bank Statement As POA And Verify
+    User Enter Valid PAN Number In PAN Field
+    Click On Next Button
+
+Upload Drivers License Front As POI And Back side As POA
+    Select Drivers License As POI And Verify Popups
+    Upload Front Side Of Drivers License As POI And Verify
+    Upload Back Side Of Drivers License As POA And Verify
+    User Enter Valid PAN Number In PAN Field
+    Click On Next Button
+
+Upload Front And Back Side Of Drivers License As POI
+    Select Drivers License As POI And Verify Popups
+    Upload Front And Back Side Of Drivers License As POI And Verify
+    Enter Valid PAN Number In PAN Field
+    Log To Console  Filled KYC Identity Screen!
+    Click On Next Button
+
+Upload PAN Card As POI And Bank Statement As POA
+    Select PAN Card As POI And Verify Popups
+    Upload PAN Card As POI And Verify
+    Upload Bank Statement As POA And Verify
+    User Enter Valid PAN Number In PAN Field
+    Click On Next Button
+
+Upload Passport As POI And Bank Statement As POA
+    Select Passport As POI And Verify Popups
+    Upload Passport As POI And Verify
+    Upload Bank Statement As POA And Verify
+    User Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 # Plan Payment screen

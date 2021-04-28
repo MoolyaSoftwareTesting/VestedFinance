@@ -122,25 +122,47 @@ ${e_docUploadDesc2} =  If none of the documents meet the criteria set above, ple
 ${e_docUploadVerifyPOIHeading} =  Document Upload: Verify Proof of Identification
 ${e_aadhaarPOIDesc} =  I’ve verified that the name on my Aadhaar is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 ${e_aadhaarPOIPopupHeading} =  Document Upload: Please upload your Aadhaar
-${e_aadhaarPOIPopupDesc} =  Document Requirements
-${e_aadhaarPOIPopupP1} =  Full Name (must be an exact match to the name on your bank account)
-${e_aadhaarPOIPopupP2} =  Full Birthdate (dd/mm/yyyy)
-${e_aadhaarPOIPopupP3} =  Aadhaar Number
-${e_aadhaarPOIPopupP4} =  Full Address
+${e_docReqUploadPopupDesc} =  Document Requirements
+${e_docReqPOIPopupP1} =  Full Name (must be an exact match to the name on your bank account)
+${e_docReqPOIPopupP2} =  Full Birthdate (dd/mm/yyyy)
+${e_docReqPOIPopupP3} =  Full Address
+${e_aadhaarDocReqPOIPopupP3} =  Aadhaar Number
+${e_clearPictureP1} =  Clear Picture
+${e_passportPOIPopupP3} =  Passport Number
+${e_passportPOIPopupP4} =  Not Expired
 ${e_aadhaarFrontUploadSuccessMsg} =  Front side of Aadhaar uploaded successfully.
 ${e_aadhaarBackUploadPopupHeading} =  Document Upload: Please upload the back side of your Aadhaar
-${e_aadhaarBackUploadPopupDesc} =  Document Requirements
 ${e_aadhaarBackUploadPopupP1} =  Full Address
 ${e_aadhaarBackUploadPopupP2} =  Aadhaar Number
-${e_aadhaarPoiUploadedSuccessMsg} =  Proof of ID: Aadhaar Uploaded Successfully
-${e_aadhaarPoaUploadedSuccessMsg} =  Proof of Address: Aadhaar Uploaded Successfully
+${e_aadhaarPOIUploadedSuccessMsg} =  Proof of ID: Aadhaar Uploaded Successfully
+${e_aadhaarPOAUploadedSuccessMsg} =  Proof of Address: Aadhaar Uploaded Successfully
+${e_bankStmtPOAUploadedSuccessMsg} =  Proof of Address: Bank Statement Uploaded Successfully
+${e_driversLicensePOAUploadedSuccessMsg} =  Proof of Address: Drivers's License Uploaded Successfully
 ${e_panNumber} =  PAN number
 ${e_dummyPAN} =  FORHK6876A
+${e_driversLicensePOIDesc} =  I’ve verified that the name on my Driver's license is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_driversLicensePOIPopupHeading} =  Document Upload: Please upload the front side of your driver's license
+${e_driversLicenseBackUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
+${e_driversLicenseFrontUploadSuccessMsg} =  Front side of Driving license uploaded successfully.
+${e_driversLicensePOIUploadedSuccessMsg} =  Proof of ID: Drivers's License Uploaded Successfully
+${e_panCardPOIDesc} =  I’ve verified that the name on my PAN card is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_panCardPOIPopupHeading} =  Document Upload: Please upload your PAN
+${e_panCardPOIUploadedSuccessMsg} =  Proof of ID: Pan Card Uploaded Successfully
+${e_passportPOIDesc} =  I’ve verified that the name on my Passport is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_passportPOIPopupHeading} =  Document Upload: Please upload the front page of your passport
+${e_passportPOIUploadedSuccessMsg} =  Proof of ID: Passport Uploaded Successfully
 ${e_docUploadPOAHeading} =  Document Upload: Proof of Address
 ${e_docUploadPOADesc1} =  Select a document to upload as proof of address.
 ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
-${e_aadhaarBackSidePOADesc} =  I’ve verified that the name on my Aadhaar (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 ${e_docUploadSuccessMsg} =  Document Uploaded
+${e_aadhaarBackSidePOADesc} =  I’ve verified that the name on my Aadhaar (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_bankStmtPOADesc} =  I’ve verified that the name on my Bank statement is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_bankStmtUploadPopupHeading} =  Document Upload: Please upload your Bank Statement
+${e_bankStmtUploadPopupP1} =  Bank statement must not be over 3 months old.
+${e_bankStmtUploadPopupP2} =  Passbook is not accepted.
+${e_bankStmtUploadPopupP3} =  Your name, address, and recent transactions are visible.
+${e_driversLicenseBsPOADesc} =  I’ve verified that the name on my Driver's license (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_driversLicenseBsUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
 
 # Plan Payment
 ${e_walletPayment} =  Wallet Mobikwik & More
@@ -216,20 +238,29 @@ ${vf_A_passportOption} =  xpath=//*[@text='Passport']
 ${vf_A_passportPOIOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Passport']]
 ${vf_A_confirmBtn} =  xpath=//*[@text='CONFIRM']
 ${vf_A_selectAnotherDocBtn} =  xpath=//*[@text='SELECT ANOTHER DOCUMENT']
-${vf_A_aadhaarImgInAadhaarPopup} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup']]
+${vf_A_imgInPopUp} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup']]
 ${vf_A_uploadBtn} =  xpath=//*[@text='UPLOAD']
 ${vf_A_chooseFromLib} =  xpath=//*[@text='Choose from Library...']
 ${vf_A_aadhaarFrontImg} =  xpath=//*[@text='AadhaarFront.jpg']
 ${vf_A_aadhaarBackImg} =  xpath=//*[@text='AadhaarBack.jpg']
 ${vf_A_aadhaarFullImg} =  xpath=//*[@text='AadhaarFull.jpg']
+${vf_A_bankStmtImg} =  xpath=//*[@text='BankStmt.jpg']
+${vf_A_driversLicenseFrontImg} =  xpath=//*[@text='DLfront.jpeg']
+${vf_A_driversLicenseBackImg} =  xpath=//*[@text='DLback.jpeg']
+${vf_A_panCardImg} =  xpath=//*[@text='PanCard.jpg']
+${vf_A_passportImg} =  xpath=//*[@text='Passport.jpg']
+${vf_A_docUploadSuccessMsg} =  xpath=//*[@text='Document Uploaded']
 ${vf_A_panTextbox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_backAadhaarPOAOption} =  xpath=//*[@text='Aadhaar (back side)']
 ${vf_A_backAadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar (back side)']]
+${vf_A_AadhaarPOAOption} =  xpath=//*[@text='Aadhaar'
+${vf_A_AadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_bankStmtPOAOption} =  xpath=//*[@text='Bank statement']
 ${vf_A_bankStmtPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Bank statement']]
 ${vf_A_driverLicenseFsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's license (front side)')]
 ${vf_A_driverLicenseFsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (front side)')]]
-${vf_A_docUploadSuccessMsg} =  xpath=//*[@text='Document Uploaded']
+${vf_A_driverLicenseBsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's license (back side)')]
+${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (back side)')]]
 
 # Plan Payment screen Locators
 ${vf_A_payText} =  Choose a plan that suits you best
@@ -262,5 +293,3 @@ ${vf_A_successBtn} =  xpath=//*[@text='Success']
 # Signature screen Locators
 ${vf_A_terms&ConditionsTxt} =  xpath=//*[@text='Terms & Conditions']
 ${vf_A_privacyCheckbox} =  xpath=//*[@text='']
-
-# Dashboard Card- KYC Completion Locators 
