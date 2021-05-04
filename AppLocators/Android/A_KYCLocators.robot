@@ -1,7 +1,7 @@
 *** Variables ***
 #  Test data or expected values
 # KYC Not Completed Credential
-${e_validEmailForKYC} =  testingVF111+9@gmail.com
+${e_validEmailForKYC} =  testingVF111+22@gmail.com
 ${e_validPasswordForKYC} =  Moolya@123
 
 # Before Completion & Instruction Screen
@@ -165,6 +165,7 @@ ${e_driversLicenseBsPOADesc} =  I’ve verified that the name on my Driver's lic
 ${e_driversLicenseBsUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
 
 # Plan Payment
+${e_payText} =  Choose a plan that suits you best
 ${e_walletPayment} =  Wallet Mobikwik & More
 ${e_cardNum} =  5104 0600 0000 0008
 ${e_cvv} =  123
@@ -197,6 +198,7 @@ ${e_step2ApproveTxtAfterKYC} =  It takes 1-3 business days to review. We may rea
 
 # LOCATORS
 # Before Completion & Instruction Screen Locators
+${vf_A_awesomeLink} =  xpath=//*[@text='AWESOME!']
 ${vf_A_viewAllStepsLink} =  xpath=//*[@text='View all steps']
 ${vf_A_doneButton} =  xpath=//*[@text='DONE']
 ${vf_A_startKYCBtn} =  xpath=//*[@text='Start KYC']
@@ -219,6 +221,10 @@ ${vf_A_chkBx4Txt} =  xpath=//*[@text='None of the these apply to me']
 
 # Investment Profile Screen Locators
 ${vf_A_primarySrcDropdown} =  xpath=//*[@text='arrow_drop_down']
+${vf_A_primarySourceOpt1Txt} =  xpath=//*[@text='Employment']
+${vf_A_primarySourceOpt2Txt} =  xpath=//*[@text='Gift']
+${vf_A_primarySourceOpt3Txt} =  xpath=//*[@text='Inheritance / Trust']
+${vf_A_primarySourceOpt4Txt} =  xpath=//*[@text='Investment Proceeds']
 
 # Identity Screen Locators
 ${vf_A_cntryIndia} =  xpath=//*[@text='India']
@@ -244,7 +250,7 @@ ${vf_A_chooseFromLib} =  xpath=//*[@text='Choose from Library...']
 ${vf_A_aadhaarFrontImg} =  xpath=//*[@text='AadhaarFront.jpg']
 ${vf_A_aadhaarBackImg} =  xpath=//*[@text='AadhaarBack.jpg']
 ${vf_A_aadhaarFullImg} =  xpath=//*[@text='AadhaarFull.jpg']
-${vf_A_bankStmtImg} =  xpath=//*[@text='BankStmt.jpg']
+${vf_A_bankStmtImg} =  xpath=//*[@text='BankStmt.jpeg']
 ${vf_A_driversLicenseFrontImg} =  xpath=//*[@text='DLfront.jpeg']
 ${vf_A_driversLicenseBackImg} =  xpath=//*[@text='DLback.jpeg']
 ${vf_A_panCardImg} =  xpath=//*[@text='PanCard.jpg']
@@ -253,7 +259,7 @@ ${vf_A_docUploadSuccessMsg} =  xpath=//*[@text='Document Uploaded']
 ${vf_A_panTextbox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_backAadhaarPOAOption} =  xpath=//*[@text='Aadhaar (back side)']
 ${vf_A_backAadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar (back side)']]
-${vf_A_AadhaarPOAOption} =  xpath=//*[@text='Aadhaar'
+${vf_A_AadhaarPOAOption} =  xpath=//*[@text='Aadhaar']
 ${vf_A_AadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_bankStmtPOAOption} =  xpath=//*[@text='Bank statement']
 ${vf_A_bankStmtPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Bank statement']]
@@ -263,7 +269,6 @@ ${vf_A_driverLicenseBsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's lic
 ${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (back side)')]]
 
 # Plan Payment screen Locators
-${vf_A_payText} =  Choose a plan that suits you best
 ${vf_A_slctBtn} =  xpath=//*[@text='Select']
 ${vf_A_chsPlanBtn} =  xpath=//*[@text='Choose Plan']
 ${vf_A_accOpeningTxt} =  xpath=//*[@text='Account Opening Fee']

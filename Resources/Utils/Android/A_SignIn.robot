@@ -33,6 +33,7 @@ Enter Email
 
 Enter Password
     [Arguments]  ${password}
+    Wait For Element Visibility On Android  ${vf_A_password}
     Verify Element Visibility  ${vf_A_password}
     Clear Text  ${vf_A_password}
     Input Text  ${vf_A_password}  ${password}
@@ -85,9 +86,11 @@ Click On Next Button
     Log to Console  Clicked on Next Button
 
 Signin With Valid Credentials - Funded Account
+    Swipe By Percent  70  70  20  20  5000
     Enter Email  ${e_validEmail}
     Enter Password  ${e_validPassword}
     Click On Signin Button
+    Sleep  3s
     Enter Pin  ${e_validPin}
     Click On Continue Button
     Verify Dashboard Screen

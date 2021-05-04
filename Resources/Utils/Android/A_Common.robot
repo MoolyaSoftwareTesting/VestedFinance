@@ -9,6 +9,8 @@ Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
 Resource   ../../../AppLocators/Android/A_ForgotPasswordLocators.robot
 Resource   ../../../AppLocators/Android/A_KYCLocators.robot
+Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
+Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 
 *** Keywords ***
 
@@ -17,7 +19,7 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML02_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3    browserstack.uploadMedia=${browserstack.uploadMedia}
+    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML02_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3
     Landing Page Is Loaded Completely
 
 Open App On Real Device
@@ -150,7 +152,9 @@ Verify Open With Label
     Element Should Be Visible  ${vf_A_openWithLabel}
 
 Close Android Keyboard
-    Hide Keyboard
+    ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
+    Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
+    ...    ELSE  Log To Console  Continue
 
 Go Back On Android
     Go Back

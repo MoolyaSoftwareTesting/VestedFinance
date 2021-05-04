@@ -7,6 +7,7 @@ Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 *** Keywords ***
 Landing Page Is Loaded Completely
     Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
+    Log to Console  Landing page is displayed
 
 App logo & text is displayed at the top
     Verify Element Visibility  ${vf_A_vestedIcon}

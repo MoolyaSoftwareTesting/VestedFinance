@@ -2,7 +2,7 @@
 
 #Test data or expected values
 ${e_emailPrefix} =  moolya+auto_     
-${e_emailDomain} =  @gmail.com 
+${e_emailDomain} =  @moolya.com 
 ${e_invalidEmailID} =  $##$$*@gmail.com
 ${e_invalidEmailDomain} =  testabc
 ${e_existingAccErrMsg} =  An account with the given email already exists.
@@ -17,3 +17,5 @@ ${e_pwd8CharMsg} =  Password must contain at least 8 characters
 ${vf_A_verficationCodeLabel} =  xpath=//*[@text='Verification Code']
 ${vf_A_confirmAccBtn} =  xpath=//*[@text='Confirm Account']
 ${vf_A_resendCodeLink} =  xpath=//*[@text='Resend it']
+${vf_A_CloseBtn} =  xpath=//*[@resource-id='com.android.chrome:id/close_button']
+${vf_A_SavePwdNeverBtn} =  xpath=//*[@text='Never']

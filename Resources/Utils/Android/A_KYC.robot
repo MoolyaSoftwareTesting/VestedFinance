@@ -4,16 +4,25 @@ Library     AppiumLibrary
 
 
 *** Keywords ***
-# Before Completion & Instruction Screen
 
+Signup And Signin For KYC
+    User Navigates To Signup Screen
+    User Enters New Email Password & Signups
+    User Lands On Verficiation Code Screen
+    Landing Page Is Loaded Completely
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed Account
+
+# Before Completion & Instruction Screen
 Click on Start/Complete KYC Button
     Click On Element If Visibile  ${vf_A_startKYCBtn}
     Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
     Log To Console  Clicked on Start/Complete KYC Button
 
-Signin With Non KYC Completed User
-    Enter Email  ${e_validEmailForKYC}
-    Enter Password  ${e_validPasswordForKYC}
+Signin With Non KYC Completed Account
+    Swipe By Percent  80  70  20  20  5000
+    Enter Email  ${emailIDGenerated}
+    Enter Password  ${e_validPassword}
     Click On Signin Button
     # Pin is not asked
     Verify Dashboard Screen
@@ -33,6 +42,7 @@ Click On Done Button And Verify Screen
     Verify Dashboard Screen
 
 Verify All Sections And Navigations Under KYC Introduction Screen
+    Wait For Page Conatin Element  ${e_headingKYC}  3s
     Verify Page Conatin Text  ${e_headingKYC}
     Verify Page Conatin Text  ${e_headingKYCTxt}
     Verify Page Conatin Text  ${e_whatDoYouNeed}
@@ -50,6 +60,7 @@ Verify All Sections And Navigations Under KYC Introduction Screen
 
 # SL43
 Verify Account Status Screen
+    Wait And Click Element On Android  ${vf_A_awesomeLink}
     Verify Element Visibility  ${vf_A_viewAllStepsLink}
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
     Log To Console  Clicked on View All Steps Link
@@ -64,8 +75,9 @@ Click On Back Arrow
 
 Verify KYC Introduction Screen
     Sleep  3s
-    Wait For Page Conatin Element  ${e_headingKYC}  5s  
+    Wait For Page Conatin Element  ${e_headingKYC}  15s  
     Verify Page Conatin Text  ${e_headingKYC}
+    Wait For Page Conatin Element  ${e_headingKYC}  15s 
     Verify Page Conatin Text  ${e_headingKYCTxt}
     Log To Console  Verified KYC Introduction Screen!
 
@@ -81,7 +93,7 @@ Click On Accept And Continue Button And Verify Basic Details Screen
     Log To Console  Clicked on Accept and Continue Button
     Verify KYC Basic Details Screen
 
-# SL44: Verify Back, Accept and Continue buttons works in KYC intro screen
+# SL44
 Verify Navigations Under KYC Introduction Screen
     Click On Back Arrow And Verify Dashboard Screen
     Click On Accept And Continue Button And Verify Basic Details Screen
@@ -92,6 +104,7 @@ Verify KYC Basic Details Screen
     Sleep  2s
     Go Back On Android
     ${e_letsGetToKnowYou1} =  Replace Characters  ${e_letsGetToKnowYou}  '  ’
+    Wait For Page Conatin Element  ${e_letsGetToKnowYou1}  5s
     Verify Page Conatin Text  ${e_letsGetToKnowYou1}
     Log To Console  Verified KYC Basic Details Screen!
 
@@ -100,12 +113,12 @@ Click On Previous Button
     Log To Console  Clicked on Previous Button
 
 Verify Navigations Under KYC Basic Details Screen
-    Go Back On Android
+    Close Android Keyboard
     Click On Back Arrow 
     Verify KYC Introduction Screen
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Sleep  2s
-    Go Back On Android
+    Close Android Keyboard
     Click On Previous Button
     Verify KYC Introduction Screen
     Sleep  3s
@@ -115,7 +128,7 @@ Verify Navigations Under KYC Basic Details Screen
 
 Enter Phone Number
     [Arguments]  ${text}
-    Sleep  2s
+    Sleep  5s
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_phoneNum}
     Go Back On Android
@@ -159,7 +172,7 @@ Verify All Checkboxes
 # SL45, SL50
 User Fill All The Fields Under KYC Basic Details Screen And Verify
     Verify Navigations Under KYC Basic Details Screen
-    Enter Phone Number  ${e_dummyPAN}
+    Enter Phone Number  ${e_dummyPhoneNo}
     Sleep  2s
     Select A Gender  ${e_maleGender}
     Click On Next Button
@@ -187,7 +200,7 @@ User Selects Enters Gender Phone Number
     Wait And Click Element On Android  ${vf_A_phoneNum}
     Input Text  ${vf_A_phoneNum}  ${e_dummyPhoneNo}
     Close Android Keyboard
-    Sleep  2s
+    Sleep  3s
     Click Element  ${vf_A_maleGender}
     Log to Console  Male Selected!
 
@@ -195,7 +208,7 @@ User Selects Enters Gender Phone Number
 # Investment Profile Screen
 
 Verify KYC Investment Profile Screen
-    Sleep  5s
+    Wait For Page Conatin Element  ${e_investProfileScreenHeading}  5s
     Verify Page Conatin Text  ${e_investProfileScreenHeading}
     Log To Console  Verified KYC Investment Profile Screen!
 
@@ -301,14 +314,21 @@ Select Option Under Total Net Worth
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
-    Swipe By Percent  70  70  20  20  5000
+    Sleep  5s
     Verify Page Conatin Text  ${e_primarySource}
     Log To Console  Verified Primary Source section
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
     Sleep  3s
-    Click Text  ${option}
-    # Verify all options pending
-    Log To Console  Clicked on option - ${option}
+    FOR  ${i}  IN RANGE  1  4
+        ${isElementVisible} =  Run Keyword And Return Status  Element Should Be Visible  ${option}
+        IF   ${isElementVisible}
+            Wait For Element Visibility On Android  ${option}
+            Click Element  ${option}
+            Log To Console  Clicked on option - ${option}
+        ELSE
+            Swipe By Percent  70  70  40  40  5000
+        END
+    END
 
 Select Option Under Number Of Deposits And Withdrawals
     [Arguments]  ${option}
@@ -340,6 +360,7 @@ Select Option Under Money Deposit
 Select Option Under Investments Made
     [Arguments]  ${option}
     Swipe By Percent  80  70  20  20  5000
+    Swipe By Percent  80  70  20  20  5000
     Verify Page Conatin Text  ${e_investmentsMade}
     Verify Page Conatin Text  ${e_investmentsMadeOpt1Txt}
     Verify Page Conatin Text  ${e_investmentsMadeOpt2Txt}
@@ -351,12 +372,12 @@ Select Option Under Investments Made
     ...     ELSE  Log To Console  Invalid Option
     Log To Console  Clicked on option - ${option}
 
-# SL51: Verify if Previous button and Back arrow works
+# SL51
 Verify Navigations Under KYC Investment Profile Screen
     Click On Back Arrow 
     Verify KYC Basic Details Screen
     Click On Next Button
-    Sleep  2s
+    Sleep  5s
     Click On Previous Button
     Verify KYC Basic Details Screen
     Click On Next Button
@@ -380,7 +401,7 @@ User Fill All The Fields Under KYC Investment Profile Screen And Verify
 # Identity Screen
 
 Verify Identity Screen
-    Sleep  2s
+    Wait For Page Conatin Element  ${e_identityScreenHeading}  8s
     Verify Page Conatin Text  ${e_identityScreenHeading}
     Log To Console  Verified KYC Identity Screen!
 
@@ -488,7 +509,7 @@ Click On Close Icon
     IF   ${isPopupVisible}  
         Log To Console  Proof Of Identification Popup is Not Closed!
     ELSE   
-        Log To Console  Proof Of Identification Popup Closed!
+        Log To Console  Verified Close Proof Of Identification Popup!
     END
 
 Verify POA Popup After Front Aadhaar Uploaded As POI
@@ -515,6 +536,19 @@ Verify POA Popup After Front Drivers License Uploaded As POI
     Swipe By Percent  85  85  30  30  5000
     Verify Element Visibility  ${vf_A_driverLicenseBsPOAOption}
     Verify Element Visibility  ${vf_A_driverLicenseBsPOAOptionImg}
+    Log To Console  Verified all Proof Of Address upload options & their images!
+
+Verify POA Popup After PAN Card Uploaded As POI
+    Verify Page Conatin Text  ${e_docUploadPOAHeading}
+    Verify Page Conatin Text  ${e_docUploadPOADesc1}
+    Log To Console  Verified Heading and Description under Proof Of Address Popup!
+    Verify Element Visibility  ${vf_A_AadhaarPOAOption}
+    Verify Element Visibility  ${vf_A_AadhaarPOAOptionImg}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOption}
+    Verify Element Visibility  ${vf_A_bankStmtPOAOptionImg}
+    Swipe By Percent  85  85  30  30  5000
+    Verify Element Visibility  ${vf_A_driverLicenseFsPOAOption}
+    Verify Element Visibility  ${vf_A_driverLicenseFsPOAOptionImg}
     Log To Console  Verified all Proof Of Address upload options & their images!
 
 Verify Confirm Button Is Displayed
@@ -734,7 +768,7 @@ Upload Front Side Of Aadhaar And Verify Success Message
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Back side of Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
@@ -748,18 +782,16 @@ Upload Front Side Of Drivers License And Verify Success Message
 
 Upload PAN Card And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
-    Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_panCardImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded PAN Card
     Log To Console  Verified Document Uploaded Success Message!
 
 Upload Passport And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
-    Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_passportImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded PAN Card
     Log To Console  Verified Document Uploaded Success Message!
@@ -767,7 +799,7 @@ Upload Passport And Verify Success Message
 Upload Full Aadhaar As POI And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg} 
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Full Aadhaar
     Log To Console  Verified Document Uploaded Success Message!
@@ -775,7 +807,7 @@ Upload Full Aadhaar As POI And Verify Success Message
 Upload Bank Statement As POA And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_bankStmtImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg}
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Bank Statement
     Log To Console  Verified Document Uploaded Success Message!
@@ -783,7 +815,7 @@ Upload Bank Statement As POA And Verify Success Message
 Upload Back Side Of Drivers License And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_driversLicenseBackImg}
-    Verify Page Conatin Text  ${e_docUploadSuccessMsg}
+    Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Back Side Of Drivers License
     Log To Console  Verified Document Uploaded Success Message!
@@ -915,14 +947,13 @@ Upload Back Side Of Aadhaar As POA And Verify
 # SL76
 Upload Bank Statement As POA And Verify
     Click On Upload Button
-    Verify POA Popup After Front Aadhaar Uploaded As POI
+    Verify POA Popup After PAN Card Uploaded As POI
     Click On Bank Statement As POA And Verify Popup
     Click On Confirm Button
     Verify Upload Bank Statement Popup Under POA
     Click On Upload Button
     Upload Bank Statement As POA And Verify Success Message
     Verify POA Uploaded Success Message  ${e_bankStmtPOAUploadedSuccessMsg}
-    Verify PAN field
 
 # SL80
 Upload Back Side Of Drivers License As POA And Verify
@@ -948,7 +979,7 @@ Upload Aadhaar Front As POI And Back side As POA
     Select Aadhaar As POI And Verify Popups
     Upload Front Side Of Aadhaar As POI And Verify
     Upload Back Side Of Aadhaar As POA And Verify
-    User Enter Valid PAN Number In PAN Field
+    Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 Upload Full Aadhaar As POI
@@ -962,14 +993,14 @@ Upload Aadhaar Front As POI And Bank Statement As POA
     Select Aadhaar As POI And Verify Popups
     Upload Front Side Of Aadhaar As POI And Verify
     Upload Bank Statement As POA And Verify
-    User Enter Valid PAN Number In PAN Field
+    Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 Upload Drivers License Front As POI And Back side As POA
     Select Drivers License As POI And Verify Popups
     Upload Front Side Of Drivers License As POI And Verify
     Upload Back Side Of Drivers License As POA And Verify
-    User Enter Valid PAN Number In PAN Field
+    Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 Upload Front And Back Side Of Drivers License As POI
@@ -983,24 +1014,23 @@ Upload PAN Card As POI And Bank Statement As POA
     Select PAN Card As POI And Verify Popups
     Upload PAN Card As POI And Verify
     Upload Bank Statement As POA And Verify
-    User Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 Upload Passport As POI And Bank Statement As POA
     Select Passport As POI And Verify Popups
     Upload Passport As POI And Verify
     Upload Bank Statement As POA And Verify
-    User Enter Valid PAN Number In PAN Field
+    Enter Valid PAN Number In PAN Field
     Click On Next Button
 
 # Plan Payment screen
 
 Verify Plan Payment Screen
-    Sleep  5s
-    Verify Page Conatin Text  ${vf_A_payText}
+    Wait For Page Conatin Element  ${e_payText}  5s
+    Verify Page Conatin Text  ${e_payText}
     Log to Console  Verified Plan Payment Screen!
 
-# SL51: Verify if Previous button and Back arrow works
+# SL51
 Verify Navigations Under KYC Plan Payment Screen
     Click On Back Arrow 
     Sleep  2s
@@ -1023,11 +1053,11 @@ Enter Phone Number And Email For Payment
     Verify Page Conatin Text   ${e_399Txt}
     Log To Console  Verified Account opening Fee!
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
-    Sleep  3s
+    Sleep  5s
     Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
     Log to Console  Phone Number Entered!
-    Sleep  3s
+    Sleep  5s
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
     Go Back On Android
@@ -1044,19 +1074,19 @@ Enter Card Details For Payment
     Log to Console  Verified all Payment options!
     Wait And Click Element On Android  ${vf_A_cardPaymentOpt}
     Click On Element If Visibile  ${vf_A_skipSavedCardLink}
-    Sleep  3s
+    Sleep  5s
     Go Back On Android
     Input Text  ${vf_A_cardNumTxtFld}  ${e_cardNum}
     Log to Console  Card Number Entered!
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
     Log to Console  Expiry Entered!
-    Sleep  2s
-    Go Back On Android
-    Wait And Click Element On Android  ${vf_A_nameTxt}
     Sleep  3s
     Go Back On Android
-    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_nameTxt}
+    Sleep  5s
+    Go Back On Android
+    Sleep  3s
     Input Text  ${vf_A_nameTxtFld}  ${e_hldrName}
     Log to Console  Name Entered!
     Wait And Click Element On Android  ${vf_A_cvvTxt}
@@ -1089,7 +1119,7 @@ Verify Sections And Navigations Under KYC Plan Payment Screen
 # Signature screen
 
 Verify Signature Screen
-    Sleep  5s
+    Wait For Page Conatin Element  ${e_signatureScreenHeading}  5s
     Verify Page Conatin Text  ${e_signatureScreenHeading}
     Log to Console  Verified Signature Screen!
 
@@ -1115,7 +1145,7 @@ Verify DriveWealths Agreements Section And Link
     Verify Page Conatin Text  ${e_driveWealthHeading}
     Verify Page Conatin Text  ${e_driveWealthDesc}
     Click Text  ${e_driveWealthHeading}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_driveWealthScreen}  5s
     Verify Page Conatin Text  ${e_driveWealthScreen}
     Go Back On Android
     Log to Console  Verified DriveWealths Agreements Section And Link!
@@ -1130,7 +1160,7 @@ Verify Esign Agreement Link
 Verify Advisory Agreement Link
     Verify Page Conatin Text  ${e_advisoryAgreement}
     Click Text  ${e_advisoryAgreement}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_advisoryAgreementPdf}  5s
     Verify Page Conatin Text  ${e_advisoryAgreementPdf}
     Go Back On Android
     Log to Console  Verified Advisory Agreement Link!
@@ -1160,7 +1190,7 @@ Verify All Sections And Navigations Under KYC Signature Screen
 
 # Dashboard Card- KYC Completion
 Verify Steps Under Account Status Screen After KYC Completion
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_stepsHeading}  5s
     Verify Page Conatin Text  ${e_stepsHeading}
     Verify Page Conatin Text  ${e_step1Submit}
     Verify Page Conatin Text  ${e_step1SubmitTxtAfterKYC}
