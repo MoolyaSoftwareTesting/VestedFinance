@@ -3,8 +3,8 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Open App On Real Device
-# Suite Setup  Open App On Browserstack
+# Suite Setup  Open App On Real Device
+Suite Setup  Open App On Browserstack
 # Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
@@ -12,10 +12,10 @@ Suite Teardown  Quit Android Application
 # robot -d Results Tests/Android/A_Tests.robot
  
 # Executing Specific Tag: 
-# robot -d Results -i Profile2 Tests/Android/A_Tests.robot
+# robot -d Results -i Signin1 Tests/Android/A_Tests.robot
  
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i Profile2 Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i Signin1 Tests/Android/A_Tests.robot
 
 
 
@@ -69,6 +69,7 @@ Signin With Invalid Login Credentials
     User Navigates To Signin Screen
     Signin With Invalid Credentials
 
+# Recheck
 # Note: Error Msg Needs To Be Verified
 Signin With Social Account - Apple With Invalid Login Credentials
     [Tags]  SL13  Signin
@@ -77,7 +78,7 @@ Signin With Social Account - Apple With Invalid Login Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-# Note: Fail- User Is Not Navigating To Dashboard. So, Dashboard Screen Is Not Verified
+#Recheck: Google Verification code is asked
 Google With Valid Login Credentials
     [Tags]  SL14  Signin
     [Teardown]  Rest Android Application
@@ -86,7 +87,7 @@ Google With Valid Login Credentials
     Signin With Valid Credentials - Google
     Verify Dashboard Screen
 
-#Fail
+#Recheck
 #Pre-req: To Be Executed After SL14
 Previously Loggedin Account Is Displayed In Google Social Signin
     [Tags]  SL18  Signin
@@ -96,7 +97,6 @@ Previously Loggedin Account Is Displayed In Google Social Signin
     Choose An Gmail Account From The Existing Accounts
     Verify Dashboard Screen
 
-#Fail
 # Invalid Google Login
 Google With Invalid Login Credentials
     [Tags]  SL15  Signin
@@ -105,7 +105,7 @@ Google With Invalid Login Credentials
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
-#Fail
+#Recheck: Invalid Pwd Error msg is not appearing
 # Invalid Facebook Login
 Facebook With Invalid Login Credentials
     [Tags]  SL17  Signin
@@ -114,6 +114,7 @@ Facebook With Invalid Login Credentials
     Click On Continue With Facebook Button
     Signin With Invalid Credentials - Facebook
 
+#Recheck
 # Valid Facebook Login: Fail- User is navigating back to Landing page
 Facebook With Valid Login Credentials
     [Tags]  SL16  Signin
@@ -123,6 +124,7 @@ Facebook With Valid Login Credentials
     Signin With Valid Credentials - Facebook
     Verify Dashboard Screen
 
+#Recheck
 # Signup With Valid Credentials
 Signup With New Email & Password
     [Tags]  SL23  Signup
@@ -327,7 +329,7 @@ KYC: Passport- POI & Bank Statement- POA
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
 
-# Profile- Funded Account
+# Profile- Premium Account
 Verify Navigations Under Profile Screen
     [Tags]  Profile1
     [Teardown]  Rest Android Application
@@ -341,7 +343,8 @@ Verify Navigations Under Profile Screen
 
 # Profile- For KYC Finished Account But Not Approved
 Navigations Under History Section For KYC Finished Account
-    [Tags]  Profile
+    [Tags]  Profile1
+    [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Finished Account
     Click On Profile Button
@@ -352,7 +355,7 @@ Navigations Under History Section For KYC Finished Account
 
 # Profile- History for KYC Incomplete Account
 Navigations Under History Section For KYC Incomplete Account
-    [Tags]  Profile2
+    [Tags]  Profile
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Click On Profile Button
@@ -361,11 +364,50 @@ Navigations Under History Section For KYC Incomplete Account
     Click On Account Statements And Verify Complete KYC Popup
     Click On Tax Documents And Verify Complete KYC Popup
 
-# Subscription plan- Premium Subscription
-Navigations Under Premium Subscription Plan
+# Premium Subscription- KYC Finished Account with Basic plan
+Premium Subscription With Card
     [Tags]  Subscription
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Finished Account
     Click On Profile Button
     Navigate To Payment Plan Screen And Verify Contents
+    Verify Select Button Under Basic Plan
+    Subscribe Premium Plan With Card
+
+# Premium Subscription- KYC Finished Account with Basic plan
+Premium Subscription With UPI
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Finished Account
+    Click On Profile Button
+    Navigate To Payment Plan Screen And Verify Contents
+    Subscribe Premium Plan With UPI
+
+# Downgrade Premium Subscription- Premium Account
+Downgrade Premium Subscription
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Premium Account
+    Click On Profile Button
+    Downgrade Premium Plan To Basic
+
+# Premium Subscription- KYC approved Premium Account
+Navigate To Vest Upsell And Try To Buy Vest
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account
+    Navigate To Vest Upsell And Buy Vest
+
+
+
+
+
+
+
+
+
+    

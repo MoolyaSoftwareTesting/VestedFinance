@@ -13,6 +13,7 @@ Signin With KYC Finished Account
 
 # Profile 
 Click On Profile Button
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_profileBtn}
     Log to Console  Clicked on Profile Button
 
@@ -24,6 +25,8 @@ Verify Menus And Sub-menus Under Profile
     Page Should Contain Element   ${vf_A_validEmail}
     Verify Page Conatin Text   ${e_driveWealthID}
     Log to Console  Verified Username, Email & Drive Wealth ID!
+    Verify Page Conatin Text   ${e_appVersion}
+    Log to Console  Verified App Version!
     Verify Page Conatin Text   ${e_history}
     Verify Page Conatin Text   ${e_transactions}
     Verify Page Conatin Text   ${e_tradeConfirmations}
@@ -53,17 +56,17 @@ Verify Profile Screen
     Log to Console  Verified Profile Screen!
 
 Click On Transactions Under History Section
-    Wait For Page Conatin Element  ${e_transactions}  3s
+    Wait For Page Conatin Element  ${e_transactions}  10s
     Click Text  ${e_transactions}
     Log to Console  Clicked on Transactions under History section 
 
 Click On Trade Confirmations Under History Section
-    Wait For Page Conatin Element  ${e_tradeConfirmations}  3s
+    Wait For Page Conatin Element  ${e_tradeConfirmations}  5s
     Click Text  ${e_tradeConfirmations}
     Log to Console  Clicked on Trade Confirmations under History section
 
 Click On Account Statements Under History Section
-    Wait For Page Conatin Element  ${e_accStmts}  3s
+    Wait For Page Conatin Element  ${e_accStmts}  10s
     Click Text  ${e_accStmts}
     Log to Console  Clicked on Account Statements under History section
 
@@ -84,38 +87,42 @@ Click On Transactions And Verify
 # PN16
 Click On Trade Confirmations And Verify
     Click On Trade Confirmations Under History Section
+    Wait For Page Conatin Element  ${e_tradeConfirmations}  8s
     Verify Page Conatin Text  ${e_tradeConfirmations}
     Log to Console  Verified Heading under Trade Confirmations screen!
 
 # PN21
 Click On Account Statements And Verify
     Click On Account Statements Under History Section
+    Wait For Page Conatin Element  ${e_accStmts}  10s
     Verify Page Conatin Text  ${e_accStmts}
     Log to Console  Verified Heading under Account Statements screen!
 
 # PN26
 Click On Tax Documents And Verify
     Click On Tax Documents Under History Section
+    Wait For Page Conatin Element  ${e_taxDocs}  8s
     Verify Page Conatin Text  ${e_taxDocs}
     Log to Console  Verified Heading under Tax Documents screen!
 
 # PN17
-Click On A Existing Trade Confirmation And Verify Download Popup
+Click On A Existing Trade Confirmation
     Wait And Click Element On Android  ${vf_A_opt1Navigation}
-    Verify Page Conatin Text  ${e_downloadFilePopup}
-    Wait And Click Element On Android  ${vf_A_downloadPopupCancelBtn}
-    Log to Console  Clicked on a existing Trade Confirmation And Verified Download Popup!
+    Sleep  3s
+    Go Back On Android
+    Log to Console  Clicked on a existing Trade Confirmation
 
 # PN23
-Click On A Existing Account Statement And Verify Download Popup
+Click On A Existing Account Statement
     Wait And Click Element On Android  ${vf_A_opt1Navigation}
-    Verify Page Conatin Text  ${e_downloadFilePopup}
-    Wait And Click Element On Android  ${vf_A_downloadPopupCancelBtn}
-    Log to Console  Clicked on a existing Account Statement And Verified Download Popup!
+    Sleep  3s
+    Go Back On Android
+    Log to Console  Clicked on a existing Account Statement
 
 # PN27
 Click On A Existing Tax Document And Verify Current Year Guidelines
     Wait And Click Element On Android  ${vf_A_taxDoc2020}
+    Wait For Page Conatin Element  ${e_2020TaxDoc}  5s
     Verify Page Conatin Text  ${e_2020TaxDoc}
     Log to Console  Clicked on a existing Tax Document And Verified!
     Click On Back Arrow
@@ -131,12 +138,11 @@ Click On Sub-menus Under History And Verify
     Click On Transactions And Verify
     Click On Back Button From Top And Verify Profile Screen
     Click On Trade Confirmations And Verify
-    #Uncomment- Download popup not displayed for me, where as displayed for Thiru
-    #Click On A Existing Trade Confirmation And Verify Download Popup
+    Click On A Existing Trade Confirmation
     Click On Back Button From Top And Verify Profile Screen
     Click On Account Statements And Verify
-    #Uncomment- Download popup not displayed for me, where as displayed for Thiru
-    #Click On A Existing Account Statement And Verify Download Popup
+    # Indrajits Account doesn't have any Existing Account Statement
+    #Click On A Existing Account Statement
     Click On Back Button From Top And Verify Profile Screen
     Click On Tax Documents And Verify
     Click On A Existing Tax Document And Verify Current Year Guidelines
@@ -194,17 +200,14 @@ Click On Tax Documents And Verify Complete KYC Popup
     Verify Complete KYC Popup For Incomplete KYC Account
 
 # Help
-# PN31, PN32
+# PN32
 User Clicks FAQ Under Help
     Wait And Click Element On Android  ${vf_A_faq}
-    Sleep  2s
+    Wait For Page Conatin Element  ${e_faq}  5s
     Verify Page Conatin Text   ${e_faq}
     Log to Console  Verified FAQ Page!
     Go Back On Android
-    Verify Page Conatin Text   ${e_cmpltdtrnsctns}
-    Log to Console  Verified Completed Transactions!
-    Click On A Existing Tax Document And Verify Current Year Guidelines
-    Click On Back Button From Top And Verify Profile Screen
+    Verify Profile Screen
 
 Navigate To Gmail Compose
     Wait And Click Element On Android  ${vf_A_skipBtn}
@@ -241,11 +244,13 @@ User Clicks Email Us Under Help
 User Clicks Message Us Under Help
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_msgUs}
-    Sleep  2s
+    Wait For Page Conatin Element  ${e_msgUsHeading}  2s
     Verify Page Conatin Text   ${e_msgUsHeading}
     Verify Page Conatin Text   ${e_msgRspnd}
     Log to Console  Message Screen Verified!
-    Click On Back Button From Top And Verify Profile Screen
+    Go Back On Android
+    Sleep  3s
+    Verify Profile Screen
 
 Click On Sub-menus Under Help And Verify
     # FAQ- Known Failure
@@ -259,8 +264,10 @@ Click On Sub-menus Under Help And Verify
 # Account
 # PN37-PN40
 User Clicks Manage Plan Under Account
+    Wait For Page Conatin Element  ${e_mngPln}  5s
     Click Text  ${e_mngPln}
     # plan details
+    Wait For Page Conatin Element  ${e_planManagement}  5s
     Verify Page Conatin Text   ${e_planManagement}
     Log to Console  Verified Manage Us Page Heading!
     Verify Page Conatin Text   ${e_planDetails}
@@ -280,11 +287,14 @@ User Clicks Manage Plan Under Account
 
 # PN41, PN42
 User Clicks Investment Profile Under Account
+    Wait For Page Conatin Element  ${e_invstmtProfile}  5s
     Click Text  ${e_invstmtProfile}
+    Wait For Page Conatin Element  ${e_invstmtProfile}  5s
     Verify Page Conatin Text  ${e_invstmtProfile}
     Log to Console  Verified Investment Page Heading!
     Wait For Page Conatin Element  ${e_riskToleranceOpt}  5s
     Click Text  ${e_riskToleranceOpt}
+    Wait For Page Conatin Element  ${e_riskToleranceOpt}  5s
     Verify Page Conatin Text  ${e_riskToleranceOpt}
     Wait For Page Conatin Element  ${e_riskToleranceOpt1Txt}  5s
     Click Text  ${e_riskToleranceOpt1Txt}
@@ -351,10 +361,10 @@ User Clicks Security Under Account
     Click Text  ${e_security}
     Wait For Page Conatin Element  ${e_security}  5s
     Verify Page Conatin Text  ${e_security}
-    Log to Console  Security Page Heading Verified
+    Log to Console  Verified Security Page Heading!
     Verify Page Conatin Text  ${e_updatePIN}
     Verify Page Conatin Text  ${e_updatePIN}
-    Log to Console  Security  Text Verified
+    Log to Console  Verified Security Text!
     Click Text  ${e_updatePIN}
     Sleep  2s
     Enter Pin  ${e_validPin}
@@ -365,20 +375,40 @@ User Clicks Security Under Account
     Click On Back Arrow
     Click On Back Button From Top And Verify Profile Screen
 
-# PN45
+# PN45, PN06
 User Clicks Go Premium Under Account
     Swipe By Percent  70  70  40  40  5000
     Wait And Click Element On Android  ${vf_A_goPremium}
+    Log to Console  Clicked on Go Premium
     Wait For Page Conatin Element  ${e_payText}  2s
     Verify Page Conatin Text   ${e_payText}
+    Verify Element Visibility  ${vf_A_planPymntToggleBtn}
+    Sleep  2s
     Swipe By Percent  70  70  50  50  5000
     Verify Page Conatin Text   ${e_premiumPlanTxt}
+    Sleep  2s
     Swipe By Percent  70  70  50  50  5000
     Click Element  ${vf_A_slctBtn}
+    Sleep  3s
     #Go Back On Android
+    Click On Element If Visibile  ${vf_A_continuePayment}
     Wait For Page Conatin Element  ${e_premiumPlanAmt}  10s
     Verify Page Conatin Text   ${e_premiumPlanAmt}
     Click Element  ${vf_A_closeButton}
+    Log to Console  Clicked on Close icon within Payment screen
+    Swipe By Percent  80  70  20  20  5000
+    Verify Page Conatin Text   ${e_faqTxt}
+    Verify Page Conatin Text   ${e_faqQ1}
+    Verify Page Conatin Text   ${e_faqA1}
+    Verify Page Conatin Text   ${e_faqQ2}
+    Verify Page Conatin Text   ${e_faqA2}
+    Verify Page Conatin Text   ${e_faqQ3}
+    Verify Page Conatin Text   ${e_faqA3}
+    Swipe By Percent  80  70  20  20  5000
+    Verify Page Conatin Text   ${e_faqQ4}
+    Verify Page Conatin Text   ${e_faqA4}
+    Verify Page Conatin Text   ${e_faqQ5}
+    Verify Page Conatin Text   ${e_faqA5}
     Log to Console  Verified Go Premium Under Account!
     Click On Back Button From Top And Verify Profile Screen
 

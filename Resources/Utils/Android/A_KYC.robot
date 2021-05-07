@@ -60,7 +60,6 @@ Verify All Sections And Navigations Under KYC Introduction Screen
 
 # SL43
 Verify Account Status Screen
-    Wait And Click Element On Android  ${vf_A_awesomeLink}
     Verify Element Visibility  ${vf_A_viewAllStepsLink}
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
     Log To Console  Clicked on View All Steps Link
@@ -214,6 +213,7 @@ Verify KYC Investment Profile Screen
 
 Select Option Under Risk tolerance
     [Arguments]  ${option}
+    Wait For Page Conatin Element  ${e_riskTolerance}  5s
     Verify Page Conatin Text  ${e_riskTolerance}
     Verify Page Conatin Text  ${e_riskToleranceOpt1Txt}
     ${e_riskToleranceOpt1Desc1} =  Replace Characters  ${e_riskToleranceOpt1Desc}  ’  '
@@ -235,6 +235,7 @@ Select Option Under Risk tolerance
 Select Option Under Investing Frequency
     [Arguments]  ${option}
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_investingFrequency}  5s
     Verify Page Conatin Text  ${e_investingFrequency}
     Verify Page Conatin Text  ${e_investingFrequencyOpt1Txt}
     Verify Page Conatin Text  ${e_investingFrequencyOpt2Txt}
@@ -249,6 +250,7 @@ Select Option Under Investing Frequency
 Select Option Under Investing Experience
     [Arguments]  ${option}
     Swipe By Percent  80  70  20  40  5000
+    Wait For Page Conatin Element  ${e_investingExperience}  5s
     Verify Page Conatin Text  ${e_investingExperience}
     Verify Page Conatin Text  ${e_investingExperienceOpt1Txt}
     Verify Page Conatin Text  ${e_investingExperienceOpt2Txt}
@@ -267,6 +269,7 @@ Select Option Under Investing Experience
 Select Option Under Yearly Income 
     [Arguments]  ${option}
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_yearlyIncome}  5s
     Verify Page Conatin Text  ${e_yearlyIncome}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt1Txt}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt2Txt}
@@ -283,6 +286,7 @@ Select Option Under Yearly Income
 Select Option Under Liquid Net Worth
     [Arguments]  ${option}
     Swipe By Percent  60  70  30  20  5000
+    Wait For Page Conatin Element  ${e_liquidNetWorth}  5s
     Verify Page Conatin Text  ${e_liquidNetWorth}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt1Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt2Txt}
@@ -299,6 +303,7 @@ Select Option Under Liquid Net Worth
 Select Option Under Total Net Worth
     [Arguments]  ${option}
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_totalNetWorth}  5s
     Verify Page Conatin Text  ${e_totalNetWorth}
     Verify Page Conatin Text  ${e_totalNetWorthOpt1Txt}
     Verify Page Conatin Text  ${e_totalNetWorthOpt2Txt}
@@ -314,6 +319,7 @@ Select Option Under Total Net Worth
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
+    # Swipe By Percent  70  70  20  20  5000
     Sleep  5s
     Verify Page Conatin Text  ${e_primarySource}
     Log To Console  Verified Primary Source section
@@ -325,6 +331,7 @@ Select Option Under Primary Source Dropdown
             Wait For Element Visibility On Android  ${option}
             Click Element  ${option}
             Log To Console  Clicked on option - ${option}
+            Exit For Loop If    ${isElementVisible}
         ELSE
             Swipe By Percent  70  70  40  40  5000
         END
@@ -332,6 +339,8 @@ Select Option Under Primary Source Dropdown
 
 Select Option Under Number Of Deposits And Withdrawals
     [Arguments]  ${option}
+    Swipe By Percent  70  70  20  20  5000
+    Wait For Page Conatin Element  ${e_depositsAndWithdrawals}  8s
     Verify Page Conatin Text  ${e_depositsAndWithdrawals}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt1Txt}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt2Txt}
@@ -391,7 +400,7 @@ User Fill All The Fields Under KYC Investment Profile Screen And Verify
     Select Option Under Yearly Income  ${e_yearlyIncomeOpt1Txt}
     Select Option Under Liquid Net Worth  ${e_liquidNetWorthOpt1Txt}
     Select Option Under Total Net Worth  ${e_totalNetWorthOpt1Txt}
-    Select Option Under Primary Source Dropdown  ${e_primarySourceOpt1Txt}
+    Select Option Under Primary Source Dropdown  ${vf_A_primarySourceOpt1Txt}
     Select Option Under Number Of Deposits And Withdrawals  ${e_depositsAndWithdrawalsOpt1Txt}
     Select Option Under Money Deposit  ${e_moneyDepositOpt1Txt}
     Select Option Under Investments Made  ${e_investmentsMadeOpt2Txt}
@@ -760,6 +769,14 @@ Verify Upload Back Side Of Drivers License Popup Under POA
 
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    #Pull File  ${dest_pathBS}  decode=False
+    Wait And Click Element On Android  ${vf_A_hamburgerMenu}
+    Log To Console  Click1
+    Click Text  ${e_imagesGallery}
+    Log To Console  Click2
+    Click Text  ${e_picturesFolder}
+    Log To Console  Click3
+    Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
@@ -1046,12 +1063,6 @@ Verify Navigations Under KYC Plan Payment Screen
     Log To Console  Verified Back arrow And Previous button- Under KYC Plan Payment Screen!
 
 Enter Phone Number And Email For Payment
-    Sleep  5s
-    Go Back On Android
-    Wait For Page Conatin Element  ${e_feeTxt}  10s
-    Verify Page Conatin Text   ${e_feeTxt}
-    Verify Page Conatin Text   ${e_399Txt}
-    Log To Console  Verified Account opening Fee!
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
     Sleep  5s
     Go Back On Android
@@ -1066,17 +1077,11 @@ Enter Phone Number And Email For Payment
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_proceedBtn}
 
-Enter Card Details For Payment
-    Verify Page Contains Element On Android  ${vf_A_cardPaymentOpt}
-    Verify Page Contains Element On Android  ${vf_A_upiPaymentOpt}
-    Verify Page Contains Element On Android  ${vf_A_netBankingPaymentOpt}
-    Verify Page Contains Element On Android  ${vf_A_walletPaymentOpt}
-    Log to Console  Verified all Payment options!
-    Wait And Click Element On Android  ${vf_A_cardPaymentOpt}
-    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
+Enter Card Details Into Fields
+    [Arguments]  ${cardNum}
     Sleep  5s
     Go Back On Android
-    Input Text  ${vf_A_cardNumTxtFld}  ${e_cardNum}
+    Input Text  ${vf_A_cardNumTxtFld}  ${cardNum}
     Log to Console  Card Number Entered!
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
@@ -1085,14 +1090,26 @@ Enter Card Details For Payment
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_nameTxt}
     Sleep  5s
-    Go Back On Android
     Sleep  3s
+    Close Android Keyboard
     Input Text  ${vf_A_nameTxtFld}  ${e_hldrName}
     Log to Console  Name Entered!
     Wait And Click Element On Android  ${vf_A_cvvTxt}
     Input Text  ${vf_A_cvvTxtFld}  ${e_cvv}
     Log to Console  CVV Entered!
+    Sleep  3s
+    Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_rememberCardCheckbox}
+
+Enter Card Details For Payment
+    Verify Page Contains Element On Android  ${vf_A_cardPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_upiPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_netBankingPaymentOpt}
+    Verify Page Contains Element On Android  ${vf_A_walletPaymentOpt}
+    Log to Console  Verified all Payment options!
+    Wait And Click Element On Android  ${vf_A_cardPaymentOpt}
+    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
+    Enter Card Details Into Fields  ${e_cardNum}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
     Log to Console  Pay Button Clicked!
 
@@ -1101,7 +1118,12 @@ Make Payment Using Card Information
     Swipe By Percent  50  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_slctBtn}
     Log to Console  Clicked on Select Button!
-    Sleep  5s
+    Sleep  8s
+    Go Back On Android
+    Wait For Page Conatin Element  ${e_feeTxt}  10s
+    Verify Page Conatin Text   ${e_feeTxt}
+    Verify Page Conatin Text   ${e_399Txt}
+    Log To Console  Verified Account opening Fee!
     Enter Phone Number And Email For Payment
     Enter Card Details For Payment
     Sleep  5s

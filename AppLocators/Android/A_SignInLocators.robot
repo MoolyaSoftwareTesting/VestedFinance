@@ -23,8 +23,8 @@ ${e_FbEmailId} =  username@example.com
 ${e_FbPwd} =  passwordsimply
 
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
-${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click Forgot password to reset it
-${e_invalidFacebookLoginErrorTxt} =   Your Apple ID or password was incorrect
+${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click ‘Forgot password’ to reset it
+${e_invalidFacebookLoginErrorTxt} =  Incorrect password. Did you forget your password? 
 ${e_emptyFieldErrorTxt} =  Please fill out this field
 ${e_dashboardTitle} =  Dashboard | Vested Finance
 ${e_signInAsDiffUser} =  Sign in as a different user?

@@ -1,5 +1,6 @@
 *** Variables ***
 #  Test data or expected values
+${dest_pathBS} =  /sdcard/Pictures/AadhaarFront.jpg
 # KYC Not Completed Credential
 ${e_validEmailForKYC} =  testingVF111+22@gmail.com
 ${e_validPasswordForKYC} =  Moolya@123
@@ -69,20 +70,6 @@ ${e_totalNetWorthOpt2Txt} =  10 to 30 lakh rupees
 ${e_totalNetWorthOpt3Txt} =  30 to 1 crore rupees
 ${e_totalNetWorthOpt4Txt} =  1+ crore rupees
 ${e_primarySource} =  What is your primary source of investment?
-${e_primarySourceOpt1Txt} =  Employment
-${e_primarySourceOpt2Txt} =  Gift
-${e_primarySourceOpt3Txt} =  Inheritance / Trust
-${e_primarySourceOpt4Txt} =  Investment Proceeds
-${e_primarySourceOpt5Txt} =  Savings
-${e_primarySourceOpt6Txt} =  Retirement Funds
-${e_primarySourceOpt7Txt} =  Gambling
-${e_primarySourceOpt8Txt} =  Legal Settlement
-${e_primarySourceOpt9Txt} =  Spouse / Parent
-${e_primarySourceOpt10Txt} =  Unemployment / Disability
-${e_primarySourceOpt11Txt} =  Rollover
-${e_primarySourceOpt12Txt} =  Rental Income
-${e_primarySourceOpt13Txt} =  Sale of Business
-${e_primarySourceOpt14Txt} =  Insurance Proceeds
 ${e_depositsAndWithdrawals} =  In the next 12 months, how many deposits and withdrawals do you plan to make with your Vested account?
 ${e_depositsAndWithdrawalsOpt1Txt} =  0 to 5
 ${e_depositsAndWithdrawalsOpt2Txt} =  6 to 10
@@ -225,6 +212,21 @@ ${vf_A_primarySourceOpt1Txt} =  xpath=//*[@text='Employment']
 ${vf_A_primarySourceOpt2Txt} =  xpath=//*[@text='Gift']
 ${vf_A_primarySourceOpt3Txt} =  xpath=//*[@text='Inheritance / Trust']
 ${vf_A_primarySourceOpt4Txt} =  xpath=//*[@text='Investment Proceeds']
+${vf_A_primarySrcDropdown} =  xpath=//*[@text='arrow_drop_down']
+${vf_A_primarySourceOpt1Txt} =  xpath=//*[@text='Employment']
+${vf_A_primarySourceOpt2Txt} =  xpath=//*[@text='Gift']
+${vf_A_primarySourceOpt3Txt} =  xpath=//*[@text='Inheritance / Trust']
+${vf_A_primarySourceOpt4Txt} =  xpath=//*[@text='Investment Proceeds']
+${vf_A_primarySourceOpt5Txt} =  xpath=//*[@text='Savings']
+${vf_A_primarySourceOpt6Txt} =  xpath=//*[@text='Retirement Funds']
+${vf_A_primarySourceOpt7Txt} =  xpath=//*[@text='Gambling']
+${vf_A_primarySourceOpt8Txt} =  xpath=//*[@text='Legal Settlement']
+${vf_A_primarySourceOpt9Txt} =  xpath=//*[@text='Spouse / Parent']
+${vf_A_primarySourceOpt10Txt} =  xpath=//*[@text='Unemployment / Disability']
+${vf_A_primarySourceOpt11Txt} =  xpath=//*[@text='Rollover']
+${vf_A_primarySourceOpt12Txt} =  xpath=//*[@text='Rental Income']
+${vf_A_primarySourceOpt13Txt} =  xpath=//*[@text='Sale of Business']
+${vf_A_primarySourceOpt14Txt} =  xpath=//*[@text='Insurance Proceeds']
 
 # Identity Screen Locators
 ${vf_A_cntryIndia} =  xpath=//*[@text='India']
@@ -267,6 +269,13 @@ ${vf_A_driverLicenseFsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's lic
 ${vf_A_driverLicenseFsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (front side)')]]
 ${vf_A_driverLicenseBsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's license (back side)')]
 ${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (back side)')]]
+
+#Checking Upload on BS
+${vf_A_hamburgerMenu} =  xpath=//*[@class='android.widget.ImageButton']
+${e_imagesGallery} =  Images
+${e_picturesFolder} =  Pictures
+
+
 
 # Plan Payment screen Locators
 ${vf_A_slctBtn} =  xpath=//*[@text='Select']
