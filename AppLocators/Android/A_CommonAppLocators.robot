@@ -8,7 +8,10 @@ ${device}              7cd17526
 ${app_package} =       com.vested.investing.android.staging
 ${app_activity} =      com.vested.mobileclient.MainActivity
 ${appium}              appium
+#${UiAutomator1}        UiAutomator1
 ${apkPath}             Resources/APK/app-staging-release.apk
+
+
 
 # Browserstack Credentials
 ${e_realDevice} =  Local

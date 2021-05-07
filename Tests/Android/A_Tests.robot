@@ -3,7 +3,8 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-Suite Setup  Open App On Emulator
+# Suite Setup  Open App On Real Device
+Suite Setup  Open App On Browserstack
 # Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
@@ -11,10 +12,11 @@ Suite Teardown  Quit Android Application
 # robot -d Results Tests/Android/A_Tests.robot
  
 # Executing Specific Tag: 
-# robot -d Results -i SL31 Tests/Android/A_Tests.robot
+# robot -d Results -i Signin1 Tests/Android/A_Tests.robot
  
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i SL34 Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://691e806da04c31df1138e84cbb5d377050bff8e3 -d Results -i Signin1 Tests/Android/A_Tests.robot
+
 
 
 *** Test Cases ***
@@ -35,7 +37,7 @@ Start Investing button is redirects to Sigin screen
     User Navigates To Signin Screen
 
 # Verify Signin And Signup links
-Switch between Sign In and Sign up by selecting provided links
+Switch between Sign in and Sign up by selecting provided links
     [Tags]  SL05  Signin
     User Navigates To Signin Screen
     User Clicks On Signup Link
@@ -67,20 +69,7 @@ Signin With Invalid Login Credentials
     User Navigates To Signin Screen
     Signin With Invalid Credentials
 
-# Note: Error Message Not Verified, As Discussed Currently On Low Priority
-Error Message On Empty Password Entered
-    [Tags]  SL08 
-    User Navigates To Signin Screen
-    User Enters Only Email
-    Click On Signin Button
-
-# Note: Error Message Not Verified, As Discussed Currently On Low Priority
-Error Message On Empty Email Entered
-    [Tags]  SL09  
-    User Navigates To Signin Screen
-    User Enters Only Password
-    Click On Signin Button
-
+# Recheck
 # Note: Error Msg Needs To Be Verified
 Signin With Social Account - Apple With Invalid Login Credentials
     [Tags]  SL13  Signin
@@ -89,13 +78,23 @@ Signin With Social Account - Apple With Invalid Login Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-# Note: Issue- User Is Not Navigating To Dashboard. So, Dashboard Screen Is Not Verified
+#Recheck: Google Verification code is asked
 Google With Valid Login Credentials
     [Tags]  SL14  Signin
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
     Signin With Valid Credentials - Google
+    Verify Dashboard Screen
+
+#Recheck
+#Pre-req: To Be Executed After SL14
+Previously Loggedin Account Is Displayed In Google Social Signin
+    [Tags]  SL18  Signin
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Click On Continue With Google Button
+    Choose An Gmail Account From The Existing Accounts
     Verify Dashboard Screen
 
 # Invalid Google Login
@@ -106,15 +105,7 @@ Google With Invalid Login Credentials
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
-#Pre-req: To Be Executed After SL15
-Previously Loggedin Account Is Displayed In Google Social Signin
-    [Tags]  SL18  Signin
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Click On Continue With Google Button
-    Choose An Gmail Account From The Existing Accounts
-    Verify Dashboard Screen
-
+#Recheck: Invalid Pwd Error msg is not appearing
 # Invalid Facebook Login
 Facebook With Invalid Login Credentials
     [Tags]  SL17  Signin
@@ -123,7 +114,8 @@ Facebook With Invalid Login Credentials
     Click On Continue With Facebook Button
     Signin With Invalid Credentials - Facebook
 
-# Valid Facebook Login
+#Recheck
+# Valid Facebook Login: Fail- User is navigating back to Landing page
 Facebook With Valid Login Credentials
     [Tags]  SL16  Signin
     [Teardown]  Rest Android Application
@@ -132,27 +124,15 @@ Facebook With Valid Login Credentials
     Signin With Valid Credentials - Facebook
     Verify Dashboard Screen
 
+#Recheck
 # Signup With Valid Credentials
 Signup With New Email & Password
     [Tags]  SL23  Signup
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters New Email Password & Signups
-    Verify Dashboard Screen
-
-# Signup With Invalid Credentials
-Signup With Invalid EmailID 
-    [Tags]  SL24  Signup
-    [Teardown]  Rest Android Application
-    User Navigates To Signup Screen
-    New User Enters Invalid Email & Verify Error Message
-
-# Signup With Invalid Email
-Signup With Invalid EmailID - Only Domain Name
-    [Tags]  SL25  Signup
-    [Teardown]  Rest Android Application
-    User Navigates To Signup Screen
-    New User Enters Only Domain Name & Verify Error Message
+    User Lands On Verficiation Code Screen
+    Landing Page Is Loaded Completely
 
 # Verify Resend Code button
 Signup - Resend Code
@@ -161,11 +141,12 @@ Signup - Resend Code
     User Navigates To Signup Screen
     User Enters New Email Password & Signups
     Click On Resend Code
-    Verify Dashboard Screen
+    User Lands On Verficiation Code Screen
+    Landing Page Is Loaded Completely
 
 # Verify Password Combination Criteria 
 User Password Mismatches Password Criteria 
-    [Tags]  SL27  Signup
+    [Tags]  SL27  Signup1
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Invalid Password
@@ -219,3 +200,214 @@ User Enters Only Code Without Password
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Only Code
+
+# Happy Flow 1 E2E- POI: Aadhaar Front And Back side
+KYC: Aadhaar Front & Back- POI
+    [Tags]  KYC  E2E1
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Front And Back Side Of Aadhaar As POI
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
+KYC: Aadhaar Front- POI & Aadhaar Back- POA
+    [Tags]  KYC  E2E2
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Aadhaar Front As POI And Back side As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 3 E2E- POI: Aadhaar Full
+KYC: Aadhaar Full- POI
+    [Tags]  KYC  E2E3
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Full Aadhaar As POI
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 4 E2E- POI: Aadhaar Front And POA: Bank Statement
+KYC: Aadhaar Front- POI & Bank Statement- POA
+    [Tags]  KYC  E2E4
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Aadhaar Front As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 5 E2E- POI: Drivers License Front And POA: Drivers License Back
+KYC: Drivers License Front- POI & Drivers License Back- POA
+    [Tags]  KYC  E2E5
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Drivers License Front As POI And Back side As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 6 E2E- POI: Drivers License Front And Back side
+KYC: Drivers License Front & Back- POI
+    [Tags]  KYC  E2E6
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Front And Back Side Of Drivers License As POI
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 7 E2E- POI: PAN Card And POA: Bank Statement
+KYC: PAN Card- POI & Bank Statement- POA
+    [Tags]  KYC  E2E7
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload PAN Card As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Happy Flow 8 E2E- POI: Passport And POA: Bank Statement
+KYC: Passport- POI & Bank Statement- POA
+    [Tags]  KYC  E2E8
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Passport As POI And Bank Statement As POA
+    Verify Sections And Navigations Under KYC Plan Payment Screen
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+
+# Profile- Premium Account
+Verify Navigations Under Profile Screen
+    [Tags]  Profile1
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Valid Credentials - Funded Account
+    Click On Profile Button
+    Verify Menus And Sub-menus Under Profile
+    Click On Sub-menus Under History And Verify
+    Click On Sub-menus Under Help And Verify
+    Click On Sub-menus Under Account And Verify
+
+# Profile- For KYC Finished Account But Not Approved
+Navigations Under History Section For KYC Finished Account
+    [Tags]  Profile1
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Finished Account
+    Click On Profile Button
+    Click On Trade Confirmations And Verify KYC Approval Needed Popup
+    Click On Account Statements And Verify KYC Approval Needed Popup
+    Click On Tax Documents And Verify KYC Approval Needed Popup
+    User Clicks Go Premium Under Account
+
+# Profile- History for KYC Incomplete Account
+Navigations Under History Section For KYC Incomplete Account
+    [Tags]  Profile
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Click On Profile Button
+    Click On Transactions And Verify Complete KYC Popup
+    Click On Trade Confirmations And Verify Complete KYC Popup
+    Click On Account Statements And Verify Complete KYC Popup
+    Click On Tax Documents And Verify Complete KYC Popup
+
+# Premium Subscription- KYC Finished Account with Basic plan
+Premium Subscription With Card
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Finished Account
+    Click On Profile Button
+    Navigate To Payment Plan Screen And Verify Contents
+    Verify Select Button Under Basic Plan
+    Subscribe Premium Plan With Card
+
+# Premium Subscription- KYC Finished Account with Basic plan
+Premium Subscription With UPI
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Finished Account
+    Click On Profile Button
+    Navigate To Payment Plan Screen And Verify Contents
+    Subscribe Premium Plan With UPI
+
+# Downgrade Premium Subscription- Premium Account
+Downgrade Premium Subscription
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Premium Account
+    Click On Profile Button
+    Downgrade Premium Plan To Basic
+
+# Premium Subscription- KYC approved Premium Account
+Navigate To Vest Upsell And Try To Buy Vest
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account
+    Navigate To Vest Upsell And Buy Vest
+
+
+
+
+
+
+
+
+
+    

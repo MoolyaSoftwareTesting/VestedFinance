@@ -16,10 +16,12 @@ Verify Signin Screen
 User Clicks On Signup Link
     Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_signUpLink}
+    Log to Console  Clicked on Signup Link
 
 User Clicks On Signin Link 
     Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_signInLink}
+    Log to Console  Clicked on Signin Link
     
 Enter Email
     [Arguments]  ${email}
@@ -31,6 +33,7 @@ Enter Email
 
 Enter Password
     [Arguments]  ${password}
+    Wait For Element Visibility On Android  ${vf_A_password}
     Verify Element Visibility  ${vf_A_password}
     Clear Text  ${vf_A_password}
     Input Text  ${vf_A_password}  ${password}
@@ -59,6 +62,7 @@ Enter Pin
 Click On Continue Button
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_continueBtn}
+    Log to Console  Clicked on Continue Button
 
 Click On Continue With Google Button
     Sleep  2s
@@ -78,12 +82,15 @@ Click On Continue With Facebook Button
 
 Click On Next Button
     Sleep  2s
-    Wait And Click Element On Android  ${vf_A_googleSigninNextBtn}
+    Wait And Click Element On Android  ${vf_A_nextButton}
+    Log to Console  Clicked on Next Button
 
 Signin With Valid Credentials - Funded Account
+    Swipe By Percent  70  70  20  20  5000
     Enter Email  ${e_validEmail}
     Enter Password  ${e_validPassword}
     Click On Signin Button
+    Sleep  3s
     Enter Pin  ${e_validPin}
     Click On Continue Button
     Verify Dashboard Screen
@@ -95,18 +102,10 @@ Signin With Invalid Credentials
     Log To Console  Entered invalid email and password
     Verify Error Message Displayed  ${e_invalidLoginErrorTxt}
 
-User Enters Only Email
-    Wait For Element Visibility On Android  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${e_invalidUserName}
-    Log To Console  Entered only email
-
-User Enters Only Password
-    Wait For Element Visibility On Android  ${vf_A_userName}
-    Input Text  ${vf_A_userName}  ${e_invalidUserName}
-    Log To Console  Entered only password
-
 Verify Dashboard Screen
+    Wait For Element Visibility On Android  ${vf_A_home}
     Verify Page Contains Element On Android  ${vf_A_home}
+    Click On Element If Visibile  ${vf_A_awesomeLink}
     Log To Console  User is directed to Dashboard screen
 
 Please fill out this field message is displayed
@@ -200,9 +199,16 @@ Signin With Invalid Credentials - Facebook
     Input Text  ${vf_A_FbPwd}  ${e_invalidPwd}
     Log to Console  Invalid Password Entered
     Close Android Keyboard
-    Click Element  ${vf_A_FbSigninBtn}
+    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
     Close Android Keyboard
-    Log to Console  Clicked on Signin button
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
+    Close Android Keyboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
+    Log to Console  Clicked on Log In button
+    Close Android Keyboard
+    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt}  10s
     Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
     Swipe By Percent  70  70  20  20  5000
     Log to Console  Error message verified!
