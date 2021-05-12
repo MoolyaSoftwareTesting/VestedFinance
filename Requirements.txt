@@ -6,4 +6,3 @@ pip install webdrivermanager
 robotframework==4.0.1
 robotframework-dependencylibrary==1.0.0.post1
 robotframework-jsonschemalibrary==1.0
-
