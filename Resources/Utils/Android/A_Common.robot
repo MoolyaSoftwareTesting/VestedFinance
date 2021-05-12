@@ -20,7 +20,7 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  uploadMedia="media://d11edf0b84008a815459c9fb26f87e91ea2c06ef"
+    Open Application  ${remote_URL}  app="bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d"  name=Jenkins   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  uploadMedia="media://d11edf0b84008a815459c9fb26f87e91ea2c06ef"
     Landing Page Is Loaded Completely
 
 Open App On Real Device
