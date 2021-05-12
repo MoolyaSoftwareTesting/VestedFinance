@@ -1,8 +1,5 @@
 robotframework-appiumlibrary==1.5.0.4
-robotframework-jsonlibrary 0.3.1
-robotframework-jsonvalidator 2.0.0
 robotframework-seleniumlibrary
-pip install webdrivermanager
 robotframework==4.0.1
 robotframework-dependencylibrary==1.0.0.post1
 robotframework-jsonschemalibrary==1.0
