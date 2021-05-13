@@ -127,7 +127,7 @@ ${vf_A_feedbackTxtBox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_confirmDowngradeBtn} =  xpath=//*[@text='Confirm Downgrade']
 ${vf_A_goBackBtn} =  xpath=//*[@text='Go Back']
 ${vf_A_backtoDashboardBtn} =  xpath=//*[@text='Back to Dashboard']
-# UPI Payment
+# UPI
 ${vf_A_cardPaymentOptForPremium} =  xpath=//*[@text='Card MasterCard and Visa credit cards']
 ${vf_A_upiPaymentOptForPremium} =  xpath=//*[@text='UPI Pay using BHIM or PayTM App']
 ${vf_A_pay2500Btn} =  xpath=//*[@text='PAY ₹ 2,500']

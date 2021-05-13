@@ -75,7 +75,7 @@ Click On Tax Documents Under History Section
 Click On Transactions And Verify
     Click On Transactions Under History Section
     Verify Page Conatin Text  ${e_transactions}
-    # Pending Transaction section not present in Defney's Acc
+    #Pending Transaction section not present in Defney's Acc
     # Verify Page Conatin Text  ${e_pendingTransactions}
     Verify Page Conatin Text  ${e_completedTransactions}
     Log to Console  Verified Heading and Subheading under Transactions screen!
@@ -137,7 +137,7 @@ Click On Sub-menus Under History And Verify
     Click On A Existing Trade Confirmation
     Click On Back Button From Top And Verify Profile Screen
     Click On Account Statements And Verify
-    # Indrajits Account doesn't have any Existing Account Statement
+    #Indrajits Account doesn't have any Existing Account Statement
     #Click On A Existing Account Statement
     Click On Back Button From Top And Verify Profile Screen
     Click On Tax Documents And Verify
