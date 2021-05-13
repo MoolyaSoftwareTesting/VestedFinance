@@ -12,6 +12,8 @@
     * [Pre-requisites](https://github.com/MoolyaSoftwareTesting/Vested Finance_RF/blob/KU_RF_PE_PHASE1/README.md#pre-requisites)
     * [Installation](https://github.com/MoolyaSoftwareTesting/Vested Finance_RF/blob/KU_RF_PE_PHASE1/README.md#installation)
     
+    
+    
  #### About the Project
  
  The scope of this project is to Automate the AUT web application Regression testing through Robot framework.
@@ -81,8 +83,3 @@
  Find the Execution result under ../results/report.html
   
         
-  * Provide the command as **robot -d Results  Tests/Web/Tests.robot** for web app
-  * Provide the command as **robot -d Results  Tests/Android/Tests.robot**. for android app
-  
- #### Execution Results 
- Find the Execution result under ../results/report.html
