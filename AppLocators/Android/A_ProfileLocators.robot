@@ -1,7 +1,7 @@
 *** Variables ***
 
-# KYC Completed Credentials
-${e_validEmailForKYCcmpltd} =  testingVF111+8@gmail.com
+# KYC Completed Credentials- Basic Acc
+${e_validEmailForKYCcmpltd} =  testingVF111+10@gmail.com
 ${e_validPasswordForKYCcmpltd} =  Moolya@123
 
 # Profile Variables

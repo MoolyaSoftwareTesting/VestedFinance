@@ -4,12 +4,8 @@ Library     AppiumLibrary
 
 ***Keywords***
 
-Signin With KYC Finished Account
-    Enter Email  ${e_validEmailForKYCcmpltd}
-    Enter Password  ${e_validPasswordForKYCcmpltd}
-    Click On Signin Button
-    # Pin is not asked
-    Verify Dashboard Screen
+Signin With KYC Completed Basic Account
+    Signin Without Pin Credentials  ${e_validEmailForKYCcmpltd}  ${e_validPasswordForKYCcmpltd}
 
 # Profile 
 Click On Profile Button
@@ -375,11 +371,14 @@ User Clicks Security Under Account
     Click On Back Arrow
     Click On Back Button From Top And Verify Profile Screen
 
+Click On Go Premium
+    Wait And Click Element On Android  ${vf_A_goPremium}
+    Log to Console  Clicked on Go Premium
+
 # PN45, PN06
 User Clicks Go Premium Under Account
     Swipe By Percent  70  70  40  40  5000
-    Wait And Click Element On Android  ${vf_A_goPremium}
-    Log to Console  Clicked on Go Premium
+    Click On Go Premium
     Wait For Page Conatin Element  ${e_payText}  2s
     Verify Page Conatin Text   ${e_payText}
     Verify Element Visibility  ${vf_A_planPymntToggleBtn}

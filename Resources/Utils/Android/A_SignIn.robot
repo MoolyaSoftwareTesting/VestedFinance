@@ -85,15 +85,26 @@ Click On Next Button
     Wait And Click Element On Android  ${vf_A_nextButton}
     Log to Console  Clicked on Next Button
 
-Signin With Valid Credentials - Funded Account
-    Swipe By Percent  70  70  20  20  5000
-    Enter Email  ${e_validEmail}
-    Enter Password  ${e_validPassword}
+Signin Without Pin Credentials
+    [Arguments]  ${email}  ${password}
+    Enter Email  ${email}
+    Enter Password  ${password}
+    Click On Signin Button
+    Verify Dashboard Screen
+
+Signin With Pin Credentials
+    [Arguments]  ${email}  ${password}  ${pin}
+    Enter Email  ${email}
+    Enter Password  ${password}
     Click On Signin Button
     Sleep  3s
-    Enter Pin  ${e_validPin}
+    Enter Pin  ${pin}
     Click On Continue Button
     Verify Dashboard Screen
+
+Signin With Valid Credentials - Funded Account
+    Swipe By Percent  70  70  20  20  5000
+    Signin With Pin Credentials  ${e_validEmail}  ${e_validPassword}  ${e_validPin}
 
 Signin With Invalid Credentials
     Enter Email  ${e_invalidUserName} 
@@ -174,12 +185,13 @@ Signin With Invalid Credentials - Apple
     Wait And Click Element On Android  ${vf_A_appleEnterBtn}
     Close Android Keyboard
     Log to Console  Logging in with Apple
-    Swipe By Percent  70  70  20  20  5000
-    Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
+    Swipe By Percent  70  50  50  20  5000
+    Verify Error Message Displayed  ${e_invalidAppleLoginErrorTxt}
+    Log to Console  Error message verified!
 
 Signin With Valid Credentials - Facebook
     Log to Console  Sigin in with Facebook
-    Sleep  5s
+    Sleep  8s
     Wait For Element Visibility On Android  ${vf_A_FbEmail}
     Input Text  ${vf_A_FbEmail}  ${e_FbEmailId}
     Log to Console  Username Entered!
@@ -199,16 +211,11 @@ Signin With Invalid Credentials - Facebook
     Input Text  ${vf_A_FbPwd}  ${e_invalidPwd}
     Log to Console  Invalid Password Entered
     Close Android Keyboard
-    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
-    Close Android Keyboard
-    Sleep  2s
-    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
-    Close Android Keyboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_FbSigninBtn}
     Log to Console  Clicked on Log In button
     Close Android Keyboard
-    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt}  10s
+    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt} 20s
     Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
     Swipe By Percent  70  70  20  20  5000
     Log to Console  Error message verified!

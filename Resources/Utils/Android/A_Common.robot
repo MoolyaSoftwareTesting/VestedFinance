@@ -20,7 +20,8 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app="bs://691e806da04c31df1138e84cbb5d377050bff8e3"  name=ML02_Tests   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3  uploadMedia="media://d11edf0b84008a815459c9fb26f87e91ea2c06ef"
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3    
+    #browserstack.uploadMedia=["media://d11edf0b84008a815459c9fb26f87e91ea2c06ef"]
     Landing Page Is Loaded Completely
 
 Open App On Real Device
@@ -155,7 +156,7 @@ Verify Open With Label
 Close Android Keyboard
     ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
     Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
-    ...    ELSE  Log To Console  Continue
+    ...    ELSE  Log To Console  Keyboard is hidden
 
 Go Back On Android
     Go Back

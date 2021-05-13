@@ -2,15 +2,11 @@
 #Desired Capabilities
 ${server}              http://localhost:4723/wd/hub
 ${platform}            Android
-${platform_version}    10
 ${emulator}            emulator-5554
-${device}              7cd17526
 ${app_package} =       com.vested.investing.android.staging
 ${app_activity} =      com.vested.mobileclient.MainActivity
 ${appium}              appium
-#${UiAutomator1}        UiAutomator1
 ${apkPath}             Resources/APK/app-staging-release.apk
-
 
 
 # Browserstack Credentials

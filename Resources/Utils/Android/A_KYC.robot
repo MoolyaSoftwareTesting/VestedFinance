@@ -771,11 +771,9 @@ Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     #Pull File  ${dest_pathBS}  decode=False
     Wait And Click Element On Android  ${vf_A_hamburgerMenu}
-    Log To Console  Click1
     Click Text  ${e_imagesGallery}
-    Log To Console  Click2
     Click Text  ${e_picturesFolder}
-    Log To Console  Click3
+    Log To Console  Navigated to Pictures Folder
     Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
@@ -1065,41 +1063,38 @@ Verify Navigations Under KYC Plan Payment Screen
 Enter Phone Number And Email For Payment
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
     Sleep  5s
-    Go Back On Android
+    #Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
     Log to Console  Phone Number Entered!
     Sleep  5s
-    Go Back On Android
+    #Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
-    Go Back On Android
+    #Go Back On Android
     Input Text  ${vf_A_mailFld}  ${e_newAccMailId}
     Log to Console  Email Id Entered!
-    Go Back On Android
+    #Go Back On Android
     Wait And Click Element On Android  ${vf_A_proceedBtn}
 
+# Card Payment
 Enter Card Details Into Fields
     [Arguments]  ${cardNum}
     Sleep  5s
-    Go Back On Android
-    Input Text  ${vf_A_cardNumTxtFld}  ${cardNum}
-    Log to Console  Card Number Entered!
+    #Go Back On Android
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
     Log to Console  Expiry Entered!
     Sleep  3s
-    Go Back On Android
+    #Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_nameTxt}
-    Sleep  5s
-    Sleep  3s
-    Close Android Keyboard
     Input Text  ${vf_A_nameTxtFld}  ${e_hldrName}
     Log to Console  Name Entered!
     Wait And Click Element On Android  ${vf_A_cvvTxt}
     Input Text  ${vf_A_cvvTxtFld}  ${e_cvv}
     Log to Console  CVV Entered!
     Sleep  3s
-    Close Android Keyboard
-    Wait And Click Element On Android  ${vf_A_rememberCardCheckbox}
+    Input Text  ${vf_A_cardNumTxtFld}  ${cardNum}
+    Log to Console  Card Number Entered!
+    Go Back On Android
 
 Enter Card Details For Payment
     Verify Page Contains Element On Android  ${vf_A_cardPaymentOpt}
@@ -1127,12 +1122,13 @@ Make Payment Using Card Information
     Enter Phone Number And Email For Payment
     Enter Card Details For Payment
     Sleep  5s
+    Close Android Keyboard
     Click On Element If Visibile  ${vf_A_skipSavingCardLink}
     Wait And Click Element On Android  ${vf_A_successBtn}
     Log to Console  Successfully Completed the Payment Using Card!
 
 # SL114
-Verify Sections And Navigations Under KYC Plan Payment Screen
+Verify Sections And Navigations Under KYC Plan Payment Screen- Card 
     Sleep  2s
     Verify Plan Payment Screen
     Verify Navigations Under KYC Plan Payment Screen
