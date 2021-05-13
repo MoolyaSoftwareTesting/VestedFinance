@@ -399,7 +399,6 @@ Navigate To Vest Upsell And Try To Buy Vest
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
 
-##Changes for committing
 
 
 
