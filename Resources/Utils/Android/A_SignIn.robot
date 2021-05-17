@@ -97,7 +97,7 @@ Signin With Pin Credentials
     Enter Email  ${email}
     Enter Password  ${password}
     Click On Signin Button
-    Sleep  3s
+    Sleep  4s
     Enter Pin  ${pin}
     Click On Continue Button
     Verify Dashboard Screen

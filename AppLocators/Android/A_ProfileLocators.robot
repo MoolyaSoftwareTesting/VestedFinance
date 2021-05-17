@@ -44,6 +44,18 @@ ${e_mailTxt4} =  What actually happened?
 ${e_mailTxt5} =  Thank you.
 ${e_msgUsHeading} =  Vested Finance Inc
 ${e_msgRspnd} =  Typically replies in a few hour
+${e_forTaxRep} =  For Tax Reporting
+${e_supTaxDoc} =  Supporting Tax Documents
+${e_supTaxDocSH} =  Apr 2020 - Mar 2021 (Indian Tax Year)
+${e_supTaxDocL1} =  General Filings Summary (PDF)
+${e_supTaxDocL2} =  General Filings Summary (XLSX)
+${e_supTaxDocL3} =  Foreign Asset Filing Summary (XLSX)
+${e_supTaxDocL4} =  Form 67  Filing Summary (XLSX)
+${e_supTaxDocN1} =  This summarizes the proceeds, dividends, interest, long-term gains (if applicable), and short-term gains in a PDF format.
+${e_supTaxDocN2} =  This is the General Filings Summary in excel format. It also includes all itemized proceeds from your transactions.
+${e_supTaxDocN3} =  This contains the necessary information to fill out Schedule FA.
+${e_supTaxDocN4} =  This contains the necessary information to fill out Form 67, which is needed to claim your tax credit (applicable only if you receive a sufficient amount of dividends in the previous fiscal year).
+${e_supTaxDocN5} =  Note: Please consult your Chartered Accountant if you have any questions related to these documents.
 
 # Account Variables
 ${e_planManagement} =  Plan Management
@@ -116,6 +128,7 @@ ${vf_A_opt1Navigation} =  xpath=(//*[@text=''])[1]
 ${vf_A_downloadPopupCancelBtn} =  xpath=//*[@text=‘Cancel’]
 ${vf_A_notNowBtn} =  xpath=//*[@text='NOT NOW']
 ${vf_A_taxDoc2020} =  xpath=//*[@text='2020']
+${vf_A_tax2020} =  xpath=//*[@text='2020']
 
 # Help Locators
 ${vf_A_msgTitle} =  xpath=//*[@id='intercom_toolbar_title_container']

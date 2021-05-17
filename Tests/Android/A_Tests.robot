@@ -10,10 +10,10 @@ Suite Teardown  Quit Android Application
 
  
 # Executing Specific Tag: 
-# robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Subscription Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Subscription Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
 
 
 *** Test Cases ***
@@ -308,7 +308,7 @@ KYC: Passport- POI & Bank Statement- POA
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
 
-# Profile- Premium Account
+# Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
     [Tags]  Profile
     [Teardown]  Rest Android Application
@@ -319,6 +319,15 @@ Verify Navigations Under Profile Screen
     Click On Sub-menus Under History And Verify
     Click On Sub-menus Under Help And Verify
     Click On Sub-menus Under Account And Verify
+
+# Premium Account containing existing Tax Documents- Defney credentials
+Verify Tax Documents Under Profile Screen
+    [Tags]  Profile
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account
+    Click On Profile Button
+    Verify Tax Documents Yearwise
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
@@ -398,8 +407,6 @@ Navigate To Vest Upsell And Try To Buy Vest
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
-
-
 
 
 

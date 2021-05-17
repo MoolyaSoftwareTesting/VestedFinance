@@ -120,7 +120,7 @@ Click On A Existing Tax Document And Verify Current Year Guidelines
     Wait And Click Element On Android  ${vf_A_taxDoc2020}
     Wait For Page Conatin Element  ${e_2020TaxDoc}  5s
     Verify Page Conatin Text  ${e_2020TaxDoc}
-    Log to Console  Clicked on a existing Tax Document And Verified!
+    Log to Console  Clicked on a existing Tax Document!
     Click On Back Arrow
 
 # PN14, PN18, PN24, PN28, PN46
@@ -194,6 +194,28 @@ Click On Account Statements And Verify Complete KYC Popup
 Click On Tax Documents And Verify Complete KYC Popup
     Click On Tax Documents Under History Section
     Verify Complete KYC Popup For Incomplete KYC Account
+
+# PF_15
+Verify Tax Documents Yearwise
+    Wait For Page Conatin Element  ${e_taxDocs}  5s
+    Click Text  ${e_taxDocs}
+    Wait And Click Element On Android  ${vf_A_tax2020}
+    Wait For Page Conatin Element  ${e_forTaxRep}  5s
+    Verify Page Conatin Text   ${e_forTaxRep}
+    Verify Page Conatin Text   ${e_supTaxDoc}
+    Verify Page Conatin Text   ${e_supTaxDocSH}
+    Verify Page Conatin Text   ${e_supTaxDocL1}
+    Verify Page Conatin Text   ${e_supTaxDocL2}
+    Verify Page Conatin Text   ${e_supTaxDocL3}
+    Verify Page Conatin Text   ${e_supTaxDocL4}
+    Verify Page Conatin Text   ${e_supTaxDocN1}
+    Verify Page Conatin Text   ${e_supTaxDocN2}
+    Verify Page Conatin Text   ${e_supTaxDocN3}
+    Verify Page Conatin Text   ${e_supTaxDocN4}
+    Verify Page Conatin Text   ${e_supTaxDocN5}
+    Log to Console  Verified Tax reporting- 2020!
+    Click On Back Arrow
+    Click On Back Button From Top And Verify Profile Screen
 
 # Help
 # PN32
