@@ -16,8 +16,8 @@ Signup And Signin For KYC
 # Before Completion & Instruction Screen
 Click on Start/Complete KYC Button
     Click On Element If Visibile  ${vf_A_startKYCBtn}
-    Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
-    Log To Console  Clicked on Start/Complete KYC Button
+    # Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
+    Log To Console  Clicked on Start KYC Button
 
 Signin With Non KYC Completed Account
     Swipe By Percent  80  70  20  20  5000
@@ -38,7 +38,6 @@ Verify All Steps Under Account Status Screen Before KYC
 
 Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_doneButton}
-    Log To Console  Clicked on Done Button
     Verify Dashboard Screen
 
 Verify All Sections And Navigations Under KYC Introduction Screen
@@ -62,7 +61,6 @@ Verify All Sections And Navigations Under KYC Introduction Screen
 Verify Account Status Screen
     Verify Element Visibility  ${vf_A_viewAllStepsLink}
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
-    Log To Console  Clicked on View All Steps Link
     Verify All Steps Under Account Status Screen Before KYC
     Click On Done Button And Verify Screen
     Wait And Click Element On Android  ${vf_A_viewAllStepsLink}
@@ -70,7 +68,6 @@ Verify Account Status Screen
 Click On Back Arrow
     Verify Element Visibility  ${vf_A_backArrow}
     Wait And Click Element On Android  ${vf_A_backArrow}
-    Log To Console  Clicked on Back arrow
 
 Verify KYC Introduction Screen
     Sleep  3s
@@ -78,7 +75,6 @@ Verify KYC Introduction Screen
     Verify Page Conatin Text  ${e_headingKYC}
     Wait For Page Conatin Element  ${e_headingKYC}  15s 
     Verify Page Conatin Text  ${e_headingKYCTxt}
-    Log To Console  Verified KYC Introduction Screen!
 
 Click On Back Arrow And Verify Dashboard Screen
     Click On Back Arrow    
@@ -88,9 +84,11 @@ Click On Accept And Continue Button And Verify Basic Details Screen
     Wait And Click Element On Android  ${vf_A_startKYCProcessBtn}
     Log To Console  Clicked on Start KYC Process Button
     Verify KYC Introduction Screen
+    Log To Console  Verified KYC Introduction Screen!
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Log To Console  Clicked on Accept and Continue Button
     Verify KYC Basic Details Screen
+    Log To Console  Verified KYC Basic Details Screen!
 
 # SL44
 Verify Navigations Under KYC Introduction Screen
@@ -105,11 +103,9 @@ Verify KYC Basic Details Screen
     ${e_letsGetToKnowYou1} =  Replace Characters  ${e_letsGetToKnowYou}  '  ’
     Wait For Page Conatin Element  ${e_letsGetToKnowYou1}  5s
     Verify Page Conatin Text  ${e_letsGetToKnowYou1}
-    Log To Console  Verified KYC Basic Details Screen!
 
 Click On Previous Button
     Wait And Click Element On Android  ${vf_A_previousButton}
-    Log To Console  Clicked on Previous Button
 
 Verify Navigations Under KYC Basic Details Screen
     Close Android Keyboard
@@ -163,12 +159,6 @@ Verify All Checkboxes
     Wait For Element Visibility On Android  ${vf_A_chkBx4} 
     Wait And Click Element On Android  ${vf_A_chkBx4}
     Log to Console  Verified All Checkboxes
-    # SL_48- Unable to verify Disabled Checkbox
-    # Sleep  3s
-    # Element Should Be Disabled  ${vf_A_chkBx1}
-    # Element Should Be Disabled  ${vf_A_chkBx2}
-    # Element Should Be Disabled  ${vf_A_chkBx3}
-    # Log to Console  First three Checkboxes are disabled on selecting 4th Checkbox
 
 # SL45, SL50
 User Fill All The Fields Under KYC Basic Details Screen And Verify
@@ -208,7 +198,6 @@ User Selects Enters Gender Phone Number
 Verify KYC Investment Profile Screen
     Wait For Page Conatin Element  ${e_investProfileScreenHeading}  5s
     Verify Page Conatin Text  ${e_investProfileScreenHeading}
-    Log To Console  Verified KYC Investment Profile Screen!
 
 Select Option Under Risk tolerance
     [Arguments]  ${option}
@@ -223,7 +212,6 @@ Select Option Under Risk tolerance
     Verify Page Conatin Text  ${e_riskToleranceOpt3Txt}
     ${e_riskToleranceOpt3Desc1} =  Replace Characters  ${e_riskToleranceOpt3Desc}  ’  ' 
     Verify Page Conatin Text  ${e_riskToleranceOpt3Desc1}
-    Log To Console  Verified all options with Description under Risk Tolerance section
     Run Keyword If    '${option}'=='${e_riskToleranceOpt1Txt}'  Click Text  ${e_riskToleranceOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_riskToleranceOpt2Txt}'  Click Text  ${e_riskToleranceOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_riskToleranceOpt3Txt}'  Click Text  ${e_riskToleranceOpt3Txt}
@@ -239,7 +227,6 @@ Select Option Under Investing Frequency
     Verify Page Conatin Text  ${e_investingFrequencyOpt1Txt}
     Verify Page Conatin Text  ${e_investingFrequencyOpt2Txt}
     Verify Page Conatin Text  ${e_investingFrequencyOpt3Txt}
-    Log To Console  Verified all options under Investing Frequency section
     Run Keyword If    '${option}'=='${e_investingFrequencyOpt1Txt}'  Click Text  ${e_investingFrequencyOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt2Txt}'  Click Text  ${e_investingFrequencyOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt3Txt}'  Click Text  ${e_investingFrequencyOpt3Txt}
@@ -256,7 +243,6 @@ Select Option Under Investing Experience
     Verify Page Conatin Text  ${e_investingExperienceOpt3Txt}
     Verify Page Conatin Text  ${e_investingExperienceOpt4Txt}
     Verify Page Conatin Text  ${e_investingExperienceOpt5Txt}
-    Log To Console  Verified all options under Investing Experience section
     Run Keyword If    '${option}'=='${e_investingExperienceOpt1Txt}'  Click Text  ${e_investingExperienceOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_investingExperienceOpt2Txt}'  Click Text  ${e_investingExperienceOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_investingExperienceOpt3Txt}'  Click Text  ${e_investingExperienceOpt3Txt}
@@ -274,7 +260,6 @@ Select Option Under Yearly Income
     Verify Page Conatin Text  ${e_yearlyIncomeOpt2Txt}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt3Txt}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt4Txt}
-    Log To Console  Verified all options under Yearly Income section
     Run Keyword If    '${option}'=='${e_yearlyIncomeOpt1Txt}'  Click Text  ${e_yearlyIncomeOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt2Txt}'  Click Text  ${e_yearlyIncomeOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt3Txt}'  Click Text  ${e_yearlyIncomeOpt3Txt}
@@ -291,7 +276,6 @@ Select Option Under Liquid Net Worth
     Verify Page Conatin Text  ${e_liquidNetWorthOpt2Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt4Txt}
-    Log To Console  Verified all options under Liquid Net Worth section
     Run Keyword If    '${option}'=='${e_liquidNetWorthOpt1Txt}'  Click Text  ${e_liquidNetWorthOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt2Txt}'  Click Text  ${e_liquidNetWorthOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt3Txt}'  Click Text  ${e_liquidNetWorthOpt3Txt}
@@ -308,7 +292,6 @@ Select Option Under Total Net Worth
     Verify Page Conatin Text  ${e_totalNetWorthOpt2Txt}
     Verify Page Conatin Text  ${e_totalNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_totalNetWorthOpt4Txt}
-    Log To Console  Verified all options under Total Net Worth section
     Run Keyword If    '${option}'=='${e_totalNetWorthOpt1Txt}'  Click Text  ${e_totalNetWorthOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt2Txt}'  Click Text  ${e_totalNetWorthOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt3Txt}'  Click Text  ${e_totalNetWorthOpt3Txt}
@@ -321,7 +304,6 @@ Select Option Under Primary Source Dropdown
     # Swipe By Percent  70  70  20  20  5000
     Sleep  5s
     Verify Page Conatin Text  ${e_primarySource}
-    Log To Console  Verified Primary Source section
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
     Sleep  3s
     FOR  ${i}  IN RANGE  1  4
@@ -344,7 +326,6 @@ Select Option Under Number Of Deposits And Withdrawals
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt1Txt}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt2Txt}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt3Txt}
-    Log To Console  Verified all options under Number Of Deposits And Withdrawals section
     Run Keyword If    '${option}'=='${e_depositsAndWithdrawalsOpt1Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt2Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt3Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt3Txt}
@@ -358,7 +339,6 @@ Select Option Under Money Deposit
     Verify Page Conatin Text  ${e_moneyDepositOpt1Txt}
     Verify Page Conatin Text  ${e_moneyDepositOpt2Txt}
     Verify Page Conatin Text  ${e_moneyDepositOpt3Txt}
-    Log To Console  Verified all options under Money Deposit section
     Run Keyword If    '${option}'=='${e_moneyDepositOpt1Txt}'  Click Text  ${e_moneyDepositOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_moneyDepositOpt2Txt}'  Click Text  ${e_moneyDepositOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_moneyDepositOpt3Txt}'  Click Text  ${e_moneyDepositOpt3Txt}
@@ -373,7 +353,6 @@ Select Option Under Investments Made
     Verify Page Conatin Text  ${e_investmentsMadeOpt1Txt}
     Verify Page Conatin Text  ${e_investmentsMadeOpt2Txt}
     Verify Page Conatin Text  ${e_investmentsMadeOpt3Txt}
-    Log To Console  Verified all options under Investments Made section
     Run Keyword If    '${option}'=='${e_investmentsMadeOpt1Txt}'  Click Text  ${e_investmentsMadeOpt1Txt}
     ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt2Txt}'  Click Text  ${e_investmentsMadeOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt3Txt}'  Click Text  ${e_investmentsMadeOpt3Txt}
@@ -411,7 +390,6 @@ User Fill All The Fields Under KYC Investment Profile Screen And Verify
 Verify Identity Screen
     Wait For Page Conatin Element  ${e_identityScreenHeading}  8s
     Verify Page Conatin Text  ${e_identityScreenHeading}
-    Log To Console  Verified KYC Identity Screen!
 
 Click On Upload Document Button
     Swipe By Percent  90  70  20  20  5000
@@ -429,7 +407,7 @@ Verify Options Under Marital Status
     Click Text  ${e_stsMarried}
     Click Text  ${e_stsWidowed}
     Click Text  ${e_stsDomPtnr}
-    Log to Console  Verified All options under Marital Status section!
+    Log To Console  Clicked on option - ${e_stsDomPtnr}
 
 # SL59
 Verify Options Under Employment Type
@@ -439,7 +417,7 @@ Verify Options Under Employment Type
     Click Text  ${e_empStdnt}
     Click Text  ${e_empSlfEmp}
     Click Text  ${e_empUnemp}
-    Log to Console  Verified all options under Employment Type section!
+    Log To Console  Clicked on option - ${e_empUnemp}
 
 Select Option Under Marital status
     [Arguments]  ${option}
@@ -472,13 +450,13 @@ Verify Navigations Under KYC Identity Screen
     Log To Console  Verified Back arrow And Previous button- Under KYC Identity Screen!
 
 # SL61
-User Fill All the Fields under KYC Identity Screen And Verify
+User Fill All the Fields Under KYC Identity Screen And Verify
     Verify Identity Screen
+    Log To Console  Verified KYC Identity Screen!
     Verify Navigations Under KYC Identity Screen
     Verify Options Under Marital Status
     Select Option Under Marital status  ${e_stsSingle}
     Verify Page Conatin Text   ${e_countryTxt}
-    Log to Console  Country Text Verified!
     Verify Page Conatin Text   ${e_India}
     Verify Page Conatin Text   ${e_Other}
     Log to Console  Verified Country section and Options!
@@ -487,7 +465,6 @@ User Fill All the Fields under KYC Identity Screen And Verify
     Select Option Under Employment Type  ${e_empStdnt}
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text   ${e_docVerTxt}
-    Log to Console  Document Verification section Text Verified!
     Wait And Click Element On Android  ${vf_A_verChkBx}
     Log to Console  Confirm Checkbox Clicked!
 
@@ -497,7 +474,6 @@ Verify Description, Upload Options And Images Under POI Popup
     Verify Page Conatin Text  ${e_docUploadPOIHeading}
     Verify Page Conatin Text  ${e_docUploadPOIDesc1}
     Verify Page Conatin Text  ${e_docUploadDesc2}
-    Log To Console  Verified Heading and Description under Proof Of Identification Popup!
     Verify Element Visibility  ${vf_A_aadhaarPOIOption}
     Verify Element Visibility  ${vf_A_aadhaarPOIOptionImg}
     Verify Element Visibility  ${vf_A_driversLicensePOIOption}
@@ -508,7 +484,7 @@ Verify Description, Upload Options And Images Under POI Popup
     Swipe By Percent  85  85  30  30  5000
     Verify Element Visibility  ${vf_A_passportOption}
     Verify Element Visibility  ${vf_A_passportPOIOptionImg}
-    Log To Console  Verified all Proof Of Identification upload options & their images!
+    Log To Console  Verified Description, Upload Options and Images under POI Popup!
 
 Click On Close Icon
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -523,7 +499,6 @@ Click On Close Icon
 Verify POA Popup After Front Aadhaar Uploaded As POI
     Verify Page Conatin Text  ${e_docUploadPOAHeading}
     Verify Page Conatin Text  ${e_docUploadPOADesc1}
-    Log To Console  Verified Heading and Description under Proof Of Address Popup!
     Verify Element Visibility  ${vf_A_backAadhaarPOAOption}
     Verify Element Visibility  ${vf_A_backAadhaarPOAOptionImg}
     Verify Element Visibility  ${vf_A_bankStmtPOAOption}
@@ -531,12 +506,11 @@ Verify POA Popup After Front Aadhaar Uploaded As POI
     Swipe By Percent  85  85  30  30  5000
     Verify Element Visibility  ${vf_A_driverLicenseFsPOAOption}
     Verify Element Visibility  ${vf_A_driverLicenseFsPOAOptionImg}
-    Log To Console  Verified all Proof Of Address upload options & their images!
+    Log To Console  Verified POA Popup After Front Aadhaar Uploaded As POI!
 
 Verify POA Popup After Front Drivers License Uploaded As POI
     Verify Page Conatin Text  ${e_docUploadPOAHeading}
     Verify Page Conatin Text  ${e_docUploadPOADesc1}
-    Log To Console  Verified Heading and Description under Proof Of Address Popup!
     Verify Element Visibility  ${vf_A_AadhaarPOAOption}
     Verify Element Visibility  ${vf_A_AadhaarPOAOptionImg}
     Verify Element Visibility  ${vf_A_bankStmtPOAOption}
@@ -544,12 +518,11 @@ Verify POA Popup After Front Drivers License Uploaded As POI
     Swipe By Percent  85  85  30  30  5000
     Verify Element Visibility  ${vf_A_driverLicenseBsPOAOption}
     Verify Element Visibility  ${vf_A_driverLicenseBsPOAOptionImg}
-    Log To Console  Verified all Proof Of Address upload options & their images!
+    Log To Console  Verified POA Popup After Front Drivers License Uploaded As POI!
 
 Verify POA Popup After PAN Card Uploaded As POI
     Verify Page Conatin Text  ${e_docUploadPOAHeading}
     Verify Page Conatin Text  ${e_docUploadPOADesc1}
-    Log To Console  Verified Heading and Description under Proof Of Address Popup!
     Verify Element Visibility  ${vf_A_AadhaarPOAOption}
     Verify Element Visibility  ${vf_A_AadhaarPOAOptionImg}
     Verify Element Visibility  ${vf_A_bankStmtPOAOption}
@@ -557,7 +530,7 @@ Verify POA Popup After PAN Card Uploaded As POI
     Swipe By Percent  85  85  30  30  5000
     Verify Element Visibility  ${vf_A_driverLicenseFsPOAOption}
     Verify Element Visibility  ${vf_A_driverLicenseFsPOAOptionImg}
-    Log To Console  Verified all Proof Of Address upload options & their images!
+    Log To Console  Verified POA Popup After PAN Card Uploaded As POI!
 
 Verify Confirm Button Is Displayed
     Verify Element Visibility  ${vf_A_confirmBtn}
@@ -582,142 +555,120 @@ Click On Aadhaar As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_aadhaarPOIOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
     Verify Page Conatin Text  ${e_aadhaarPOIDesc}
-    Log To Console  Proof Of Identification Popup for Aadhaar id displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Aadhaar Popup!
 
 Click On Drivers License As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_driversLicensePOIOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
     Verify Page Conatin Text  ${e_driversLicensePOIDesc}
-    Log To Console  Proof Of Identification Popup for Drivers License displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Drivers License Popup!
 
 Click On PAN Card As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_panCardOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
     Verify Page Conatin Text  ${e_panCardPOIDesc}
-    Log To Console  Proof Of Identification Popup for Drivers License displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under PAN Card Popup!
 
 Click On Passport As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_passportOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOIHeading}
     Verify Page Conatin Text  ${e_passportPOIDesc}
-    Log To Console  Proof Of Identification Popup for Passport displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Passport Popup!
 
 Click On Aadhaar Back Side As POA And Verify Popup
     Wait And Click Element On Android  ${vf_A_backAadhaarPOAOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
     Verify Page Conatin Text  ${e_aadhaarBackSidePOADesc}
-    Log To Console  Proof Of Address Popup for Aadhaar back side displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Aadhaar Back Side Popup!
 
 Click On Bank Statement As POA And Verify Popup
     Wait And Click Element On Android  ${vf_A_bankStmtPOAOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
     Verify Page Conatin Text  ${e_bankStmtPOADesc}
-    Log To Console  Proof Of Address Popup for Bank Statement displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Bank Statement Popup!
 
 Click On Back Side Of Drivers License As POA And Verify Popup
     Wait And Click Element On Android  ${vf_A_driverLicenseBsPOAOption}
     Verify Page Conatin Text  ${e_docUploadVerifyPOAHeading}
     Verify Page Conatin Text  ${e_driversLicenseBsPOADesc}
-    Log To Console  Proof Of Address Popup for Bank Statement displayed
     Verify Page Conatin Text  ${e_docUploadDesc2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Description!
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Confirm and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Back Side Of Drivers License Popup!
 
 Click On Confirm Button And Verify Aadhaar Popup
     Click On Confirm Button
     Verify Page Conatin Text  ${e_aadhaarPOIPopupHeading}
-    Log To Console  Document Upload- Please upload your Aadhaar Popup is displayed
     Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_docReqPOIPopupP1}
     Verify Page Conatin Text  ${e_docReqPOIPopupP2}
     Verify Page Conatin Text  ${e_aadhaarDocReqPOIPopupP3}
     Verify Page Conatin Text  ${e_docReqPOIPopupP3}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Document Requirement Points!
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Upload and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Aadhaar Popup!
 
 Click On Confirm Button And Verify Drivers License Popup
     Click On Confirm Button
     Verify Page Conatin Text  ${e_driversLicensePOIPopupHeading}
-    Log To Console  Document Upload- Please upload Front side of Drivers License Popup is displayed
     Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_docReqPOIPopupP1}
     Verify Page Conatin Text  ${e_docReqPOIPopupP2}
     Verify Page Conatin Text  ${e_docReqPOIPopupP3}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Document Requirement Points!
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Upload and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Drivers License Popup!
 
 Click On Confirm Button And Verify PAN Card Popup
     Click On Confirm Button
     Verify Page Conatin Text  ${e_panCardPOIPopupHeading}
-    Log To Console  Document Upload- Please upload your PAN Popup is displayed
     Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_docReqPOIPopupP1}
     Verify Page Conatin Text  ${e_docReqPOIPopupP2}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Document Requirement Points!
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Upload and Select Another Document button!
+    Log To Console  Verified contents and Buttons under PAN Card Popup!
 
 Click On Confirm Button And Verify Passport Popup
     Click On Confirm Button
     Verify Page Conatin Text  ${e_passportPOIPopupHeading}
-    Log To Console  Document Upload- Please upload your Passport Popup is displayed
     Verify Page Conatin Text  ${e_docReqUploadPopupDesc}
     Verify Page Conatin Text  ${e_docReqPOIPopupP1}
     Verify Page Conatin Text  ${e_docReqPOIPopupP2}
     Verify Page Conatin Text  ${e_passportPOIPopupP3}
     Verify Page Conatin Text  ${e_passportPOIPopupP4}
     Verify Image Is Displayed In Popup
-    Log To Console  Verified Heading, Image and Document Requirement Points!
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Upload and Select Another Document button!
+    Log To Console  Verified contents and Buttons under Passport Popup!
 
 Verify Upload Back Side Of Aadhaar Popup Under POI
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupHeading}
@@ -726,7 +677,7 @@ Verify Upload Back Side Of Aadhaar Popup Under POI
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupP2}
     Verify Image Is Displayed In Popup
     Verify Upload Button Is Displayed
-    Log To Console  Verified Description, Image and Upload button in Back side Aadhaar upload Popup!
+    Log To Console  Verified Back side Aadhaar upload Popup!
 
 Verify Upload Back Side Of Drivers License Popup Under POI
     Verify Page Conatin Text  ${e_driversLicenseBackUploadPopupHeading}
@@ -734,7 +685,7 @@ Verify Upload Back Side Of Drivers License Popup Under POI
     Verify Page Conatin Text  ${e_clearPictureP1}
     Verify Image Is Displayed In Popup
     Verify Upload Button Is Displayed
-    Log To Console  Verified Description, Image and Upload button in Back side Drivers License upload Popup!
+    Log To Console  Verified Back side Drivers License upload Popup!
 
 Verify Upload Back Side Of Aadhaar Popup Under POA
     Verify Page Conatin Text  ${e_aadhaarBackUploadPopupHeading}
@@ -744,7 +695,7 @@ Verify Upload Back Side Of Aadhaar Popup Under POA
     Verify Image Is Displayed In Popup
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Description, Image and Upload buttons in Back side Aadhaar upload Popup!
+    Log To Console  Verified Back side Aadhaar upload Popup!
 
 Verify Upload Bank Statement Popup Under POA
     Verify Page Conatin Text  ${e_bankStmtUploadPopupHeading}
@@ -755,7 +706,7 @@ Verify Upload Bank Statement Popup Under POA
     Verify Image Is Displayed In Popup
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Description, Image and Upload buttons in Bank Statement upload Popup!
+    Log To Console  Verified Bank Statement upload Popup!
 
 Verify Upload Back Side Of Drivers License Popup Under POA
     Verify Page Conatin Text  ${e_driversLicenseBsUploadPopupHeading}
@@ -764,7 +715,7 @@ Verify Upload Back Side Of Drivers License Popup Under POA
     Verify Image Is Displayed In Popup
     Verify Upload Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified Description, Image and Upload buttons in Back Side Of Drivers License upload Popup!
+    Log To Console  Verified Back Side Of Drivers License upload Popup!
 
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
@@ -847,7 +798,6 @@ Verify POA Uploaded Success Message
 Verify PAN field
     Verify Page Conatin Text  ${e_panNumber}
     Verify Element Visibility  ${vf_A_panTextbox}
-    Log To Console  PAN field displayed!
 
 Enter Valid PAN Number In PAN Field
     Verify PAN field
@@ -1042,7 +992,6 @@ Upload Passport As POI And Bank Statement As POA
 Verify Plan Payment Screen
     Wait For Page Conatin Element  ${e_payText}  5s
     Verify Page Conatin Text  ${e_payText}
-    Log to Console  Verified Plan Payment Screen!
 
 # SL51
 Verify Navigations Under KYC Plan Payment Screen
@@ -1064,13 +1013,12 @@ Enter Phone Number And Email For Payment
     Sleep  5s
     Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
-    Log to Console  Phone Number Entered!
     Sleep  5s
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
     Go Back On Android
     Input Text  ${vf_A_mailFld}  ${e_newAccMailId}
-    Log to Console  Email Id Entered!
+    Log to Console  Entered Phone number and Email Id
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_proceedBtn}
 
@@ -1100,15 +1048,14 @@ Enter Card Details For Payment
     Verify Page Contains Element On Android  ${vf_A_upiPaymentOpt}
     Verify Page Contains Element On Android  ${vf_A_netBankingPaymentOpt}
     Verify Page Contains Element On Android  ${vf_A_walletPaymentOpt}
-    Log to Console  Verified all Payment options!
     Wait And Click Element On Android  ${vf_A_cardPaymentOpt}
     Click On Element If Visibile  ${vf_A_skipSavedCardLink}
     Enter Card Details Into Fields  ${e_cardNum}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
-    Log to Console  Pay Button Clicked!
+    Log to Console  Clicked on Pay Button!
 
 # SL114
-Make Payment For Yearly Plan Using Card Information
+Make Payment For Yearly Basic Plan Using Card Information
     Swipe By Percent  50  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_basicSelectBtn}
     Log to Console  Clicked on Select Button!
@@ -1117,7 +1064,6 @@ Make Payment For Yearly Plan Using Card Information
     Wait For Page Conatin Element  ${e_feeTxt}  10s
     Verify Page Conatin Text   ${e_feeTxt}
     Verify Page Conatin Text   ${e_399Txt}
-    Log To Console  Verified Account opening Fee!
     Enter Phone Number And Email For Payment
     Enter Card Details For Payment
     Sleep  5s
@@ -1126,7 +1072,7 @@ Make Payment For Yearly Plan Using Card Information
     Wait And Click Element On Android  ${vf_A_successBtn}
     Log to Console  Successfully Completed the Payment Using Card!
 
-Make Payment For Quarterly Plan Using UPI
+Make Payment For Quarterly Premium Plan Using UPI
     Wait And Click Element On Android  ${vf_A_payToggleBtn}
     Swipe By Percent  50  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_premSelectBtn}
@@ -1147,27 +1093,54 @@ Make Payment For Quarterly Plan Using UPI
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_pay750Btn}
     Log to Console  Clicked on Pay Button
-    
+
+Make Payment For Yearly Premium Plan Using UPI
+    Swipe By Percent  50  70  20  20  5000
+    Wait And Click Element On Android  ${vf_A_premSelectBtn}
+    Log to Console  Clicked on Select Button!
+    Sleep  8s
+    Go Back On Android
+    Wait For Page Conatin Element  ${e_authSubsTxt}  10s
+    Verify Page Conatin Text   ${e_authSubsTxt}
+    Verify Page Conatin Text   ${e_2500Txt}
+    Log To Console  Verified Account opening Fee!
+    Enter Phone Number And Email For Payment
+    Verify Card & UPI Payment Options
+    Select An UPI Payment Option And Verify  ${e_recurringPaymentTxt}
+    Wait And Click Element On Android  ${vf_A_pay2500Btn}
+    Log to Console  Clicked on Pay Button
+    Verify UPI- ICICI Bank Payment Screen  ${e_recurringPaymentTxt}
+    Enter UPI ID
+    Go Back On Android
+    Wait And Click Element On Android  ${vf_A_pay2500Btn}
+    Log to Console  Clicked on Pay Button 
 
 # SL114
 Verify Sections And Navigations Under KYC Plan Payment Screen- Card 
     Sleep  2s
     Verify Plan Payment Screen
+    Log to Console  Verified Plan Payment Screen!
     Verify Navigations Under KYC Plan Payment Screen
-    Make Payment For Yearly Plan Using Card Information
+    Make Payment For Yearly Basic Plan Using Card Information
 
 # SP_30
 Purchase Quarterly Premium Plan Under KYC Plan Payment Screen- UPI
     Sleep  2s
     Verify Plan Payment Screen
-    Make Payment For Quarterly Plan Using UPI
+    Log to Console  Verified Plan Payment Screen!
+    Make Payment For Quarterly Premium Plan Using UPI
+
+Purchase Yearly Premium Plan Under KYC Plan Payment Screen- UPI
+    Sleep  2s
+    Verify Plan Payment Screen
+    Log to Console  Verified Plan Payment Screen!
+    Make Payment For Yearly Premium Plan Using UPI
 
 # Signature screen
 
 Verify Signature Screen
     Wait For Page Conatin Element  ${e_signatureScreenHeading}  10s
     Verify Page Conatin Text  ${e_signatureScreenHeading}
-    Log to Console  Verified Signature Screen!
 
 Verify Navigations Under KYC Signature Screen
     Click On Back Arrow 
@@ -1219,15 +1192,16 @@ Verify Advisory Agreement Link
 Verify DriveWealths Privacy Policy Section And Link
     Verify Page Conatin Text  ${e_privacyPolicy}
     Wait And Click Element On Android  ${vf_A_privacyCheckbox}
-    Log to Console  Verified and Clicked on DriveWealths Privacy Policy Checkbox!
+    Log to Console  Clicked on DriveWealths Privacy Policy Checkbox!
 
 Verify Signature Acknowledge Section
     Verify Page Conatin Text  ${e_signatureAcknowledge}
     Input Text  ${vf_A_userName}  ${e_fullNameForSignature}
-    Log To Console  Verified and Entered full name as Signature!    
+    Log To Console  Entered full name as Signature!    
 
 Verify All Sections And Navigations Under KYC Signature Screen
     Verify Signature Screen
+    Log to Console  Verified Signature Screen!
     Verify Navigations Under KYC Signature Screen
     Verify Element Visibility  ${vf_A_terms&ConditionsTxt}
     Verify Tax Form Information Section And Link

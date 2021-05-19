@@ -12,9 +12,11 @@ Suite Teardown  Quit Android Application
 # Executing Specific Tag: 
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
+# To run All test on browserstack: 
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Profile Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -172,7 +174,7 @@ KYC: Aadhaar Front & Back- POI
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Front And Back Side Of Aadhaar As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -188,7 +190,7 @@ KYC: Aadhaar Front- POI & Aadhaar Back- POA
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Aadhaar Front As POI And Back side As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -204,7 +206,7 @@ KYC: Aadhaar Full- POI
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Full Aadhaar As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -220,7 +222,7 @@ KYC: Aadhaar Front- POI & Bank Statement- POA
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Aadhaar Front As POI And Bank Statement As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -236,7 +238,7 @@ KYC: Drivers License Front- POI & Drivers License Back- POA
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Drivers License Front As POI And Back side As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -252,7 +254,7 @@ KYC: Drivers License Front & Back- POI
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Front And Back Side Of Drivers License As POI
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -268,7 +270,7 @@ KYC: PAN Card- POI & Bank Statement- POA
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload PAN Card As POI And Bank Statement As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -284,7 +286,7 @@ KYC: Passport- POI & Bank Statement- POA
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Passport As POI And Bank Statement As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify All Sections And Navigations Under KYC Signature Screen
@@ -292,7 +294,7 @@ KYC: Passport- POI & Bank Statement- POA
 
 # Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
-    [Tags]  Profile
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
@@ -303,14 +305,13 @@ Verify Navigations Under Profile Screen
     Click On Sub-menus Under Account And Verify
 
 # Premium Account containing existing Tax Documents- Defney credentials
-Verify Tax Documents And Manage Plan Under Profile Screen
-    [Tags]  Profile
+Verify Tax Documents Under Profile Screen
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Click On Profile Button
     Verify Tax Documents Yearwise
-    Verify Manage Plan
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
@@ -326,7 +327,7 @@ Navigations Under History Section For KYC Completed Account
 
 # Profile- History for KYC Incomplete Account
 Navigations Under History Section For KYC Incomplete Account
-    [Tags]  Profile
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Click On Profile Button
@@ -337,7 +338,7 @@ Navigations Under History Section For KYC Incomplete Account
 
 # Normal Subscription- KYC Approved Basic Account
 Verify Payment Plan Screen For Basic Account
-    [Tags]  Subscription
+    [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -349,7 +350,6 @@ Verify Payment Plan Screen For Basic Account
 # Basic plan Subscription as part of KYC flow 
 Basic Subscription Using UPI
     [Tags]  Subscription
-    [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -357,40 +357,50 @@ Basic Subscription Using UPI
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Passport As POI And Bank Statement As POA
     Verify Sections And Navigations Under KYC Plan Payment Screen- UPI
     Verify Plan Payment Screen
 
-# Premium Subscription- Premium Account
-Verify Payment Plan Screen And Downgrade Premium Subscription
-    [Tags]  Subscription
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With Premium Account For Downgrading
-    Click On Profile Button
-    Navigate To Payment Plan Screen And Verify Premium Account For Yearly
-    Downgrade Premium Plan To Basic
-
+# NOTE: To be executed after 'Basic Subscription Using UPI'
 # Premium Subscription- KYC Completed Basic Account
 Premium Subscription With Card
     [Tags]  Subscription
     [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With Basic Account For Premium Subscription
     Click On Profile Button
     Click On Go Premium
     Verify Basic Account Contents Under Payment Plan Screen 
     Subscribe Premium Plan With Card
 
+# TBU: After KYC-Doc upload on BS 
+# Premium Subscription- Premium Account
+Verify Payment Plan Screen And Downgrade Premium Subscription
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
+    Upload Full Aadhaar As POI
+    Purchase Yearly Premium Plan Under KYC Plan Payment Screen- UPI
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+    Click On Profile Button
+    Navigate To Payment Plan Screen And Verify Premium Account For Yearly
+    Downgrade Premium Plan To Basic
+
 # Premium Subscription- KYC Approved Premium Account
 Navigate To Vest Upsell And Try To Buy Vest
-    [Tags]  Subscription  
+    [Tags]  Subscription  Test
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
 
+# TBU: After KYC-Doc upload on BS 
 # Subscription > Purchase Premium (Quarterly) > Downgrade
 Purchase Quarterly Premium Plan After Basic And Then Downgrade
     [Tags]  Subscription
@@ -401,7 +411,7 @@ Purchase Quarterly Premium Plan After Basic And Then Downgrade
     Verify All Sections And Navigations Under KYC Introduction Screen
     User Fill All The Fields Under KYC Basic Details Screen And Verify
     User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields under KYC Identity Screen And Verify
+    User Fill All the Fields Under KYC Identity Screen And Verify
     Upload Full Aadhaar As POI
     Purchase Quarterly Premium Plan Under KYC Plan Payment Screen- UPI
     Verify All Sections And Navigations Under KYC Signature Screen

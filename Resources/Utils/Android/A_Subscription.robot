@@ -10,15 +10,6 @@ Signin With KYC Approved Basic Account
 Signin With KYC Approved Premium Account
     Signin With Pin Credentials  ${e_emailKycApprovePremium}  ${e_pwdKycApprovePremium}  ${e_pinKycApprovePremium}
 
-Signin With Premium Account For Downgrading
-    Signin Without Pin Credentials  ${e_emailPremiumFrDowngrd}  ${e_pwdPremiumFrDowngrd}
-
-Signin With Basic Account For Premium Subscription
-    Signin Without Pin Credentials  ${e_emailBasicAccFrPrem}  ${e_pwdBasicAccFrPrem}
-
-Signin With Premium Account For Switch Plan
-    Signin Without Pin Credentials  ${e_emailPremiumFrSwitchPln}  ${e_pwdPremiumFrSwitchPln}
-
 # Normal Subscription
 Verify Values Under Basic Plan For Basic Account
     Verify Page Conatin Text  ${e_basicHeading}
@@ -33,7 +24,7 @@ Verify Values Under Basic Plan For Basic Account
 
 Verify Values Under Premium Plan For Basic Account
     Verify Page Conatin Text  ${e_premiumHeading}
-    Verify Page Conatin Text  ${e_subsChrgsUnderPremium}
+    Verify Page Conatin Text  ${e_subsChrgsYearlyUnderPremium}
     Verify Element Visibility  ${vf_A_zeroComInvstUnderPremium}
     Verify Element Visibility  ${vf_A_vestUpfrntFeeUnderPremium}
     Verify Page Conatin Text  ${e_withdrwlFeeUnderPremium}
@@ -45,10 +36,11 @@ Verify Values Under Premium Plan For Basic Account
 Verify Basic Account Contents Under Payment Plan Screen 
     Wait For Page Conatin Element  ${e_payText}  5s
     Verify Page Conatin Text  ${e_payText}
-    Verify Page Conatin Text  ${e_save500Txt}
-    Verify Page Conatin Text  ${e_payQuarterlyTxt}
-    Verify Page Conatin Text  ${e_payYearlyTxt}
-    Swipe By Percent  70  70  50  50  5000
+    # NOTE: Toggle button is not displayed
+    # Verify Page Conatin Text  ${e_save500Txt}
+    # Verify Page Conatin Text  ${e_payQuarterlyTxt}
+    # Verify Page Conatin Text  ${e_payYearlyTxt}
+    # Swipe By Percent  70  70  50  50  5000
     Verify Page Conatin Text  ${e_subsChrgs}
     Verify Page Conatin Text  ${e_zeroComInvst}
     Verify Page Conatin Text  ${e_comsnDisclr}
@@ -62,7 +54,7 @@ Verify Basic Account Contents Under Payment Plan Screen
 Verify Current Plan And Select Button 
     Verify Element Visibility  ${vf_A_currentPlanBtn}
     Log to Console  Verified Current Plan Button Under Basic
-     Verify Element Visibility  ${vf_A_slctBtn}
+     Verify Element Visibility  ${vf_A_basicSelectBtn}
     Log to Console  Verified Select Button Under Premium
 
 Enter UPI ID
@@ -341,7 +333,7 @@ Verify Premium Subscribed Success Screen
 
 # SB_09
 Subscribe Premium Plan With Card
-    Wait And Click Element On Android  ${vf_A_slctBtn}
+    Wait And Click Element On Android  ${vf_A_basicSelectBtn}
     Log to Console  Clicked on Select button under Premium
     Click On Element If Visibile  ${vf_A_continuePayment}
     Sleep  5s
@@ -396,7 +388,7 @@ Select An UPI Payment Option And Verify
 # SB_09- UPI
 Subscribe Premium Plan With UPI
     Swipe By Percent  70  70  50  50  5000
-    Wait And Click Element On Android  ${vf_A_slctBtn}
+    Wait And Click Element On Android  ${vf_A_basicSelectBtn}
     Log to Console  Clicked on Select button under Premium
     Click On Element If Visibile  ${vf_A_continuePayment}
     Sleep  5s

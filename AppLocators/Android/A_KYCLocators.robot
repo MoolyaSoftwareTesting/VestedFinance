@@ -160,6 +160,7 @@ ${e_expiry} =  0223
 ${e_hldrName} =  Abcxyz
 ${e_399Txt} =  ₹ 399
 ${e_750Txt} =  ₹ 750
+${e_2500Txt} =  ₹ 2,500
 ${e_feeTxt} =  Account Opening Fee
 ${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com

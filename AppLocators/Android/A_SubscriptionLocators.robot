@@ -9,18 +9,6 @@ ${e_emailKycApprovePremium} =  defney+Tes3@vestedfinance.co
 ${e_pwdKycApprovePremium} =  Test@123
 ${e_pinKycApprovePremium} =  111111
 
-# Premium Account credentials for Downgrading
-${e_emailPremiumFrDowngrd} =  testingVF111+7@gmail.com
-${e_pwdPremiumFrDowngrd} =  Moolya@123
-
-# KYC Completed- Basic Acc For Premium Subscription
-${e_emailBasicAccFrPrem} =  testingVF111@gmail.com
-${e_pwdBasicAccFrPrem} =  Moolya@123
-
-# Premium Account credentials for Switch Plan
-${e_emailPremiumFrSwitchPln} =  testingVF111+5@gmail.com
-${e_pwdPremiumFrSwitchPln} =  Moolya@123
-
 #Payment Credentials
 ${e_cardNumForPremiumSubs} =  5104 0155 5555 5558
 ${e_upiIdForPremiumSubs} =  success@razorpay
