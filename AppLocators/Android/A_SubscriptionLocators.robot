@@ -1,9 +1,5 @@
 *** Variables ***
 
-# Premium Account credentials
-${e_validEmailPremium} =  testingVF111+4@gmail.com
-${e_validPasswordPremium} =  Moolya@123
-
 # KYC Approved Basic Account credentials
 ${e_emailKycApproveBasic} =  defney+Tes2@vestedfinance.co
 ${e_pwdKycApproveBasic} =  Test@123
@@ -12,6 +8,18 @@ ${e_pwdKycApproveBasic} =  Test@123
 ${e_emailKycApprovePremium} =  defney+Tes3@vestedfinance.co
 ${e_pwdKycApprovePremium} =  Test@123
 ${e_pinKycApprovePremium} =  111111
+
+# Premium Account credentials for Downgrading
+${e_emailPremiumFrDowngrd} =  testingVF111+7@gmail.com
+${e_pwdPremiumFrDowngrd} =  Moolya@123
+
+# KYC Completed- Basic Acc For Premium Subscription
+${e_emailBasicAccFrPrem} =  testingVF111@gmail.com
+${e_pwdBasicAccFrPrem} =  Moolya@123
+
+# Premium Account credentials for Switch Plan
+${e_emailPremiumFrSwitchPln} =  testingVF111+5@gmail.com
+${e_pwdPremiumFrSwitchPln} =  Moolya@123
 
 #Payment Credentials
 ${e_cardNumForPremiumSubs} =  5104 0155 5555 5558
@@ -33,7 +41,8 @@ ${e_vestUpfrntFeeUnderBasic} =  $3
 ${e_withdrwlFeeUnderBasic} =  $11
 ${e_withdrwlFeeTxtUnderBasic} =  / withdrawal
 ${e_premiumHeading} =  Premium
-${e_subsChrgsUnderPremium} =  ₹2,500 /year
+${e_subsChrgsYearlyUnderPremium} =  ₹2,500 /year
+${e_subsChrgsQtrlyUnderPremium} =  ₹750 /quarter
 ${e_vestUpfrntFeeUnderPremium} =  $0
 ${e_withdrwlFeeUnderPremium} =  1 free withdrawal per year
 ${e_withdrwlFeeTxtUnderPremium} =  $11 / withdrawal thereafter
@@ -75,6 +84,10 @@ ${e_payzapp} =  PayZapp
 
 
 # Premium Subscription
+${e_billingFrqncyTxt} =  Billing Frequency
+${e_billingFrqncyDesc1} =  You are currently on the annual premium plan at a rate of ₹2,500 per year. You can switch to the quarterly premium plan at a rate of ₹750 per quarter.
+${e_billingFrqncyDesc2} =  The quarterly premium plan will go into effect at the next renewal date.
+${e_switchToQtrly} =  Switch to Quarterly
 ${e_accOpnFee} =  Account opening fee
 ${e_premPlanScreenHeading} =  You will lose the following features by downgrading
 ${e_planDowngrade} =  Plan Downgrade
@@ -98,8 +111,8 @@ ${e_accOpnFeeUnderBasic} =  ₹399
 ${e_accOpnFeeUnderBasicTxt} =  (one-time)
 ${e_accOpnFeeUnderPremium} =  ₹0
 # UPI
-${e_paymentUPItxt2} =  This is a recurring payment and upto ₹ 2,500 will be charged now. Vested can charge upto ₹ 2,500 on a yearly basis till
 ${e_recurringPaymentTxt} =  This is a recurring payment and upto ₹ 2,500 will be charged now. Vested can charge upto ₹ 2,500 on a yearly basis till
+${e_QtrlypaymentUPItxt} =  This is a recurring payment and upto ₹ 750 will be charged now. Vested can charge upto ₹ 750 on a monthly basis till
 # Multi Asset Vests
 ${e_buyingPower} =  Buying Power
 ${e_previewOrdeBtn} =  Preview Order
@@ -131,6 +144,7 @@ ${vf_A_backtoDashboardBtn} =  xpath=//*[@text='Back to Dashboard']
 ${vf_A_cardPaymentOptForPremium} =  xpath=//*[@text='Card MasterCard and Visa credit cards']
 ${vf_A_upiPaymentOptForPremium} =  xpath=//*[@text='UPI Pay using BHIM or PayTM App']
 ${vf_A_pay2500Btn} =  xpath=//*[@text='PAY ₹ 2,500']
+${vf_A_pay750Btn} =  xpath=//*[@text='PAY ₹ 750']
 ${vf_A_continuePayment} =  xpath=/*[@text='CONTINUE PAYMENT']
 ${vf_A_upiPaymentICICI} =  xpath=//*[@text='ICICI Bank' and ./*[@class='android.view.View']]
 ${vf_A_upiPaymentHDFC} =  xpath=//*[@text='HDFC Bank' and ./*[@class='android.view.View']]

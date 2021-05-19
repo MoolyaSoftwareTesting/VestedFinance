@@ -1,7 +1,7 @@
 *** Variables ***
 
 # KYC Completed Credentials- Basic Acc
-${e_validEmailForKYCcmpltd} =  testingVF111+10@gmail.com
+${e_validEmailForKYCcmpltd} =  testingVF111+15@gmail.com
 ${e_validPasswordForKYCcmpltd} =  Moolya@123
 
 # Profile Variables
@@ -44,6 +44,7 @@ ${e_mailTxt4} =  What actually happened?
 ${e_mailTxt5} =  Thank you.
 ${e_msgUsHeading} =  Vested Finance Inc
 ${e_msgRspnd} =  Typically replies in a few hour
+${e_msgInput} =  When does the market open for investing
 ${e_forTaxRep} =  For Tax Reporting
 ${e_supTaxDoc} =  Supporting Tax Documents
 ${e_supTaxDocSH} =  Apr 2020 - Mar 2021 (Indian Tax Year)
@@ -60,11 +61,13 @@ ${e_supTaxDocN5} =  Note: Please consult your Chartered Accountant if you have a
 # Account Variables
 ${e_planManagement} =  Plan Management
 ${e_planDetails} =  Plan Details
-${e_planDetailsTxt1} =  You are currently on the Quarterly Premium Plan
-${e_planDetailsTxt2} =  Your plan will renew automatically on Jul 19, 2021.
+${e_planDetailsYrlyTxt1} =  You are currently on the Yearly Premium Plan
+${e_planDetailsQtrlyTxt1} =  You are currently on the Quarterly Premium Plan
+${e_planDetailsTxt2} =  Your plan will renew automatically on
 ${e_billingDetails} =  Billing Details
 ${e_billingOptions} =  Billing Options
-${e_billingTxt} =  You are currently paying ₹750 for the quarterly plan.
+${e_billingYrlyTxt} =  You are currently paying ₹2,500 for the yearly plan.
+${e_billingQtrlyTxt} =  You are currently paying ₹750 for the quarterly plan.
 ${e_riskToleranceOpt} =  Risk Tolerance
 ${e_investingFrequencyOpt} =  Investing Frequency
 ${e_investingExperienceOpt} =  Investing Experience
@@ -131,10 +134,12 @@ ${vf_A_taxDoc2020} =  xpath=//*[@text='2020']
 ${vf_A_tax2020} =  xpath=//*[@text='2020']
 
 # Help Locators
-${vf_A_msgTitle} =  xpath=//*[@id='intercom_toolbar_title_container']
+${vf_A_msgInputFld} =  xpath=//*[@class='android.widget.EditText']
+${vf_A_sendBtn} =  xpath=//*[@content-desc='Send button']
 
 # Account Locators
 ${vf_A_downgradePlanBtn} =  xpath=//*[@text='Downgrade Plan']
-${vf_switchPlanBtn} =  xpath=//*[@text='Switch to Yearly Plan']
+${vf_switchToYrlyBtn} =  xpath=//*[@text='Switch to Yearly Plan']
+${vf_switchToQtrlyBtn} =  xpath=//*[@text='Switch to Quarterly Plan']
 ${vf_A_closeButton} =  xpath=//*[@text='×']
 ${vf_A_planPymntToggleBtn} =  xpath=//*[@class='android.widget.Switch']

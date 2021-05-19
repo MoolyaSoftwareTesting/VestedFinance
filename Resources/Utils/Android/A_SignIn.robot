@@ -164,6 +164,7 @@ Signin With Invalid Credentials - Google
     Enter Google Password  ${e_invalidPwd}
     Close Android Keyboard
     Log To Console  Entered invalid password
+    Sleep  3s
     Click On Next Button
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
     Log To Console  Error message verified!
@@ -215,7 +216,7 @@ Signin With Invalid Credentials - Facebook
     Wait And Click Element On Android  ${vf_A_FbSigninBtn}
     Log to Console  Clicked on Log In button
     Close Android Keyboard
-    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt} 20s
+    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt}  20s
     Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
     Swipe By Percent  70  70  20  20  5000
     Log to Console  Error message verified!

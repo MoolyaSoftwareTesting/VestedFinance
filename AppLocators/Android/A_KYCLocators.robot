@@ -159,7 +159,9 @@ ${e_cvv} =  123
 ${e_expiry} =  0223
 ${e_hldrName} =  Abcxyz
 ${e_399Txt} =  ₹ 399
+${e_750Txt} =  ₹ 750
 ${e_feeTxt} =  Account Opening Fee
+${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
 
@@ -278,7 +280,9 @@ ${e_picturesFolder} =  Pictures
 
 
 # Plan Payment screen Locators
-${vf_A_slctBtn} =  xpath=//*[@text='Select']
+${vf_A_basicSelectBtn} =  xpath=//*[@text='Select']
+${vf_A_premSelectBtn} =  xpath=//*[@text='Select' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='₹0']]]
+${vf_A_premSubscribedBtn} =  xpath=//*[@text='Subscribed']
 ${vf_A_chsPlanBtn} =  xpath=//*[@text='Choose Plan']
 ${vf_A_accOpeningTxt} =  xpath=//*[@text='Account Opening Fee']
 ${vf_A_phnTxtFld} =  xpath=//*[@text='Phone']
@@ -303,6 +307,7 @@ ${vf_A_cvvTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[4]
 ${vf_A_rememberCardCheckbox} =  xpath=//*[@text='Remember Card']
 ${vf_A_pay399Btn} =  xpath=//*[@text='PAY ₹ 399']
 ${vf_A_successBtn} =  xpath=//*[@text='Success']
+${vf_A_payToggleBtn} =  xpath=//*[@class='android.widget.Switch']
 
 # Signature screen Locators
 ${vf_A_terms&ConditionsTxt} =  xpath=//*[@text='Terms & Conditions']

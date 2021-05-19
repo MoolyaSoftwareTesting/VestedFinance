@@ -12,9 +12,9 @@ Suite Teardown  Quit Android Application
 # Executing Specific Tag: 
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
+
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
-
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -74,33 +74,15 @@ Signin With Social Account - Apple With Invalid Signin Credentials
     Click On Continue With Apple Button
     Signin With Invalid Credentials - Apple
 
-# Blocker: Google Verification code is asked
-Google With Valid Signin Credentials
-    [Tags]  SL14
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Click On Continue With Google Button
-    Signin With Valid Credentials - Google
-    Verify Dashboard Screen
-
-# Blocker: To Be Executed After SL14
-Previously Loggedin Account Is Displayed In Google Social Signin
-    [Tags]  SL18
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Click On Continue With Google Button
-    Choose An Gmail Account From The Existing Accounts
-    Verify Dashboard Screen
-
 # Invalid Google Signin
 Google With Invalid Signin Credentials
-    [Tags]  SL15  Signin
+    [Tags]  SL15  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
     Signin With Invalid Credentials - Google
 
-# Blocker: On clicking Log In button, Incorrect password Error msg is not appearing
+# FAIL: On clicking Log In button, Incorrect password Error msg is not appearing
 Facebook With Invalid Signin Credentials
     [Tags]  SL17
     [Teardown]  Rest Android Application
@@ -110,7 +92,7 @@ Facebook With Invalid Signin Credentials
 
 # Valid Facebook Signin
 Facebook With Valid Signin Credentials
-    [Tags]  SL16  Signin
+    [Tags]  SL16  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Facebook Button
@@ -136,14 +118,14 @@ Signup - Resend Code
     User Lands On Verficiation Code Screen
     Landing Page Is Loaded Completely
 
-# Failing on Browser stack
-# Verify Password Combination Criteria 
+# FAIL: Verify Password Combination Criteria 
 User Password Mismatches Password Criteria 
     [Tags]  SL27
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
+    User Enters Valid Email
     User Enters Invalid Password
-    Verify Password Combination Criteria 
+    Verify Password Combination Criteria
 
 # Signup With Existing Email
 Signup With Existing Email & Verify Error Message
@@ -154,7 +136,7 @@ Signup With Existing Email & Verify Error Message
 
 # Signup With Existing Google Social Credentials
 User Signups With Existing Google Account & Password  
-    [Tags]  SL30  Signup
+    [Tags]  SL30  Signup  
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Google Account Password To Signup
@@ -168,14 +150,14 @@ User Enters An Invalid Email Id In Forgot Password Validation Screen
 
 # Reset Password- Invalid Code With Valid Password
 User Enters Invalid Code With Valid Password In Reset Password Screen
-    [Tags]  SL33  ForgotPassword
+    [Tags]  SL33  ForgotPassword  
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Invalid Code For Password Reset
 
 # Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
-    [Tags]  SL36  ForgotPassword
+    [Tags]  SL36  ForgotPassword  
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Different Passwords In Both Fields
@@ -321,17 +303,18 @@ Verify Navigations Under Profile Screen
     Click On Sub-menus Under Account And Verify
 
 # Premium Account containing existing Tax Documents- Defney credentials
-Verify Tax Documents Under Profile Screen
+Verify Tax Documents And Manage Plan Under Profile Screen
     [Tags]  Profile
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Click On Profile Button
     Verify Tax Documents Yearwise
+    Verify Manage Plan
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
-    [Tags]  Profile
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -384,17 +367,17 @@ Verify Payment Plan Screen And Downgrade Premium Subscription
     [Tags]  Subscription
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
-    Signin With Premium Account
+    Signin With Premium Account For Downgrading
     Click On Profile Button
-    Navigate To Payment Plan Screen And Verify Premium Account Contents
+    Navigate To Payment Plan Screen And Verify Premium Account For Yearly
     Downgrade Premium Plan To Basic
 
 # Premium Subscription- KYC Completed Basic Account
 Premium Subscription With Card
-    [Tags]  Subscription  
+    [Tags]  Subscription
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
-    Signin With KYC Completed Basic Account
+    Signin With Basic Account For Premium Subscription
     Click On Profile Button
     Click On Go Premium
     Verify Basic Account Contents Under Payment Plan Screen 
@@ -402,15 +385,29 @@ Premium Subscription With Card
 
 # Premium Subscription- KYC Approved Premium Account
 Navigate To Vest Upsell And Try To Buy Vest
-    [Tags]  Subscription
+    [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
 
+# Subscription > Purchase Premium (Quarterly) > Downgrade
+Purchase Quarterly Premium Plan After Basic And Then Downgrade
+    [Tags]  Subscription
+    [Teardown]  Rest Android Application
+    Signup And Signin For KYC
+    Verify Account Status Screen
+    Click on Start/Complete KYC Button
+    Verify All Sections And Navigations Under KYC Introduction Screen
+    User Fill All The Fields Under KYC Basic Details Screen And Verify
+    User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    User Fill All the Fields under KYC Identity Screen And Verify
+    Upload Full Aadhaar As POI
+    Purchase Quarterly Premium Plan Under KYC Plan Payment Screen- UPI
+    Verify All Sections And Navigations Under KYC Signature Screen
+    Verify Steps Under Account Status Screen After KYC Completion
+    Click On Profile Button
+    Navigate To Payment Plan Screen And Verify Premium Account For Quarterly
+    Downgrade Premium Plan To Basic
 
 
-
-
-
-    

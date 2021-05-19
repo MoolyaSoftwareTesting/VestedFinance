@@ -4,14 +4,20 @@ Library     AppiumLibrary
 
 ***Keywords***
 
-Signin With Premium Account
-    Signin Without Pin Credentials  ${e_validEmailPremium}  ${e_validPasswordPremium}
-
 Signin With KYC Approved Basic Account
     Signin With Pin Credentials  ${e_emailKycApproveBasic}  ${e_pwdKycApproveBasic}  ${e_validPin}
 
 Signin With KYC Approved Premium Account
     Signin With Pin Credentials  ${e_emailKycApprovePremium}  ${e_pwdKycApprovePremium}  ${e_pinKycApprovePremium}
+
+Signin With Premium Account For Downgrading
+    Signin Without Pin Credentials  ${e_emailPremiumFrDowngrd}  ${e_pwdPremiumFrDowngrd}
+
+Signin With Basic Account For Premium Subscription
+    Signin Without Pin Credentials  ${e_emailBasicAccFrPrem}  ${e_pwdBasicAccFrPrem}
+
+Signin With Premium Account For Switch Plan
+    Signin Without Pin Credentials  ${e_emailPremiumFrSwitchPln}  ${e_pwdPremiumFrSwitchPln}
 
 # Normal Subscription
 Verify Values Under Basic Plan For Basic Account
@@ -80,21 +86,10 @@ Make Payment Using UPI
     Verify Page Conatin Text   ${e_399Txt}
     Log To Console  Verified Account opening Fee!
     Enter Phone Number And Email For Payment
-    Wait And Click Element On Android  ${vf_A_upiPaymentOptForPremium}
-    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
-    Wait For Page Conatin Element  ${e_paymentUPIdesc}  8s
-    Verify Page Conatin Text   ${e_paymentUPIdesc}
-    Verify Page Conatin Text   ${e_paymentUPItxt1}
-    Verify Element Visibility  ${vf_A_upiPaymentICICI}
-    Verify Element Visibility  ${vf_A_upiPaymentHDFC}
-    Verify Element Visibility  ${vf_A_upiPaymentSBI}
-    Log to Console  Verified UPI options!
-    Verify Page Conatin Text   ${e_paymentUPItxt2}
-    Wait And Click Element On Android  ${vf_A_upiPaymentICICI}
-    Log to Console  Clicked on ICICI Bank option
+    Select An UPI Payment Option And Verify  ${e_recurringPaymentTxt}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
     Log to Console  Clicked on Pay Button
-    Verify UPI- ICICI Bank Payment Screen
+    Verify UPI- ICICI Bank Payment Screen  ${e_recurringPaymentTxt}
     Enter UPI ID
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_pay399Btn}
@@ -206,6 +201,20 @@ Verify Vest Upsell- Buy Vest From Basic Account
 
 # Premium Subscription
 
+Click On Manage Plan Under Profile
+    Wait For Page Conatin Element  ${e_mngPln}  5s
+    Click Text  ${e_mngPln}
+    Log to Console  Clicked on Manage Plan
+
+Verify Plan Details Section
+    [Arguments]  ${planType}
+    Sleep  3s
+    Verify Page Conatin Text  ${e_planManagement}
+    Verify Page Conatin Text  ${e_planDetails}
+    Verify Page Conatin Text  ${planType}
+    Verify Page Conatin Text  ${e_planDetailsTxt2}
+    Log to Console  Verified Plan Details section!
+
 Verify Values Under Basic Plan For Premium Account
     Verify Page Conatin Text  ${e_basicHeading}
     Verify Page Conatin Text  ${e_subsChrgsUnderBasic}
@@ -220,8 +229,9 @@ Verify Values Under Basic Plan For Premium Account
     Log to Console  Verified values under Basic Plan!
 
 Verify Values Under Premium Plan For Premium Account
+    [Arguments]  ${subsCharges}
     Verify Page Conatin Text  ${e_premiumHeading}
-    Verify Page Conatin Text  ${e_subsChrgsUnderPremium}
+    Verify Page Conatin Text  ${subsCharges}
     Verify Page Conatin Text  ${e_accOpnFeeUnderPremium}
     Verify Element Visibility  ${vf_A_zeroComInvstUnderPremium}
     Verify Page Conatin Text  ${e_accOpnFeeUnderPremium}
@@ -231,15 +241,7 @@ Verify Values Under Premium Plan For Premium Account
     Verify Element Visibility  ${vf_A_accessAddntlVestsUnderPremium}
     Log to Console  Verified values under Premium Plan!
 
-# SB_06
-Navigate To Payment Plan Screen And Verify Premium Account Contents
-    Wait For Page Conatin Element  ${e_mngPln}  5s
-    Click Text  ${e_mngPln}
-    Verify Page Conatin Text  ${e_planManagement}
-    Verify Page Conatin Text  ${e_planDetails}
-    Wait And Click Element On Android  ${vf_A_downgradePlanBtn}
-    Log to Console  Clicked on Downgrade Plan button
-    Sleep  3s
+Verify Fields Under Premium Plan Downgrade Screen
     Wait For Page Conatin Element  ${e_premPlanScreenHeading}  5s
     Verify Page Conatin Text  ${e_premPlanScreenHeading}
     Swipe By Percent  70  70  50  50  5000
@@ -250,8 +252,30 @@ Navigate To Payment Plan Screen And Verify Premium Account Contents
     Verify Page Conatin Text  ${e_vestUpfrntFee}
     Verify Page Conatin Text  ${e_accessAddntlVests}
     Log to Console  Verified all fields under Payment Plan Screen!
+
+# SB_06
+Navigate To Payment Plan Screen And Verify Premium Account For Yearly
+    Click On Manage Plan Under Profile
+    Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
+    Log to Console  Verified Plan Details for Yearly Plan!
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_downgradePlanBtn}
+    Log to Console  Clicked on Downgrade Plan button
+    Sleep  3s
+    Verify Fields Under Premium Plan Downgrade Screen
     Verify Values Under Basic Plan For Premium Account
-    Verify Values Under Premium Plan For Premium Account
+    Verify Values Under Premium Plan For Premium Account  ${e_subsChrgsYearlyUnderPremium}
+
+Navigate To Payment Plan Screen And Verify Premium Account For Quarterly
+    Sleep  3s
+    Click On Manage Plan Under Profile
+    Verify Plan Details Section  ${e_planDetailsQtrlyTxt1}
+    Wait And Click Element On Android  ${vf_A_downgradePlanBtn}
+    Log to Console  Clicked on Downgrade Plan button
+    Sleep  3s
+    Verify Fields Under Premium Plan Downgrade Screen
+    Verify Values Under Basic Plan For Premium Account
+    Verify Values Under Premium Plan For Premium Account  ${e_subsChrgsQtrlyUnderPremium}
 
 # SB_07, SB_08
 Verify Downgrade And Current Plan Button
@@ -346,12 +370,28 @@ Subscribe Premium Plan With Card
     Verify Premium Subscribed Success Screen
 
 Verify UPI- ICICI Bank Payment Screen
+    [Arguments]  ${recurringTxt}
     Verify Page Conatin Text   ${e_upiICICItxt}
     Verify Page Conatin Text   ${e_upiPayTxt}
     Verify Page Conatin Text   ${e_upiIdTxt}
     Verify Page Conatin Text   ${e_upiNoteTxt}
-    Verify Page Conatin Text   ${e_recurringPaymentTxt}
+    Verify Page Conatin Text   ${recurringTxt}
     Log to Console  Verified UPI- ICICI Bank Payment Screen!
+
+Select An UPI Payment Option And Verify
+    [Arguments]  ${recurringTxt}
+    Wait And Click Element On Android  ${vf_A_upiPaymentOptForPremium}
+    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
+    Wait For Page Conatin Element  ${e_paymentUPIdesc}  8s
+    Verify Page Conatin Text   ${e_paymentUPIdesc}
+    Verify Page Conatin Text   ${e_paymentUPItxt1}
+    Verify Element Visibility  ${vf_A_upiPaymentICICI}
+    Verify Element Visibility  ${vf_A_upiPaymentHDFC}
+    Verify Element Visibility  ${vf_A_upiPaymentSBI}
+    Log to Console  Verified UPI options!
+    Verify Page Conatin Text   ${recurringTxt}
+    Wait And Click Element On Android  ${vf_A_upiPaymentICICI}
+    Log to Console  Clicked on ICICI Bank option
 
 # SB_09- UPI
 Subscribe Premium Plan With UPI
@@ -366,21 +406,10 @@ Subscribe Premium Plan With UPI
     Log to Console  Verified Subscription Amount!
     Enter Phone Number And Email For Payment
     Verify Card & UPI Payment Options
-    Wait And Click Element On Android  ${vf_A_upiPaymentOptForPremium}
-    Click On Element If Visibile  ${vf_A_skipSavedCardLink}
-    Wait For Page Conatin Element  ${e_paymentUPIdesc}  8s
-    Verify Page Conatin Text   ${e_paymentUPIdesc}
-    Verify Page Conatin Text   ${e_paymentUPItxt1}
-    Verify Element Visibility  ${vf_A_upiPaymentICICI}
-    Verify Element Visibility  ${vf_A_upiPaymentHDFC}
-    Verify Element Visibility  ${vf_A_upiPaymentSBI}
-    Log to Console  Verified UPI options!
-    Verify Page Conatin Text   ${e_paymentUPItxt2}
-    Wait And Click Element On Android  ${vf_A_upiPaymentICICI}
-    Log to Console  Clicked on ICICI Bank option
+    Select An UPI Payment Option And Verify  ${e_recurringPaymentTxt}
     Wait And Click Element On Android  ${vf_A_pay2500Btn}
     Log to Console  Clicked on Pay Button
-    Verify UPI- ICICI Bank Payment Screen
+    Verify UPI- ICICI Bank Payment Screen  ${e_recurringPaymentTxt}
     Enter UPI ID
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_pay2500Btn}
@@ -412,7 +441,7 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Sleep  2s
     Click On Back Arrow
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
-    Swipe By Percent   80  50   10   50  5000 
+    Swipe By Percent   70  80   10   80  5000 
     # Moderate
     Verify Page Conatin Text   ${e_modMultiAssetVests}
     Verify Page Conatin Text   ${e_modMultiAssetVestsTxt}
@@ -425,14 +454,14 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Sleep  2s
     Click On Back Arrow
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
-    Swipe By Percent   80  50   10   50  5000 
-    Swipe By Percent   80  50   10   50  5000 
+    Swipe By Percent   70  80   10   80  5000 
+    Swipe By Percent   70  80   10   80  5000 
     # Conservative
     Verify Page Conatin Text   ${e_conMultiAssetVests}
     Verify Page Conatin Text   ${e_conMultiAssetVestsTxt}
     Click Text  ${e_conMultiAssetVests}
-    Wait For Page Conatin Element  ${e_conserMultiAssetClass}  5s
-    Verify Page Conatin Text   ${e_conserMultiAssetClass}
+    Wait For Page Conatin Element  ${e_conMultiAssetClass}  5s
+    Verify Page Conatin Text   ${e_conMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Conservative
     Click On Buy Button And Verify Buying Power Screen
     Click On Back Arrow
@@ -440,6 +469,26 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Click On Back Arrow
     Log to Console  Premium user is able to Buy Multi Vests!
 
+# SP12
+Click On Billing Details- Yearly And Verify
+    Verify Page Conatin Text  ${e_billingDetails}
+    Verify Page Conatin Text  ${e_billingOptions}
+    Verify Page Conatin Text  ${e_billingYrlyTxt}
+    Verify Element Visibility  ${vf_switchToQtrlyBtn}
+    Log to Console  Verified Billing Details- Yearly section!
+    Wait And Click Element On Android  ${vf_switchToQtrlyBtn}
+    Log to Console  Clicked on Switch to Qurterly Plan button
+    Wait For Page Conatin Element  ${e_billingFrqncyTxt}  5s
+    Verify Page Conatin Text  ${e_billingFrqncyTxt}
+    Verify Page Conatin Text  ${e_billingFrqncyDesc1}
+    Verify Page Conatin Text  ${e_billingFrqncyDesc2}
+    Verify Page Conatin Text  ${e_switchToQtrly}
+    Verify Element Visibility  ${vf_A_goBackBtn}
+    Log to Console  Verified Billing Frequency screen!
 
-
-
+Navigate To Billing Frequency And Switch Plan
+    Click On Manage Plan Under Profile
+    Verify Page Conatin Text  ${e_planManagement}
+    Click On Billing Details- Yearly And Verify    
+    Click Text  ${e_switchToQtrly}
+    

@@ -35,7 +35,6 @@ Verify Menus And Sub-menus Under Profile
     Verify Page Conatin Text   ${e_msgUs}
     Log to Console  Verified Sub-menu's under Help!
     Verify Page Conatin Text   ${e_account}
-    Verify Page Conatin Text   ${e_mngPln}
     Verify Page Conatin Text   ${e_invstmtProfile}
     Verify Page Conatin Text   ${e_security}
     Log to Console  Verified sub-menu's under Account!
@@ -267,6 +266,19 @@ User Clicks Message Us Under Help
     Verify Page Conatin Text   ${e_msgRspnd}
     Log to Console  Message Screen Verified!
     Go Back On Android
+    Sleep  10s
+    Wait and Click Element On Android  ${vf_A_home}
+    Page Should Contain Element  ${vf_A_chatBoxIcon}
+    Click On Profile Button
+    Sleep  2s
+    Page Should Contain Element  ${vf_A_chatBoxIcon}
+    Wait And Click Element On Android  ${vf_A_chatBoxIcon}
+    Input Text  ${vf_A_msgInputFld}  ${e_msgInput}
+    Wait And Click Element On Android  ${vf_A_sendBtn}
+    Close Android Keyboard
+    Sleep  2s
+    Log to Console  Verified Intercom Chat Screen!
+    Go Back On Android
     Sleep  3s
     Verify Profile Screen
 
@@ -275,32 +287,27 @@ Click On Sub-menus Under Help And Verify
     # User Clicks FAQ Under Help
     User Clicks Email Us Under Help
     User Clicks Message Us Under Help
-    Wait For Element Visibility On Android  ${vf_A_chatBoxIcon}
-    Page Should Contain Element   ${vf_A_chatBoxIcon}
-    Log to Console  Verified Chatbox!
 
 # Account
 # PN37-PN40
 User Clicks Manage Plan Under Account
     Wait For Page Conatin Element  ${e_mngPln}  5s
     Click Text  ${e_mngPln}
-    # plan details
+    # Plan details
     Wait For Page Conatin Element  ${e_planManagement}  5s
     Verify Page Conatin Text   ${e_planManagement}
     Log to Console  Verified Manage Us Page Heading!
-    Verify Page Conatin Text   ${e_planDetails}
-    Verify Page Conatin Text   ${e_planDetailsTxt1}
-    Verify Page Conatin Text   ${e_planDetailsTxt2}
-    Log to Console  Verified Plan Details Text!
-    Verify Page Contains Element On Android  ${vf_A_downgradePlanBtn}
-    Log to Console  Downgrade Plan Button Verified
-    # billing details
-    Verify Page Conatin Text   ${e_billingDetails}
-    Verify Page Conatin Text   ${e_billingOptions}
-    Verify Page Conatin Text   ${e_billingTxt}
-    Log to Console  Verified Billing Details Text!
-    Verify Page Contains Element On Android  ${vf_switchPlanBtn}
-    Log to Console  Verified Switch Plan Button!
+    Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
+    # NOTE- These sections are Not present under Defney account
+    # Verify Page Contains Element On Android  ${vf_A_downgradePlanBtn}
+    # Log to Console  Verified Downgrade Plan Button!
+    # Billing details section
+    # Verify Page Conatin Text   ${e_billingDetails}
+    # Verify Page Conatin Text   ${e_billingOptions}
+    # Verify Page Conatin Text   ${e_billingQtrlyTxt}
+    # Log to Console  Verified Billing Details for Quarterly plan!
+    # Verify Page Contains Element On Android  ${vf_switchToYrlyBtn}
+    # Log to Console  Verified Switch to Quarterly Plan Button!
     Click On Back Button From Top And Verify Profile Screen
 
 # PN41, PN42
@@ -375,7 +382,7 @@ User Clicks Investment Profile Under Account
 
 # PN43, PN44
 User Clicks Security Under Account
-    Wait For Page Conatin Element  ${e_security}  5s
+    Wait For Page Conatin Element  ${e_security}  10s
     Click Text  ${e_security}
     Wait For Page Conatin Element  ${e_security}  5s
     Verify Page Conatin Text  ${e_security}
@@ -409,7 +416,7 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_premiumPlanTxt}
     Sleep  2s
     Swipe By Percent  70  70  50  50  5000
-    Click Element  ${vf_A_slctBtn}
+    Click Element  ${vf_A_basicSelectBtn}
     Sleep  3s
     #Go Back On Android
     Click On Element If Visibile  ${vf_A_continuePayment}
@@ -417,6 +424,7 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_premiumPlanAmt}
     Click Element  ${vf_A_closeButton}
     Log to Console  Clicked on Close icon within Payment screen
+    Sleep  3s
     Swipe By Percent  80  70  20  20  5000
     Verify Page Conatin Text   ${e_faqTxt}
     Verify Page Conatin Text   ${e_faqQ1}
@@ -446,7 +454,11 @@ User Logs Out From The App
 
 Click On Sub-menus Under Account And Verify
     Swipe By Percent  70  70  40  40  5000
-    User Clicks Manage Plan Under Account
     User Clicks Investment Profile Under Account
+    Swipe By Percent  70  70  40  40  5000
     User Clicks Security Under Account
     User Logs Out From The App
+
+Verify Manage Plan
+    Swipe By Percent  70  70  40  40  5000
+    User Clicks Manage Plan Under Account

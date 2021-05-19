@@ -7,7 +7,7 @@ ${e_validPassword} =  iTestUser1!
 ${e_validPin} =  111111
 ${e_invalidUserName} =  abcdxyz@gmail.com
 ${e_invalidPwd} =  Abcd@123
-${e_incorrectPassword} =  $$$$$
+${e_incorrectPassword} =  aqwec
 
 # Google Credentials
 ${e_validGoogleEmail} =  vftest885@gmail.com
