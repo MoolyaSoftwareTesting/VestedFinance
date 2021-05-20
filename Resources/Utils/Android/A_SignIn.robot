@@ -99,8 +99,8 @@ Signin With Basic Account
     Enter Password  ${e_validBasicPassword}
     Click On Signin Button
     Sleep  3s
-    # Enter Pin  ${e_validPin}
-    # Click On Continue Button
+    Enter Pin  ${e_validPin}
+    Click On Continue Button
     Verify Dashboard Screen
 
 

@@ -300,3 +300,18 @@ KYC: Drivers License Front- POI & Drivers License Back- POA
     Verify Sections And Navigations Under KYC Plan Payment Screen
     Verify All Sections And Navigations Under KYC Signature Screen
     Verify Steps Under Account Status Screen After KYC Completion
+
+Subscription Flow: Basic User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  SB_Basic
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Withdrawal With Basic Subscription
+    User Checks Super Vest With Basic Subscription
+
+Subscription Flow: Premium User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  SB_Premium
+    User Navigates To Signin Screen
+    Signin With Valid Credentials - Funded Account
+    User Checks Vest Upsell With Premium Subscription
+    User Checks Super Vest With Premium Subscription
+    User Checks Withdrawal With Premium Subscription

@@ -77,3 +77,69 @@ Subscription Using Wallet
     User Changes Plan To Premium
     User Subscribes Using Wallet
 
+# Additional Tests
+Buy Vest Upsell With No Subscription
+    [Tags]  SB_Add1
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Clicks Vest Upsell With No Subscription
+
+Purchase Vest Upsell With Basic Subscription
+    [Tags]  SB_Add2
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Vest Upsell With Basic Subscription
+
+Purchase Super Vest With Basic Subscription
+    [Tags]  SB_Add3
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Super Vest With Basic Subscription
+
+Purchase Vest Upsell With Premium Subscription
+    [Tags]  SB_Add4
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Valid Credentials - Funded Account
+    User Checks Vest Upsell With Premium Subscription
+
+Purchase Super Vest With Premium Subscription
+    [Tags]  SB_Add5
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Valid Credentials - Funded Account
+    User Checks Super Vest With Premium Subscription
+
+User Navigates To Withdrawal With Basic Subscription 
+    [Tags]  SB_Add6
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Withdrawal With Basic Subscription
+
+User Navigates To Withdrawal With Premium Subscription 
+    [Tags]  SB_Add7
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Withdrawal With Premium Subscription
+
+
+Subscription Flow: Basic User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  SB_Basic
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    User Checks Withdrawal With Basic Subscription
+    User Checks Super Vest With Basic Subscription
+
+Subscription Flow: Premium User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  SB_Premium
+    User Navigates To Signin Screen
+    Signin With Valid Credentials - Funded Account
+    User Checks Vest Upsell With Premium Subscription
+    User Checks Super Vest With Premium Subscription
+    User Checks Withdrawal With Premium Subscription
+

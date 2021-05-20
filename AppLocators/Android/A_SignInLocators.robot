@@ -4,8 +4,8 @@
 
 # updated here
 # Basic User
-${e_validBasicEmail} =  asha.kharat+12@moolya.com
-${e_validBasicPassword} =  Moolya@123
+${e_validBasicEmail} =  defney+Tes2@vestedfinance.co
+${e_validBasicPassword} =  Test@123
 
 # defney+Tes2@vestedfinance.co | Test@123
 # thiruvengadam.s+2@moolya.com | Thiru!99

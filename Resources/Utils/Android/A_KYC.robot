@@ -896,7 +896,7 @@ Upload Front And Back Side Of Drivers License As POI
 Verify Plan Payment Screen
     Sleep  5s
     Verify Page Conatin Text  ${vf_A_payText}
-    Verify Element Visibility  ${vf_A_planPymntToggleBtn}
+    # Verify Element Visibility  ${vf_A_planPymntToggleBtn}
     Log to Console  Verified Plan Payment Screen!
 
 # SL51: Verify if Previous button and Back arrow works
