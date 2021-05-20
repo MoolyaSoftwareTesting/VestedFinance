@@ -36,11 +36,6 @@ Verify Values Under Premium Plan For Basic Account
 Verify Basic Account Contents Under Payment Plan Screen 
     Wait For Page Conatin Element  ${e_payText}  5s
     Verify Page Conatin Text  ${e_payText}
-    # NOTE: Toggle button is not displayed
-    # Verify Page Conatin Text  ${e_save500Txt}
-    # Verify Page Conatin Text  ${e_payQuarterlyTxt}
-    # Verify Page Conatin Text  ${e_payYearlyTxt}
-    # Swipe By Percent  70  70  50  50  5000
     Verify Page Conatin Text  ${e_subsChrgs}
     Verify Page Conatin Text  ${e_zeroComInvst}
     Verify Page Conatin Text  ${e_comsnDisclr}
@@ -474,7 +469,6 @@ Click On Billing Details- Yearly And Verify
     Verify Page Conatin Text  ${e_billingFrqncyTxt}
     Verify Page Conatin Text  ${e_billingFrqncyDesc1}
     Verify Page Conatin Text  ${e_billingFrqncyDesc2}
-    Verify Page Conatin Text  ${e_switchToQtrly}
     Verify Element Visibility  ${vf_A_goBackBtn}
     Log to Console  Verified Billing Frequency screen!
 
@@ -482,5 +476,4 @@ Navigate To Billing Frequency And Switch Plan
     Click On Manage Plan Under Profile
     Verify Page Conatin Text  ${e_planManagement}
     Click On Billing Details- Yearly And Verify    
-    Click Text  ${e_switchToQtrly}
     

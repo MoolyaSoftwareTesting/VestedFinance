@@ -151,6 +151,7 @@ Signin With Valid Credentials - Google
     Click On Element If Visibile  ${vf_A_useAnotherAccBtn}
     Enter Email  ${e_validGoogleEmail}
     Click On Next Button
+    Close Android Keyboard
     Enter Google Password  ${e_validGooglePassword}
     Close Android Keyboard
     Click On Next Button
@@ -160,11 +161,13 @@ Signin With Invalid Credentials - Google
     Click On Element If Visibile  ${vf_A_useAnotherAccBtn}
     Sleep  5s
     Enter Email  ${e_validGoogleEmail}
+    Close Android Keyboard
     Click On Next Button
     Enter Google Password  ${e_invalidPwd}
     Close Android Keyboard
     Log To Console  Entered invalid password
     Sleep  3s
+    Close Android Keyboard
     Click On Next Button
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
     Log To Console  Error message verified!

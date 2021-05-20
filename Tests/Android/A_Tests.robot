@@ -16,7 +16,7 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Profile Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -166,7 +166,7 @@ User Enters Different New And Confirm Passwords
 
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 KYC: Aadhaar Front & Back- POI
-    [Tags]  KYC  E2E1
+    [Tags]  KYC  E2E1  
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -394,30 +394,11 @@ Verify Payment Plan Screen And Downgrade Premium Subscription
 
 # Premium Subscription- KYC Approved Premium Account
 Navigate To Vest Upsell And Try To Buy Vest
-    [Tags]  Subscription  Test
+    [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
 
-# TBU: After KYC-Doc upload on BS 
-# Subscription > Purchase Premium (Quarterly) > Downgrade
-Purchase Quarterly Premium Plan After Basic And Then Downgrade
-    [Tags]  Subscription
-    [Teardown]  Rest Android Application
-    Signup And Signin For KYC
-    Verify Account Status Screen
-    Click on Start/Complete KYC Button
-    Verify All Sections And Navigations Under KYC Introduction Screen
-    User Fill All The Fields Under KYC Basic Details Screen And Verify
-    User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields Under KYC Identity Screen And Verify
-    Upload Full Aadhaar As POI
-    Purchase Quarterly Premium Plan Under KYC Plan Payment Screen- UPI
-    Verify All Sections And Navigations Under KYC Signature Screen
-    Verify Steps Under Account Status Screen After KYC Completion
-    Click On Profile Button
-    Navigate To Payment Plan Screen And Verify Premium Account For Quarterly
-    Downgrade Premium Plan To Basic
 
 

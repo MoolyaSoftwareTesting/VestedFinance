@@ -108,6 +108,7 @@ Click On Previous Button
     Wait And Click Element On Android  ${vf_A_previousButton}
 
 Verify Navigations Under KYC Basic Details Screen
+    Sleep  3s
     Close Android Keyboard
     Click On Back Arrow 
     Verify KYC Introduction Screen
@@ -140,6 +141,7 @@ Select A Gender
 
 # SL48
 Verify All Checkboxes
+    Close Android Keyboard
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
     Verify Page Conatin Text   ${e_chkBx3Txt}
@@ -361,6 +363,7 @@ Select Option Under Investments Made
 
 # SL51
 Verify Navigations Under KYC Investment Profile Screen
+    Sleep  3s
     Click On Back Arrow 
     Verify KYC Basic Details Screen
     Click On Next Button
@@ -440,6 +443,7 @@ Select Option Under Employment Type
     Log To Console  Clicked on option - ${option} 
 
 Verify Navigations Under KYC Identity Screen
+    Sleep  3s
     Click On Back Arrow 
     Verify KYC Investment Profile Screen
     Click On Next Button
@@ -995,6 +999,7 @@ Verify Plan Payment Screen
 
 # SL51
 Verify Navigations Under KYC Plan Payment Screen
+    Sleep  3s
     Click On Back Arrow 
     Sleep  2s
     Verify Identity Screen
@@ -1072,28 +1077,6 @@ Make Payment For Yearly Basic Plan Using Card Information
     Wait And Click Element On Android  ${vf_A_successBtn}
     Log to Console  Successfully Completed the Payment Using Card!
 
-Make Payment For Quarterly Premium Plan Using UPI
-    Wait And Click Element On Android  ${vf_A_payToggleBtn}
-    Swipe By Percent  50  70  20  20  5000
-    Wait And Click Element On Android  ${vf_A_premSelectBtn}
-    Log to Console  Clicked on Select Button!
-    Sleep  8s
-    Go Back On Android
-    Wait For Page Conatin Element  ${e_authSubsTxt}  10s
-    Verify Page Conatin Text   ${e_authSubsTxt}
-    Verify Page Conatin Text   ${e_750Txt}
-    Log To Console  Verified Account opening Fee!
-    Enter Phone Number And Email For Payment
-    Verify Card & UPI Payment Options
-    Select An UPI Payment Option And Verify  ${e_QtrlypaymentUPItxt}
-    Wait And Click Element On Android  ${vf_A_pay750Btn}
-    Log to Console  Clicked on Pay Button
-    Verify UPI- ICICI Bank Payment Screen  ${e_QtrlypaymentUPItxt}
-    Enter UPI ID
-    Go Back On Android
-    Wait And Click Element On Android  ${vf_A_pay750Btn}
-    Log to Console  Clicked on Pay Button
-
 Make Payment For Yearly Premium Plan Using UPI
     Swipe By Percent  50  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_premSelectBtn}
@@ -1123,13 +1106,6 @@ Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Verify Navigations Under KYC Plan Payment Screen
     Make Payment For Yearly Basic Plan Using Card Information
 
-# SP_30
-Purchase Quarterly Premium Plan Under KYC Plan Payment Screen- UPI
-    Sleep  2s
-    Verify Plan Payment Screen
-    Log to Console  Verified Plan Payment Screen!
-    Make Payment For Quarterly Premium Plan Using UPI
-
 Purchase Yearly Premium Plan Under KYC Plan Payment Screen- UPI
     Sleep  2s
     Verify Plan Payment Screen
@@ -1143,6 +1119,7 @@ Verify Signature Screen
     Verify Page Conatin Text  ${e_signatureScreenHeading}
 
 Verify Navigations Under KYC Signature Screen
+    Sleep  3s
     Click On Back Arrow 
     Verify Plan Payment Screen
     Swipe By Percent  50  70  20  20  5000

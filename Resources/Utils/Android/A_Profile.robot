@@ -272,7 +272,7 @@ User Clicks Message Us Under Help
     Click On Profile Button
     Sleep  2s
     Page Should Contain Element  ${vf_A_chatBoxIcon}
-    # NOTE: Due to delay in respond the scripts are failing
+    # NOTE: Due to delay in reply the scripts are failing
     # Wait And Click Element On Android  ${vf_A_chatBoxIcon}
     # Input Text  ${vf_A_msgInputFld}  ${e_msgInput}
     # Wait And Click Element On Android  ${vf_A_sendBtn}

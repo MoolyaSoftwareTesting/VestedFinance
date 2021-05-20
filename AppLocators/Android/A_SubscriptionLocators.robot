@@ -14,9 +14,6 @@ ${e_cardNumForPremiumSubs} =  5104 0155 5555 5558
 ${e_upiIdForPremiumSubs} =  success@razorpay
 
 # Normal Subscription
-${e_save500Txt} =  Save ₹500
-${e_payQuarterlyTxt} =  Pay yearly
-${e_payYearlyTxt} =  Pay quarterly
 ${e_subsChrgs} =  Subscription charges
 ${e_zeroComInvst} =  Zero Commission Investing
 ${e_comsnDisclr} =  Commission Disclosure
@@ -75,7 +72,6 @@ ${e_payzapp} =  PayZapp
 ${e_billingFrqncyTxt} =  Billing Frequency
 ${e_billingFrqncyDesc1} =  You are currently on the annual premium plan at a rate of ₹2,500 per year. You can switch to the quarterly premium plan at a rate of ₹750 per quarter.
 ${e_billingFrqncyDesc2} =  The quarterly premium plan will go into effect at the next renewal date.
-${e_switchToQtrly} =  Switch to Quarterly
 ${e_accOpnFee} =  Account opening fee
 ${e_premPlanScreenHeading} =  You will lose the following features by downgrading
 ${e_planDowngrade} =  Plan Downgrade
