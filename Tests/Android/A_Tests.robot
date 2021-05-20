@@ -16,7 +16,7 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
 
 # Refactored apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i SignIn Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot

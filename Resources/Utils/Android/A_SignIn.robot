@@ -202,6 +202,7 @@ Signin With Valid Credentials - Facebook
     Wait And Click Element On Android  ${vf_A_FbPwd}
     Input Text  ${vf_A_FbPwd}  ${e_FbPwd}
     Log to Console  Password Entered
+    Sleep  8s
     Close Android Keyboard
     Click Element  ${vf_A_FbSigninBtn}
     Log to Console  Signed In!

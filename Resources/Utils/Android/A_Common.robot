@@ -20,7 +20,7 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3   
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a   
     #browserstack.uploadMedia=["media://d11edf0b84008a815459c9fb26f87e91ea2c06ef","media://62eb209d80004ea7f2d3cb460900e409f3c8bd45"]
     Landing Page Is Loaded Completely
 

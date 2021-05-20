@@ -77,6 +77,7 @@ Verify KYC Introduction Screen
     Verify Page Conatin Text  ${e_headingKYCTxt}
 
 Click On Back Arrow And Verify Dashboard Screen
+    Sleep  3s
     Click On Back Arrow    
     Verify Dashboard Screen
 
