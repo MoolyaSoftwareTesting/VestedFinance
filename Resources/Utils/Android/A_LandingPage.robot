@@ -6,7 +6,7 @@ Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 
 *** Keywords ***
 Landing Page Is Loaded Completely
-    Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
+    Wait For Element Visibility On Android  ${vf_A_continueBtn}
     Log to Console  Landing page is displayed
 
 App logo & text is displayed at the top
