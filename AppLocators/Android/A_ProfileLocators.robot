@@ -7,7 +7,7 @@ ${e_validPasswordForKYCcmpltd} =  Moolya@123
 # Profile Variables
 ${e_usrnmDefney} =  Indrajit Palit
 ${e_driveWealthID} =  DriveWealth ID: VTEV000001
-${e_appVersion} =  Version: v1.0 (39)
+${e_appVersion} =  Version: v4.3 (1192)
 ${e_profileTxt} =  Profile
 ${e_history} =  HISTORY
 ${e_transactions} =  Transactions
