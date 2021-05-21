@@ -16,7 +16,7 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
 
 # Refactored apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i SignIn Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i Failed Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
@@ -73,7 +73,7 @@ Signin With Invalid Signin Credentials
 
 # Invalid Apple Signin
 Signin With Social Account - Apple With Invalid Signin Credentials
-    [Tags]  SL13  Signin
+    [Tags]  SL13  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Apple Button
@@ -318,7 +318,7 @@ Verify Tax Documents Under Profile Screen
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
-    [Tags]  Profile  
+    [Tags]  Profile
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -340,7 +340,7 @@ Navigations Under History Section For KYC Incomplete Account
     Click On Tax Documents And Verify Complete KYC Popup
 
 # Normal Subscription- KYC Approved Basic Account
-Verify Payment Plan Screen For Basic Account
+Verify Vest Upsell And Payment Plan Screen For Basic Account
     [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen

@@ -198,7 +198,7 @@ Click On Tax Documents And Verify Complete KYC Popup
 Verify Tax Documents Yearwise
     Wait For Page Conatin Element  ${e_taxDocs}  5s
     Click Text  ${e_taxDocs}
-    Wait And Click Element On Android  ${vf_A_tax2020}
+    Wait And Click Element On Android  ${vf_A_taxDoc2020}
     Wait For Page Conatin Element  ${e_forTaxRep}  5s
     Verify Page Conatin Text   ${e_forTaxRep}
     Verify Page Conatin Text   ${e_supTaxDoc}

@@ -32,7 +32,7 @@ ${e_vestUpfrntFeeUnderPremium} =  $0
 ${e_withdrwlFeeUnderPremium} =  1 free withdrawal per year
 ${e_withdrwlFeeTxtUnderPremium} =  $11 / withdrawal thereafter
 # Multi-Asset Class Vests
-${e_multiAssetVestsTxt} =  Multi-Asset Class Vests
+${e_multiAssetVestsTxt} =  MULTI-ASSET CLASS PORTFOLIOS
 ${e_aggMultiAssetVests} =  Aggressive
 ${e_aggMultiAssetVestsTxt} =  Optimized for more aggressive growth while maintaining portfolio efficiency.
 ${e_modMultiAssetVests} =  Moderate
@@ -43,7 +43,7 @@ ${e_aggMultiAssetClass} =  Multi-Asset Class - Aggressive
 ${e_modMultiAssetClass} =  Multi-Asset Class - Moderate
 ${e_conMultiAssetClass} =  Multi-Asset Class - Conservative
 ${e_buy} =  Buy
-${e_upgradePopUpTxt1} =  Please subscribe to purchase additional vest
+${e_upgradePopUpTxt1} =  Upgrade Required
 ${e_upgradePopUpTxt2} =  Please upgrade your current plan to purchase this Vest.
 # UPI
 ${e_upiPayTxt} =  PAY USING UPI ID

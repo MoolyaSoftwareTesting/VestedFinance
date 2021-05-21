@@ -7,7 +7,7 @@ ${e_validPasswordForKYCcmpltd} =  Moolya@123
 # Profile Variables
 ${e_usrnmDefney} =  Indrajit Palit
 ${e_driveWealthID} =  DriveWealth ID: VTEV000001
-${e_appVersion} =  Version: v4.1 (1168)
+${e_appVersion} =  Version: v1.0 (39)
 ${e_profileTxt} =  Profile
 ${e_history} =  HISTORY
 ${e_transactions} =  Transactions
@@ -33,7 +33,7 @@ ${e_kycApprovalNeededPopup} =  KYC Approval Needed
 ${e_kycApprovalNeededPopupDesc} =  KYC approval is needed before you can see your history
 ${e_checkStatusBtn} =  CHECK STATUS
 ${e_startKyc} =  START KYC
-${e_2020TaxDoc} =  2020 Documents
+${e_2020TaxDoc} =  2020-2021 Documents
 
 # Help Variables
 ${e_gmailCompose} =  Compose
@@ -130,8 +130,7 @@ ${vf_A_chatBoxIcon} =  xpath=//*[@class='android.widget.ImageButton']
 ${vf_A_opt1Navigation} =  xpath=(//*[@text=''])[1]
 ${vf_A_downloadPopupCancelBtn} =  xpath=//*[@text=‘Cancel’]
 ${vf_A_notNowBtn} =  xpath=//*[@text='NOT NOW']
-${vf_A_taxDoc2020} =  xpath=//*[@text='2020']
-${vf_A_tax2020} =  xpath=//*[@text='2020']
+${vf_A_taxDoc2020} =  xpath=//*[@text='2020-2021']
 
 # Help Locators
 ${vf_A_msgInputFld} =  xpath=//*[@class='android.widget.EditText']

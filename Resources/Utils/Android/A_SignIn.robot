@@ -114,6 +114,7 @@ Signin With Invalid Credentials
     Verify Error Message Displayed  ${e_invalidLoginErrorTxt}
 
 Verify Dashboard Screen
+    Sleep  2s
     Wait For Element Visibility On Android  ${vf_A_home}
     Verify Page Contains Element On Android  ${vf_A_home}
     Click On Element If Visibile  ${vf_A_awesomeLink}
@@ -168,9 +169,10 @@ Signin With Invalid Credentials - Google
     Log To Console  Entered invalid password
     Sleep  3s
     Close Android Keyboard
+    Sleep  3s
     Click On Next Button
+    Wait For Page Conatin Element  ${e_invalidGoogleLoginErrorTxt}  5s
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
-    Log To Console  Error message verified!
 
 Signin With Invalid Credentials - Apple
     Sleep  5s
@@ -186,6 +188,7 @@ Signin With Invalid Credentials - Apple
     Input Text  ${vf_A_applePwd}  ${e_applePwd}
     Log to Console  Password Entered!
     Sleep  3s
+    Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_appleEnterBtn}
     Close Android Keyboard
     Log to Console  Logging in with Apple
@@ -205,6 +208,7 @@ Signin With Valid Credentials - Facebook
     Sleep  8s
     Close Android Keyboard
     Click Element  ${vf_A_FbSigninBtn}
+    Sleep  2s
     Log to Console  Signed In!
 
 Signin With Invalid Credentials - Facebook
