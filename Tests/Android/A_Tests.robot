@@ -15,11 +15,14 @@ Suite Teardown  Quit Android Application
 # To run All test on browserstack: 
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
 
-# Refactored apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i Failed Tests/Android/A_Tests.robot
-
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
+
+# Refactored apk:
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
+
+# Legacy apk:
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML02_AK -d Results -i Test Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -378,7 +381,7 @@ Premium Subscription With Card
 # TBU: After KYC-Doc upload on BS 
 # Premium Subscription- Premium Account
 Verify Payment Plan Screen And Downgrade Premium Subscription
-    [Tags]  Subscription
+    [Tags]  Subscription  
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -403,5 +406,21 @@ Navigate To Vest Upsell And Try To Buy Vest
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account
 
+# Basic Subscription Additional Scripts
+Subscription Flow: Basic User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  Subscription  
+    User Navigates To Signin Screen
+    Signin With KYC Approved Basic Account
+    User Checks Withdrawal With Basic Subscription Account
+    User Checks Super Vest With Basic Subscription Account
+
+# Premium Subscription Additional Scripts
+Subscription Flow: Premium User Account - Withdrawal, Vest Upsell, Super Vest
+    [Tags]  Subscription  
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account
+    User Checks Vest Upsell With Premium Subscription Account
+    User Checks Super Vest With Premium Subscription Account
+    User Checks Withdrawal With Premium Subscription Account
 
 

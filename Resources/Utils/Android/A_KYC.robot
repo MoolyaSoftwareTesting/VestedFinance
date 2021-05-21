@@ -288,8 +288,8 @@ Select Option Under Liquid Net Worth
 
 Select Option Under Total Net Worth
     [Arguments]  ${option}
-    Swipe By Percent  80  70  20  20  5000
-    Wait For Page Conatin Element  ${e_totalNetWorth}  5s
+    # Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_totalNetWorth}  10s
     Verify Page Conatin Text  ${e_totalNetWorth}
     Verify Page Conatin Text  ${e_totalNetWorthOpt1Txt}
     Verify Page Conatin Text  ${e_totalNetWorthOpt2Txt}

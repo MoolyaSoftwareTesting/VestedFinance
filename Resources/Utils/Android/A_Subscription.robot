@@ -13,7 +13,7 @@ Signin With KYC Approved Premium Account
 # Normal Subscription
 Verify Values Under Basic Plan For Basic Account
     Verify Page Conatin Text  ${e_basicHeading}
-    Verify Page Conatin Text  ${e_subsChrgsUnderBasic}
+    Verify Page Conatin Text  ${e_priceUnderBasic}
     Verify Element Visibility  ${vf_A_zeroComInvstUnderBasic}
     Verify Page Conatin Text  ${e_vestUpfrntFeeUnderBasic}
     Verify Element Visibility  ${vf_A_vestUpfrntFeeUnderBasic}
@@ -24,7 +24,7 @@ Verify Values Under Basic Plan For Basic Account
 
 Verify Values Under Premium Plan For Basic Account
     Verify Page Conatin Text  ${e_premiumHeading}
-    Verify Page Conatin Text  ${e_subsChrgsYearlyUnderPremium}
+    Verify Page Conatin Text  ${e_priceYearlyUnderPremium}
     Verify Element Visibility  ${vf_A_zeroComInvstUnderPremium}
     Verify Element Visibility  ${vf_A_vestUpfrntFeeUnderPremium}
     Verify Page Conatin Text  ${e_withdrwlFeeUnderPremium}
@@ -36,10 +36,11 @@ Verify Values Under Premium Plan For Basic Account
 Verify Basic Account Contents Under Payment Plan Screen 
     Wait For Page Conatin Element  ${e_payText}  5s
     Verify Page Conatin Text  ${e_payText}
-    Verify Page Conatin Text  ${e_subsChrgs}
+    Verify Page Conatin Text  ${e_price}
     Verify Page Conatin Text  ${e_zeroComInvst}
     Verify Page Conatin Text  ${e_comsnDisclr}
     Verify Page Conatin Text  ${e_vestUpfrntFee}
+    Verify Page Conatin Text  ${e_withdrwlFee}
     Verify Page Conatin Text  ${e_accessAddntlVests}
     Log to Console  Verified all fields under Payment Plan Screen!
     Verify Values Under Basic Plan For Basic Account
@@ -407,7 +408,7 @@ Subscribe Premium Plan With UPI
 Click On Buy Button And Verify Buying Power Screen
     Wait And Click Element On Android  ${vf_A_buyBtn}
     Log to Console  Clicked on Buy Button
-    Wait For Page Conatin Element  ${e_buyingPower}  5s
+    Wait For Page Conatin Element  ${e_buyingPower}  10s
     Verify Page Conatin Text   ${e_buyingPower}
     Verify Page Conatin Text   ${e_previewOrdeBtn}
     Log to Console  Verified Buying Power Screen!
@@ -415,7 +416,7 @@ Click On Buy Button And Verify Buying Power Screen
 # SB_10
 Verify Vest Upsell- Buy Vest From Premium Account
     Scroll Down Till Multi-Asset Class Vests
-    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  2s
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  5s
     Verify Page Conatin Text   ${e_multiAssetVestsTxt}
     # Aggressive
     Verify Page Conatin Text   ${e_aggMultiAssetVests}
@@ -477,3 +478,136 @@ Navigate To Billing Frequency And Switch Plan
     Verify Page Conatin Text  ${e_planManagement}
     Click On Billing Details- Yearly And Verify    
     
+# Additional Tests
+
+User Clicks Vest Upsell With No Subscription
+    # Swipe By Percent  90  90  10  10  3000
+    # Swipe By Percent  90  90  10  10  3000        
+    Verify Page Conatin Text   ${e_aggMultiAssetVests}
+    Click Text   ${e_aggMultiAssetVests}
+    Sleep  3s
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  15s
+    Verify Page Conatin Text    ${e_multiAssetVestsTxt}
+    Sleep  5s
+    Click Text  ${e_buy}
+    Wait For Page Conatin Element  ${e_KYCPopUpTxt1}  5s
+    Verify Page Conatin Text   ${e_KYCPopUpTxt1}
+    Verify Page Conatin Text   ${e_KYCPopUpTxt2}
+    Wait And Click Element On Android  ${vf_A_notNowBtn}
+    Log to Console  Verified Vest Upsell With No Subscription!
+    Click On Back Arrow And Verify Dashboard Screen
+
+User Checks Super Vest With Basic Subscription Account
+    Sleep  5s
+    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  90  90  10  10  3000        
+    Swipe By Percent  90  90  10  10  3000   
+    Swipe By Percent   70  80   10   80  5000      
+    Verify Page Conatin Text   ${e_saas}
+    Log to Console  SAAS verified!
+    Click Text   ${e_saas}
+    Log to Console  SAAS clicked!
+    Sleep  3s
+    Wait For Page Conatin Element  ${e_saas}  15s
+    Verify Page Conatin Text    ${e_saas}
+    Log to Console  SAAS verified!
+    Sleep  5s
+    Click Text  ${e_buy}
+    Log to Console  Buy button Clicked!
+    Wait For Page Conatin Element  ${e_investAmt}  10s
+    Verify Page Conatin Text   ${e_investAmt0}
+    Click Text   ${e_investAmt0}
+    Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt}
+    Log to Console  Amount entered!
+    Click Text  ${e_previewOrder}
+    Log to Console  Preview Order Clicked!
+    Sleep  2s
+    Verify Page Conatin Text   ${e_marketBuyOrder}
+    Log to Console  Text verified!
+    Click Text  ${e_goPrm&Buy}
+    Log to Console  Go premium and save $3 clicked!
+    Sleep  2s
+    Verify Plan Payment Screen
+    Go Back On Android
+    Go Back On Android
+    Go Back On Android
+    Go Back On Android
+    Verify Dashboard Screen
+
+
+User Checks Withdrawal With Basic Subscription Account
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_transfer}
+    Wait Until Page Contains  ${e_withdrawFunds}  5s
+    Click Text  ${e_withdrawFunds}
+    Log to Console  Withdraw funds clicked!
+    Verify Page Conatin Text   ${e_wtdrwPrcsNt}
+    Log to Console  Text verified!
+    Verify Page Conatin Text   ${e_wtdrwPrcsBtn}
+    Log to Console  Button verified!    
+    Click Text  ${e_wtdrwPrcsBtn}
+    Log to Console  Go premium and save $3 clicked!   
+    Sleep  2s
+    Verify Plan Payment Screen
+    Sleep  2s
+    Go Back On Android
+    Go Back On Android
+    Go Back On Android
+    Verify Dashboard Screen
+
+User Checks Vest Upsell With Premium Subscription Account
+    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  90  90  10  10  3000
+    # Swipe By Percent  90  90  10  10  3000 
+    Verify Page Conatin Text   ${e_aggMultiAssetVests}
+    Click Text   ${e_aggMultiAssetVests}
+    Sleep  3s
+    Wait For Page Conatin Element  ${e_aggMultiAssetClass}  15s
+    Verify Page Conatin Text    ${e_aggMultiAssetClass}
+    Sleep  5s
+    Click Text  ${e_buy}
+    Wait For Page Conatin Element  ${e_investAmt}  10s
+    Verify Page Conatin Text   ${e_investAmt0}
+    Click Text   ${e_investAmt0}
+    Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt} 
+    Click Text  ${e_previewOrder}
+    Sleep  2s
+    Element Should Be Enabled  ${vf_A_placeOrderBtn}
+    Log to Console  Verified Vest Upsell With Premium Subscription Account!
+    Go Back On Android
+    Go Back On Android
+    Go Back On Android
+    Verify Dashboard Screen
+
+User Checks Super Vest With Premium Subscription Account
+    Sleep  2s
+    Swipe By Percent  90  90  10  10  3000 
+    Swipe By Percent   70  80   10   80  5000       
+    Verify Page Conatin Text   ${e_saas}
+    Click Text   ${e_saas}
+    Sleep  3s
+    Wait For Page Conatin Element  ${e_saas}  15s
+    Verify Page Conatin Text    ${e_saas}
+    Sleep  5s
+    Click Text  ${e_buy}
+    Wait For Page Conatin Element  ${e_investAmt}  10s
+    Verify Page Conatin Text   ${e_investAmt0}
+    Click Text   ${e_investAmt0}
+    Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt} 
+    Click Text  ${e_previewOrder}
+    Sleep  2s
+    Element Should Be Enabled  ${vf_A_placeOrderBtn}
+    Log to Console  Verified Super Vest With Premium Subscription Account!
+    Go Back On Android
+    Go Back On Android
+    Go Back On Android
+    Verify Dashboard Screen
+
+User Checks Withdrawal With Premium Subscription Account
+    Wait And Click Element On Android  ${vf_A_transfer}
+    Wait Until Page Contains  ${e_withdrawFunds}  5s
+    Click Text  ${e_withdrawFunds}
+    Verify Page Conatin Text   ${e_premiumWthdrwNote}
+    Click Text  ${e_proceed}
+    Verify Page Conatin Text   ${e_proceedError}
+    Log to Console  Verified Withdrawal With Premium Subscription Account!

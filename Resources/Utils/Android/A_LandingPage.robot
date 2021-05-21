@@ -6,7 +6,7 @@ Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 
 *** Keywords ***
 Landing Page Is Loaded Completely
-    Wait For Element Visibility On Android  ${vf_A_continueBtn}
+    Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
     Log to Console  Landing page is displayed
 
 App logo & text is displayed at the top
@@ -35,7 +35,7 @@ Verify Heading for each point is displayed
 Click On Start Investing Button
     Sleep  5s
     Swipe By Percent  80  70  20  20  5000
-    Click On Element If Visibile  ${vf_A_continueBtn}
+    Click On Element If Visibile  ${vf_A_startInvestingBtn}
     ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${vf_A_chromeOption}
     IF   ${isElementVisible}  
         Choose Chrome Browser
