@@ -403,10 +403,10 @@ Navigate To Vest Upsell And Try To Buy Vest
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
-    Verify Vest Upsell- Buy Vest From Premium Account
+    Verify Vest Upsell- Buy Vest From Premium Account 
 
 # Basic Subscription Additional Scripts
-Subscription Flow: Basic User Account - Withdrawal, Vest Upsell, Super Vest
+Basic User Account - Withdrawal, Vest Upsell, Super Vest
     [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
@@ -415,7 +415,7 @@ Subscription Flow: Basic User Account - Withdrawal, Vest Upsell, Super Vest
     User Checks Super Vest With Basic Subscription Account
 
 # Premium Subscription Additional Scripts
-Subscription Flow: Premium User Account - Withdrawal, Vest Upsell, Super Vest
+Premium User Account - Withdrawal, Vest Upsell, Super Vest
     [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
