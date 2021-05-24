@@ -412,9 +412,11 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_payText}
     Sleep  2s
     Swipe By Percent  70  70  50  50  5000
+    Wait For Page Conatin Element  ${e_premiumPlanTxt}  3s
     Verify Page Conatin Text   ${e_premiumPlanTxt}
     Sleep  2s
     Swipe By Percent  70  70  50  50  5000
+    Wait For Page Conatin Element  ${vf_A_basicSelectBtn}  3s
     Click Element  ${vf_A_basicSelectBtn}
     Sleep  3s
     #Go Back On Android
@@ -425,6 +427,7 @@ User Clicks Go Premium Under Account
     Log to Console  Clicked on Close icon within Payment screen
     Sleep  3s
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_faqTxt}  5s
     Verify Page Conatin Text   ${e_faqTxt}
     Verify Page Conatin Text   ${e_faqQ1}
     Verify Page Conatin Text   ${e_faqA1}
@@ -433,6 +436,7 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_faqQ3}
     Verify Page Conatin Text   ${e_faqA3}
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_faqQ4}  5s
     Verify Page Conatin Text   ${e_faqQ4}
     Verify Page Conatin Text   ${e_faqA4}
     Verify Page Conatin Text   ${e_faqQ5}

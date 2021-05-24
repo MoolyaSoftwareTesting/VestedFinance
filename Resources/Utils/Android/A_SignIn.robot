@@ -26,6 +26,7 @@ User Clicks On Signin Link
 Enter Email
     [Arguments]  ${email}
     Navigate Back To Signin Screen If Element Visible  ${vf_A_googleChooseAccPage}
+    Sleep  2s
     Verify Element Visibility  ${vf_A_userName}
     Clear Text  ${vf_A_userName}
     Input Text  ${vf_A_userName}  ${email} 
@@ -87,14 +88,18 @@ Click On Next Button
 
 Signin Without Pin Credentials
     [Arguments]  ${email}  ${password}
+    Sleep  2s
     Enter Email  ${email}
+    Sleep  2s
     Enter Password  ${password}
     Click On Signin Button
     Verify Dashboard Screen
 
 Signin With Pin Credentials
     [Arguments]  ${email}  ${password}  ${pin}
+    Sleep  3s
     Enter Email  ${email}
+    Sleep  2s
     Enter Password  ${password}
     Click On Signin Button
     Sleep  4s
@@ -153,8 +158,10 @@ Signin With Valid Credentials - Google
     Enter Email  ${e_validGoogleEmail}
     Click On Next Button
     Close Android Keyboard
+    Sleep  3s
     Enter Google Password  ${e_validGooglePassword}
     Close Android Keyboard
+    Sleep  3s
     Click On Next Button
     Log To Console  Signedin with Valid Google Credentials!
 
@@ -163,6 +170,7 @@ Signin With Invalid Credentials - Google
     Sleep  5s
     Enter Email  ${e_validGoogleEmail}
     Close Android Keyboard
+    Sleep  2s
     Click On Next Button
     Enter Google Password  ${e_invalidPwd}
     Close Android Keyboard
@@ -187,8 +195,9 @@ Signin With Invalid Credentials - Apple
     Clear Text  ${vf_A_applePwd}
     Input Text  ${vf_A_applePwd}  ${e_applePwd}
     Log to Console  Password Entered!
-    Sleep  3s
+    Sleep  2s
     Close Android Keyboard
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_appleEnterBtn}
     Close Android Keyboard
     Log to Console  Logging in with Apple

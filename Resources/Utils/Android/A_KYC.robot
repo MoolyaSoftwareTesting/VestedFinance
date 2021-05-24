@@ -143,6 +143,7 @@ Select A Gender
 # SL48
 Verify All Checkboxes
     Close Android Keyboard
+    Wait For Page Conatin Element  ${e_chkBx1Txt}  5s
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
     Verify Page Conatin Text   ${e_chkBx3Txt}
@@ -156,7 +157,9 @@ Verify All Checkboxes
     Go Back On Android
     Swipe By Percent  80  70  20  20  5000
     Close Android Keyboard
+    Sleep  3s
     Click Text  ${e_chkBx3Txt}
+    Sleep  2s
     Verify Element Visibility  ${vf_A_chkBx4} 
     Sleep  2s
     Wait For Element Visibility On Android  ${vf_A_chkBx4} 
@@ -304,7 +307,7 @@ Select Option Under Total Net Worth
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
-    # Swipe By Percent  70  70  20  20  5000
+    Swipe By Percent  70  70  20  20  5000
     Sleep  5s
     Verify Page Conatin Text  ${e_primarySource}
     Wait And Click Element On Android  ${vf_A_primarySrcDropdown}
@@ -323,7 +326,7 @@ Select Option Under Primary Source Dropdown
 
 Select Option Under Number Of Deposits And Withdrawals
     [Arguments]  ${option}
-    Swipe By Percent  70  70  20  20  5000
+    Swipe By Percent  70  70  20  50  5000
     Wait For Page Conatin Element  ${e_depositsAndWithdrawals}  8s
     Verify Page Conatin Text  ${e_depositsAndWithdrawals}
     Verify Page Conatin Text  ${e_depositsAndWithdrawalsOpt1Txt}

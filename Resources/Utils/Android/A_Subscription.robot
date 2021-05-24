@@ -480,6 +480,18 @@ Navigate To Billing Frequency And Switch Plan
     
 # Additional Tests
 
+Scroll Down Till Super Vest
+    Sleep  3s
+    FOR  ${i}  IN RANGE  1  4
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text   ${e_saas}
+        IF   ${isElementVisible}
+            Wait For Page Conatin Element  ${e_saas}  2s
+            Exit For Loop If    ${isElementVisible}
+        ELSE
+            Swipe By Percent  90  90  10  10  3000  
+        END
+    END
+
 User Clicks Vest Upsell With No Subscription
     # Swipe By Percent  90  90  10  10  3000
     # Swipe By Percent  90  90  10  10  3000        
@@ -499,10 +511,8 @@ User Clicks Vest Upsell With No Subscription
 
 User Checks Super Vest With Basic Subscription Account
     Sleep  5s
-    Swipe By Percent  90  90  10  10  3000
-    Swipe By Percent  90  90  10  10  3000        
-    Swipe By Percent  90  90  10  10  3000   
-    Swipe By Percent   70  80   10   80  5000      
+    Scroll Down Till Super Vest    
+    Swipe By Percent   70  80   10   80  5000  
     Verify Page Conatin Text   ${e_saas}
     Log to Console  SAAS verified!
     Click Text   ${e_saas}
@@ -556,9 +566,10 @@ User Checks Withdrawal With Basic Subscription Account
     Verify Dashboard Screen
 
 User Checks Vest Upsell With Premium Subscription Account
-    Swipe By Percent  90  90  10  10  3000
-    Swipe By Percent  90  90  10  10  3000
+    # Swipe By Percent  90  90  10  10  3000
+    # Swipe By Percent  90  90  10  10  3000
     # Swipe By Percent  90  90  10  10  3000 
+    Scroll Down Till Multi-Asset Class Vests
     Verify Page Conatin Text   ${e_aggMultiAssetVests}
     Click Text   ${e_aggMultiAssetVests}
     Sleep  3s
@@ -581,8 +592,9 @@ User Checks Vest Upsell With Premium Subscription Account
 
 User Checks Super Vest With Premium Subscription Account
     Sleep  2s
-    Swipe By Percent  90  90  10  10  3000 
-    Swipe By Percent   70  80   10   80  5000       
+    Swipe By Percent  90  90  10  10  3000    
+    Swipe By Percent   70  80   10   80  5000  
+    Wait For Page Conatin Element  ${e_saas}  5s  
     Verify Page Conatin Text   ${e_saas}
     Click Text   ${e_saas}
     Sleep  3s
