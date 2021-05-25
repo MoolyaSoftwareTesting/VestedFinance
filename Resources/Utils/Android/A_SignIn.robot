@@ -222,6 +222,7 @@ Signin With Valid Credentials - Facebook
     Close Android Keyboard
     Click Element  ${vf_A_FbSigninBtn}
     Sleep  2s
+    Click On Element If Visibile  ${vf_A_accountBtn}
     Log to Console  Signed In!
 
 Signin With Invalid Credentials - Facebook
