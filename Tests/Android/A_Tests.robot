@@ -75,7 +75,7 @@ Signin With Invalid Signin Credentials
 
 # Invalid Apple Signin
 Signin With Social Account - Apple With Invalid Signin Credentials
-    [Tags]  SL13  Signin  
+    [Tags]  SL13  Signin  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Apple Button
@@ -83,7 +83,7 @@ Signin With Social Account - Apple With Invalid Signin Credentials
 
 # Invalid Google Signin
 Google With Invalid Signin Credentials
-    [Tags]  SL15  Signin  
+    [Tags]  SL15  Signin  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
@@ -99,7 +99,7 @@ Facebook With Invalid Signin Credentials
 
 # Valid Facebook Signin
 Facebook With Valid Signin Credentials
-    [Tags]  SL16  Signin  
+    [Tags]  SL16  Signin  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Facebook Button
@@ -164,14 +164,14 @@ User Enters Invalid Code With Valid Password In Reset Password Screen
 
 # Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
-    [Tags]  SL36  ForgotPassword  
+    [Tags]  SL36  ForgotPassword  Failed
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Different Passwords In Both Fields
 
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 KYC: Aadhaar Front & Back- POI
-    [Tags]  KYC  E2E1  
+    [Tags]  KYC  E2E1  Failed
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -299,7 +299,7 @@ KYC: Passport- POI & Bank Statement- POA
 
 # Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
-    [Tags]  Profile  
+    [Tags]  Profile  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
@@ -320,7 +320,7 @@ Verify Tax Documents Under Profile Screen
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
-    [Tags]  Profile
+    [Tags]  Profile  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -343,7 +343,7 @@ Navigations Under History Section For KYC Incomplete Account
 
 # Normal Subscription- KYC Approved Basic Account
 Verify Vest Upsell And Payment Plan Screen For Basic Account
-    [Tags]  Subscription  
+    [Tags]  Subscription  Failed
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
