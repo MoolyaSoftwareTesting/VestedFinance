@@ -160,7 +160,8 @@ Signin With Valid Credentials - Google
     Close Android Keyboard
     Sleep  3s
     Enter Google Password  ${e_validGooglePassword}
-    Close Android Keyboard
+    # Close Android Keyboard
+    Go Back On Android
     Sleep  3s
     Click On Next Button
     Log To Console  Signedin with Valid Google Credentials!
@@ -176,7 +177,8 @@ Signin With Invalid Credentials - Google
     Close Android Keyboard
     Log To Console  Entered invalid password
     Sleep  3s
-    Close Android Keyboard
+    # Close Android Keyboard
+    Go Back On Android
     Sleep  3s
     Click On Next Button
     Wait For Page Conatin Element  ${e_invalidGoogleLoginErrorTxt}  5s
@@ -196,7 +198,8 @@ Signin With Invalid Credentials - Apple
     Input Text  ${vf_A_applePwd}  ${e_applePwd}
     Log to Console  Password Entered!
     Sleep  2s
-    Close Android Keyboard
+    # Close Android Keyboard
+    Go Back On Android
     Sleep  3s
     Wait And Click Element On Android  ${vf_A_appleEnterBtn}
     Close Android Keyboard

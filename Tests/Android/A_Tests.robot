@@ -343,7 +343,7 @@ Navigations Under History Section For KYC Incomplete Account
 
 # Normal Subscription- KYC Approved Basic Account
 Verify Vest Upsell And Payment Plan Screen For Basic Account
-    [Tags]  Subscription  Failed
+    [Tags]  Subscription  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account

@@ -165,6 +165,7 @@ ${e_feeTxt} =  Account Opening Fee
 ${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
+${e_selectBtnTxt} =  Select
 
 # Signature screen
 ${e_signatureScreenHeading} =  Let’s open your account

@@ -414,16 +414,15 @@ User Clicks Go Premium Under Account
     Swipe By Percent  70  70  50  50  5000
     Wait For Page Conatin Element  ${e_premiumPlanTxt}  3s
     Verify Page Conatin Text   ${e_premiumPlanTxt}
-    Sleep  2s
     Swipe By Percent  70  70  50  50  5000
-    Wait For Page Conatin Element  ${vf_A_basicSelectBtn}  3s
-    Click Element  ${vf_A_basicSelectBtn}
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_basicSelectBtn}
     Sleep  3s
     #Go Back On Android
     Click On Element If Visibile  ${vf_A_continuePayment}
     Wait For Page Conatin Element  ${e_premiumPlanAmt}  10s
     Verify Page Conatin Text   ${e_premiumPlanAmt}
-    Click Element  ${vf_A_closeButton}
+    Wait And Click Element On Android  ${vf_A_closeButton}
     Log to Console  Clicked on Close icon within Payment screen
     Sleep  3s
     Swipe By Percent  80  70  20  20  5000

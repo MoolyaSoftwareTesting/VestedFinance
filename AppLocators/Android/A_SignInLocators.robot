@@ -19,8 +19,8 @@ ${e_appleUserId} =  abcd@dot.com
 ${e_applePwd} =  Moolya@123
 
 # Facebook Credentials
-${e_FbEmailId} =  Asha.kharat@moolya.com
-${e_FbPwd} =  Moolya@123
+${e_FbEmailId} =  7019240170 
+${e_FbPwd} =  Test@123
 
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
 ${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click ‘Forgot password’ to reset it

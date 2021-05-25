@@ -142,7 +142,8 @@ Select A Gender
 
 # SL48
 Verify All Checkboxes
-    Close Android Keyboard
+    # Close Android Keyboard
+    Go Back On Android
     Wait For Page Conatin Element  ${e_chkBx1Txt}  5s
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
