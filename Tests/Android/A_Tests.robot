@@ -162,7 +162,7 @@ User Enters Invalid Code With Valid Password In Reset Password Screen
     User Navigates To Forgot Password Screen
     User Enters Invalid Code For Password Reset
 
-# Reset Password- Different New And Confirm Passwords
+# FAIL: Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
     [Tags]  SL36  ForgotPassword  
     [Teardown]  Rest Android Application
