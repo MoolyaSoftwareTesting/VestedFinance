@@ -142,7 +142,7 @@ Select A Gender
 
 # SL48
 Verify All Checkboxes
-    # Close Android Keyboard
+    Close Android Keyboard
     Wait For Page Conatin Element  ${e_chkBx1Txt}  5s
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
@@ -177,6 +177,7 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Click On Previous Button
     Sleep  2s
     Log to Console  Verified Checkboxes are optional!
+    Sleep  2s
     Close Android Keyboard
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s

@@ -12,6 +12,7 @@ Resource   ../../../AppLocators/Android/A_KYCLocators.robot
 Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
 Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
+Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
 
 *** Keywords ***
 

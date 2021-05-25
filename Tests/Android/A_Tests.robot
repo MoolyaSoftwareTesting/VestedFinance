@@ -83,7 +83,7 @@ Signin With Social Account - Apple With Invalid Signin Credentials
 
 # Invalid Google Signin
 Google With Invalid Signin Credentials
-    [Tags]  SL15  Signin  Failed
+    [Tags]  SL15  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
@@ -164,7 +164,7 @@ User Enters Invalid Code With Valid Password In Reset Password Screen
 
 # Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
-    [Tags]  SL36  ForgotPassword  Failed
+    [Tags]  SL36  ForgotPassword  
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Different Passwords In Both Fields
@@ -299,7 +299,7 @@ KYC: Passport- POI & Bank Statement- POA
 
 # Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
-    [Tags]  Profile  Failed
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
@@ -424,4 +424,10 @@ Premium User Account - Withdrawal, Vest Upsell, Super Vest
     User Checks Super Vest With Premium Subscription Account
     User Checks Withdrawal With Premium Subscription Account
 
+# Non KYC Approved Account
+Fund Transfer- Non KYC Approved Account
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Completed Basic Account
 
