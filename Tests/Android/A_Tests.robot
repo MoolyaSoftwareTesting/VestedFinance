@@ -75,7 +75,7 @@ Signin With Invalid Signin Credentials
 
 # Invalid Apple Signin
 Signin With Social Account - Apple With Invalid Signin Credentials
-    [Tags]  SL13  Signin  Failed
+    [Tags]  SL13  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Apple Button

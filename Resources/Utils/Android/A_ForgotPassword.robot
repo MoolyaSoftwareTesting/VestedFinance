@@ -76,6 +76,6 @@ User Enters Different Passwords In Both Fields
     Enter New Password Again  ${e_newInvalidPwd}
     Sleep  2s
     Close Android Keyboard
-    Sleep  3s
+    Sleep  5s
     Element Should Be Disabled  ${vf_A_changePwd}
     Log to Console  Change Password button remains Disabled!

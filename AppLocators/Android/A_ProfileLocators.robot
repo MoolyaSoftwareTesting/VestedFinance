@@ -91,8 +91,8 @@ ${e_faqQ2} =  Are there any brokerage charges to invest in US stocks and ETFs?
 ${e_faqA2} =  Either plan will enable you to invest in US stocks and ETFs at zero commission. Please see zero commission disclosure.
 ${e_faqQ3} =  Are there any other fees associated with US investing?
 ${e_faqA3} =  Investing in the US requires you to fund your account with US dollars. Your bank may charge you an international wire fee to fund your account.
-${e_faqQ4} =  Will I have the opportunity to purchase the subscription later?
-${e_faqA4} =  Yes, the subscription can be purchased at a later time.
+${e_faqQ4} =  Will I have the opportunity to purchase the premium later?
+${e_faqA4} =  Yes, the premium can be purchased at a later time.
 ${e_faqQ5} =  Can I downgrade my premium later?
 ${e_faqA5} =  You have the option to stop your premium from auto-renewing. If you stop auto-renewal, you will continue to enjoy all premium benefits until the end of your premium term. There are no partial term refunds.
 
