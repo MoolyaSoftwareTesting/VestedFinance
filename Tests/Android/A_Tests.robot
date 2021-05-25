@@ -431,14 +431,14 @@ Fund Transfer- Non KYC Approved Account
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
     Click On Tansfer From Dashboard
-    Verify Add Funds for Non KYC Approved Account
-    Verify Withdrawal Funds for Non KYC Approved Account
+    Verify Add Funds For Non KYC Approved Account
+    Verify Withdrawal Funds For Non KYC Approved Account
 
-# Non KYC Approved Account
-Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  
+# KYC Approved Account- No Funding History
+Fund Transfer For New Account- No Funding History
+    [Tags]  FundTransfer  Test 
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
     Click On Tansfer From Dashboard
-    
+    Verify Fund Transfer Screen For New Account With No Funding History
