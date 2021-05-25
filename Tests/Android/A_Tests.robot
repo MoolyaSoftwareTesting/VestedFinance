@@ -97,9 +97,9 @@ Facebook With Invalid Signin Credentials
     Click On Continue With Facebook Button
     Signin With Invalid Credentials - Facebook
 
-# Valid Facebook Signin
+# FAIL: Valid Facebook Signin
 Facebook With Valid Signin Credentials
-    [Tags]  SL16  Signin  Failed
+    [Tags]  SL16  Signin  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Facebook Button
@@ -441,3 +441,4 @@ Fund Transfer- Non KYC Approved Account
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
     Click On Tansfer From Dashboard
+    

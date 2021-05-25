@@ -5,7 +5,7 @@ Library     AppiumLibrary
 ***Keywords***
 
 Signin With New Account- No Funding History
-
+    Signin Without Pin Credentials  ${e_validEmailForKYCcmpltd}  ${e_validPasswordForKYCcmpltd}
 
 # Add Funds
 
