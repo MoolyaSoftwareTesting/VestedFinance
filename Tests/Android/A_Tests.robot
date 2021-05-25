@@ -21,7 +21,7 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # Legacy apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML02_AK -d Results -i Subscription Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML02_AK -d Results -i FundTransfer Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -171,7 +171,7 @@ User Enters Different New And Confirm Passwords
 
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 KYC: Aadhaar Front & Back- POI
-    [Tags]  KYC  E2E1  Failed
+    [Tags]  KYC  E2E1  
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -430,6 +430,14 @@ Fund Transfer- Non KYC Approved Account
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
-    Click On Tansfer From Dashboard Screen
+    Click On Tansfer From Dashboard
     Verify Add Funds for Non KYC Approved Account
     Verify Withdrawal Funds for Non KYC Approved Account
+
+# Non KYC Approved Account
+Fund Transfer- Non KYC Approved Account
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With New Account- No Funding History
+    Click On Tansfer From Dashboard

@@ -67,6 +67,7 @@ ${vf_A_continueWithFbBtn} =  xpath=//*[@text='Continue with Facebook']
 ${vf_A_FbEmail} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_FbPwd} =  xpath=(//*[@class='android.widget.EditText'])[2]
 ${vf_A_FbSigninBtn} =  xpath=//*[@text='Log In']
+${vf_A_acceptAllBtn} =  xpath=//*[@text='Accept All']
 
 #Dashboard
 ${vf_A_stockOne} =  xpath=//*[@text='Tesla, Inc.']

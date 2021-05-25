@@ -210,7 +210,8 @@ Signin With Invalid Credentials - Apple
 
 Signin With Valid Credentials - Facebook
     Log to Console  Sigin in with Facebook
-    Sleep  8s
+    Sleep  5s
+    Click On Element If Visibile  ${vf_A_acceptAllBtn}
     Wait For Element Visibility On Android  ${vf_A_FbEmail}
     Input Text  ${vf_A_FbEmail}  ${e_FbEmailId}
     Log to Console  Username Entered!
