@@ -320,7 +320,7 @@ Verify Tax Documents Under Profile Screen
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
-    [Tags]  Profile  Failed
+    [Tags]  Profile  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -430,4 +430,6 @@ Fund Transfer- Non KYC Approved Account
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
-
+    Click On Tansfer From Dashboard Screen
+    Verify Add Funds for Non KYC Approved Account
+    Verify Withdrawal Funds for Non KYC Approved Account

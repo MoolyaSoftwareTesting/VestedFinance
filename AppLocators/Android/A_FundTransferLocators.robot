@@ -2,8 +2,14 @@
 
 # Add Funds
 
+${vf_A_addFundsBtn}
 
+# Withdrawal Funds
 
-# Withdrawal
+${vf_A_withdrawalFundsBtn}
 
+# Add Funds LOCATORS
 
+${vf_A_addFundsBtn}
+
+# Withdrawal Funds LOCATORS

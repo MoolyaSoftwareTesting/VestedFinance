@@ -177,9 +177,9 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Click On Previous Button
     Sleep  2s
     Log to Console  Verified Checkboxes are optional!
-    Select A Gender  ${e_maleGender}
     Sleep  2s
     Close Android Keyboard
+    Go Back On Android
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s
     Verify All Checkboxes

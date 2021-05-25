@@ -547,7 +547,7 @@ User Checks Super Vest With Basic Subscription Account
 
 User Checks Withdrawal With Basic Subscription Account
     Sleep  2s
-    Wait And Click Element On Android  ${vf_A_transfer}
+    Click On Tansfer From Dashboard Screen
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
     Log to Console  Withdraw funds clicked!
@@ -616,7 +616,7 @@ User Checks Super Vest With Premium Subscription Account
     Verify Dashboard Screen
 
 User Checks Withdrawal With Premium Subscription Account
-    Wait And Click Element On Android  ${vf_A_transfer}
+    Click On Tansfer From Dashboard Screen
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
     Verify Page Conatin Text   ${e_premiumWthdrwNote}
