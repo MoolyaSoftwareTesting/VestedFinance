@@ -132,7 +132,7 @@ Scroll Down Till Multi-Asset Class Vests
     END
 
 # SB05
-Verify Vest Upsell- Buy Vest From Basic Account
+Verify Super Vest Upsell- Buy Vest From Basic Account
     Scroll Down Till Multi-Asset Class Vests    
     Verify Page Conatin Text   ${e_multiAssetVestsTxt}
     # Aggressive
@@ -405,7 +405,7 @@ Subscribe Premium Plan With UPI
     Sleep  5s
     Verify Premium Subscribed Success Screen
 
-Click On Buy Button And Verify Buying Power Screen
+Click On Buy Button And Verify Buy Order Screen
     Wait And Click Element On Android  ${vf_A_buyBtn}
     Log to Console  Clicked on Buy Button
     Wait For Page Conatin Element  ${e_buyingPower}  10s
@@ -424,7 +424,7 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Wait For Page Conatin Element  ${e_aggMultiAssetClass}  5s
     Verify Page Conatin Text   ${e_aggMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Aggressive
-    Click On Buy Button And Verify Buying Power Screen
+    Click On Buy Button And Verify Buy Order Screen
     Click On Back Arrow
     Sleep  2s
     Click On Back Arrow
@@ -437,7 +437,7 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Wait For Page Conatin Element  ${e_modMultiAssetClass}  5s
     Verify Page Conatin Text   ${e_modMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Moderate
-    Click On Buy Button And Verify Buying Power Screen
+    Click On Buy Button And Verify Buy Order Screen
     Click On Back Arrow
     Sleep  2s
     Click On Back Arrow
@@ -451,7 +451,7 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Wait For Page Conatin Element  ${e_conMultiAssetClass}  5s
     Verify Page Conatin Text   ${e_conMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Conservative
-    Click On Buy Button And Verify Buying Power Screen
+    Click On Buy Button And Verify Buy Order Screen
     Click On Back Arrow
     Sleep  2s
     Click On Back Arrow
@@ -509,7 +509,7 @@ User Clicks Vest Upsell With No Subscription
     Log to Console  Verified Vest Upsell With No Subscription!
     Click On Back Arrow And Verify Dashboard Screen
 
-User Checks Super Vest With Basic Subscription Account
+Verify Vest With No Subscription Account
     Sleep  5s
     Scroll Down Till Super Vest    
     Swipe By Percent   70  80   10   80  5000  
@@ -545,7 +545,7 @@ User Checks Super Vest With Basic Subscription Account
     Verify Dashboard Screen
 
 
-User Checks Withdrawal With Basic Subscription Account
+Verify Withdrawal With No Subscription Account
     Sleep  2s
     Click On Tansfer From Dashboard Screen
     Wait Until Page Contains  ${e_withdrawFunds}  5s
@@ -556,7 +556,7 @@ User Checks Withdrawal With Basic Subscription Account
     Verify Page Conatin Text   ${e_wtdrwPrcsBtn}
     Log to Console  Button verified!    
     Click Text  ${e_wtdrwPrcsBtn}
-    Log to Console  Go premium and save $3 clicked!   
+    Log to Console  Clicked on Go premium and save $11 button!   
     Sleep  2s
     Verify Plan Payment Screen
     Sleep  2s
@@ -565,7 +565,7 @@ User Checks Withdrawal With Basic Subscription Account
     Go Back On Android
     Verify Dashboard Screen
 
-User Checks Vest Upsell With Premium Subscription Account
+Verify Super Vest Upsell With Premium Subscription Account
     # Swipe By Percent  90  90  10  10  3000
     # Swipe By Percent  90  90  10  10  3000
     # Swipe By Percent  90  90  10  10  3000 
@@ -590,7 +590,7 @@ User Checks Vest Upsell With Premium Subscription Account
     Go Back On Android
     Verify Dashboard Screen
 
-User Checks Super Vest With Premium Subscription Account
+Verify Vest With Premium Subscription Account
     Sleep  2s
     Swipe By Percent  90  90  10  10  3000    
     Swipe By Percent   70  80   10   80  5000  
@@ -609,13 +609,13 @@ User Checks Super Vest With Premium Subscription Account
     Click Text  ${e_previewOrder}
     Sleep  2s
     Element Should Be Enabled  ${vf_A_placeOrderBtn}
-    Log to Console  Verified Super Vest With Premium Subscription Account!
+    Log to Console  Verified Vest With Premium Subscription Account!
     Go Back On Android
     Go Back On Android
     Go Back On Android
     Verify Dashboard Screen
 
-User Checks Withdrawal With Premium Subscription Account
+Verify Withdrawal With Premium Subscription Account
     Click On Tansfer From Dashboard Screen
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}

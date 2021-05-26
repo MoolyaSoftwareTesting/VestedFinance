@@ -13,50 +13,50 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # To run All test on browserstack: 
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_AK -d Results Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML03_AK -d Results Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
 
 # Refactored apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML02_AK -d Results -i Welcome Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://2b34b3e6be55133a8559ef9c3518ff49742c053a --variable sessionName:ML03_AK -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # Legacy apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML02_AK -d Results -i FundTransfer Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML03_AK -d Results -i FundTransfer Tests/Android/A_Tests.robot
 
 *** Test Cases ***
 # Verify Landing Screen
 Verify Landing Screen Widgets Logo & Text
-    [Tags]  SL01  Welcome 
+    [Tags]  SL01  Welcome  ExcludeKYC
     App logo & text is displayed at the top
 
 # Verify Points On Landing Screen
 Points on Security, Compliance and Recommendations in Landing Screen
-    [Tags]  SL02  Welcome 
+    [Tags]  SL02  Welcome  ExcludeKYC
     Verify 3 points on Security, Compliance and Recommendations with icons are displayed
     Verify Heading for each point is displayed
 
 # Verify Start Investing Button 
 Start Investing button is redirects to Sigin screen
-    [Tags]  SL03  Welcome 
+    [Tags]  SL03  Welcome  ExcludeKYC
     User Navigates To Signin Screen
 
 # Verify Signin And Signup links
 Switch between Sign in and Sign up by selecting provided links
-    [Tags]  SL05  Signin
+    [Tags]  SL05  Signin  ExcludeKYC
     User Navigates To Signin Screen
     User Clicks On Signup Link
     User Clicks On Signin Link 
 
 # Valid Signin
 Signin With Valid Credentials 
-    [Tags]  SL06  Signin
+    [Tags]  SL06  Signin  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
 
 # Pre-req: To be executed after SL06
 User Selects The Already Present Account In Easy Signin Page
-    [Tags]  SL10  Signin
+    [Tags]  SL10  Signin  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Easy Signin Screen
     User Selects The Already Present Account In Easy Signin
@@ -64,18 +64,18 @@ User Selects The Already Present Account In Easy Signin Page
 
 # Pre-req: To be executed after SL10
 Signin As Different User Link In Easy Signin Page
-    [Tags]  SL11  Signin
+    [Tags]  SL11  Signin  ExcludeKYC
     User Navigates To Signin Screen
 
 # Invalid Signin
 Signin With Invalid Signin Credentials
-    [Tags]  SL07  Signin
+    [Tags]  SL07  Signin  ExcludeKYC
     User Navigates To Signin Screen
     Signin With Invalid Credentials
 
 # Invalid Apple Signin
 Signin With Social Account - Apple With Invalid Signin Credentials
-    [Tags]  SL13  Signin  
+    [Tags]  SL13  Signin  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Apple Button
@@ -83,7 +83,7 @@ Signin With Social Account - Apple With Invalid Signin Credentials
 
 # Invalid Google Signin
 Google With Invalid Signin Credentials
-    [Tags]  SL15  Signin  
+    [Tags]  SL15  Signin  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Google Button
@@ -91,7 +91,7 @@ Google With Invalid Signin Credentials
 
 # FAIL: On clicking Log In button, Incorrect password Error msg is not appearing
 Facebook With Invalid Signin Credentials
-    [Tags]  SL17
+    [Tags]  SL17  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Facebook Button
@@ -99,7 +99,7 @@ Facebook With Invalid Signin Credentials
 
 # FAIL: Valid Facebook Signin
 Facebook With Valid Signin Credentials
-    [Tags]  SL16  Signin  
+    [Tags]  SL16  Signin  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Click On Continue With Facebook Button
@@ -108,7 +108,7 @@ Facebook With Valid Signin Credentials
 
 # Signup With Valid Credentials
 Signup With New Email & Password
-    [Tags]  SL23  Signup
+    [Tags]  SL23  Signup  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters New Email Password & Signups
@@ -117,7 +117,7 @@ Signup With New Email & Password
 
 # Verify Resend Code button
 Signup - Resend Code
-    [Tags]  SL26  Signup
+    [Tags]  SL26  Signup  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters New Email Password & Signups
@@ -127,7 +127,7 @@ Signup - Resend Code
 
 # FAIL: Verify Password Combination Criteria 
 User Password Mismatches Password Criteria 
-    [Tags]  SL27
+    [Tags]  SL27  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Valid Email
@@ -136,35 +136,35 @@ User Password Mismatches Password Criteria
 
 # Signup With Existing Email
 Signup With Existing Email & Verify Error Message
-    [Tags]  SL29  Signup
+    [Tags]  SL29  Signup  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Email Password & Signups
 
 # Signup With Existing Google Social Credentials
 User Signups With Existing Google Account & Password  
-    [Tags]  SL30  Signup  
+    [Tags]  SL30  Signup  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signup Screen
     User Enters Existing Google Account Password To Signup
 
 # Forgot Password Validation- Invalid Email Id
 User Enters An Invalid Email Id In Forgot Password Validation Screen
-    [Tags]  SL32  ForgotPassword
+    [Tags]  SL32  ForgotPassword  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Invalid Email
 
 # Reset Password- Invalid Code With Valid Password
 User Enters Invalid Code With Valid Password In Reset Password Screen
-    [Tags]  SL33  ForgotPassword  
+    [Tags]  SL33  ForgotPassword  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Invalid Code For Password Reset
 
 # FAIL: Reset Password- Different New And Confirm Passwords
 User Enters Different New And Confirm Passwords
-    [Tags]  SL36  ForgotPassword  
+    [Tags]  SL36  ForgotPassword  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Forgot Password Screen
     User Enters Different Passwords In Both Fields
@@ -299,7 +299,7 @@ KYC: Passport- POI & Bank Statement- POA
 
 # Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
-    [Tags]  Profile  
+    [Tags]  Profile  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
@@ -311,7 +311,7 @@ Verify Navigations Under Profile Screen
 
 # Premium Account containing existing Tax Documents- Defney credentials
 Verify Tax Documents Under Profile Screen
-    [Tags]  Profile  
+    [Tags]  Profile  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
@@ -320,7 +320,7 @@ Verify Tax Documents Under Profile Screen
 
 # Profile- For KYC Completed Account But Not Approved
 Navigations Under History Section For KYC Completed Account
-    [Tags]  Profile  
+    [Tags]  Profile  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -332,7 +332,7 @@ Navigations Under History Section For KYC Completed Account
 
 # Profile- History for KYC Incomplete Account
 Navigations Under History Section For KYC Incomplete Account
-    [Tags]  Profile  
+    [Tags]  Profile  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Click On Profile Button
@@ -343,18 +343,18 @@ Navigations Under History Section For KYC Incomplete Account
 
 # Normal Subscription- KYC Approved Basic Account
 Verify Vest Upsell And Payment Plan Screen For Basic Account
-    [Tags]  Subscription  
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
-    Verify Vest Upsell- Buy Vest From Basic Account
+    Verify Super Vest Upsell- Buy Vest From Basic Account
     Verify Basic Account Contents Under Payment Plan Screen 
     Verify Current Plan And Select Button 
 
 # TBU: After KYC-Doc upload on BS 
 # Basic plan Subscription as part of KYC flow 
 Basic Subscription Using UPI
-    [Tags]  Subscription
+    [Tags]  Subscription  ExcludeKYC
     User Navigates To Signin Screen
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -370,7 +370,7 @@ Basic Subscription Using UPI
 # NOTE: To be executed after 'Basic Subscription Using UPI'
 # Premium Subscription- KYC Completed Basic Account
 Premium Subscription With Card
-    [Tags]  Subscription
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     Click On Profile Button
     Click On Go Premium
@@ -380,7 +380,7 @@ Premium Subscription With Card
 # TBU: After KYC-Doc upload on BS 
 # Premium Subscription- Premium Account
 Verify Payment Plan Screen And Downgrade Premium Subscription
-    [Tags]  Subscription  
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -398,35 +398,35 @@ Verify Payment Plan Screen And Downgrade Premium Subscription
     Downgrade Premium Plan To Basic
 
 # Premium Subscription- KYC Approved Premium Account
-Navigate To Vest Upsell And Try To Buy Vest
-    [Tags]  Subscription  
+Navigate To Vest Upsell And Verify
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
     Verify Vest Upsell- Buy Vest From Premium Account 
 
 # Basic Subscription Additional Scripts
-Basic User Account - Withdrawal, Vest Upsell, Super Vest
-    [Tags]  Subscription  
+Basic User Account - Withdrawal, Vest Upsell
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
-    User Checks Withdrawal With Basic Subscription Account
-    User Checks Super Vest With Basic Subscription Account
+    Verify Withdrawal With No Subscription Account
+    Verify Vest With No Subscription Account
 
 # Premium Subscription Additional Scripts
 Premium User Account - Withdrawal, Vest Upsell, Super Vest
-    [Tags]  Subscription  
+    [Tags]  Subscription  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
-    User Checks Vest Upsell With Premium Subscription Account
-    User Checks Super Vest With Premium Subscription Account
-    User Checks Withdrawal With Premium Subscription Account
+    Verify Super Vest Upsell With Premium Subscription Account
+    Verify Vest With Premium Subscription Account
+    Verify Withdrawal With Premium Subscription Account
 
 # Non KYC Approved Account
 Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  
+    [Tags]  FundTransfer  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -436,7 +436,7 @@ Fund Transfer- Non KYC Approved Account
 
 # KYC Approved Account- No Funding History
 Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  Test 
+    [Tags]  FundTransfer  ExcludeKYC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History

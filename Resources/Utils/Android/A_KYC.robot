@@ -569,7 +569,7 @@ Click On Aadhaar As POI And Verify Popup
     Verify Image Is Displayed In Popup
     Verify Confirm Button Is Displayed
     Verify Select Another Document Button Is Displayed
-    Log To Console  Verified contents and Buttons under Aadhaar Popup!
+    Log To Console  Verified contents and Buttons under Aadhaar as POI Popup!
 
 Click On Drivers License As POI And Verify Popup
     Wait And Click Element On Android  ${vf_A_driversLicensePOIOption}
