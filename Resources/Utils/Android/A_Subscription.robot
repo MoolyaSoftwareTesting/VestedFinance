@@ -547,7 +547,7 @@ Verify Vest With No Subscription Account
 
 Verify Withdrawal With No Subscription Account
     Sleep  2s
-    Click On Tansfer From Dashboard Screen
+    Click On Tansfer From Dashboard
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
     Log to Console  Withdraw funds clicked!
@@ -616,7 +616,7 @@ Verify Vest With Premium Subscription Account
     Verify Dashboard Screen
 
 Verify Withdrawal With Premium Subscription Account
-    Click On Tansfer From Dashboard Screen
+    Click On Tansfer From Dashboard
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
     Verify Page Conatin Text   ${e_premiumWthdrwNote}

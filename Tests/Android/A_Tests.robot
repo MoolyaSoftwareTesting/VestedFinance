@@ -426,7 +426,7 @@ Premium User Account - Withdrawal, Vest Upsell, Super Vest
 
 # Non KYC Approved Account
 Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -436,9 +436,12 @@ Fund Transfer- Non KYC Approved Account
 
 # KYC Approved Account- No Funding History
 Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
     Click On Tansfer From Dashboard
     Verify Fund Transfer Screen For New Account With No Funding History
+
+# FT_97 - FT_102
+Online Transfer - General validations
