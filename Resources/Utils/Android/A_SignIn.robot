@@ -84,7 +84,6 @@ Click On Continue With Facebook Button
 Click On Next Button
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_nextButton}
-    Log to Console  Clicked on Next Button
 
 Signin Without Pin Credentials
     [Arguments]  ${email}  ${password}
@@ -229,10 +228,9 @@ Signin With Invalid Credentials - Facebook
     Sleep  5s
     Wait For Element Visibility On Android  ${vf_A_FbEmail}
     Input Text  ${vf_A_FbEmail}  ${e_invalidUserName}
-    Log to Console  Invalid Username Entered
     Wait And Click Element On Android  ${vf_A_FbPwd}
     Input Text  ${vf_A_FbPwd}  ${e_invalidPwd}
-    Log to Console  Invalid Password Entered
+    Log to Console  Invalid Username & Password Entered
     Close Android Keyboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_FbSigninBtn}

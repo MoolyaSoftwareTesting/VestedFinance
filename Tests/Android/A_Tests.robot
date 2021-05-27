@@ -444,4 +444,10 @@ Fund Transfer For New Account- No Funding History
     Verify Fund Transfer Screen For New Account With No Funding History
 
 # FT_97 - FT_102
-Online Transfer - General validations
+Online Transfer - General Validations
+    [Tags]  FundTransfer  Test
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Click On Tansfer From Dashboard
+    Fill And Submit A Fund Transfer

@@ -166,7 +166,7 @@ Verify All Checkboxes
     Wait And Click Element On Android  ${vf_A_chkBx4}
     Log to Console  Verified All Checkboxes
 
-# SL45, SL50
+# SL45, SL47, SL50
 User Fill All The Fields Under KYC Basic Details Screen And Verify
     Verify Navigations Under KYC Basic Details Screen
     Enter Phone Number  ${e_dummyPhoneNo}
@@ -185,21 +185,6 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Verify All Checkboxes
     Log To Console  Filled KYC Basic Details Screen!
     Click On Next Button
-
-# SL47
-User Selects Enters Gender Phone Number
-    Verify Page Conatin Text  ${e_headingKYC}
-    Log to Console  First Page Verified!
-    Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
-    Verify Page Conatin Text   ${e_letsGetToKnowYou}
-    Log to Console  Second Page Verified!
-    Wait And Click Element On Android  ${vf_A_phoneNum}
-    Input Text  ${vf_A_phoneNum}  ${e_dummyPhoneNo}
-    Close Android Keyboard
-    Sleep  3s
-    Click Element  ${vf_A_maleGender}
-    Log to Console  Male Selected!
-
 
 # Investment Profile Screen
 
@@ -224,8 +209,6 @@ Select Option Under Risk tolerance
     ...     ELSE IF   '${option}'=='${e_riskToleranceOpt2Txt}'  Click Text  ${e_riskToleranceOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_riskToleranceOpt3Txt}'  Click Text  ${e_riskToleranceOpt3Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option} 
-
 
 Select Option Under Investing Frequency
     [Arguments]  ${option}
@@ -239,7 +222,6 @@ Select Option Under Investing Frequency
     ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt2Txt}'  Click Text  ${e_investingFrequencyOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_investingFrequencyOpt3Txt}'  Click Text  ${e_investingFrequencyOpt3Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option} 
 
 Select Option Under Investing Experience
     [Arguments]  ${option}
@@ -257,7 +239,6 @@ Select Option Under Investing Experience
     ...     ELSE IF   '${option}'=='${e_investingExperienceOpt4Txt}'  Click Text  ${e_investingExperienceOpt4Txt}
     ...     ELSE IF   '${option}'=='${e_investingExperienceOpt5Txt}'  Click Text  ${e_investingExperienceOpt5Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 Select Option Under Yearly Income 
     [Arguments]  ${option}
@@ -273,7 +254,6 @@ Select Option Under Yearly Income
     ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt3Txt}'  Click Text  ${e_yearlyIncomeOpt3Txt}
     ...     ELSE IF   '${option}'=='${e_yearlyIncomeOpt4Txt}'  Click Text  ${e_yearlyIncomeOpt4Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
  
 Select Option Under Liquid Net Worth
     [Arguments]  ${option}
@@ -289,7 +269,6 @@ Select Option Under Liquid Net Worth
     ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt3Txt}'  Click Text  ${e_liquidNetWorthOpt3Txt}
     ...     ELSE IF   '${option}'=='${e_liquidNetWorthOpt4Txt}'  Click Text  ${e_liquidNetWorthOpt4Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 Select Option Under Total Net Worth
     [Arguments]  ${option}
@@ -305,7 +284,6 @@ Select Option Under Total Net Worth
     ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt3Txt}'  Click Text  ${e_totalNetWorthOpt3Txt}
     ...     ELSE IF   '${option}'=='${e_totalNetWorthOpt4Txt}'  Click Text  ${e_totalNetWorthOpt4Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 Select Option Under Primary Source Dropdown
     [Arguments]  ${option}
@@ -319,7 +297,6 @@ Select Option Under Primary Source Dropdown
         IF   ${isElementVisible}
             Wait For Element Visibility On Android  ${option}
             Click Element  ${option}
-            Log To Console  Clicked on option - ${option}
             Exit For Loop If    ${isElementVisible}
         ELSE
             Swipe By Percent  70  70  40  40  5000
@@ -338,7 +315,6 @@ Select Option Under Number Of Deposits And Withdrawals
     ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt2Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_depositsAndWithdrawalsOpt3Txt}'  Click Text  ${e_depositsAndWithdrawalsOpt3Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 Select Option Under Money Deposit
     [Arguments]  ${option}
@@ -351,7 +327,6 @@ Select Option Under Money Deposit
     ...     ELSE IF   '${option}'=='${e_moneyDepositOpt2Txt}'  Click Text  ${e_moneyDepositOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_moneyDepositOpt3Txt}'  Click Text  ${e_moneyDepositOpt3Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 Select Option Under Investments Made
     [Arguments]  ${option}
@@ -365,7 +340,6 @@ Select Option Under Investments Made
     ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt2Txt}'  Click Text  ${e_investmentsMadeOpt2Txt}
     ...     ELSE IF   '${option}'=='${e_investmentsMadeOpt3Txt}'  Click Text  ${e_investmentsMadeOpt3Txt}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option}
 
 # SL51
 Verify Navigations Under KYC Investment Profile Screen
@@ -416,7 +390,6 @@ Verify Options Under Marital Status
     Click Text  ${e_stsMarried}
     Click Text  ${e_stsWidowed}
     Click Text  ${e_stsDomPtnr}
-    Log To Console  Clicked on option - ${e_stsDomPtnr}
 
 # SL59
 Verify Options Under Employment Type
@@ -426,7 +399,6 @@ Verify Options Under Employment Type
     Click Text  ${e_empStdnt}
     Click Text  ${e_empSlfEmp}
     Click Text  ${e_empUnemp}
-    Log To Console  Clicked on option - ${e_empUnemp}
 
 Select Option Under Marital status
     [Arguments]  ${option}
@@ -436,7 +408,6 @@ Select Option Under Marital status
     ...     ELSE IF   '${option}'=='${e_stsWidowed}'  Click Text  ${e_stsWidowed}
     ...     ELSE IF   '${option}'=='${e_stsDomPtnr}'  Click Text  ${e_stsDomPtnr}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option} 
 
 Select Option Under Employment Type
     [Arguments]  ${option}
@@ -446,7 +417,6 @@ Select Option Under Employment Type
     ...     ELSE IF   '${option}'=='${e_empSlfEmp}'  Click Text  ${e_empSlfEmp}
     ...     ELSE IF   '${option}'=='${e_empUnemp}'  Click Text  ${e_empUnemp}
     ...     ELSE  Log To Console  Invalid Option
-    Log To Console  Clicked on option - ${option} 
 
 Verify Navigations Under KYC Identity Screen
     Sleep  3s
@@ -476,7 +446,7 @@ User Fill All the Fields Under KYC Identity Screen And Verify
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text   ${e_docVerTxt}
     Wait And Click Element On Android  ${vf_A_verChkBx}
-    Log to Console  Confirm Checkbox Clicked!
+    Log to Console  Filled KYC Identity Screen!
 
 # Document Upload
 
@@ -946,7 +916,7 @@ Upload Front And Back Side Of Aadhaar As POI
     Select Aadhaar As POI And Verify Popups
     Upload Front And Back Side Of Aadhaar As POI And Verify
     Enter Valid PAN Number In PAN Field
-    Log To Console  Filled KYC Identity Screen!
+    Log To Console  Uploaded Front And Back Side Of Aadhaar!
     Click On Next Button
 
 Upload Aadhaar Front As POI And Back side As POA
@@ -960,7 +930,7 @@ Upload Full Aadhaar As POI
     Select Aadhaar As POI And Verify Popups
     Upload Full Aadhaar As POI And Verify
     Enter Valid PAN Number In PAN Field
-    Log To Console  Filled KYC Identity Screen!
+    Log To Console  Uploaded Full Aadhaar!
     Click On Next Button
 
 Upload Aadhaar Front As POI And Bank Statement As POA
@@ -981,7 +951,7 @@ Upload Front And Back Side Of Drivers License As POI
     Select Drivers License As POI And Verify Popups
     Upload Front And Back Side Of Drivers License As POI And Verify
     Enter Valid PAN Number In PAN Field
-    Log To Console  Filled KYC Identity Screen!
+    Log To Console  Uploaded Front And Back Side Of Drivers License!
     Click On Next Button
 
 Upload PAN Card As POI And Bank Statement As POA
@@ -1040,18 +1010,15 @@ Enter Card Details Into Fields
     #Go Back On Android
     Wait And Click Element On Android  ${vf_A_expiryTxt}
     Input Text  ${vf_A_expiryTxtFld}  ${e_expiry}
-    Log to Console  Expiry Entered!
     Sleep  3s
     #Close Android Keyboard
     Wait And Click Element On Android  ${vf_A_nameTxt}
     Input Text  ${vf_A_nameTxtFld}  ${e_hldrName}
-    Log to Console  Name Entered!
     Wait And Click Element On Android  ${vf_A_cvvTxt}
     Input Text  ${vf_A_cvvTxtFld}  ${e_cvv}
-    Log to Console  CVV Entered!
     Sleep  3s
     Input Text  ${vf_A_cardNumTxtFld}  ${cardNum}
-    Log to Console  Card Number Entered!
+    Log to Console  Entered Card Number, Expiry, Name & CVV!
     Go Back On Android
 
 Enter Card Details For Payment
@@ -1063,7 +1030,7 @@ Enter Card Details For Payment
     Click On Element If Visibile  ${vf_A_skipSavedCardLink}
     Enter Card Details Into Fields  ${e_cardNum}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
-    Log to Console  Clicked on Pay Button!
+    Log to Console  Clicked on PAY ₹ 399 Button!
 
 # SL114
 Make Payment For Yearly Basic Plan Using Card Information
@@ -1097,12 +1064,11 @@ Make Payment For Yearly Premium Plan Using UPI
     Verify Card & UPI Payment Options
     Select An UPI Payment Option And Verify  ${e_recurringPaymentTxt}
     Wait And Click Element On Android  ${vf_A_pay2500Btn}
-    Log to Console  Clicked on Pay Button
     Verify UPI- ICICI Bank Payment Screen  ${e_recurringPaymentTxt}
     Enter UPI ID
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_pay2500Btn}
-    Log to Console  Clicked on Pay Button 
+    Log to Console  Clicked on PAY ₹ 2,500 Button 
 
 # SL114
 Verify Sections And Navigations Under KYC Plan Payment Screen- Card 

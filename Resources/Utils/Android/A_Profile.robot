@@ -11,7 +11,6 @@ Signin With KYC Completed Basic Account
 Click On Profile Button
     Sleep  3s
     Wait And Click Element On Android  ${vf_A_profileBtn}
-    Log to Console  Clicked on Profile Button
 
 # PN01-PN10
 Verify Menus And Sub-menus Under Profile
@@ -28,16 +27,14 @@ Verify Menus And Sub-menus Under Profile
     Verify Page Conatin Text   ${e_tradeConfirmations}
     Verify Page Conatin Text   ${e_accStmts}
     Verify Page Conatin Text   ${e_taxDocs}
-    Log to Console  Verified Sub-menu's under History!
     Verify Page Conatin Text   ${e_help}
     Verify Page Conatin Text   ${e_faq}
     Verify Page Conatin Text   ${e_emailUs}
     Verify Page Conatin Text   ${e_msgUs}
-    Log to Console  Verified Sub-menu's under Help!
     Verify Page Conatin Text   ${e_account}
     Verify Page Conatin Text   ${e_invstmtProfile}
     Verify Page Conatin Text   ${e_security}
-    Log to Console  Verified sub-menu's under Account!
+    Log to Console  Verified Sub-menu's under History, Help & Account!
     Swipe By Percent  70  70  40  40  5000
     Verify Page Conatin Text   ${e_logout}
     Log to Console  Verified Log Out!
@@ -53,22 +50,18 @@ Verify Profile Screen
 Click On Transactions Under History Section
     Wait For Page Conatin Element  ${e_transactions}  10s
     Click Text  ${e_transactions}
-    Log to Console  Clicked on Transactions under History section 
 
 Click On Trade Confirmations Under History Section
     Wait For Page Conatin Element  ${e_tradeConfirmations}  5s
     Click Text  ${e_tradeConfirmations}
-    Log to Console  Clicked on Trade Confirmations under History section
 
 Click On Account Statements Under History Section
     Wait For Page Conatin Element  ${e_accStmts}  10s
     Click Text  ${e_accStmts}
-    Log to Console  Clicked on Account Statements under History section
 
 Click On Tax Documents Under History Section
     Wait For Page Conatin Element  ${e_taxDocs}  3s
     Click Text  ${e_taxDocs}
-    Log to Console  Clicked on Tax Documents under History section
 
 # PN13
 Click On Transactions And Verify
@@ -298,7 +291,6 @@ User Clicks Manage Plan Under Account
     # Plan details section
     Wait For Page Conatin Element  ${e_planManagement}  5s
     Verify Page Conatin Text   ${e_planManagement}
-    Log to Console  Verified Manage Us Page Heading!
     Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
     Verify Page Contains Element On Android  ${vf_A_downgradePlanBtn}
     Log to Console  Verified Downgrade Plan Button!
@@ -306,9 +298,8 @@ User Clicks Manage Plan Under Account
     Verify Page Conatin Text   ${e_billingDetails}
     Verify Page Conatin Text   ${e_billingOptions}
     Verify Page Conatin Text   ${e_billingQtrlyTxt}
-    Log to Console  Verified Billing Details for Quarterly plan!
     Verify Page Contains Element On Android  ${vf_switchToYrlyBtn}
-    Log to Console  Verified Switch to Quarterly Plan Button!
+    Log to Console  Verified Billing Details for Quarterly plan!
     Click On Back Button From Top And Verify Profile Screen
 
 # PN41, PN42

@@ -76,12 +76,11 @@ Make Payment Using UPI
     Enter Phone Number And Email For Payment
     Select An UPI Payment Option And Verify  ${e_recurringPaymentTxt}
     Wait And Click Element On Android  ${vf_A_pay399Btn}
-    Log to Console  Clicked on Pay Button
     Verify UPI- ICICI Bank Payment Screen  ${e_recurringPaymentTxt}
     Enter UPI ID
     Go Back On Android
     Wait And Click Element On Android  ${vf_A_pay399Btn}
-    Log to Console  Clicked on Pay Button
+    Log to Console  Clicked on PAY ₹ 399 Button
     Sleep  5s
     Wait And Click Element On Android  ${vf_A_successBtn}
 
@@ -550,11 +549,10 @@ Verify Withdrawal With No Subscription Account
     Click On Tansfer From Dashboard
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
-    Log to Console  Withdraw funds clicked!
+    Log to Console  Clicked on Withdraw funds!
     Verify Page Conatin Text   ${e_wtdrwPrcsNt}
-    Log to Console  Text verified!
     Verify Page Conatin Text   ${e_wtdrwPrcsBtn}
-    Log to Console  Button verified!    
+    Log to Console  Verified Button and content!    
     Click Text  ${e_wtdrwPrcsBtn}
     Log to Console  Clicked on Go premium and save $11 button!   
     Sleep  2s

@@ -157,7 +157,7 @@ Verify Open With Label
 Close Android Keyboard
     ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
     Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
-    ...    ELSE  Log To Console  Keyboard is hidden
+    #...    ELSE  Log To Console  Keyboard is hidden
 
 Go Back On Android
     Go Back
