@@ -436,18 +436,39 @@ Fund Transfer- Non KYC Approved Account
 
 # KYC Approved Account- No Funding History
 Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  
+    [Tags]  FundTransfer
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
     Click On Tansfer From Dashboard
     Verify Fund Transfer Screen For New Account With No Funding History
+    Click On Withdraw Funds And Verify Withdrawal Amount Screen
 
-# FT_97 - FT_102
-Online Transfer - General Validations
+# FT_97 - FT_101
+Remove Online Fund Transfer
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Click On Tansfer From Dashboard
+    Fill And Remove A Fund Transfer
+
+# FT_97 - FT_99, FT_102
+Submit Online Fund Transfer
     [Tags]  FundTransfer  Test
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
     Click On Tansfer From Dashboard
+    Verify Second Withdrawal
     Fill And Submit A Fund Transfer
+
+# Fund Withdrawal: SL03, SL04
+Verify Withdrawal Process For First Withdrawal
+    [Tags]  FundTransfer  Test
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account For 1st Withdrawal
+    Verify First Withdrawal
+    
+    

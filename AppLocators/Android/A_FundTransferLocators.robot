@@ -10,6 +10,11 @@ ${e_emailKycApprvTransfer} =  indrajit+8007@vestedfinance.co
 ${e_pwdKycApprvTransfer} =  iTestUser1!
 ${e_pinKycApprvTransfer} =  111111
 
+# KYC Approved Premium Account For 1st Withdrawal
+${e_emailKycApprvWithdrwl} =  indrajit+8002@vestedfinance.co
+${e_pwdKycApprvWithdrwl} =  iTestUser1!
+${e_pinKycApprvWithdrwl} =  111111
+
 ${e_incmpltDeposits} =  INCOMPLETE DEPOSITS
 ${e_pendingTransfers} =  PENDING TRANSFERS
 ${e_cmpltedTransfers} =  COMPLETED TRANSFERS
@@ -30,7 +35,7 @@ ${e_selectYourBankDesc1} =  This provides bank instructions to fund your Vested 
 ${e_selectYourBankDesc2} =  Note: There are fees to transfer funds overseas. Please check with your bank for actual prices.
 ${e_indianBankOpts} =  INDIAN
 ${e_iciciBankOpt} =  ICICI Bank
-${e_amtUnderIncmpltDeposits} =  $5.00
+${e_amtDeposited} =  $5.00
 ${e_2stepToGo} =  2 step to go
 ${e_fundOnlineUsingICICI} =  FUND ONLINE USING ICICI MONEY2WORLD
 ${e_selectDiffFundTransfer} =  SELECT A DIFFERENT FUNDS TRANSFER METHOD
@@ -45,37 +50,50 @@ ${e_1stepToGo} =  1 step to go
 ${e_uploadWireReceiptNote} =  Note: Banks may take a few days to send you a wire receipt.
 ${e_yourReceiptTxt} =  OUR RECEIPT SHOULD CONTAIN:
 ${e_yourFullName} =  Your full name
-${e_userName} =  DEFNEY TEST
 ${e_yourDriveWealthTxt} =  Your DriveWealth ID (if you have entered it)
-${e_userDriveWealthID} =  VTSA000009
 ${e_bankName} =  Bank Name
+${e_iciciUnderBankName} =  ICICI BANK
 ${e_amtInUSDTxt} =  Amount Transferred in USD
 ${e_dateOnWireReceiptTxt} =  Date on the wire receipt
 ${e_selectDateTxt} =  Select date
-${e_todaysDate} =  26
 ${e_calenderOkBtn} =  OK
 ${e_pwdForPdfTxt} =  Password for Swift Copy in case of PDF file
 ${e_enterPwdTxt} =  Enter Password
 ${e_leaveBlankTxt} =  Leave Blank if PDF is not password protected
 ${e_incmpltTransferTxt} =  Incomplete information may cause delay in transfer.
-${e_uploadWireReceipt} =  UPLOAD WIRE RECEIPT
-
+${e_uploadWireReceiptBtn} =  UPLOAD WIRE RECEIPT
+${e_receiptUploadSuccessMsg} =  Wire Receipt Uploaded
+${e_reUploadRecTxt} =  Re-Upload Receipt
+${e_removeDepositTxt} =  Are you sure you want to remove this deposit?
+${e_yesBtn} =  Yes
+${e_noBtn} =  No
+${e_submitBtn} =  Submit
+${e_submitTransferSuccessMsg} =  Thank you for completing your transfer!
+${e_submitTransferSuccessTxt} =  will be deposited in your bank in 3-5 business days.
+${e_backToDashbrdBtnSccsTransfer} =  BACK TO DASHBOARD
 
 # Withdrawal Funds
 ${e_kycApprovalNeededPopupTxt3} =  Investing in US stocks means investing in US dollars. Vested charges an $11 withdrawal fee every time you initiate an withdrawal except for premium subscribers who get one free withdrawal annually.
+${e_withdrawalProcess} =  Withdrawal Process
+${e_settledCash} =  Settled Cash
+${e_settledCashAmt} =  $0.00
+${e_amtToWithdraw} =  Amount to Withdraw
+${e_withdrawProcessNote} =  Note: Drivewealth charges a $11 withdrawal fee. Intermediary banks may charge additional fees on top of this amount.
+${e_proceedBtn} =  Proceed
 
 # LOCATORS
 ${vf_A_transfer} =  xpath=//*[@text='Transfer']
+${vf_A_imgInTransfer} =  xpath=//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Cash Balance']]
 
 # Add Funds 
 
 ${vf_A_addFundsBtn} =  xpath=//*[@text='ADD FUNDS']
-${vf_A_amtToTransfer} =  xpath=//*[@class='android.widget.EditText']
+${vf_A_amtTxtBox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_fundOnlineTxtUnderICICI} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='ICICI Bank']]
 ${vf_A_previousBtn} =  xpath=//*[@text='PREVIOUS']
 ${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
-${vf_A_continueBtnUnderFT} =  (//*[@text='CONTINUE'])[1]
-${vf_A_removeBtn} =  (//*[@text='REMOVE'])[1]
+${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
+${vf_A_removeBtn} =  xpath=(//*[@text='REMOVE'])[1]
 
 # Withdrawal Funds 
 

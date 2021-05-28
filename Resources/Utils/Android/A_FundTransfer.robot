@@ -10,7 +10,11 @@ Signin With New Account- No Funding History
 Signin With KYC Approved Account For Online Transfer
     Signin With Pin Credentials  ${e_emailKycApprvTransfer}  ${e_pwdKycApprvTransfer}  ${e_pinKycApprvTransfer}
 
+Signin With KYC Approved Premium Account For 1st Withdrawal
+    Signin With Pin Credentials  ${e_emailKycApprvWithdrwl}  ${e_pwdKycApprvWithdrwl}  ${e_pinKycApprvWithdrwl}
+
 Verify Transfer Landing Screen
+    Wait For Page Conatin Element  ${e_cashBalance}  5s
     Verify Page Conatin Text  ${e_cashBalance}
 
 Verify Fund Transfer Screen For New Account With No Funding History
@@ -22,12 +26,15 @@ Verify Fund Transfer Screen For New Account With No Funding History
     Log to Console  Verified Cash Balance- $0.00
     Verify Element Visibility  ${vf_A_addFundsBtn}
     Verify Element Visibility  ${vf_A_withdrawalFundsBtn}
+    Verify Element Visibility  ${vf_A_imgInTransfer}
     Log to Console  Verified Fund Transfer Screen For New Account With No Funding History!
 
 # Add Funds
 
 Click On Tansfer From Dashboard
     Wait And Click Element On Android  ${vf_A_transfer}
+    Verify Transfer Landing Screen
+    Log to Console  Navigated to Transfer Landing Screen
 
 Click On Next Button Under Add Funds Flow
     Wait And Click Element On Android  ${vf_A_nextBtn}
@@ -56,46 +63,26 @@ Click On Switch Bank Link And Select A Bank
     Wait For Page Conatin Element  ${e_iciciBankOpt}  5s
     Verify Page Conatin Text  ${e_iciciBankOpt}
 
-Click On Continue Button Under Fund Transfer
-    Sleep  2s
-    Wait And Click Element On Android  ${vf_A_continueBtnUnderFT}
-
-Verify Fund Online Using ICICI Screen
-    Wait For Page Conatin Element  ${e_fundOnlineUsingICICI}  5s
-    Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
-
-Verify New Entry Created Under Incomplete Deposits
-    [Arguments]  ${step}
-    Verify Page Conatin Text  ${e_incmpltDeposits}
-    Verify Page Conatin Text  ${e_amtUnderIncmpltDeposits}
-    Verify Page Conatin Text  ${step}
-    Verify Element Visibility  ${vf_A_continueBtn}
-    Verify Element Visibility  ${vf_A_removeBtn}
-    Log to Console  Verified new entry created under Incomplete Deposits
-
-Verify Upload The Wire Receipt Screen
-    Wait For Page Conatin Element  ${e_uploadWireReceipt}  5s
-    Verify Page Conatin Text  ${e_uploadWireReceipt}
-
-Fill And Submit A Fund Transfer
-    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+Fill Deposit Screen
     Wait For Page Conatin Element  ${e_howMuchDepositTxt}  5s
     Verify Page Conatin Text  ${e_howMuchDepositTxt}
     Verify Page Conatin Text  ${e_amtToTransferTxt}
     Verify Page Conatin Text  ${e_$Txt}
-    Input Text  ${vf_A_amtToTransfer}  ${e_amtToTransfer}
+    Input Text  ${vf_A_amtTxtBox}  ${e_amtToTransfer}
     Log To Console  Amount to Transfer entered - ${e_amtToTransfer} 
     Verify Page Conatin Text  ${e_transferFromTxt}
     Click On Switch Bank Link And Select A Bank
-    Click On Next Button Under Add Funds Flow
-    Verify Fund Online Using ICICI Screen
-    Wait And Click Element On Android  ${vf_A_CloseIcon}
-    Log to Console  Clicked on Close icon under Fund Online Using ICICI screen
-    Verify Transfer Landing Screen
-    Verify New Entry Created Under Incomplete Deposits  ${e_2stepToGo}
-    Log to Console  Verified new entry created under Incomplete Deposits
-    Click On Continue Button Under Fund Transfer
-    Verify Fund Online Using ICICI Screen
+
+Click On Continue Button Under Fund Transfer
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_continueBtnUnderFT}
+
+Verify User Is Navigated To Fund Online Using ICICI Screen
+    Wait For Page Conatin Element  ${e_fundOnlineUsingICICI}  5s
+    Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
+
+Verify Fund Online Using ICICI Screen
+    Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
     Verify Page Conatin Text  ${e_selectDiffFundTransfer}
     Verify Page Conatin Text  ${e_importantTxt}
     Verify Page Conatin Text  ${e_importantP1}
@@ -103,43 +90,119 @@ Fill And Submit A Fund Transfer
     Verify Page Conatin Text  ${e_feesTxt}
     Verify Page Conatin Text  ${e_feesP1}
     Verify Page Conatin Text  ${e_dwnldInstrctnsBtn}
-    Log to Console  User is returned to step 2 of the fund transfer process
-    Click On Next Button Under Add Funds Flow
-    Verify Upload The Wire Receipt Screen
-    Wait And Click Element On Android  ${vf_A_CloseIcon}
-    Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
-    Verify Transfer Landing Screen
-    Verify New Entry Created Under Incomplete Deposits  ${e_1stepToGo}
-    Click On Continue Button Under Fund Transfer
-    Verify Upload The Wire Receipt Screen
+    Log to Console  Verified Fund Online Using ICICI Screen Money2World Screen!
+
+Verify New Entry Created Under Incomplete Deposits
+    [Arguments]  ${step}
+    Verify Page Conatin Text  ${e_incmpltDeposits}
+    Verify Page Conatin Text  ${e_amtDeposited}
+    Verify Page Conatin Text  ${step}
+    ${todaysDate} =  Get Current Date On Android   
+    Verify Page Conatin Text  ${todaysDate}
+    ${presentYear} =  Get Current Year On Android   
+    Verify Page Conatin Text  ${presentYear}
+    Verify Element Visibility  ${vf_A_continueBtnUnderFT}
+    Verify Element Visibility  ${vf_A_removeBtn}
+    Log to Console  Verified new entry created under Incomplete Deposits!
+
+Verify User Is Navigated To Upload The Wire Receipt Screen
+    Wait For Page Conatin Element  ${e_uploadWireReceipt}  5s
+    Verify Page Conatin Text  ${e_uploadWireReceipt}
+
+Upload Wire Receipt And Verify Success Message
+    Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_driversLicenseBackImg}
+    Wait For Page Conatin Element  ${e_receiptUploadSuccessMsg}  10s
+    Verify Page Conatin Text  ${e_receiptUploadSuccessMsg}
+    Verify Page Conatin Text  ${e_reUploadRecTxt}
+    Log To Console  Uploaded Wire Receipt
+
+Verify And Fill The Upload Wire Receipt Received Screen
     Verify Page Conatin Text  ${e_uploadWireReceiptNote}
     Verify Page Conatin Text  ${e_yourReceiptTxt}
     Verify Page Conatin Text  ${e_yourFullName}
-    Verify Page Conatin Text  ${e_userName}
     Verify Page Conatin Text  ${e_yourDriveWealthTxt}
-    Verify Page Conatin Text  ${e_userDriveWealthID}
     Verify Page Conatin Text  ${e_bankName}
-    Verify Page Conatin Text  ${e_iciciBankOpt}
+    Verify Page Conatin Text  ${e_iciciUnderBankName}
     Verify Page Conatin Text  ${e_amtInUSDTxt}
-    Verify Page Conatin Text  ${e_amtUnderIncmpltDeposits}
+    Verify Page Conatin Text  ${e_amtDeposited}
     Swipe By Percent  70  70  20  20  5000
     Verify Page Conatin Text  ${e_dateOnWireReceiptTxt}
     Click Text  ${e_selectDateTxt}
     Wait For Page Conatin Element  ${e_calenderOkBtn}  5s
-    # Work on clicking Today's current date
-    Click Text  ${e_todaysDate}
+    ${todaysDate} =  Get Current Date On Android      
+    Click Text  ${todaysDate}
     Click Text  ${e_calenderOkBtn}
     Verify Page Conatin Text  ${e_pwdForPdfTxt}
     Verify Page Conatin Text  ${e_enterPwdTxt}
     Verify Page Conatin Text  ${e_leaveBlankTxt}
     Verify Page Conatin Text  ${e_incmpltTransferTxt}
-    Verify Page Conatin Text  ${e_uploadWireReceipt}
-    Click Text  ${e_calenderOkBtn}
-    # Upload img
-
+    Click Text  ${e_uploadWireReceiptBtn}
+    Upload Wire Receipt And Verify Success Message
     # Test_on_Real img on BS device- 
-    Log to Console  Verified and Filled Upload the Wire Receipt for Transfer
+    Log to Console  Verified, Filled & Uploaded the Wire Receipt for Transfer
 
+Fill And Remove A Fund Transfer
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Next Button Under Add Funds Flow
+    Verify User Is Navigated To Fund Online Using ICICI Screen
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Clicked on Close icon under Fund Online Using ICICI screen
+    Verify Transfer Landing Screen
+    Verify New Entry Created Under Incomplete Deposits  ${e_2stepToGo}
+    Click On Continue Button Under Fund Transfer
+    Verify User Is Navigated To Fund Online Using ICICI Screen
+    Log to Console  User is returned to step 2 of the fund transfer process
+    Verify Fund Online Using ICICI Screen
+    Click On Next Button Under Add Funds Flow
+    Verify User Is Navigated To Upload The Wire Receipt Screen
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
+    Verify Transfer Landing Screen
+    Verify New Entry Created Under Incomplete Deposits  ${e_1stepToGo}
+    Click On Continue Button Under Fund Transfer
+    Verify User Is Navigated To Upload The Wire Receipt Screen
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
+    Wait And Click Element On Android  ${vf_A_removeBtn}
+    Wait For Page Conatin Element  ${e_removeDepositTxt}  10s
+    Verify Page Conatin Text  ${e_removeDepositTxt}
+    Verify Page Conatin Text  ${e_yesBtn}
+    Verify Page Conatin Text  ${e_noBtn} 
+    Click Text  ${e_yesBtn}
+    ${isElementVisible} =  Run Keyword And Return Status  Verify New Entry Created Under Incomplete Deposits  ${e_1stepToGo}
+    IF   ${isElementVisible}  
+        Log to Console  Incomplete Transfer is still present in the list
+    ELSE   
+        Log to Console  Removed Incomplete Transfer from the list
+    END
+
+Fill And Submit A Fund Transfer
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Next Button Under Add Funds Flow
+    Verify User Is Navigated To Fund Online Using ICICI Screen
+    Verify Fund Online Using ICICI Screen
+    Click On Next Button Under Add Funds Flow
+    Verify User Is Navigated To Upload The Wire Receipt Screen
+    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
+    Verify Transfer Landing Screen
+    Verify New Entry Created Under Incomplete Deposits  ${e_1stepToGo}
+    Click On Continue Button Under Fund Transfer
+    Verify User Is Navigated To Upload The Wire Receipt Screen
+    Verify And Fill The Upload Wire Receipt Received Screen
+    Click Text  ${e_submitBtn}
+    Wait For Page Conatin Element  ${e_submitTransferSuccessMsg}  5s
+    Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
+    Verify Page Conatin Text  ${e_amtDeposited}
+    Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
+    Verify Page Conatin Text  ${e_submitTransferSuccessTxt}
+    Verify Page Conatin Text  ${e_backToDashbrdBtnSccsTransfer}
+    Log to Console  Verified Success screen after Transaction is submited successfully!
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
 
 # Withdrawal Funds
 
@@ -153,3 +216,30 @@ Verify Withdrawal Funds For Non KYC Approved Account
     Verify Page Conatin Text  ${e_checkStatusBtn}
     Wait And Click Element On Android  ${vf_A_notNowBtn}
     Log to Console  Verified Withdrawal Funds For Non KYC Approved Account!
+
+Verify Content In Withdrawal Process Screen
+    Wait And Click Element On Android  ${vf_A_withdrawalFundsBtn}
+    Wait For Page Conatin Element  ${e_withdrawalProcess}  5s
+    Verify Page Conatin Text  ${e_withdrawalProcess}
+    Verify Page Conatin Text  ${e_settledCash}
+    Verify Page Conatin Text  ${e_amtToWithdraw}
+    Verify Element Visibility  ${vf_A_amtTxtBox}
+    Verify Page Conatin Text  ${e_proceedBtn}
+
+Click On Withdraw Funds And Verify Withdrawal Amount Screen
+    Verify Content In Withdrawal Process Screen
+    Verify Page Conatin Text  ${e_settledCashAmt}
+    Verify Page Conatin Text  ${e_withdrawProcessNote}
+    Verify Page Conatin Text  ${e_wtdrwPrcsBtn}
+    Log to Console  Verified Withdrawal Amount Screen!
+
+Verify First Withdrawal
+    Verify Content In Withdrawal Process Screen
+    Page Should Not Contain Text  ${e_withdrawProcessNote}
+    Log to Console  Verified First Withdrawal Amount Screen!
+
+Verify Second Withdrawal
+    Verify Content In Withdrawal Process Screen
+    Verify Page Conatin Text   ${e_withdrawProcessNote}
+    Log to Console  Verified Second Withdrawal Amount Screen!
+    Click On Back Arrow

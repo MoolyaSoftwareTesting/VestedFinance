@@ -617,7 +617,7 @@ Verify Withdrawal With Premium Subscription Account
     Click On Tansfer From Dashboard
     Wait Until Page Contains  ${e_withdrawFunds}  5s
     Click Text  ${e_withdrawFunds}
-    Verify Page Conatin Text   ${e_premiumWthdrwNote}
-    Click Text  ${e_proceed}
+    Verify Page Conatin Text   ${e_withdrawProcessNote}
+    Click Text  ${e_proceedBtn}
     Verify Page Conatin Text   ${e_proceedError}
     Log to Console  Verified Withdrawal With Premium Subscription Account!

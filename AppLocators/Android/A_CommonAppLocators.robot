@@ -15,6 +15,9 @@ ${e_browserstackDevice} =  Browserstack
 ${browserstack_userName} =  username
 ${browserstack_accessKey} =  accesskey
 ${remote_URL}    http://${browserstack_userName}:${browserstack_accessKey}@hub.browserstack.com:80/wd/hub
+@{media}
+    ...     media://d11edf0b84008a815459c9fb26f87e91ea2c06ef
+    ...     media://62eb209d80004ea7f2d3cb460900e409f3c8bd45
 
 # Choose Chrome Browser
 ${vf_A_openWithLabel} =  xpath=//*[@text='Open with']

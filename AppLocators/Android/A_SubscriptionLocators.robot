@@ -60,8 +60,6 @@ ${e_withdrawFunds} =  WITHDRAW FUNDS
 ${e_withdrawProcess} =  Withdrawal Process
 ${e_wtdrwPrcsNt} =  Note: Drivewealth charges a $11 withdrawal fee. Intermediary banks may charge additional fees on top of this amount.
 ${e_wtdrwPrcsBtn} =  Go premium and save $11
-${e_premiumWthdrwNote} =  Note: Drivewealth charges a $11 withdrawal fee. Intermediary banks may charge additional fees on top of this amount.
-${e_proceed} =  Proceed
 ${e_proceedError} =  Withdraw amount is required
 # UPI
 ${e_upiPayTxt} =  PAY USING UPI ID

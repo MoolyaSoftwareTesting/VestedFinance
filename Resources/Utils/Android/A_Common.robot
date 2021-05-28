@@ -4,6 +4,7 @@ Library     JSONLibrary
 Library     JsonValidator
 Library     AppiumLibrary
 Library     String
+Library     DateTime
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
@@ -21,8 +22,7 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a   
-    #browserstack.uploadMedia=["media://d11edf0b84008a815459c9fb26f87e91ea2c06ef","media://62eb209d80004ea7f2d3cb460900e409f3c8bd45"]
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a    browserstack.uploadMedia=${media} 
     Landing Page Is Loaded Completely
 
 Open App On Real Device
@@ -158,6 +158,16 @@ Close Android Keyboard
     ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
     Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
     #...    ELSE  Log To Console  Keyboard is hidden
+
+Get Current Date On Android
+    ${date}=  Get Current Date  time_zone=local  increment=0  result_format=timestamp  exclude_millis=True
+    Set Global Variable  ${date}
+    ${convertDate} =      Convert Date      ${date}      result_format=%d
+    [Return]  ${convertDate} 
+
+Get Current Year On Android
+    ${convertYear} =      Convert Date      ${date}      result_format=%d
+    [Return]  ${convertYear} 
 
 Go Back On Android
     Go Back

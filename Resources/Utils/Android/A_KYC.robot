@@ -16,7 +16,7 @@ Signup And Signin For KYC
 # Before Completion & Instruction Screen
 Click on Start/Complete KYC Button
     Click On Element If Visibile  ${vf_A_startKYCBtn}
-    # Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
+    Click On Element If Visibile  ${vf_A_CmpltKYCBtn}
     Log To Console  Clicked on Start KYC Button
 
 Signin With Non KYC Completed Account
@@ -699,12 +699,6 @@ Verify Upload Back Side Of Drivers License Popup Under POA
 
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
-    #Pull File  ${dest_pathBS}  decode=False
-    Wait And Click Element On Android  ${vf_A_hamburgerMenu}
-    Click Text  ${e_imagesGallery}
-    Click Text  ${e_picturesFolder}
-    Log To Console  Navigated to Pictures Folder
-    Swipe By Percent  70  70  20  20  5000
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
