@@ -12,6 +12,11 @@ Resource   ../../../AppLocators/Android/A_KYCLocators.robot
 Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
 Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
+Resource   ../../../AppLocators/Android/A_ReferralLocators.robot
+Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
+
+
+
 
 *** Keywords ***
 
@@ -156,6 +161,12 @@ Close Android Keyboard
 
 Go Back On Android
     Go Back
+
+Open Chrome Browser App
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  appActivity=${chrome_activity}  appPackage=${chrome_package}  deviceName=${emulator}  automationName=${appium}   
+
+    # Open Application  ${remote_URL}  app=${appURL}  build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a
+
 
 Rest Android Application
     Reset Application

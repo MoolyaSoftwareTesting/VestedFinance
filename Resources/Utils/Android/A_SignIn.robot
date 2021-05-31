@@ -103,6 +103,17 @@ Signin With Basic Account
     Click On Continue Button
     Verify Dashboard Screen
 
+Signin With New KYC Account
+    Enter Email  ${e_validnewEmail}
+    Enter Password  ${e_validnewPassword}
+    Click On Signin Button
+    Verify Dashboard Screen
+
+Signin With Non KYC Account
+    Enter Email  ${e_nonKYCEmail}
+    Enter Password  ${e_validnewPassword}
+    Click On Signin Button
+    Verify Dashboard Screen
 
 Signin With Invalid Credentials
     Enter Email  ${e_invalidUserName} 

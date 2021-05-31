@@ -4,8 +4,8 @@ Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
 # Suite Setup  Open App On Real Device
-# Suite Setup  Open App On Browserstack
-Suite Setup  Launch Android App
+Suite Setup  Open App On Browserstack
+# Suite Setup  Launch Android App
 # Suite Teardown  Quit Android Application
 
 # Complete Suite: 
@@ -16,7 +16,9 @@ Suite Setup  Launch Android App
  
 # To run specific test on browserstack:    
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Test Tests/Android/A_Tests.robot
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML02_TS -d Results -i Test Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML02_TS -d Results -i TAGNAME Tests/Android/A_Tests.robot
+
+
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -315,3 +317,44 @@ Subscription Flow: Premium User Account - Withdrawal, Vest Upsell, Super Vest
     User Checks Vest Upsell With Premium Subscription
     User Checks Super Vest With Premium Subscription
     User Checks Withdrawal With Premium Subscription
+
+# Referral Tests
+
+Referral Screen For New User
+    [Tags]  Ref_1
+    User Navigates To Signin Screen
+    Signin With New KYC Account
+    New KYC User Navigates To Referral Page
+
+
+Referral Screen For Incomplete KYC User
+    [Tags]  Ref_2
+    User Navigates To Signin Screen
+    Signin With Non KYC Completed User
+    KYC Started User Navigates To Referral Page
+
+Referral Screen For Non Approved KYC User
+    [Tags]  Ref_3
+    User Navigates To Signin Screen
+    Signin With Non KYC Account
+    KYC Not Approved User Navigates To Referral Page
+
+Referral Screen For KYC Approved User
+    [Tags]  Ref_4
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    Subscribed User Navigated To Referral Page
+
+Referral Screen For KYC Approved User And Links Funtionality
+    [Tags]  Ref_5
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    Subscribed User Navigated To Referral Page
+    Open Browser And Paste Copied Invite Link
+
+Referral Screen For KYC Approved User And Invite Button Funtionality
+    [Tags]  Ref_6
+    User Navigates To Signin Screen
+    Signin With Basic Account
+    Subscribed User Navigated To Referral Page
+    Invite Link Functionality

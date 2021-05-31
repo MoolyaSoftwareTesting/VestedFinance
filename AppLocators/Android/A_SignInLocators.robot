@@ -10,6 +10,10 @@ ${e_validBasicPassword} =  Test@123
 # defney+Tes2@vestedfinance.co | Test@123
 # thiruvengadam.s+2@moolya.com | Thiru!99
 
+# New Account
+${e_validnewEmail} =  thiruvengadam.s+53@moolya.com
+${e_validnewPassword} =  Thiru!99
+${e_nonKYCEmail} =  thiruvengadam.s+6@moolya.com
 
 # Funded User Credentials
 ${e_validEmail} =  defney+Tes3@vestedfinance.co

@@ -1,8 +1,10 @@
 *** Variables ***
 #  Test data or expected values
 # KYC Not Completed Credential
-${e_validEmailForKYC} =  testingVF111+9@gmail.com
-${e_validPasswordForKYC} =  Moolya@123
+${e_validEmailForKYC} =  thiruvengadam.s+1@moolya.com
+${e_validPasswordForKYC} =  Thiru!99
+
+# testingVF111+9@gmail.com  Moolya@123
 
 # Before Completion & Instruction Screen
 ${e_stepsHeading} =  Complete 3 simple steps to start investing in US stocks and ETFs
