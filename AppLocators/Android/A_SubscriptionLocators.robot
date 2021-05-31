@@ -14,25 +14,25 @@ ${e_cardNumForPremiumSubs} =  5104 0155 5555 5558
 ${e_upiIdForPremiumSubs} =  success@razorpay
 
 # Normal Subscription
-${e_subsChrgs} =  Subscription charges
+${e_price} =  Price
 ${e_zeroComInvst} =  Zero Commission Investing
 ${e_comsnDisclr} =  Commission Disclosure
 ${e_vestUpfrntFee} =  Vest upfront fee
 ${e_withdrwlFee} =  Withdrawal fee
 ${e_accessAddntlVests} =  Access to purchase additional Vests
 ${e_basicHeading} =  Basic
-${e_subsChrgsUnderBasic} =  FREE
+${e_priceUnderBasic} =  FREE
 ${e_vestUpfrntFeeUnderBasic} =  $3
 ${e_withdrwlFeeUnderBasic} =  $11
 ${e_withdrwlFeeTxtUnderBasic} =  / withdrawal
 ${e_premiumHeading} =  Premium
-${e_subsChrgsYearlyUnderPremium} =  ₹2,500 /year
+${e_priceYearlyUnderPremium} =  ₹2,500 /year
 ${e_subsChrgsQtrlyUnderPremium} =  ₹750 /quarter
 ${e_vestUpfrntFeeUnderPremium} =  $0
 ${e_withdrwlFeeUnderPremium} =  1 free withdrawal per year
 ${e_withdrwlFeeTxtUnderPremium} =  $11 / withdrawal thereafter
 # Multi-Asset Class Vests
-${e_multiAssetVestsTxt} =  MULTI-ASSET CLASS PORTFOLIOS
+${e_multiAssetVestsTxt} =  MULTI-ASSET CLASS VESTS
 ${e_aggMultiAssetVests} =  Aggressive
 ${e_aggMultiAssetVestsTxt} =  Optimized for more aggressive growth while maintaining portfolio efficiency.
 ${e_modMultiAssetVests} =  Moderate
@@ -45,6 +45,22 @@ ${e_conMultiAssetClass} =  Multi-Asset Class - Conservative
 ${e_buy} =  Buy
 ${e_upgradePopUpTxt1} =  Upgrade Required
 ${e_upgradePopUpTxt2} =  Please upgrade your current plan to purchase this Vest.
+${e_KYCPopUpTxt1} =  KYC Approval Needed
+${e_KYCPopUpTxt2} =  Your KYC must be approved before you can place an order.
+${e_saas} =  SAAS
+${e_moat} =  Moat
+${e_investAmt} =  Investment Amount
+${e_investAmt0} =  0
+${e_investAmtTxt} =  100
+${e_previewOrder} =  Preview Order
+${e_marketBuyOrder} =  Market Buy Order
+${e_goPrm&Buy} =  Go premium and save $3
+${e_Transfer} =  Transfer
+${e_withdrawFunds} =  WITHDRAW FUNDS
+${e_withdrawProcess} =  Withdrawal Process
+${e_wtdrwPrcsNt} =  Note: Drivewealth charges a $11 withdrawal fee. Intermediary banks may charge additional fees on top of this amount.
+${e_wtdrwPrcsBtn} =  Subscribe and save $11
+${e_proceedError} =  Withdraw amount is required
 # UPI
 ${e_upiPayTxt} =  PAY USING UPI ID
 ${e_upiPayTxt2} =  Google Pay, BHIM, PhonePe & more
@@ -105,7 +121,6 @@ ${e_previewOrdeBtn} =  Preview Order
 # Normal Subscription Locators
 ${vf_A_xMark} =  xpath=//*[@text='']
 ${vf_A_tick} =  xpath=//*[@text='']
-${vf_A_upgradeBtn} =  xpath=//*[@text='UPGRADE']
 
 # Premium Subscription Locators
 ${vf_A_zeroComInvstUnderBasic} =  xpath=//*[@text='Included' and (./preceding-sibling::* | ./following-sibling::*)[@text='Basic']]
@@ -135,3 +150,9 @@ ${vf_A_upiPaymentHDFC} =  xpath=//*[@text='HDFC Bank' and ./*[@class='android.vi
 ${vf_A_upiPaymentSBI} =  xpath=//*[@text='SBI Bank' and ./*[@class='android.view.View']]
 ${vf_A_enterUPI} =  xpath=//*[@class='android.widget.EditText'][2]
 ${vf_A_buyBtn} =  xpath=//*[@text='Buy']
+
+# Vest Upsell
+${vf_A_notNowBtn} =  xpath=//*[@text='NOT NOW']
+${vf_A_cmpltKYCBtn} =  xpath=//*[@text='COMPLETE KYC']
+${vf_A_investAmtTxt} =  xpath=//*[@class='android.widget.EditText']
+${vf_A_placeOrderBtn} =  xpath=//*[@text='Place Buy Order']

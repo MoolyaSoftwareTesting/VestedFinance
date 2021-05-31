@@ -6,7 +6,7 @@ ${e_validEmailForgotPwd} =  abc@moolya.com
 #  Test data or expected values
 ${e_resetCode} =  12345
 ${e_newPwd} =  Test123VF!
-${e_newInvalidPwd} =  123TestVF!
+${e_newInvalidPwd} =  12345
 ${e_forgotPasswordLink} =  Forgot your password?
 ${e_invalidCodeErrorMsg} =  Invalid verification code provided, please try again. 
 #${e_pwdErrorMsg} =  Password does not match the confirm password.

@@ -11,7 +11,6 @@ Signin With KYC Completed Basic Account
 Click On Profile Button
     Sleep  3s
     Wait And Click Element On Android  ${vf_A_profileBtn}
-    Log to Console  Clicked on Profile Button
 
 # PN01-PN10
 Verify Menus And Sub-menus Under Profile
@@ -28,16 +27,14 @@ Verify Menus And Sub-menus Under Profile
     Verify Page Conatin Text   ${e_tradeConfirmations}
     Verify Page Conatin Text   ${e_accStmts}
     Verify Page Conatin Text   ${e_taxDocs}
-    Log to Console  Verified Sub-menu's under History!
     Verify Page Conatin Text   ${e_help}
     Verify Page Conatin Text   ${e_faq}
     Verify Page Conatin Text   ${e_emailUs}
     Verify Page Conatin Text   ${e_msgUs}
-    Log to Console  Verified Sub-menu's under Help!
     Verify Page Conatin Text   ${e_account}
     Verify Page Conatin Text   ${e_invstmtProfile}
     Verify Page Conatin Text   ${e_security}
-    Log to Console  Verified sub-menu's under Account!
+    Log to Console  Verified Sub-menu's under History, Help & Account!
     Swipe By Percent  70  70  40  40  5000
     Verify Page Conatin Text   ${e_logout}
     Log to Console  Verified Log Out!
@@ -53,22 +50,18 @@ Verify Profile Screen
 Click On Transactions Under History Section
     Wait For Page Conatin Element  ${e_transactions}  10s
     Click Text  ${e_transactions}
-    Log to Console  Clicked on Transactions under History section 
 
 Click On Trade Confirmations Under History Section
     Wait For Page Conatin Element  ${e_tradeConfirmations}  5s
     Click Text  ${e_tradeConfirmations}
-    Log to Console  Clicked on Trade Confirmations under History section
 
 Click On Account Statements Under History Section
     Wait For Page Conatin Element  ${e_accStmts}  10s
     Click Text  ${e_accStmts}
-    Log to Console  Clicked on Account Statements under History section
 
 Click On Tax Documents Under History Section
     Wait For Page Conatin Element  ${e_taxDocs}  3s
     Click Text  ${e_taxDocs}
-    Log to Console  Clicked on Tax Documents under History section
 
 # PN13
 Click On Transactions And Verify
@@ -231,8 +224,9 @@ Navigate To Gmail Compose
     Wait And Click Element On Android  ${vf_A_addEmail}
     Wait And Click Element On Android  ${vf_A_googleOpt}
     Signin With Valid Credentials - Google
+    Click On Element If Visibile  ${vf_A_moreBtn}
     Wait And Click Element On Android  ${vf_A_agreeBtn}
-    Wait And Click Element On Android  ${vf_A_moreBtn}
+    Click On Element If Visibile  ${vf_A_moreBtn}
     Wait And Click Element On Android  ${vf_A_acceptBtn}
     Sleep  2s
     Click On Element If Visibile  ${vf_A_okBtn}
@@ -286,6 +280,7 @@ User Clicks Message Us Under Help
 Click On Sub-menus Under Help And Verify
     # FAQ- Known Failure
     # User Clicks FAQ Under Help
+    # Blocker: Google verification code is asked on BS device
     User Clicks Email Us Under Help
     User Clicks Message Us Under Help
 
@@ -297,7 +292,6 @@ User Clicks Manage Plan Under Account
     # Plan details section
     Wait For Page Conatin Element  ${e_planManagement}  5s
     Verify Page Conatin Text   ${e_planManagement}
-    Log to Console  Verified Manage Us Page Heading!
     Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
     Verify Page Contains Element On Android  ${vf_A_downgradePlanBtn}
     Log to Console  Verified Downgrade Plan Button!
@@ -305,9 +299,8 @@ User Clicks Manage Plan Under Account
     Verify Page Conatin Text   ${e_billingDetails}
     Verify Page Conatin Text   ${e_billingOptions}
     Verify Page Conatin Text   ${e_billingQtrlyTxt}
-    Log to Console  Verified Billing Details for Quarterly plan!
     Verify Page Contains Element On Android  ${vf_switchToYrlyBtn}
-    Log to Console  Verified Switch to Quarterly Plan Button!
+    Log to Console  Verified Billing Details for Quarterly plan!
     Click On Back Button From Top And Verify Profile Screen
 
 # PN41, PN42
@@ -412,19 +405,21 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_payText}
     Sleep  2s
     Swipe By Percent  70  70  50  50  5000
+    Wait For Page Conatin Element  ${e_premiumPlanTxt}  3s
     Verify Page Conatin Text   ${e_premiumPlanTxt}
-    Sleep  2s
     Swipe By Percent  70  70  50  50  5000
-    Click Element  ${vf_A_basicSelectBtn}
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_basicSelectBtn}
     Sleep  3s
     #Go Back On Android
     Click On Element If Visibile  ${vf_A_continuePayment}
     Wait For Page Conatin Element  ${e_premiumPlanAmt}  10s
     Verify Page Conatin Text   ${e_premiumPlanAmt}
-    Click Element  ${vf_A_closeButton}
+    Wait And Click Element On Android  ${vf_A_closeButton}
     Log to Console  Clicked on Close icon within Payment screen
     Sleep  3s
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_faqTxt}  5s
     Verify Page Conatin Text   ${e_faqTxt}
     Verify Page Conatin Text   ${e_faqQ1}
     Verify Page Conatin Text   ${e_faqA1}
@@ -433,6 +428,7 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_faqQ3}
     Verify Page Conatin Text   ${e_faqA3}
     Swipe By Percent  80  70  20  20  5000
+    Wait For Page Conatin Element  ${e_faqQ4}  5s
     Verify Page Conatin Text   ${e_faqQ4}
     Verify Page Conatin Text   ${e_faqA4}
     Verify Page Conatin Text   ${e_faqQ5}

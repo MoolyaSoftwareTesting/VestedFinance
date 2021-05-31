@@ -4,6 +4,7 @@ Library     JSONLibrary
 Library     JsonValidator
 Library     AppiumLibrary
 Library     String
+Library     DateTime
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
@@ -12,6 +13,8 @@ Resource   ../../../AppLocators/Android/A_KYCLocators.robot
 Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
 Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
+Resource   ../../../AppLocators/Android/A_ReferralLocators.robot
+Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
 
 *** Keywords ***
 
@@ -20,8 +23,7 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a   
-    #browserstack.uploadMedia=["media://d11edf0b84008a815459c9fb26f87e91ea2c06ef","media://62eb209d80004ea7f2d3cb460900e409f3c8bd45"]
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a    browserstack.uploadMedia=${media} 
     Landing Page Is Loaded Completely
 
 Open App On Real Device
@@ -156,7 +158,17 @@ Verify Open With Label
 Close Android Keyboard
     ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
     Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
-    ...    ELSE  Log To Console  Keyboard is hidden
+    #...    ELSE  Log To Console  Keyboard is hidden
+
+Open Chrome Browser App
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  appActivity=${chrome_activity}  appPackage=${chrome_package}  deviceName=${emulator}  automationName=${appium}   
+    # Open Application  ${remote_URL}  app=${appURL}  build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a
+
+Get Current Date On Android
+    ${date}=  Get Current Date  time_zone=local  increment=0  result_format=timestamp  exclude_millis=True
+    Set Global Variable  ${date}
+    ${convertDate} =      Convert Date      ${date}      result_format=%d
+    [Return]  ${convertDate} 
 
 Go Back On Android
     Go Back

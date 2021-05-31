@@ -19,11 +19,11 @@ ${e_appleUserId} =  abcd@dot.com
 ${e_applePwd} =  Moolya@123
 
 # Facebook Credentials
-${e_FbEmailId} =  Asha.kharat@moolya.com
+${e_FbEmailId} =  facebookVFtest@gmail.com
 ${e_FbPwd} =  Moolya@123
 
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
-${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click ‘Forgot password’ to reset it
+${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click Forgot password to reset it
 ${e_invalidFacebookLoginErrorTxt} =  Incorrect password. Did you forget your password? 
 ${e_invalidAppleLoginErrorTxt} =  Your Apple ID or password was incorrect.
 ${e_emptyFieldErrorTxt} =  Please fill out this field
@@ -67,6 +67,8 @@ ${vf_A_continueWithFbBtn} =  xpath=//*[@text='Continue with Facebook']
 ${vf_A_FbEmail} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_FbPwd} =  xpath=(//*[@class='android.widget.EditText'])[2]
 ${vf_A_FbSigninBtn} =  xpath=//*[@text='Log In']
+${vf_A_acceptAllBtn} =  xpath=//*[@text='Accept All']
+${vf_A_accountBtn} =  xpath=//*[@text='Moolya']
 
 #Dashboard
 ${vf_A_stockOne} =  xpath=//*[@text='Tesla, Inc.']

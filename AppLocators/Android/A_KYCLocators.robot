@@ -165,6 +165,7 @@ ${e_feeTxt} =  Account Opening Fee
 ${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
+${e_selectBtnTxt} =  Select
 
 # Signature screen
 ${e_signatureScreenHeading} =  Let’s open your account
@@ -192,7 +193,7 @@ ${vf_A_awesomeLink} =  xpath=//*[@text='AWESOME!']
 ${vf_A_viewAllStepsLink} =  xpath=//*[@text='View all steps']
 ${vf_A_doneButton} =  xpath=//*[@text='DONE']
 ${vf_A_startKYCBtn} =  xpath=//*[@text='Start KYC']
-${vf_A_backArrow} =  xpath=//*[@text='chevron_left']
+${vf_A_backArrow} =  xpath=//*[@text='']
 ${vf_A_startKYCProcessBtn} =  xpath=//*[@text='Start KYC process']
 ${vf_A_CmpltKYCBtn} =  xpath=//*[@text='Complete KYC']
 ${vf_A_acceptAndContinueBtn} =  xpath=//*[@text='ACCEPT AND CONTINUE']
