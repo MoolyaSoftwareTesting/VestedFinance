@@ -443,7 +443,7 @@ Referral Screen For Incomplete KYC User
     [Tags]  Referrals  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
-    Signin With Non KYC Completed Account
+    Signin With Non KYC Completed Account For Referrals
     KYC Started User Navigates To Referral Page
 
 Referral Screen For Non Approved KYC User
@@ -454,7 +454,7 @@ Referral Screen For Non Approved KYC User
     KYC Not Approved User Navigates To Referral Page
 
 Referral Screen For KYC Approved User And Links Funtionality
-    [Tags]  Referrals  Ref
+    [Tags]  Referrals  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -462,7 +462,7 @@ Referral Screen For KYC Approved User And Links Funtionality
     Open Browser And Paste Copied Invite Link
 
 Referral Screen For KYC Approved User And Invite Button Funtionality
-    [Tags]  Referrals  Ref
+    [Tags]  Referrals  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account

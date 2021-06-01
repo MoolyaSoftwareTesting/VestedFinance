@@ -7,8 +7,8 @@ Library     AppiumLibrary
 Signin With New KYC Account
     Signin Without Pin Credentials  ${e_newEmailKYC}  ${e_validnewPassword}
 
-Signin With Non KYC Completed Account
-    Signin Without Pin Credentials  ${e_emailForKYCNotCmpltd}  ${e_validPasswordForKYC}
+Signin With Non KYC Completed Account For Referrals
+    Signin Without Pin Credentials  ${e_emailForKYCNotCmpltd}  ${e_passwordForKYCNotCmpltd}
 
 Signin With Non KYC Account
     Signin Without Pin Credentials  ${e_nonKYCEmail}  ${e_validnewPassword}
@@ -78,12 +78,11 @@ Subscribed User Navigated To Referral Page
 
 Invite Link Functionality
     Wait And Click Element On Android  ${vf_A_invite}
-    Log to Console  Invite Clicked!
+    Log to Console  Clicked on Invite!
     Sleep  2s
     Verify Page Conatin Text   ${e_shareTitle}
     Verify Page Conatin Text   ${e_copyTxt}
     Verify Page Conatin Text   ${e_messages}
-    Log to Console  Headings verified
     Click Text  ${e_messages}
     Verify Page Conatin Text   ${e_selectConversation}
     Wait For Page Conatin Element  ${e_newMessage}  5s
@@ -95,7 +94,7 @@ Invite Link Functionality
     Wait For Page Conatin Element  ${e_link}  5s
     Verify Page Conatin Text   ${e_link}
     Verify Page Conatin Text   ${e_sharingTxt}
-    Log to Console  Link and Text message to share verified    
+    Log to Console  Verified Link and Text message to share!    
     Go Back On Android
 
 

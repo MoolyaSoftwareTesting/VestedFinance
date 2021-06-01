@@ -2,7 +2,7 @@
 
 # Non KYC Completed User
 ${e_emailForKYCNotCmpltd} =  thiruvengadam.s+1@moolya.com
-${e_validPasswordForKYC} =  Thiru!99
+${e_passwordForKYCNotCmpltd} =  Thiru!99
 
 # New Account
 ${e_newEmailKYC} =  thiruvengadam.s+53@moolya.com
