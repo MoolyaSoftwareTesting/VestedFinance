@@ -46,6 +46,7 @@ User Adds Funds With Already Selected Bank
     Verify Page Conatin Text   ${e_slctBankNote}
     Verify Page Conatin Text   ${e_slctBanikNote}
     Verify Page Conatin Text   ${e_indian}
+    Verify All Bank Names
 
 User Adds Funds By Choosing A Bank
     Wait And Click Element On Android  ${vf_A_transfer}
@@ -63,3 +64,27 @@ User Adds Funds By Choosing A Bank
     Verify Page Conatin Text   ${e_slctBankTxt}
     Verify Page Conatin Text   ${e_slctBankNote}
     Verify Page Conatin Text   ${e_indian}
+    Verify All Bank Names
+    Click Text  ${e_HDFCBank}
+    
+
+Verify All Bank Names
+    Verify Page Conatin Text   ${e_AxisBank}
+    Verify Page Conatin Text   ${e_ICICIBank}
+    Verify Page Conatin Text   ${e_HDFCBank}
+    Verify Page Conatin Text   ${e_IDFCBank}
+    Verify Page Conatin Text   ${e_InduslandBank}
+    Verify Page Conatin Text   ${e_KotakBank}
+    Swipe By Percent  90  90  10  10  3000
+    Verify Page Conatin Text   ${e_YesBank}
+    Verify Page Conatin Text   ${e_BankOfBaroda}
+    Verify Page Conatin Text   ${e_CitiBank}
+    Verify Page Conatin Text   ${e_HSBCBank}
+    Verify Page Conatin Text   ${e_SBI}
+    Verify Page Conatin Text   ${e_PNB}
+    Verify Page Conatin Text   ${e_OtherBank}
+    Verify Page Conatin Text   ${e_international}
+    Verify Page Conatin Text   ${e_nonIndianBank}
+    Swipe By Percent  90  10  10  90  3000
+
+
