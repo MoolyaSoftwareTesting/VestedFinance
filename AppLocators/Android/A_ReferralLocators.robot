@@ -61,7 +61,7 @@ ${vf_A_chromeApp} =  xpath=//*[@text='Chrome']
 ${vf_A_chromeSearchBar}=  xpath=//*[@text='Search or type web address']
 ${vf_A_enterKey} =  xpath=//*[@id='icon']
 ${vf_A_vfLogo} =  xpath=(//*[@class='android.widget.Image'])[1]
-${vf_A_signup&Claim} =  xpath=(//*[@class='android.widget.Button'])[2]
+${vf_A_signup&Claim$5} =  xpath=(//*[@class='android.widget.Button'])[2]
 ${vf_A_chatInChrome} =  xpath=//*[@text='Open Intercom Messenger']
 
 ${chrome_activity} =  com.google.android.apps.chrome.Main

@@ -15,7 +15,7 @@ Signin With Non KYC Account
 
 # Referrals
 
-Click On Referrals From Dashboard
+Click On Referrals Tab
     Wait For Page Conatin Element  ${e_referral}  5s
     Click Text  ${e_referral}
     Verify Page Conatin Text   ${e_referral}
@@ -30,7 +30,7 @@ Verify Referral Screen Content
     Verify Page Conatin Text   ${e_FAQs}
 
 New KYC User Navigates To Referral Page
-    Click On Referrals From Dashboard
+    Click On Referrals Tab
     Verify Referral Screen Content
     Element Should Be Visible   ${vf_A_referralLock}
     Verify Page Conatin Text   ${e_screenLockNote2}
@@ -44,7 +44,7 @@ New KYC User Navigates To Referral Page
     Wait For Element Visibility On Android  ${vf_A_acceptAndContinueBtn}
 
 KYC Started User Navigates To Referral Page
-    Click On Referrals From Dashboard
+    Click On Referrals Tab
     Verify Referral Screen Content
     Element Should Be Visible   ${vf_A_referralLock}
     Verify Page Conatin Text   ${e_screenLockNote2}
@@ -58,7 +58,7 @@ KYC Started User Navigates To Referral Page
 
 
 KYC Not Approved User Navigates To Referral Page
-    Click On Referrals From Dashboard
+    Click On Referrals Tab
     Verify Referral Screen Content
     Element Should Be Visible   ${vf_A_referralLock}
     Verify Page Conatin Text   ${e_screenLockNote1}
@@ -69,7 +69,7 @@ KYC Not Approved User Navigates To Referral Page
 
 
 Subscribed User Navigated To Referral Page
-    Click On Referrals From Dashboard
+    Click On Referrals Tab
     Verify Referral Screen Content
     Verify Page Conatin Text   ${e_shareYourLink}
     Element Should Be Visible   ${vf_A_invite}
@@ -145,7 +145,7 @@ Open Browser And Paste Copied Invite Link
     Verify Page Conatin Text   ${e_referrerTxt1}
     Element Should Be Visible   ${vf_A_vfLogo}
     Verify Page Conatin Text   ${e_claim$5}
-    Element Should Be Visible   ${vf_A_signup&Claim}
+    Element Should Be Visible   ${vf_A_signup&Claim$5}
     Verify Page Conatin Text   ${e_referrerTxt2}
     Verify Page Conatin Text   ${e_refDisclosure}
     Element Should Be Visible   ${vf_A_chatInChrome}

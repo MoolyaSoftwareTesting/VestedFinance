@@ -34,9 +34,21 @@ ${e_selectYourBankDesc1} =  This provides bank instructions to fund your Vested 
 ${e_selectYourBankDesc2} =  Note: There are fees to transfer funds overseas. Please check with your bank for actual prices.
 ${e_indianBankOpts} =  INDIAN
 ${e_iciciBankOpt} =  ICICI Bank
+${e_axisBankOpt} =  Axis Bank
+${e_hdfcBankOpt} =  HDFC Bank
+${e_idfcBankOpt} =  IDFC First Bank
+${e_indusIndBankOpt} =  IndusInd Bank
+${e_kotakBankOpt} =  Kotak Bank
+${e_nonIndianBankOpt} =  Non-Indian Bank
 ${e_amtDeposited} =  $5.00
 ${e_2stepToGo} =  2 step to go
 ${e_fundOnlineUsingICICI} =  FUND ONLINE USING ICICI MONEY2WORLD
+${e_fundOnlineUsingAxis} =  FUND ONLINE USING AXIS NETBANKING
+${e_fundOnlineUsingHDFC} =  FUND ONLINE USING HDFC NETBANKING
+${e_fundOnlineUsingIDFC} =  FUND ONLINE USING IDFC NETBANKING
+${e_fundOnlineUsingIndusInd} =  FUND ONLINE USING INDUSIND NETBANKING
+${e_fundOnlineUsingKotak} =  FUND ONLINE USING KOTAK NETBANKING
+${e_fundOnlineUsingNonIndian} =  FUND ONLINE USING NON-INDIAN NETBANKING
 ${e_selectDiffFundTransfer} =  SELECT A DIFFERENT FUNDS TRANSFER METHOD
 ${e_importantTxt} =  Important
 ${e_importantP1} =  Funds from 3rd parties are not accepted.
@@ -86,6 +98,40 @@ ${e_settledCashAmt} =  $0.00
 ${e_amtToWithdraw} =  Amount to Withdraw
 ${e_withdrawProcessNote} =  Note: Drivewealth charges a $11 withdrawal fee. Intermediary banks may charge additional fees on top of this amount.
 ${e_proceedBtn} =  Proceed
+${e_beneficiaryName} =  Beneficiary Name
+${e_accountNum} =  Account Number
+${e_reEntrAccountNum} =  Re-Enter Account Number
+${e_selAccountType} =  Select Account Type
+${e_accountType} =  Account Type
+${e_accountTypeCurrent} =  Current
+${e_accountTypeSavings} =  Savings
+${e_swiftCode} =  SWIFT Code
+${e_reTypeSwiftCode} =  Re-Type SWIFT Code
+${e_bankAddress} =  Bank Address
+${e_bankCity} =  Bank City
+${e_bankZipCode} =  Bank Zip Code
+${e_bankZipCodeErrMsg} =  Bank Zip Code is required
+${e_bankCityErrMsg} =  Bank City is required
+${e_bankCountryErrMsg} =  Select Bank Country is required
+${e_bankAddrsErrMsg} =  Bank Address is required
+${e_bankNameErrMsg} =  Bank Name is required
+${e_reTypeSwiftCodeErrMsg} =  Re-Type SWIFT Code is required
+${e_swiftCodeErrMsg} =  SWIFT Code is required
+${e_accountTypeErrMsg} =  Account Type is required
+${e_reEntrAccountNumErrMsg} =  Re-Enter Account Number is required
+${e_accountNumErrMsg} =  Account Number is required
+${e_beneficiaryNameErrMsg} =  Beneficiary Name is required
+${e_beneficiaryNameInput} =  Abcd xyz
+${e_accountNumInput} =  5555522222
+${e_swiftCodeInput} =  123456
+${e_bankNameInput} =  ICICI
+${e_bankAddressInput} =  Bangalore
+${e_bankCountryInput} =  India
+${e_bankStateInput} =  Karnataka
+${e_bankCityInput} =  Bangalore
+${e_bankZipCodeInput} =  560100
+${e_withdrwlConfirmtn} =  Withdrawal Confirmation
+
 
 # LOCATORS
 ${vf_A_transfer} =  xpath=//*[@text='Transfer']
@@ -95,6 +141,11 @@ ${vf_A_imgInTransfer} =  xpath=//*[@class='android.view.ViewGroup' and ./parent:
 ${vf_A_addFundsBtn} =  xpath=//*[@text='ADD FUNDS']
 ${vf_A_amtTxtBox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_fundOnlineTxtUnderICICI} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='ICICI Bank']]
+${vf_A_fundOnlineTxtUnderAxis} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='Axis Bank']]
+${vf_A_fundOnlineTxtUnderHDFC} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='HDFC Bank']]
+${vf_A_fundOnlineTxtUnderIDFC} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='IDFC First Bank']]
+${vf_A_fundOnlineTxtUnderIndusInd} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='IndusInd Bank']]
+${vf_A_fundOnlineTxtUnderKotak} =  xpath=//*[@text='Fund online' and (./preceding-sibling::* | ./following-sibling::*)[@text='Kotak Bank']]
 ${vf_A_previousBtn} =  xpath=//*[@text='PREVIOUS']
 ${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
 ${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
@@ -105,3 +156,18 @@ ${vf_A_nextBtnUndrFundOnline} =  xpath=//*[@text='NEXT' and ./parent::*[(./prece
 
 ${vf_A_withdrawalFundsBtn} =  xpath=//*[@text='WITHDRAW FUNDS']
 ${vf_A_backArrowInWithdrwl} =  xpath=//*[@text='']
+${vf_A_beneficiaryNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[1]
+${vf_A_accNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[2]
+${vf_A_reEtnrAccNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[3]
+${vf_A_accTypeDropdown} =  xpath=//*[@text='']
+${vf_A_swiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[4]
+${vf_A_reTypeSwiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
+${vf_A_bankNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[6]
+${vf_A_bankAddrsTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[7]
+${vf_A_selBankCountryTxt} =  xpath=(//*[@text='Select Bank Country'])[1]
+${vf_A_selBankCountryDropdown} =  xpath=(//*[@text='Select Bank Country'])[2]
+${vf_A_selBankStateTxt} =  xpath=(//*[@text='Select Bank State'])[1]
+${vf_A_selBankStateDropdown} =  xpath=(//*[@text='Select Bank State'])[2]
+${vf_A_bankCityTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[8]
+${vf_A_bankZipCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[9]
+${vf_A_continueBtnUndrWithdrwlDet} =  xpath=//*[@text='Continue']

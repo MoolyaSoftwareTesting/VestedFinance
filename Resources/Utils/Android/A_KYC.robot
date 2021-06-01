@@ -74,9 +74,11 @@ Verify KYC Introduction Screen
     Wait For Page Conatin Element  ${e_headingKYC}  15s  
     Verify Page Conatin Text  ${e_headingKYC}
 
-Click On Back Arrow And Verify Dashboard Screen
+Click On Back Arrow And Verify Account Status Screen
     Sleep  2s
-    Click On Back Arrow    
+    Click On Back Arrow  
+    Verify Element Visibility  ${vf_A_viewAllStepsLink}
+    Click On Done Button And Verify Screen  
     Verify Dashboard Screen
 
 Click On Accept And Continue Button And Verify Basic Details Screen
@@ -84,6 +86,7 @@ Click On Accept And Continue Button And Verify Basic Details Screen
     Log To Console  Clicked on Start KYC Process Button
     Verify KYC Introduction Screen
     Log To Console  Verified KYC Introduction Screen!
+    Sleep  2s
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Log To Console  Clicked on Accept and Continue Button
     Verify KYC Basic Details Screen
@@ -91,7 +94,7 @@ Click On Accept And Continue Button And Verify Basic Details Screen
 
 # SL44
 Verify Navigations Under KYC Introduction Screen
-    Click On Back Arrow And Verify Dashboard Screen
+    Click On Back Arrow And Verify Account Status Screen
     Click On Accept And Continue Button And Verify Basic Details Screen
 
 # Basic Details Screen
@@ -111,13 +114,18 @@ Verify Navigations Under KYC Basic Details Screen
     Close Android Keyboard
     Sleep  3s
     Click On Back Arrow 
-    Verify KYC Introduction Screen
+    Verify Dashboard Screen
+    Sleep  3s
+    Wait And Click Element On Android  ${vf_A_startKYCProcessBtn}
+    Sleep  2s
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Sleep  2s
     Close Android Keyboard
     Click On Previous Button
-    Verify KYC Introduction Screen
+    Verify Dashboard Screen
     Sleep  3s
+    Wait And Click Element On Android  ${vf_A_startKYCProcessBtn}
+    Sleep  2s
     Wait And Click Element On Android  ${vf_A_acceptAndContinueBtn}
     Log To Console  Verified Back arrow And Previous button- Under KYC Basic Details Screen!
 
@@ -141,7 +149,7 @@ Select A Gender
 
 # SL48
 Verify All Checkboxes
-    Close Android Keyboard
+    Swipe By Percent  80  70  20  20  5000
     Wait For Page Conatin Element  ${e_chkBx1Txt}  5s
     Verify Page Conatin Text   ${e_chkBx1Txt}
     Verify Page Conatin Text   ${e_chkBx2Txt}
@@ -150,7 +158,8 @@ Verify All Checkboxes
     Wait And Click Element On Android  ${vf_A_chkBx1}
     Wait And Click Element On Android  ${vf_A_chkBx2}
     Sleep  2s
-    Go Back On Android 
+    Click On Element If Visibile  ${e_noThanksTxt}
+    Wait And Click Element On Android  ${vf_A_chkBx2}
     Wait And Click Element On Android  ${vf_A_chkBx3}
     Sleep  2s
     Go Back On Android
@@ -178,7 +187,7 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Log to Console  Verified Checkboxes are optional!
     Sleep  2s
     Close Android Keyboard
-    Go Back On Android
+    # Go Back On Android
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s
     Verify All Checkboxes
@@ -698,6 +707,8 @@ Verify Upload Back Side Of Drivers License Popup Under POA
 
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
@@ -705,6 +716,8 @@ Upload Front Side Of Aadhaar And Verify Success Message
 
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
@@ -713,6 +726,8 @@ Upload Back Side Of Aadhaar And Verify Success Message
 
 Upload Front Side Of Drivers License And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait Until Page Contains  ${e_driversLicenseFrontUploadSuccessMsg}  5s
     Verify Page Conatin Text  ${e_driversLicenseFrontUploadSuccessMsg}
@@ -720,6 +735,8 @@ Upload Front Side Of Drivers License And Verify Success Message
 
 Upload PAN Card And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_panCardImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
@@ -728,6 +745,8 @@ Upload PAN Card And Verify Success Message
 
 Upload Passport And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_passportImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
@@ -736,6 +755,8 @@ Upload Passport And Verify Success Message
 
 Upload Full Aadhaar As POI And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
@@ -744,6 +765,8 @@ Upload Full Aadhaar As POI And Verify Success Message
 
 Upload Bank Statement As POA And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
@@ -752,6 +775,8 @@ Upload Bank Statement As POA And Verify Success Message
 
 Upload Back Side Of Drivers License And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
+    Wait And Click Element On Android  ${vf_A_picturesFolder}
+    Sleep  3s
     Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}

@@ -3,8 +3,6 @@ Library     OperatingSystem
 Library     AppiumLibrary
 Resource    ../../Tests/Android/A_Import.robot
 
-#Suite Setup  Open App On Real Device
-#Suite Setup  Open App On Browserstack
 Suite Setup  Launch Android App
 Suite Teardown  Quit Android Application
 
@@ -179,7 +177,7 @@ User Enters Different New And Confirm Passwords
 
 # Happy Flow 1 E2E- POI: Aadhaar Front And Back side
 KYC: Aadhaar Front & Back- POI
-    [Tags]  KYC  E2E1  
+    [Tags]  KYC  E2E1  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -195,7 +193,7 @@ KYC: Aadhaar Front & Back- POI
 
 # Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
 KYC: Aadhaar Front- POI & Aadhaar Back- POA
-    [Tags]  KYC  E2E2
+    [Tags]  KYC  E2E2  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -211,7 +209,7 @@ KYC: Aadhaar Front- POI & Aadhaar Back- POA
 
 # Happy Flow 3 E2E- POI: Aadhaar Full
 KYC: Aadhaar Full- POI
-    [Tags]  KYC  E2E3
+    [Tags]  KYC  E2E3  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -227,7 +225,7 @@ KYC: Aadhaar Full- POI
 
 # Happy Flow 4 E2E- POI: Aadhaar Front And POA: Bank Statement
 KYC: Aadhaar Front- POI & Bank Statement- POA
-    [Tags]  KYC  E2E4
+    [Tags]  KYC  E2E4  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -243,7 +241,7 @@ KYC: Aadhaar Front- POI & Bank Statement- POA
 
 # Happy Flow 5 E2E- POI: Drivers License Front And POA: Drivers License Back
 KYC: Drivers License Front- POI & Drivers License Back- POA
-    [Tags]  KYC  E2E5
+    [Tags]  KYC  E2E5  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -259,7 +257,7 @@ KYC: Drivers License Front- POI & Drivers License Back- POA
 
 # Happy Flow 6 E2E- POI: Drivers License Front And Back side
 KYC: Drivers License Front & Back- POI
-    [Tags]  KYC  E2E6
+    [Tags]  KYC  E2E6  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -275,7 +273,7 @@ KYC: Drivers License Front & Back- POI
 
 # Happy Flow 7 E2E- POI: PAN Card And POA: Bank Statement
 KYC: PAN Card- POI & Bank Statement- POA
-    [Tags]  KYC  E2E7
+    [Tags]  KYC  E2E7  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -291,7 +289,7 @@ KYC: PAN Card- POI & Bank Statement- POA
 
 # Happy Flow 8 E2E- POI: Passport And POA: Bank Statement
 KYC: Passport- POI & Bank Statement- POA
-    [Tags]  KYC  E2E8
+    [Tags]  KYC  E2E8  ExcludeKYC
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -499,17 +497,17 @@ Remove Online Fund Transfer
     Fill And Remove A Fund Transfer
 
 # FT_97 - FT_99, FT_102, SL03, SL05
-Submit Online Fund Transfer
+Submit Online Fund Transfer And Withdrawal Fund
     [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
     Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer
+    Fill And Submit A Fund Transfer- ICICI Bank Online
     Click On Tansfer From Dashboard
     Verify Second Withdrawal
     Verify Withdrawal Amount Field Validation 
-    Verify Withdrawal Details Validation
+    Verify Withdrawal Details Feilds Validation
 
 # Fund Withdrawal: SL04
 Verify Withdrawal Process For First Withdrawal
@@ -518,4 +516,16 @@ Verify Withdrawal Process For First Withdrawal
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account For 1st Withdrawal
     Verify First Withdrawal
-    
+
+Submit Online Fund Transfer
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Click On Tansfer From Dashboard
+    Fill And Submit A Fund Transfer- Axis Bank Online
+    Fill And Submit A Fund Transfer- HDFC Bank Online
+    Fill And Submit A Fund Transfer- IDFC Bank Online
+    Fill And Submit A Fund Transfer- Induslnd Bank Online
+    Fill And Submit A Fund Transfer- Kotak Bank Online
+    Fill And Submit A Fund Transfer- Non Indian Bank
