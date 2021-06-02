@@ -21,6 +21,7 @@ Click On Referrals Tab
     Verify Page Conatin Text   ${e_referral}
 
 Verify Referral Screen Content
+    Wait For Page Conatin Element  ${e_giveGet}  5s
     Verify Page Conatin Text   ${e_giveGet}
     Verify Page Conatin Text   ${e_giveGetNote}
     Element Should Be Visible   ${vf_A_infoBtn}

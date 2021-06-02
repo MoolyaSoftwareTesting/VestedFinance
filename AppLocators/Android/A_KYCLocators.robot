@@ -151,6 +151,7 @@ ${e_bankStmtUploadPopupP2} =  Passbook is not accepted.
 ${e_bankStmtUploadPopupP3} =  Your name, address, and recent transactions are visible.
 ${e_driversLicenseBsPOADesc} =  I’ve verified that the name on my Driver's license (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 ${e_driversLicenseBsUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
+${e_selectAPhoto} =  Select a photo
 
 # Plan Payment
 ${e_payText} =  Choose a plan that suits you best

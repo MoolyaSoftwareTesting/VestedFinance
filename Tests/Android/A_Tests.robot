@@ -11,15 +11,11 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # To run All test on browserstack: 
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://d06a3077ed77bac1d85e6e1973e9a990ecb3ee6d --variable sessionName:ML03_AK -d Results Tests/Android/A_Tests.robot
-
-# To run specific test on browserstack:    
-
-# Refactored apk:
 # robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://986c2eb932067988b618c33a70bb6144485e6877 --variable sessionName:ML03_AK -d Results Tests/Android/A_Tests.robot
 
-# Legacy apk:
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://af920ce10e48a11bb01b7bf60f586bd4af31bf97 --variable sessionName:ML03_AK -d Results -i FundTransfer Tests/Android/A_Tests.robot
+# To run specific test on browserstack:    
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://986c2eb932067988b618c33a70bb6144485e6877 --variable sessionName:ML03_AK -d Results -i E2E1 Tests/Android/A_Tests.robot
+
 
 *** Test Cases ***
 # Verify Landing Screen
@@ -194,18 +190,20 @@ KYC: Aadhaar Front & Back- POI
 # Happy Flow 2 E2E- POI: Aadhaar Front And POA: Back side
 KYC: Aadhaar Front- POI & Aadhaar Back- POA
     [Tags]  KYC  E2E2  
-    [Teardown]  Rest Android Application
-    Signup And Signin For KYC
-    Verify Account Status Screen
-    Click on Start/Complete KYC Button
-    Verify All Sections And Navigations Under KYC Introduction Screen
-    User Fill All The Fields Under KYC Basic Details Screen And Verify
-    User Fill All The Fields Under KYC Investment Profile Screen And Verify
-    User Fill All the Fields Under KYC Identity Screen And Verify
-    Upload Aadhaar Front As POI And Back side As POA
-    Verify Sections And Navigations Under KYC Plan Payment Screen- Card
-    Verify All Sections And Navigations Under KYC Signature Screen
-    Verify Steps Under Account Status Screen After KYC Completion
+    Click Element At Coordinates  353  837
+    Log To Console  Clicked
+    # [Teardown]  Rest Android Application
+    # Signup And Signin For KYC
+    # Verify Account Status Screen
+    # Click on Start/Complete KYC Button
+    # Verify All Sections And Navigations Under KYC Introduction Screen
+    # User Fill All The Fields Under KYC Basic Details Screen And Verify
+    # User Fill All The Fields Under KYC Investment Profile Screen And Verify
+    # User Fill All the Fields Under KYC Identity Screen And Verify
+    # Upload Aadhaar Front As POI And Back side As POA
+    # Verify Sections And Navigations Under KYC Plan Payment Screen- Card
+    # Verify All Sections And Navigations Under KYC Signature Screen
+    # Verify Steps Under Account Status Screen After KYC Completion
 
 # Happy Flow 3 E2E- POI: Aadhaar Full
 KYC: Aadhaar Full- POI
@@ -305,7 +303,7 @@ KYC: Passport- POI & Bank Statement- POA
 
 # Profile- Premium Account - Indrajit credentials
 Verify Navigations Under Profile Screen
-    [Tags]  Profile  ExcludeKYC
+    [Tags]  Profile  ExcludeKYC  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Valid Credentials - Funded Account
@@ -469,7 +467,7 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
 
 # Non KYC Approved Account
 Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -479,7 +477,7 @@ Fund Transfer- Non KYC Approved Account
 
 # KYC Approved Account- No Funding History
 Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
@@ -489,7 +487,7 @@ Fund Transfer For New Account- No Funding History
 
 # FT_97 - FT_101
 Remove Online Fund Transfer
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
@@ -498,7 +496,7 @@ Remove Online Fund Transfer
 
 # FT_97 - FT_99, FT_102, SL03, SL05
 Submit Online Fund Transfer And Withdrawal Fund
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
@@ -511,14 +509,14 @@ Submit Online Fund Transfer And Withdrawal Fund
 
 # Fund Withdrawal: SL04
 Verify Withdrawal Process For First Withdrawal
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account For 1st Withdrawal
     Verify First Withdrawal
 
 Submit Online Fund Transfer
-    [Tags]  FundTransfer  ExcludeKYC
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer

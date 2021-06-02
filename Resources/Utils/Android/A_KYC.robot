@@ -186,8 +186,10 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Sleep  2s
     Log to Console  Verified Checkboxes are optional!
     Sleep  2s
-    Close Android Keyboard
-    # Go Back On Android
+    # For execution from VS> BS
+    # Close Android Keyboard
+    # When execution from Jenkins> BS
+    Go Back On Android
     Swipe By Percent  80  70  20  20  5000
     Sleep  2s
     Verify All Checkboxes
@@ -708,8 +710,12 @@ Verify Upload Back Side Of Drivers License Popup Under POA
 Upload Front Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarFrontImgOnBS
+    Click Element At Coordinates  363  800
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait Until Page Contains  ${e_aadhaarFrontUploadSuccessMsg}  10s
     Verify Page Conatin Text  ${e_aadhaarFrontUploadSuccessMsg}
     Log To Console  Verified Front Side Aadhaar uploaded Success Message!
@@ -717,8 +723,12 @@ Upload Front Side Of Aadhaar And Verify Success Message
 Upload Back Side Of Aadhaar And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarBackImgOnBS
+    Click Element At Coordinates  0  800
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarBackImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Back side of Aadhaar
@@ -727,8 +737,12 @@ Upload Back Side Of Aadhaar And Verify Success Message
 Upload Front Side Of Drivers License And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarFullImgOnBS
+    Click Element At Coordinates  727  352
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait Until Page Contains  ${e_driversLicenseFrontUploadSuccessMsg}  5s
     Verify Page Conatin Text  ${e_driversLicenseFrontUploadSuccessMsg}
     Log To Console  Verified Front Side Drivers License uploaded Success Message!
@@ -736,8 +750,12 @@ Upload Front Side Of Drivers License And Verify Success Message
 Upload PAN Card And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_panCardImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # PanCardImgOnBS
+    Click Element At Coordinates  364  352
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_panCardImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded PAN Card
@@ -746,8 +764,12 @@ Upload PAN Card And Verify Success Message
 Upload Passport And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_passportImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # PassportImgOnBS
+    Click Element At Coordinates  0  352
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_passportImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded PAN Card
@@ -756,8 +778,12 @@ Upload Passport And Verify Success Message
 Upload Full Aadhaar As POI And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarFullImgOnBS
+    Click Element At Coordinates  727  352
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Full Aadhaar
@@ -766,8 +792,12 @@ Upload Full Aadhaar As POI And Verify Success Message
 Upload Bank Statement As POA And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarFrontImgOnBS
+    Click Element At Coordinates  363  800
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Bank Statement
@@ -776,8 +806,12 @@ Upload Bank Statement As POA And Verify Success Message
 Upload Back Side Of Drivers License And Verify Success Message
     Wait And Click Element On Android  ${vf_A_chooseFromLib}
     Wait And Click Element On Android  ${vf_A_picturesFolder}
-    Sleep  3s
-    Wait And Click Element On Android  ${vf_A_aadhaarFullImg}
+    Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    Verify Page Conatin Text   ${e_selectAPhoto}
+    # AadhaarFrontImgOnBS
+    Click Element At Coordinates  363  800
+    #For Local device 
+    # Wait And Click Element On Android  ${vf_A_aadhaarFrontImg}
     Wait For Page Conatin Element  ${e_docUploadSuccessMsg}  8s
     Verify Element Visibility  ${vf_A_docUploadSuccessMsg}
     Log To Console  Uploaded Back Side Of Drivers License

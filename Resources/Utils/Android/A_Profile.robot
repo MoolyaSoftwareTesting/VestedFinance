@@ -281,7 +281,7 @@ Click On Sub-menus Under Help And Verify
     # FAQ- Known Failure
     # User Clicks FAQ Under Help
     # Blocker: Google verification code is asked on BS device
-    User Clicks Email Us Under Help
+    # User Clicks Email Us Under Help
     User Clicks Message Us Under Help
 
 # Account

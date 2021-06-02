@@ -142,6 +142,7 @@ Verify Super Vest Upsell- Buy Vest From Basic Account
     Verify Page Conatin Text   ${e_modMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Moderate
     Click Text  ${e_buy}
+    Wait For Page Conatin Element  ${e_upgradePopUpTxt1}  3s
     Verify Page Conatin Text   ${e_upgradePopUpTxt1}
     Verify Page Conatin Text   ${e_upgradePopUpTxt2}
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -174,6 +175,7 @@ Verify Super Vest Upsell- Buy Vest From Basic Account
     Verify Page Conatin Text   ${e_conMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Conservative
     Click Text  ${e_buy}
+    Wait For Page Conatin Element  ${e_upgradePopUpTxt1}  5s
     Verify Page Conatin Text   ${e_upgradePopUpTxt1}
     Verify Page Conatin Text   ${e_upgradePopUpTxt2}
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -413,6 +415,19 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Scroll Down Till Multi-Asset Class Vests
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  5s
     Verify Page Conatin Text   ${e_multiAssetVestsTxt}
+    # Conservative
+    Verify Page Conatin Text   ${e_conMultiAssetVests}
+    Verify Page Conatin Text   ${e_conMultiAssetVestsTxt}
+    Click Text  ${e_conMultiAssetVests}
+    Wait For Page Conatin Element  ${e_conMultiAssetClass}  5s
+    Verify Page Conatin Text   ${e_conMultiAssetClass}
+    Log to Console  Navigated to Multi-Asset Class - Conservative
+    Click On Buy Button And Verify Buy Order Screen
+    Click On Back Arrow
+    Sleep  2s
+    Click On Back Arrow
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
+    Swipe By Percent   70  50   10   50  5000 
     # Moderate
     Verify Page Conatin Text   ${e_modMultiAssetVests}
     Verify Page Conatin Text   ${e_modMultiAssetVestsTxt}
@@ -425,27 +440,14 @@ Verify Vest Upsell- Buy Vest From Premium Account
     Sleep  2s
     Click On Back Arrow
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
-    Swipe By Percent   70  80   10   80  5000 
+    Swipe By Percent   70  50   10   50  5000 
+    Swipe By Percent   70  50   10   50  5000 
     # Aggressive
     Verify Page Conatin Text   ${e_aggMultiAssetVests}
     Click Text  ${e_aggMultiAssetVests}
     Wait For Page Conatin Element  ${e_aggMultiAssetClass}  5s
     Verify Page Conatin Text   ${e_aggMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Aggressive
-    Click On Buy Button And Verify Buy Order Screen
-    Click On Back Arrow
-    Sleep  2s
-    Click On Back Arrow
-    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
-    Swipe By Percent   70  80   10   80  5000 
-    Swipe By Percent   70  80   10   80  5000 
-    # Conservative
-    Verify Page Conatin Text   ${e_conMultiAssetVests}
-    Verify Page Conatin Text   ${e_conMultiAssetVestsTxt}
-    Click Text  ${e_conMultiAssetVests}
-    Wait For Page Conatin Element  ${e_conMultiAssetClass}  5s
-    Verify Page Conatin Text   ${e_conMultiAssetClass}
-    Log to Console  Navigated to Multi-Asset Class - Conservative
     Click On Buy Button And Verify Buy Order Screen
     Click On Back Arrow
     Sleep  2s
@@ -507,7 +509,7 @@ User Clicks Vest Upsell With No Subscription
 Verify Vest With No Subscription Account
     Sleep  5s
     Scroll Down Till Super Vest    
-    # Swipe By Percent   70  80   10   80  5000  
+    Swipe By Percent   70  80   10   80  5000  
     Verify Page Conatin Text   ${e_saas}
     Log to Console  SAAS verified!
     Click Text   ${e_saas}
@@ -564,11 +566,11 @@ Verify Super Vest Upsell With Premium Subscription Account
     # Swipe By Percent  90  90  10  10  3000
     # Swipe By Percent  90  90  10  10  3000 
     Scroll Down Till Multi-Asset Class Vests
-    Verify Page Conatin Text   ${e_aggMultiAssetVests}
-    Click Text   ${e_aggMultiAssetVests}
+    Verify Page Conatin Text   ${e_conMultiAssetVests}
+    Click Text   ${e_conMultiAssetVests}
     Sleep  3s
-    Wait For Page Conatin Element  ${e_aggMultiAssetClass}  15s
-    Verify Page Conatin Text    ${e_aggMultiAssetClass}
+    Wait For Page Conatin Element  ${e_conMultiAssetClass}  15s
+    Verify Page Conatin Text    ${e_conMultiAssetClass}
     Sleep  5s
     Click Text  ${e_buy}
     Wait For Page Conatin Element  ${e_investAmt}  10s
