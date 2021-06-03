@@ -1,6 +1,7 @@
 *** Variables ***
+
 #  Test data or expected values
-${dest_pathBS} =  /sdcard/Pictures/AadhaarFront.jpg
+
 # KYC Not Completed Credential
 ${e_validEmailForKYC} =  testingVF111+22@gmail.com
 ${e_validPasswordForKYC} =  Moolya@123
@@ -34,16 +35,17 @@ ${e_chkBx1Txt} =  I work at a US brokerage firm, or am a family member of an ind
 ${e_chkBx2Txt} =  I am a politically exposed person or public official, or am a family member of a politically exposed person or public official
 ${e_chkBx3Txt} =  I am a director, an officer, or own at least 10% of a US-listed public company’s equities
 ${e_chkBx4Txt} =  None of the these apply to me
+${e_noThanksTxt} =  NO, THANKS
 
 # Investment Profile Screen
 ${e_investProfileScreenHeading} =  Let’s build your investment profile.
 ${e_riskTolerance} =  Risk tolerance
 ${e_riskToleranceOpt1Txt} =  Low
-${e_riskToleranceOpt1Desc} =  I’m comfortable accepting lower returns for more stability.
+${e_riskToleranceOpt1Desc} =  I am comfortable accepting lower returns for more stability
 ${e_riskToleranceOpt2Txt} =  Moderate
-${e_riskToleranceOpt2Desc} =  I’m looking for growth. Moderate gains or losses along the way are fine.
+${e_riskToleranceOpt2Desc} =  I am looking for growth. Moderate gains or losses along the way are fine
 ${e_riskToleranceOpt3Txt} =  High
-${e_riskToleranceOpt3Desc} =  I’m comfortable accepting higher risk for higher returns.
+${e_riskToleranceOpt3Desc} =  I am comfortable accepting higher risk for higher returns
 ${e_investingFrequency} =  How often do you plan to invest in companies?
 ${e_investingFrequencyOpt1Txt} =  Several times a week
 ${e_investingFrequencyOpt2Txt} =  Once a month
@@ -91,12 +93,12 @@ ${e_stsSingle} =  Single
 ${e_stsDivorced} =  Divorced
 ${e_stsMarried} =  Married
 ${e_stsWidowed} =  Widowed
-${e_stsDomPtnr} =  Domestic partner
+${e_stsDomPtnr} =  Domestic Partner
 ${e_employmentTxt} =  Employment
 ${e_empEmployed} =  Employed
 ${e_empRtd} =  Retired
 ${e_empStdnt} =  Student
-${e_empSlfEmp} =  Self-Employed
+${e_empSlfEmp} =  Self Employed
 ${e_empUnemp} =  Unemployed
 ${e_countryTxt} =  What country do you primarily file taxes in?
 ${e_India} =  India
@@ -150,6 +152,7 @@ ${e_bankStmtUploadPopupP2} =  Passbook is not accepted.
 ${e_bankStmtUploadPopupP3} =  Your name, address, and recent transactions are visible.
 ${e_driversLicenseBsPOADesc} =  I’ve verified that the name on my Driver's license (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 ${e_driversLicenseBsUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
+${e_selectAPhoto} =  Select a photo
 
 # Plan Payment
 ${e_payText} =  Choose a plan that suits you best
@@ -165,6 +168,7 @@ ${e_feeTxt} =  Account Opening Fee
 ${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
+${e_selectBtnTxt} =  Select
 
 # Signature screen
 ${e_signatureScreenHeading} =  Let’s open your account
@@ -192,7 +196,7 @@ ${vf_A_awesomeLink} =  xpath=//*[@text='AWESOME!']
 ${vf_A_viewAllStepsLink} =  xpath=//*[@text='View all steps']
 ${vf_A_doneButton} =  xpath=//*[@text='DONE']
 ${vf_A_startKYCBtn} =  xpath=//*[@text='Start KYC']
-${vf_A_backArrow} =  xpath=//*[@text='chevron_left']
+${vf_A_backArrow} =  xpath=//*[@text='']
 ${vf_A_startKYCProcessBtn} =  xpath=//*[@text='Start KYC process']
 ${vf_A_CmpltKYCBtn} =  xpath=//*[@text='Complete KYC']
 ${vf_A_acceptAndContinueBtn} =  xpath=//*[@text='ACCEPT AND CONTINUE']
@@ -210,7 +214,7 @@ ${vf_A_chkBx4Txt} =  xpath=//*[@text='None of the these apply to me']
 
 
 # Investment Profile Screen Locators
-${vf_A_primarySrcDropdown} =  xpath=//*[@text='arrow_drop_down']
+${vf_A_primarySrcDropdown} =  xpath=//*[@text='']
 ${vf_A_primarySourceOpt1Txt} =  xpath=//*[@text='Employment']
 ${vf_A_primarySourceOpt2Txt} =  xpath=//*[@text='Gift']
 ${vf_A_primarySourceOpt3Txt} =  xpath=//*[@text='Inheritance / Trust']
@@ -247,6 +251,12 @@ ${vf_A_selectAnotherDocBtn} =  xpath=//*[@text='SELECT ANOTHER DOCUMENT']
 ${vf_A_imgInPopUp} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup']]
 ${vf_A_uploadBtn} =  xpath=//*[@text='UPLOAD']
 ${vf_A_chooseFromLib} =  xpath=//*[@text='Choose from Library...']
+${vf_A_picturesFolder} =  xpath=//*[@text='5 items']
+${vf_A_aadhaarFrontImgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=5][contains(@content-desc,'Photo taken on ')]
+${vf_A_aadhaarBackImgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=4][contains(@content-desc,'Photo taken on ')]
+${vf_A_aadhaarFullImgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=3][contains(@content-desc,'Photo taken on ')]
+${vf_A_panCardImgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=2][contains(@content-desc,'Photo taken on ')]
+${vf_A_passportImgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=1][contains(@content-desc,'Photo taken on ')]
 ${vf_A_aadhaarFrontImg} =  xpath=//*[@text='AadhaarFront.jpg']
 ${vf_A_aadhaarBackImg} =  xpath=//*[@text='AadhaarBack.jpg']
 ${vf_A_aadhaarFullImg} =  xpath=//*[@text='AadhaarFull.jpg']

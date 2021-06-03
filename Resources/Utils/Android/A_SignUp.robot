@@ -5,7 +5,7 @@ Library     AppiumLibrary
 *** Keywords ***
 
 User Navigates To Signup Screen
-    Click on Start Investing button
+    Click On Continue Button Under Landing Screen
     Click On Element If Visibile  ${vf_A_signInAsDiffUser}
     User Clicks On Signup Link
 

@@ -7,7 +7,7 @@ ${e_validPasswordForKYCcmpltd} =  Moolya@123
 # Profile Variables
 ${e_usrnmDefney} =  Indrajit Palit
 ${e_driveWealthID} =  DriveWealth ID: VTEV000001
-${e_appVersion} =  Version: v4.1 (1168)
+${e_appVersion} =  Version: v1.0 (44)
 ${e_profileTxt} =  Profile
 ${e_history} =  HISTORY
 ${e_transactions} =  Transactions
@@ -33,7 +33,7 @@ ${e_kycApprovalNeededPopup} =  KYC Approval Needed
 ${e_kycApprovalNeededPopupDesc} =  KYC approval is needed before you can see your history
 ${e_checkStatusBtn} =  CHECK STATUS
 ${e_startKyc} =  START KYC
-${e_2020TaxDoc} =  2020 Documents
+${e_2020TaxDoc} =  2020-2021 Documents
 
 # Help Variables
 ${e_gmailCompose} =  Compose
@@ -42,7 +42,7 @@ ${e_mailTxt2} =  Steps to replicate your issue
 ${e_mailTxt3} =  What were you expecting to happen?
 ${e_mailTxt4} =  What actually happened?
 ${e_mailTxt5} =  Thank you.
-${e_msgUsHeading} =  Vested Finance Inc
+${e_msgUsHeading} =  Start a conversation
 ${e_msgRspnd} =  Typically replies in a few hour
 ${e_msgInput} =  Testing chat box
 ${e_forTaxRep} =  For Tax Reporting
@@ -70,11 +70,22 @@ ${e_billingYrlyTxt} =  You are currently paying ₹2,500 for the yearly plan.
 ${e_billingQtrlyTxt} =  You are currently paying ₹750 for the quarterly plan.
 ${e_riskToleranceOpt} =  Risk Tolerance
 ${e_investingFrequencyOpt} =  Investing Frequency
-${e_investingExperienceOpt} =  Investing Experience
 ${e_investingFrequencyOpt3} =  Once every six months
+${e_investingExperienceOpt} =  Investing Experience
+${e_investingExprncOpt1TxtUndrProfile} =  Less than a year
+${e_investingExprncOpt2TxtUndrProfile} =  1 – 2 years
+${e_investingExprncOpt3TxtUndrProfile} =  3 - 5 years
+${e_investingExprncOpt4TxtUndrProfile} =  5 - 10 years
+${e_investingExprncOpt5TxtUndrProfile} =  10+ years
 ${e_yearlyIncomeOpt} =  Yearly Income
+${e_yearlyIncomeOpt1TxtUndrProfile} =  0 - 10 lakh rupees
+${e_yearlyIncomeOpt2TxtUndrProfile} =  10 - 25 lakh rupees
+${e_yearlyIncomeOpt3TxtUndrProfile} =  25 - 50 lakh rupees
 ${e_liquidNetWorthOpt} =  Liquid Net Worth
 ${e_totalNetWorthOpt} =  Total Net Worth
+${e_totalNetWorthOpt1TxtUndrProfile} =  0 - 10 lakh rupees
+${e_totalNetWorthOpt2TxtUndrProfile} =  10 - 30 lakh rupees
+${e_totalNetWorthOpt3TxtUndrProfile} =  30 - 1 crore rupees
 ${e_updatePIN} =  Update Pin
 ${e_updatePINTxt} =  Change to a new pin
 ${e_changePINTxt} =  Enter your current 6 digit pin
@@ -85,16 +96,16 @@ ${e_logoutPopupTxt} =  Are you sure you want to log out?
 ${e_logoutPopupYes} =  YES
 ${e_logoutPopupNo} =  NO
 ${e_faqTxt} =  Frequently Asked Questions
-${e_faqQ1} =  What are vests? What is Vest upfront fee?
+${e_faqQ1} =  What are vests? What is vest upfront fee?
 ${e_faqA1} =  Investing in a Vest is optional. Vests are curated portfolios made by Vested to help you diversify your holdings. The Vest upfront fee is charged everytime you purchase a Vest.
 ${e_faqQ2} =  Are there any brokerage charges to invest in US stocks and ETFs?
 ${e_faqA2} =  Either plan will enable you to invest in US stocks and ETFs at zero commission. Please see zero commission disclosure.
 ${e_faqQ3} =  Are there any other fees associated with US investing?
 ${e_faqA3} =  Investing in the US requires you to fund your account with US dollars. Your bank may charge you an international wire fee to fund your account.
-${e_faqQ4} =  Will I have the opportunity to purchase the subscription later?
-${e_faqA4} =  Yes, the subscription can be purchased at a later time.
+${e_faqQ4} =  Will I have the opportunity to purchase the premium later?
+${e_faqA4} =  Yes, premium can be purchased at a later time.
 ${e_faqQ5} =  Can I downgrade my premium later?
-${e_faqA5} =  You have the option to stop your premium from auto-renewing. If you stop auto-renewal, you will continue to enjoy all premium benefits until the end of your premium term. There are no partial term refunds.
+${e_faqA5} =  You have the option to downgrade your premium. If you downgrade, you will continue to enjoy all premium benefits until the end of your plan period. 
 
 # LOCATORS
 # Profile page locator
@@ -125,13 +136,13 @@ ${vf_A_goPremium} =  xpath=//*[@text='Go Premium']
 ${vf_A_logout} =  xpath=//*[@text='Log out']
 ${vf_A_validEmail} =  xpath=//*[@text='indrajit+9377@vestedfinance.co']
 ${vf_A_chatBoxIcon} =  xpath=//*[@class='android.widget.ImageButton']
+${vf_A_backArrowUnderPaymentPlan} =  xpath=//*[@text='chevron_left']
 
 # History Locators
 ${vf_A_opt1Navigation} =  xpath=(//*[@text=''])[1]
 ${vf_A_downloadPopupCancelBtn} =  xpath=//*[@text=‘Cancel’]
 ${vf_A_notNowBtn} =  xpath=//*[@text='NOT NOW']
-${vf_A_taxDoc2020} =  xpath=//*[@text='2020']
-${vf_A_tax2020} =  xpath=//*[@text='2020']
+${vf_A_taxDoc2020} =  xpath=//*[@text='2020-2021']
 
 # Help Locators
 ${vf_A_msgInputFld} =  xpath=//*[@class='android.widget.EditText']
