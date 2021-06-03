@@ -84,7 +84,6 @@ Verify User Is Navigated To Fund Online Using ICICI Screen
     Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
 
 Verify Fund Online Screen
-    Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
     Verify Page Conatin Text  ${e_selectDiffFundTransfer}
     Verify Page Conatin Text  ${e_importantTxt}
     Verify Page Conatin Text  ${e_importantP1}
@@ -295,6 +294,12 @@ Fill And Submit A Fund Transfer- Kotak Bank Online
     Verify Dashboard Screen
     Click On Tansfer From Dashboard
 
+Verify Copied Toast Message
+    [Arguments]  ${copyIcon}
+    Wait And Click Element On Android  ${copyIcon}
+    Wait For Page Conatin Element  ${e_copiedToastMsg}  5s
+    Verify Page Conatin Text  ${e_copiedToastMsg}
+
 Fill And Submit A Fund Transfer- Non Indian Bank
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
@@ -314,8 +319,57 @@ Fill And Submit A Fund Transfer- Non Indian Bank
     Click On Next Button Under Add Funds Flow
     Wait For Page Conatin Element  ${e_fundOnlineUsingNonIndian}  5s
     Verify Page Conatin Text  ${e_fundOnlineUsingNonIndian}
-    Verify Fund Online Screen
     # Here: Verify More
+    Verify Page Conatin Text  ${e_nonIndianBankP1}
+    Verify Page Conatin Text  ${e_nonIndianBankA1}
+    Verify Page Conatin Text  ${e_nonIndianBankP2}
+    Verify Page Conatin Text  ${e_nonIndianBankA2}
+    Verify Page Conatin Text  ${e_nonIndianBankAccInfo}
+    Verify Page Conatin Text  ${e_nonIndianBankCredit}
+    Verify Page Conatin Text  ${e_nonIndianBankDriveNum}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon1}
+    Verify Page Conatin Text  ${e_nonIndianBankAccInfoTxt}
+    Verify Page Conatin Text  ${e_nonIndianBankBenInfo}
+    Verify Page Conatin Text  ${e_nonIndianBankBenInfoName}
+    Verify Page Conatin Text  ${e_nonIndianBankBenInfoNameTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon2}
+    Swipe By Percent  80  70  20  20  5000
+    Verify Page Conatin Text  ${e_nonIndianBankAccNum}
+    Verify Page Conatin Text  ${e_nonIndianBankAccNumTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon3}
+    Verify Page Conatin Text  ${e_nonIndianBankAddrs}
+    Verify Page Conatin Text  ${e_nonIndianBankAddrsTxt1}
+    Verify Page Conatin Text  ${e_nonIndianBankAddrsTxt2}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon4}
+    Verify Page Conatin Text  ${e_nonIndianBankEmail}
+    Verify Page Conatin Text  ${e_nonIndianBankEmailTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon5}
+    Verify Page Conatin Text  ${e_nonIndianBankPhnNum}
+    Verify Page Conatin Text  ${e_nonIndianBankPhnNumTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon6}
+    Verify Page Conatin Text  ${e_nonIndianBankInfo}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoName}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoNameTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon7}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoRouNum}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoRouNumTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon8}
+    Swipe By Percent  80  70  20  20  5000
+    Verify Page Conatin Text  ${e_nonIndianBankInfoSwiftCode}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoSwiftCodeTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon9}
+    Verify Page Conatin Text  ${e_nonIndianBankAddrs}
+    Verify Page Conatin Text  ${e_nonIndianBankInfoAddrsTxt}
+    Verify Copied Toast Message  ${vf_A_accInfoCopyIcon10}
+    Verify Page Conatin Text  ${e_nonIndianBankP3}
+    Verify Page Conatin Text  ${e_nonIndianBankA3}
+    Swipe By Percent  80  70  20  20  5000
+    Verify Page Conatin Text  ${e_important}
+    Verify Page Conatin Text  ${e_importantP1}
+    Verify Page Conatin Text  ${e_importantP2}
+    Verify Page Conatin Text  ${e_fees}
+    Verify Page Conatin Text  ${e_feesP1}
+    Log to Console  Verified Fund Online Screen!
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
     Verify User Is Navigated To Upload The Wire Receipt Screen
     Verify And Fill The Upload Wire Receipt Received Screen

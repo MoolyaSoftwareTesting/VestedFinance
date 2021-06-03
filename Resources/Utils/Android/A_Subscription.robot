@@ -142,13 +142,13 @@ Verify Super Vest Upsell- Buy Vest From Basic Account
     Verify Page Conatin Text   ${e_modMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Moderate
     Click Text  ${e_buy}
-    Wait For Page Conatin Element  ${e_upgradePopUpTxt1}  3s
+    Wait For Page Conatin Element  ${e_upgradePopUpTxt1}  5s
     Verify Page Conatin Text   ${e_upgradePopUpTxt1}
     Verify Page Conatin Text   ${e_upgradePopUpTxt2}
     Wait And Click Element On Android  ${vf_A_CloseIcon}
     Sleep  2s
     Click On Back Arrow
-    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  5s
     Swipe By Percent   60  80   20   80  5000 
     # Aggressive
     Verify Page Conatin Text   ${e_aggMultiAssetVests}
@@ -164,7 +164,7 @@ Verify Super Vest Upsell- Buy Vest From Basic Account
     Wait And Click Element On Android  ${vf_A_CloseIcon}
     Sleep  2s
     Click On Back Arrow
-    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  5s
     Swipe By Percent   60  80   20   80  5000 
     Swipe By Percent   60  80   20   80  5000 
     # Conservative
@@ -181,7 +181,7 @@ Verify Super Vest Upsell- Buy Vest From Basic Account
     Wait And Click Element On Android  ${vf_A_CloseIcon}
     Sleep  2s
     Click On Back Arrow
-    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  3s
+    Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  5s
 
 
 # Premium Subscription
@@ -509,7 +509,10 @@ User Clicks Vest Upsell With No Subscription
 Verify Vest With No Subscription Account
     Sleep  5s
     Scroll Down Till Super Vest    
-    Swipe By Percent   70  80   10   80  5000  
+    Swipe By Percent  90  90  10  10  3000  
+    # Swipe Left to view Saas
+    #Swipe By Percent   70  80   10   80  5000  
+    Swipe By Percent   70  50   10   50  5000 
     Verify Page Conatin Text   ${e_saas}
     Log to Console  SAAS verified!
     Click Text   ${e_saas}
@@ -523,7 +526,7 @@ Verify Vest With No Subscription Account
     Log to Console  Buy button Clicked!
     Wait For Page Conatin Element  ${e_investAmt}  10s
     Verify Page Conatin Text   ${e_investAmt0}
-    Click Text   ${e_investAmt0}
+    Verify Element Visibility  ${vf_A_investAmtTxt}
     Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt}
     Log to Console  Amount entered!
     Click Text  ${e_previewOrder}
@@ -575,12 +578,12 @@ Verify Super Vest Upsell With Premium Subscription Account
     Click Text  ${e_buy}
     Wait For Page Conatin Element  ${e_investAmt}  10s
     Verify Page Conatin Text   ${e_investAmt0}
-    Click Text   ${e_investAmt0}
+    Verify Element Visibility  ${vf_A_investAmtTxt}
     Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt} 
     Click Text  ${e_previewOrder}
     Sleep  2s
     Element Should Be Enabled  ${vf_A_placeOrderBtn}
-    Log to Console  Verified Vest Upsell With Premium Subscription Account!
+    Log to Console  Verified Super Vest Upsell With Premium Subscription Account!
     Go Back On Android
     Go Back On Android
     Go Back On Android
@@ -588,8 +591,10 @@ Verify Super Vest Upsell With Premium Subscription Account
 
 Verify Vest With Premium Subscription Account
     Sleep  2s
+    # Scroll till Vest section
     Swipe By Percent  90  90  10  10  3000    
-    # Swipe By Percent   70  80   10   80  5000  
+    # Swip Left to display Saas
+    Swipe By Percent   70  50   10   50  5000  
     Wait For Page Conatin Element  ${e_saas}  5s  
     Verify Page Conatin Text   ${e_saas}
     Click Text   ${e_saas}
@@ -600,9 +605,11 @@ Verify Vest With Premium Subscription Account
     Click Text  ${e_buy}
     Wait For Page Conatin Element  ${e_investAmt}  10s
     Verify Page Conatin Text   ${e_investAmt0}
-    Click Text   ${e_investAmt0}
+    Verify Element Visibility  ${vf_A_investAmtTxt}
     Input Text  ${vf_A_investAmtTxt}  ${e_investAmtTxt} 
+    Wait For Page Conatin Element  ${e_previewOrder}  3s
     Click Text  ${e_previewOrder}
+    Wait For Page Conatin Element  ${e_placeBuyOrder}  10s
     Sleep  2s
     Element Should Be Enabled  ${vf_A_placeOrderBtn}
     Log to Console  Verified Vest With Premium Subscription Account!

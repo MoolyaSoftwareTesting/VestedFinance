@@ -50,11 +50,44 @@ ${e_fundOnlineUsingIndusInd} =  FUND ONLINE USING INDUSIND NETBANKING
 ${e_fundOnlineUsingKotak} =  FUND ONLINE USING KOTAK NETBANKING
 ${e_fundOnlineUsingNonIndian} =  FUND ONLINE USING NON-INDIAN NETBANKING
 ${e_selectDiffFundTransfer} =  SELECT A DIFFERENT FUNDS TRANSFER METHOD
-${e_importantTxt} =  Important
+${e_important} =  Important
 ${e_importantP1} =  Funds from 3rd parties are not accepted.
 ${e_importantP2} =  The name on your bank account must be an exact match to the name listed on the government ID you have provided us.
-${e_feesTxt} =  Fees
+${e_fees} =  Fees
 ${e_feesP1} =  Your bank may charge fees to transfer funds overseas. Please check with your bank as the fees may vary.
+${e_nonIndianBankP1} =  1. Initiate a US dollar transfer with an account under your name.
+${e_nonIndianBankA1} =  The account used for fund transfer must be under your name and must match the name on your Vested account.
+${e_nonIndianBankP2} =  2. Fill in the forms with DriveWealth as the beneficiary.
+${e_nonIndianBankA2} =  Your funds are transferred to our broker-partner DriveWealth before they can be deposited into your Vested account.
+${e_nonIndianBankAccInfo} =  ACCOUNT INFORMATION
+${e_nonIndianBankCredit} =  Further Credit To (IMPORTANT!)
+${e_nonIndianBankDriveNum} =  VTFS000001
+${e_nonIndianBankAccInfoTxt} =  This is your unique DriveWealth Account Number. Add this to the Futher Credit To, Memo, or Additional Notes section.
+${e_copiedToastMsg} =  Copied
+${e_nonIndianBankBenInfo} =  BENEFICIARY INFORMATION
+${e_nonIndianBankBenInfoName} =  Name
+${e_nonIndianBankBenInfoNameTxt} =  DriveWealth, LLC
+${e_nonIndianBankAccNum} =  Account Number
+${e_nonIndianBankAccNumTxt} =  3303231840
+${e_nonIndianBankAddrs} =  Address
+${e_nonIndianBankAddrsTxt1} =  97 Main Street, Second Floor, Chatham, New Jersey 07928
+${e_nonIndianBankAddrsTxt2} =  (Chatnam is the city and New Jersey is the state)
+${e_nonIndianBankEmail} =  Email
+${e_nonIndianBankEmailTxt} =  support@drivewealth.com
+${e_nonIndianBankPhnNum} =  Phone Number
+${e_nonIndianBankPhnNumTxt} =  +1-800-461-2680
+${e_nonIndianBankInfo} =  BANK INFORMATION
+${e_nonIndianBankInfoName} =  Name
+${e_nonIndianBankInfoNameTxt} =  Silicon Valley Bank
+${e_nonIndianBankInfoRouNum} =  Routing Number (ABA)
+${e_nonIndianBankInfoRouNumTxt} =  121140399
+${e_nonIndianBankInfoSwiftCode} =  SWIFT Code
+${e_nonIndianBankInfoSwiftCodeTxt} =  SVBKUS6S
+${e_nonIndianBankInfoAddrsTxt} =  3003, Tasman Drive, Santa Clara, California, USA, 95054
+${e_nonIndianBankP3} =  3. Get a wire receipt from your bank
+${e_nonIndianBankA3} =  Your wire receipt helps us keep track of your deposit.
+
+
 ${e_dwnldInstrctnsBtn} =  DOWNLOAD INSTRUCTIONS
 ${e_uploadWireReceipt} =  UPLOAD THE WIRE RECEIPT YOU RECEIVED FOR THE TRANSFER
 ${e_1stepToGo} =  1 step to go
@@ -151,6 +184,16 @@ ${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
 ${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
 ${vf_A_removeBtn} =  xpath=(//*[@text='REMOVE'])[1]
 ${vf_A_nextBtnUndrFundOnline} =  xpath=//*[@text='NEXT' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]
+${vf_A_accInfoCopyIcon1} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='FUND USING NON-INDIAN BANK']]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[1]
+${vf_A_accInfoCopyIcon2} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='FUND USING NON-INDIAN BANK']]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[2]
+${vf_A_accInfoCopyIcon3} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[2]
+${vf_A_accInfoCopyIcon4} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*[@class='android.view.ViewGroup'])[3]
+${vf_A_accInfoCopyIcon5} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[3]
+${vf_A_accInfoCopyIcon6} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[4]
+${vf_A_accInfoCopyIcon7} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[5]
+${vf_A_accInfoCopyIcon8} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[6]
+${vf_A_accInfoCopyIcon9} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[5]
+${vf_A_accInfoCopyIcon10} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*[@class='android.view.ViewGroup'])[6]
 
 # Withdrawal Funds 
 

@@ -42,7 +42,7 @@ ${e_mailTxt2} =  Steps to replicate your issue
 ${e_mailTxt3} =  What were you expecting to happen?
 ${e_mailTxt4} =  What actually happened?
 ${e_mailTxt5} =  Thank you.
-${e_msgUsHeading} =  Vested Finance Inc
+${e_msgUsHeading} =  Start a conversation
 ${e_msgRspnd} =  Typically replies in a few hour
 ${e_msgInput} =  Testing chat box
 ${e_forTaxRep} =  For Tax Reporting
@@ -70,11 +70,22 @@ ${e_billingYrlyTxt} =  You are currently paying ₹2,500 for the yearly plan.
 ${e_billingQtrlyTxt} =  You are currently paying ₹750 for the quarterly plan.
 ${e_riskToleranceOpt} =  Risk Tolerance
 ${e_investingFrequencyOpt} =  Investing Frequency
-${e_investingExperienceOpt} =  Investing Experience
 ${e_investingFrequencyOpt3} =  Once every six months
+${e_investingExperienceOpt} =  Investing Experience
+${e_investingExprncOpt1TxtUndrProfile} =  Less than a year
+${e_investingExprncOpt2TxtUndrProfile} =  1 – 2 years
+${e_investingExprncOpt3TxtUndrProfile} =  3 - 5 years
+${e_investingExprncOpt4TxtUndrProfile} =  5 - 10 years
+${e_investingExprncOpt5TxtUndrProfile} =  10+ years
 ${e_yearlyIncomeOpt} =  Yearly Income
+${e_yearlyIncomeOpt1TxtUndrProfile} =  0 - 10 lakh rupees
+${e_yearlyIncomeOpt2TxtUndrProfile} =  10 - 25 lakh rupees
+${e_yearlyIncomeOpt3TxtUndrProfile} =  25 - 50 lakh rupees
 ${e_liquidNetWorthOpt} =  Liquid Net Worth
 ${e_totalNetWorthOpt} =  Total Net Worth
+${e_totalNetWorthOpt1TxtUndrProfile} =  0 - 10 lakh rupees
+${e_totalNetWorthOpt2TxtUndrProfile} =  10 - 30 lakh rupees
+${e_totalNetWorthOpt3TxtUndrProfile} =  30 - 1 crore rupees
 ${e_updatePIN} =  Update Pin
 ${e_updatePINTxt} =  Change to a new pin
 ${e_changePINTxt} =  Enter your current 6 digit pin
@@ -94,7 +105,7 @@ ${e_faqA3} =  Investing in the US requires you to fund your account with US doll
 ${e_faqQ4} =  Will I have the opportunity to purchase the premium later?
 ${e_faqA4} =  Yes, premium can be purchased at a later time.
 ${e_faqQ5} =  Can I downgrade my premium later?
-${e_faqA5} =  You have the option to downgrade your premium. If you downgrade, you will continue to enjoy all premium benefits until the end of your plan period. There are no partial term refunds.
+${e_faqA5} =  You have the option to downgrade your premium. If you downgrade, you will continue to enjoy all premium benefits until the end of your plan period. 
 
 # LOCATORS
 # Profile page locator
@@ -125,6 +136,7 @@ ${vf_A_goPremium} =  xpath=//*[@text='Go Premium']
 ${vf_A_logout} =  xpath=//*[@text='Log out']
 ${vf_A_validEmail} =  xpath=//*[@text='indrajit+9377@vestedfinance.co']
 ${vf_A_chatBoxIcon} =  xpath=//*[@class='android.widget.ImageButton']
+${vf_A_backArrowUnderPaymentPlan} =  xpath=//*[@text='chevron_left']
 
 # History Locators
 ${vf_A_opt1Navigation} =  xpath=(//*[@text=''])[1]

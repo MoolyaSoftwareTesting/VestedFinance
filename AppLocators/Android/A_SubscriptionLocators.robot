@@ -53,6 +53,7 @@ ${e_investAmt} =  Investment Amount
 ${e_investAmt0} =  0
 ${e_investAmtTxt} =  100
 ${e_previewOrder} =  Preview Order
+${e_placeBuyOrder} =  Place Buy Order
 ${e_marketBuyOrder} =  Market Buy Order
 ${e_goPrm&Buy} =  Go premium and save $3
 ${e_Transfer} =  Transfer
