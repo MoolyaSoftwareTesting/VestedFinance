@@ -133,11 +133,10 @@ Verify Navigations Under KYC Basic Details Screen
 Enter Phone Number
     [Arguments]  ${text}
     Sleep  5s
-    Go Back On Android
+    # Go Back On Android
     Wait And Click Element On Android  ${vf_A_phoneNum}
-    Go Back On Android
+    # Go Back On Android
     Input Text  ${vf_A_phoneNum}  ${text}
-    Log to Console  Entered Phone number!
     Close Android Keyboard
 
 Select A Gender
@@ -145,7 +144,6 @@ Select A Gender
     Run Keyword If    '${gender}'=='${e_maleGender}'  Click Text  ${e_maleGender}
     ...     ELSE IF   '${gender}'=='${e_femaleGender}'  Click Text  ${e_femaleGender}
     ...     ELSE  Log To Console  Invalid Data
-    Log To Console  Clicked on Gender- ${gender} 
 
 # SL48
 Verify All Checkboxes
@@ -180,6 +178,7 @@ User Fill All The Fields Under KYC Basic Details Screen And Verify
     Enter Phone Number  ${e_dummyPhoneNo}
     Sleep  2s
     Select A Gender  ${e_maleGender}
+    Log to Console  Entered Phone number & selected Gender - ${e_maleGender}
     Click On Next Button
     Sleep  2s
     Click On Previous Button
@@ -1052,15 +1051,16 @@ Verify Navigations Under KYC Plan Payment Screen
 Enter Phone Number And Email For Payment
     Wait And Click Element On Android  ${vf_A_phnTxtFld}
     Sleep  5s
-    Go Back On Android
+    # Go Back On Android
     Input Text  ${vf_A_phnFld}  ${e_dummyPhoneNo}
     Sleep  5s
-    Go Back On Android
+    # Go Back On Android
     Wait And Click Element On Android  ${vf_A_mailTxtFld}
-    Go Back On Android
+    # Go Back On Android
     Input Text  ${vf_A_mailFld}  ${e_newAccMailId}
     Log to Console  Entered Phone number and Email Id
-    Go Back On Android
+    # Close Android Keyboard
+    # Go Back On Android
     Wait And Click Element On Android  ${vf_A_proceedBtn}
 
 # Card Payment
@@ -1079,7 +1079,8 @@ Enter Card Details Into Fields
     Sleep  3s
     Input Text  ${vf_A_cardNumTxtFld}  ${cardNum}
     Log to Console  Entered Card Number, Expiry, Name & CVV!
-    Go Back On Android
+    # Go Back On Android
+    # Close Android Keyboard
 
 Enter Card Details For Payment
     Verify Page Contains Element On Android  ${vf_A_cardPaymentOpt}
@@ -1105,7 +1106,7 @@ Make Payment For Yearly Basic Plan Using Card Information
     Enter Phone Number And Email For Payment
     Enter Card Details For Payment
     Sleep  5s
-    Close Android Keyboard
+    # Close Android Keyboard
     Click On Element If Visibile  ${vf_A_skipSavingCardLink}
     Wait And Click Element On Android  ${vf_A_successBtn}
     Log to Console  Successfully Completed the Payment Using Card!
@@ -1137,6 +1138,7 @@ Verify Sections And Navigations Under KYC Plan Payment Screen- Card
     Log to Console  Verified Plan Payment Screen!
     Verify Navigations Under KYC Plan Payment Screen
     Make Payment For Yearly Basic Plan Using Card Information
+    Click On Next Button
 
 Purchase Yearly Premium Plan Under KYC Plan Payment Screen- UPI
     Sleep  2s
@@ -1193,17 +1195,26 @@ Verify Esign Agreement Link
 Verify Advisory Agreement Link
     Verify Page Conatin Text  ${e_advisoryAgreement}
     Click Text  ${e_advisoryAgreement}
-    Wait For Page Conatin Element  ${e_advisoryAgreementPdf}  5s
-    Verify Page Conatin Text  ${e_advisoryAgreementPdf}
-    Go Back On Android
+    #Vested-advisory PDF is not displayed on BS device
+    # Wait For Page Conatin Element  ${e_advisoryAgreementPdf}  5s
+    # Verify Page Conatin Text  ${e_advisoryAgreementPdf}
+    # Go Back On Android
+    Sleep  5s
+    Wait And Click Element On Android  ${vf_A_CloseIconUnderAdvsAggrmnt}
     Log to Console  Verified Advisory Agreement Link!
 
 Verify DriveWealths Privacy Policy Section And Link
+    Wait For Page Conatin Element  ${e_privacyPolicy}  5s
     Verify Page Conatin Text  ${e_privacyPolicy}
+    Click Text  ${e_privacyPolicyLink}
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_CloseIconUnderAdvsAggrmnt}
+    Sleep  2s
     Wait And Click Element On Android  ${vf_A_privacyCheckbox}
     Log to Console  Clicked on DriveWealths Privacy Policy Checkbox!
 
 Verify Signature Acknowledge Section
+    Wait For Page Conatin Element  ${e_signatureAcknowledge}  15s
     Verify Page Conatin Text  ${e_signatureAcknowledge}
     Input Text  ${vf_A_userName}  ${e_fullNameForSignature}
     Log To Console  Entered full name as Signature!    
@@ -1217,7 +1228,6 @@ Verify All Sections And Navigations Under KYC Signature Screen
     Verify DriveWealths Agreements Section And Link
     Verify Esign Agreement Link
     Verify Advisory Agreement Link
-    Swipe By Percent  70  70  20  20  5000
     Verify DriveWealths Privacy Policy Section And Link
     Verify Signature Acknowledge Section
     Click On Next Button

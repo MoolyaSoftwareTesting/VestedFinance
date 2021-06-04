@@ -2,6 +2,9 @@
 
 #  Test data or expected values
 
+${email} =  moolya+auto_+49394@moolya.com
+${pwd} =  iTestUser1!
+
 # KYC Not Completed Credential
 ${e_validEmailForKYC} =  testingVF111+22@gmail.com
 ${e_validPasswordForKYC} =  Moolya@123
@@ -183,6 +186,7 @@ ${e_esignAgreementPopupHeading} =  ESIGN Agreement: VESTED FINANCE INC.
 ${e_advisoryAgreement} =  Advisory Agreement
 ${e_advisoryAgreementPdf} =  vested-advisory
 ${e_privacyPolicy} =  I agree to Drivewealth’s Privacy Policy
+${e_privacyPolicyLink} =  Privacy Policy
 ${e_signatureAcknowledge} =  By signing below, I acknowledge that I have read and agree to the account agreement and disclosures.
 ${e_fullNameForSignature} =  Abc Xyz
 
@@ -318,3 +322,4 @@ ${vf_A_payToggleBtn} =  xpath=//*[@class='android.widget.Switch']
 # Signature screen Locators
 ${vf_A_terms&ConditionsTxt} =  xpath=//*[@text='Terms & Conditions']
 ${vf_A_privacyCheckbox} =  xpath=//*[@text='']
+${vf_A_CloseIconUnderAdvsAggrmnt} =  xpath=(//*[@class='android.widget.ImageButton'])[1]
