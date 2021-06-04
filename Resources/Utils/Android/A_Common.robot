@@ -4,19 +4,17 @@ Library     JSONLibrary
 Library     JsonValidator
 Library     AppiumLibrary
 Library     String
+Library     DateTime
 Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
 Resource   ../../../AppLocators/Android/A_ForgotPasswordLocators.robot
 Resource   ../../../AppLocators/Android/A_KYCLocators.robot
-Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
+Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
 Resource   ../../../AppLocators/Android/A_ReferralLocators.robot
 Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
-
-
-
 
 *** Keywords ***
 
@@ -25,23 +23,25 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a    
+    # browserstack.uploadMedia=${media}
     Landing Page Is Loaded Completely
 
 Open App On Real Device
-    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  appActivity=${app_activity}  appPackage=${app_package}  deviceName=${device}  automationName=${appium}   
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
     Landing Page Is Loaded Completely
 
 Open App On Emulator
     Open Application  ${server}  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
     Landing Page Is Loaded Completely
+
 Verify Element And Text On Android
     [Arguments]  ${element}  ${text}
     Run Keyword And Continue On Failure  Element Should Contain Text  ${element}  ${text}
 
 Wait For Element Visibility On Android 
     [Arguments]  ${element}
-    Wait Until Element Is Visible  ${element}  timeout=30
+    Wait Until Element Is Visible  ${element}  timeout=20
 
 Wait And Click Element On Android
     [Arguments]  ${element}
@@ -157,16 +157,22 @@ Verify Open With Label
     Element Should Be Visible  ${vf_A_openWithLabel}
 
 Close Android Keyboard
-    Hide Keyboard
-
-Go Back On Android
-    Go Back
+    ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
+    Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
+    #...    ELSE  Log To Console  Keyboard is hidden
 
 Open Chrome Browser App
     Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  appActivity=${chrome_activity}  appPackage=${chrome_package}  deviceName=${emulator}  automationName=${appium}   
-
     # Open Application  ${remote_URL}  app=${appURL}  build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a
 
+Get Current Date On Android
+    ${date}=  Get Current Date  time_zone=local  increment=0  result_format=timestamp  exclude_millis=True
+    Set Global Variable  ${date}
+    ${convertDate} =      Convert Date      ${date}      result_format=%d
+    [Return]  ${convertDate} 
+
+Go Back On Android
+    Go Back
 
 Rest Android Application
     Reset Application

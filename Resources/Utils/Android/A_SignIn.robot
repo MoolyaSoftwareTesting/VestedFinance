@@ -5,7 +5,7 @@ Library     AppiumLibrary
 *** Keywords ***
 
 User Navigates To Signin Screen
-    Click on Start Investing button
+    Click On Continue Button Under Landing Screen
     Click On Element If Visibile  ${vf_A_signInAsDiffUser}
 
 Verify Signin Screen
@@ -26,6 +26,7 @@ User Clicks On Signin Link
 Enter Email
     [Arguments]  ${email}
     Navigate Back To Signin Screen If Element Visible  ${vf_A_googleChooseAccPage}
+    Sleep  2s
     Verify Element Visibility  ${vf_A_userName}
     Clear Text  ${vf_A_userName}
     Input Text  ${vf_A_userName}  ${email} 
@@ -33,6 +34,7 @@ Enter Email
 
 Enter Password
     [Arguments]  ${password}
+    Wait For Element Visibility On Android  ${vf_A_password}
     Verify Element Visibility  ${vf_A_password}
     Clear Text  ${vf_A_password}
     Input Text  ${vf_A_password}  ${password}
@@ -82,38 +84,31 @@ Click On Continue With Facebook Button
 Click On Next Button
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_nextButton}
-    Log to Console  Clicked on Next Button
+
+Signin Without Pin Credentials
+    [Arguments]  ${email}  ${password}
+    Sleep  2s
+    Enter Email  ${email}
+    Sleep  2s
+    Enter Password  ${password}
+    Click On Signin Button
+    Verify Dashboard Screen
+
+Signin With Pin Credentials
+    [Arguments]  ${email}  ${password}  ${pin}
+    Sleep  3s
+    Enter Email  ${email}
+    Sleep  2s
+    Enter Password  ${password}
+    Click On Signin Button
+    Sleep  4s
+    Enter Pin  ${pin}
+    Click On Continue Button
+    Verify Dashboard Screen
 
 Signin With Valid Credentials - Funded Account
-    Enter Email  ${e_validEmail}
-    Enter Password  ${e_validPassword}
-    Click On Signin Button
-    Sleep  3s
-    Enter Pin  ${e_validPin}
-    Click On Continue Button
-    Verify Dashboard Screen
-
-# Updated here
-Signin With Basic Account
-    Enter Email  ${e_validBasicEmail}
-    Enter Password  ${e_validBasicPassword}
-    Click On Signin Button
-    Sleep  3s
-    Enter Pin  ${e_validPin}
-    Click On Continue Button
-    Verify Dashboard Screen
-
-Signin With New KYC Account
-    Enter Email  ${e_validnewEmail}
-    Enter Password  ${e_validnewPassword}
-    Click On Signin Button
-    Verify Dashboard Screen
-
-Signin With Non KYC Account
-    Enter Email  ${e_nonKYCEmail}
-    Enter Password  ${e_validnewPassword}
-    Click On Signin Button
-    Verify Dashboard Screen
+    Swipe By Percent  70  70  20  20  5000
+    Signin With Pin Credentials  ${e_validEmail}  ${e_validPassword}  ${e_validPin}
 
 Signin With Invalid Credentials
     Enter Email  ${e_invalidUserName} 
@@ -123,8 +118,10 @@ Signin With Invalid Credentials
     Verify Error Message Displayed  ${e_invalidLoginErrorTxt}
 
 Verify Dashboard Screen
+    Sleep  2s
     Wait For Element Visibility On Android  ${vf_A_home}
     Verify Page Contains Element On Android  ${vf_A_home}
+    Click On Element If Visibile  ${vf_A_awesomeLink}
     Log To Console  User is directed to Dashboard screen
 
 Please fill out this field message is displayed
@@ -135,7 +132,7 @@ Please fill out this field message is displayed
     Log To Console  Verified error msg text
 
 User Navigates To Easy Signin Screen
-    Click on Start Investing button
+    Click On Continue Button Under Landing Screen
     Sleep  5s
     Verify Element Visibility  ${vf_A_easySignInBtn}
     Log to Console  User is in Easy Sign-in Page!
@@ -159,8 +156,12 @@ Signin With Valid Credentials - Google
     Click On Element If Visibile  ${vf_A_useAnotherAccBtn}
     Enter Email  ${e_validGoogleEmail}
     Click On Next Button
-    Enter Google Password  ${e_validGooglePassword}
     Close Android Keyboard
+    Sleep  3s
+    Enter Google Password  ${e_validGooglePassword}
+    # Close Android Keyboard
+    Go Back On Android
+    Sleep  3s
     Click On Next Button
     Log To Console  Signedin with Valid Google Credentials!
 
@@ -168,13 +169,19 @@ Signin With Invalid Credentials - Google
     Click On Element If Visibile  ${vf_A_useAnotherAccBtn}
     Sleep  5s
     Enter Email  ${e_validGoogleEmail}
+    Close Android Keyboard
+    Sleep  2s
     Click On Next Button
     Enter Google Password  ${e_invalidPwd}
     Close Android Keyboard
     Log To Console  Entered invalid password
+    Sleep  3s
+    # Close Android Keyboard
+    Go Back On Android
+    Sleep  3s
     Click On Next Button
+    Wait For Page Conatin Element  ${e_invalidGoogleLoginErrorTxt}  5s
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
-    Log To Console  Error message verified!
 
 Signin With Invalid Credentials - Apple
     Sleep  5s
@@ -189,38 +196,47 @@ Signin With Invalid Credentials - Apple
     Clear Text  ${vf_A_applePwd}
     Input Text  ${vf_A_applePwd}  ${e_applePwd}
     Log to Console  Password Entered!
+    Sleep  2s
+    # Close Android Keyboard
+    Go Back On Android
     Sleep  3s
     Wait And Click Element On Android  ${vf_A_appleEnterBtn}
     Close Android Keyboard
     Log to Console  Logging in with Apple
-    Swipe By Percent  70  70  20  20  5000
-    Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
+    Swipe By Percent  70  50  50  20  5000
+    Verify Error Message Displayed  ${e_invalidAppleLoginErrorTxt}
+    Log to Console  Error message verified!
 
 Signin With Valid Credentials - Facebook
     Log to Console  Sigin in with Facebook
     Sleep  5s
+    Click On Element If Visibile  ${vf_A_acceptAllBtn}
     Wait For Element Visibility On Android  ${vf_A_FbEmail}
     Input Text  ${vf_A_FbEmail}  ${e_FbEmailId}
     Log to Console  Username Entered!
     Wait And Click Element On Android  ${vf_A_FbPwd}
     Input Text  ${vf_A_FbPwd}  ${e_FbPwd}
     Log to Console  Password Entered
+    Sleep  8s
     Close Android Keyboard
     Click Element  ${vf_A_FbSigninBtn}
+    Sleep  2s
+    Click On Element If Visibile  ${vf_A_accountBtn}
     Log to Console  Signed In!
 
 Signin With Invalid Credentials - Facebook
     Sleep  5s
     Wait For Element Visibility On Android  ${vf_A_FbEmail}
     Input Text  ${vf_A_FbEmail}  ${e_invalidUserName}
-    Log to Console  Invalid Username Entered
     Wait And Click Element On Android  ${vf_A_FbPwd}
     Input Text  ${vf_A_FbPwd}  ${e_invalidPwd}
-    Log to Console  Invalid Password Entered
+    Log to Console  Invalid Username & Password Entered
     Close Android Keyboard
-    Click Element  ${vf_A_FbSigninBtn}
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_FbSigninBtn}
+    Log to Console  Clicked on Log In button
     Close Android Keyboard
-    Log to Console  Clicked on Signin button
+    Wait For Page Conatin Element  ${e_invalidFacebookLoginErrorTxt}  20s
     Verify Error Message Displayed  ${e_invalidFacebookLoginErrorTxt}
     Swipe By Percent  70  70  20  20  5000
     Log to Console  Error message verified!

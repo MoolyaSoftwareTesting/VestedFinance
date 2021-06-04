@@ -6,7 +6,8 @@ Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 
 *** Keywords ***
 Landing Page Is Loaded Completely
-    Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
+    Wait For Element Visibility On Android  ${vf_A_continueBtn}
+    Log to Console  Landing page is displayed
 
 App logo & text is displayed at the top
     Verify Element Visibility  ${vf_A_vestedIcon}
@@ -18,23 +19,23 @@ Verify 3 points on Security, Compliance and Recommendations with icons are displ
     Verify Page Conatin Text  ${e_securityTxt}
     Verify Page Conatin Text  ${e_complianceTxt}
     Verify Page Conatin Text  ${e_recommendationsTxt}
-    Log to Console  Verified Text part
+    Log to Console  Verified content!
     Verify Element Visibility  ${vf_A_securityIcon}
     Verify Element Visibility  ${vf_A_complianceIcon}
     Verify Element Visibility  ${vf_A_recommendationsIcon} 
-    Log to Console  Verified all Icons
+    Log to Console  Verified all Icons!
     
 Verify Heading for each point is displayed
     Verify Page Conatin Text  ${e_securityHeading}
     Verify Page Conatin Text  ${e_complianceHeading}
     Verify Page Conatin Text  ${e_recommendationsTxt}
-    Log to Console  Verified all Headings
+    Log to Console  Verified all Headings!
     Log Source
     
-Click On Start Investing Button
+Click On Continue Button Under Landing Screen
     Sleep  5s
     Swipe By Percent  80  70  20  20  5000
-    Click On Element If Visibile  ${vf_A_startInvestingBtn}
+    Click On Element If Visibile  ${vf_A_continueBtn}
     ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${vf_A_chromeOption}
     IF   ${isElementVisible}  
         Choose Chrome Browser
@@ -47,7 +48,7 @@ Verify Landing Page On Mobile
     Log To Console  Landing Page 
     Wait For Element Visibility On Android  ${vf_A_screenHeader}
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
-    Wait And Click Element On Android  ${vf_A_startInvestingBtn}
+    Wait And Click Element On Android  ${vf_A_continueBtn}
     
 Verify Buy Sell Stock On Mobile
     # Buy

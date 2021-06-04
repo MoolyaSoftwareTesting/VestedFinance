@@ -1,5 +1,14 @@
 *** Variables ***
 
+# Non KYC Completed User
+${e_emailForKYCNotCmpltd} =  thiruvengadam.s+1@moolya.com
+${e_passwordForKYCNotCmpltd} =  Thiru!99
+
+# New Account
+${e_newEmailKYC} =  thiruvengadam.s+53@moolya.com
+${e_validnewPassword} =  Thiru!99
+${e_nonKYCEmail} =  thiruvengadam.s+6@moolya.com
+
 # Variables
 
 # Referral Main Screen
@@ -69,4 +78,4 @@ ${vf_A_copyLinkIcon} =  xpath=//*[@text='content_copy']
 ${vf_A_shareTitle} =  xpath=//*[@text='Share with']
 
 # FAQs Link
-${vf_A_closeBtn} =  xpath=//*[@text='close']
+${vf_A_faqCloseBtn} =  xpath=//*[@text='close']

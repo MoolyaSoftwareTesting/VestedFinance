@@ -1,27 +1,13 @@
 *** Variables ***
 
 #  Test data or expected values
-
-# updated here
-# Basic User
-${e_validBasicEmail} =  defney+Tes2@vestedfinance.co
-${e_validBasicPassword} =  Test@123
-
-# defney+Tes2@vestedfinance.co | Test@123
-# thiruvengadam.s+2@moolya.com | Thiru!99
-
-# New Account
-${e_validnewEmail} =  thiruvengadam.s+53@moolya.com
-${e_validnewPassword} =  Thiru!99
-${e_nonKYCEmail} =  thiruvengadam.s+6@moolya.com
-
 # Funded User Credentials
-${e_validEmail} =  defney+Tes3@vestedfinance.co
-${e_validPassword} =  Test@123
+${e_validEmail} =  indrajit+9377@vestedfinance.co
+${e_validPassword} =  iTestUser1!
 ${e_validPin} =  111111
 ${e_invalidUserName} =  abcdxyz@gmail.com
 ${e_invalidPwd} =  Abcd@123
-${e_incorrectPassword} =  $$$$$
+${e_incorrectPassword} =  aqwec
 
 # Google Credentials
 ${e_validGoogleEmail} =  vftest885@gmail.com
@@ -33,12 +19,13 @@ ${e_appleUserId} =  abcd@dot.com
 ${e_applePwd} =  Moolya@123
 
 # Facebook Credentials
-${e_FbEmailId} =  username@example.com
-${e_FbPwd} =  passwordsimply
+${e_FbEmailId} =  facebookVFtest@gmail.com
+${e_FbPwd} =  Moolya@123
 
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
 ${e_invalidGoogleLoginErrorTxt} =  Wrong password. Try again or click Forgot password to reset it
-${e_invalidFacebookLoginErrorTxt} =   Your Apple ID or password was incorrect
+${e_invalidFacebookLoginErrorTxt} =  Incorrect password. Did you forget your password? 
+${e_invalidAppleLoginErrorTxt} =  Your Apple ID or password was incorrect.
 ${e_emptyFieldErrorTxt} =  Please fill out this field
 ${e_dashboardTitle} =  Dashboard | Vested Finance
 ${e_signInAsDiffUser} =  Sign in as a different user?
@@ -80,6 +67,8 @@ ${vf_A_continueWithFbBtn} =  xpath=//*[@text='Continue with Facebook']
 ${vf_A_FbEmail} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_FbPwd} =  xpath=(//*[@class='android.widget.EditText'])[2]
 ${vf_A_FbSigninBtn} =  xpath=//*[@text='Log In']
+${vf_A_acceptAllBtn} =  xpath=//*[@text='Accept All']
+${vf_A_accountBtn} =  xpath=//*[@text='Moolya']
 
 #Dashboard
 ${vf_A_stockOne} =  xpath=//*[@text='Tesla, Inc.']
@@ -90,7 +79,7 @@ ${vf_A_previewOrderBtn} =  xpath=//*[@text='Preview Order']
 ${vf_A_placeBuyOrderBtn} =  xpath=//*[@text='Place Buy Order']
 ${vf_A_sellBtn} =  xpath=//*[@text='Sell']
 ${vf_A_placeSellOrderBtn} =  xpath=//*[@text='Place Sell Order']
-${vf_A_logout} =  xpath=//*[text='Log Out']
+${vf_A_logout} =  xpath=//*[@text='Log Out']
 ${vf_A_profile} =  xpath=//span[contains(text(),'Profile')]
 ${vf_A_noBtn} =  xpath=//*[@text='NO']
 ${vf_A_cancelBtn} =  xpath=//*[@text='CANCEL']

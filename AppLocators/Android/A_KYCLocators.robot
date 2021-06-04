@@ -1,10 +1,9 @@
 *** Variables ***
 #  Test data or expected values
+${dest_pathBS} =  /sdcard/Pictures/AadhaarFront.jpg
 # KYC Not Completed Credential
-${e_validEmailForKYC} =  thiruvengadam.s+1@moolya.com
-${e_validPasswordForKYC} =  Thiru!99
-
-# testingVF111+9@gmail.com  Moolya@123
+${e_validEmailForKYC} =  testingVF111+22@gmail.com
+${e_validPasswordForKYC} =  Moolya@123
 
 # Before Completion & Instruction Screen
 ${e_stepsHeading} =  Complete 3 simple steps to start investing in US stocks and ETFs
@@ -71,20 +70,6 @@ ${e_totalNetWorthOpt2Txt} =  10 to 30 lakh rupees
 ${e_totalNetWorthOpt3Txt} =  30 to 1 crore rupees
 ${e_totalNetWorthOpt4Txt} =  1+ crore rupees
 ${e_primarySource} =  What is your primary source of investment?
-${e_primarySourceOpt1Txt} =  Employment
-${e_primarySourceOpt2Txt} =  Gift
-${e_primarySourceOpt3Txt} =  Inheritance / Trust
-${e_primarySourceOpt4Txt} =  Investment Proceeds
-${e_primarySourceOpt5Txt} =  Savings
-${e_primarySourceOpt6Txt} =  Retirement Funds
-${e_primarySourceOpt7Txt} =  Gambling
-${e_primarySourceOpt8Txt} =  Legal Settlement
-${e_primarySourceOpt9Txt} =  Spouse / Parent
-${e_primarySourceOpt10Txt} =  Unemployment / Disability
-${e_primarySourceOpt11Txt} =  Rollover
-${e_primarySourceOpt12Txt} =  Rental Income
-${e_primarySourceOpt13Txt} =  Sale of Business
-${e_primarySourceOpt14Txt} =  Insurance Proceeds
 ${e_depositsAndWithdrawals} =  In the next 12 months, how many deposits and withdrawals do you plan to make with your Vested account?
 ${e_depositsAndWithdrawalsOpt1Txt} =  0 to 5
 ${e_depositsAndWithdrawalsOpt2Txt} =  6 to 10
@@ -129,6 +114,9 @@ ${e_docReqPOIPopupP1} =  Full Name (must be an exact match to the name on your b
 ${e_docReqPOIPopupP2} =  Full Birthdate (dd/mm/yyyy)
 ${e_docReqPOIPopupP3} =  Full Address
 ${e_aadhaarDocReqPOIPopupP3} =  Aadhaar Number
+${e_clearPictureP1} =  Clear Picture
+${e_passportPOIPopupP3} =  Passport Number
+${e_passportPOIPopupP4} =  Not Expired
 ${e_aadhaarFrontUploadSuccessMsg} =  Front side of Aadhaar uploaded successfully.
 ${e_aadhaarBackUploadPopupHeading} =  Document Upload: Please upload the back side of your Aadhaar
 ${e_aadhaarBackUploadPopupP1} =  Full Address
@@ -144,6 +132,12 @@ ${e_driversLicensePOIPopupHeading} =  Document Upload: Please upload the front s
 ${e_driversLicenseBackUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
 ${e_driversLicenseFrontUploadSuccessMsg} =  Front side of Driving license uploaded successfully.
 ${e_driversLicensePOIUploadedSuccessMsg} =  Proof of ID: Drivers's License Uploaded Successfully
+${e_panCardPOIDesc} =  I’ve verified that the name on my PAN card is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_panCardPOIPopupHeading} =  Document Upload: Please upload your PAN
+${e_panCardPOIUploadedSuccessMsg} =  Proof of ID: Pan Card Uploaded Successfully
+${e_passportPOIDesc} =  I’ve verified that the name on my Passport is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
+${e_passportPOIPopupHeading} =  Document Upload: Please upload the front page of your passport
+${e_passportPOIUploadedSuccessMsg} =  Proof of ID: Passport Uploaded Successfully
 ${e_docUploadPOAHeading} =  Document Upload: Proof of Address
 ${e_docUploadPOADesc1} =  Select a document to upload as proof of address.
 ${e_docUploadVerifyPOAHeading} =  Document Upload: Verify Proof of Address
@@ -156,18 +150,22 @@ ${e_bankStmtUploadPopupP2} =  Passbook is not accepted.
 ${e_bankStmtUploadPopupP3} =  Your name, address, and recent transactions are visible.
 ${e_driversLicenseBsPOADesc} =  I’ve verified that the name on my Driver's license (back side) is an exact match to the name on the bank account I intend to fund my Vested account with (including spaces, spelling, order of words, and abbreviations).
 ${e_driversLicenseBsUploadPopupHeading} =  Document Upload: Please upload the back side of your driver's license
-${e_clearPictureP1} =  Clear Picture
 
 # Plan Payment
+${e_payText} =  Choose a plan that suits you best
 ${e_walletPayment} =  Wallet Mobikwik & More
 ${e_cardNum} =  5104 0600 0000 0008
 ${e_cvv} =  123
 ${e_expiry} =  0223
 ${e_hldrName} =  Abcxyz
 ${e_399Txt} =  ₹ 399
+${e_750Txt} =  ₹ 750
+${e_2500Txt} =  ₹ 2,500
 ${e_feeTxt} =  Account Opening Fee
+${e_authSubsTxt} =  Authenticate Subscription
 ${e_newAccMailId} =  thiruvengadam.s+1@moolya.com
 ${e_newAccPwd} =  Thiru!99
+${e_selectBtnTxt} =  Select
 
 # Signature screen
 ${e_signatureScreenHeading} =  Let’s open your account
@@ -191,10 +189,11 @@ ${e_step2ApproveTxtAfterKYC} =  It takes 1-3 business days to review. We may rea
 
 # LOCATORS
 # Before Completion & Instruction Screen Locators
+${vf_A_awesomeLink} =  xpath=//*[@text='AWESOME!']
 ${vf_A_viewAllStepsLink} =  xpath=//*[@text='View all steps']
 ${vf_A_doneButton} =  xpath=//*[@text='DONE']
 ${vf_A_startKYCBtn} =  xpath=//*[@text='Start KYC']
-${vf_A_backArrow} =  xpath=//*[@text='chevron_left']
+${vf_A_backArrow} =  xpath=//*[@text='']
 ${vf_A_startKYCProcessBtn} =  xpath=//*[@text='Start KYC process']
 ${vf_A_CmpltKYCBtn} =  xpath=//*[@text='Complete KYC']
 ${vf_A_acceptAndContinueBtn} =  xpath=//*[@text='ACCEPT AND CONTINUE']
@@ -227,6 +226,7 @@ ${vf_A_primarySourceOpt11Txt} =  xpath=//*[@text='Rollover']
 ${vf_A_primarySourceOpt12Txt} =  xpath=//*[@text='Rental Income']
 ${vf_A_primarySourceOpt13Txt} =  xpath=//*[@text='Sale of Business']
 ${vf_A_primarySourceOpt14Txt} =  xpath=//*[@text='Insurance Proceeds']
+
 # Identity Screen Locators
 ${vf_A_cntryIndia} =  xpath=//*[@text='India']
 ${vf_A_verChkBx} =  xpath=//*[@text='']
@@ -251,14 +251,16 @@ ${vf_A_chooseFromLib} =  xpath=//*[@text='Choose from Library...']
 ${vf_A_aadhaarFrontImg} =  xpath=//*[@text='AadhaarFront.jpg']
 ${vf_A_aadhaarBackImg} =  xpath=//*[@text='AadhaarBack.jpg']
 ${vf_A_aadhaarFullImg} =  xpath=//*[@text='AadhaarFull.jpg']
-${vf_A_bankStmtImg} =  xpath=//*[@text='BankStmt.jpg']
+${vf_A_bankStmtImg} =  xpath=//*[@text='BankStmt.jpeg']
 ${vf_A_driversLicenseFrontImg} =  xpath=//*[@text='DLfront.jpeg']
 ${vf_A_driversLicenseBackImg} =  xpath=//*[@text='DLback.jpeg']
+${vf_A_panCardImg} =  xpath=//*[@text='PanCard.jpg']
+${vf_A_passportImg} =  xpath=//*[@text='Passport.jpg']
 ${vf_A_docUploadSuccessMsg} =  xpath=//*[@text='Document Uploaded']
 ${vf_A_panTextbox} =  xpath=//*[@class='android.widget.EditText']
 ${vf_A_backAadhaarPOAOption} =  xpath=//*[@text='Aadhaar (back side)']
 ${vf_A_backAadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar (back side)']]
-${vf_A_AadhaarPOAOption} =  xpath=//*[@text='Aadhaar'
+${vf_A_AadhaarPOAOption} =  xpath=//*[@text='Aadhaar']
 ${vf_A_AadhaarPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_bankStmtPOAOption} =  xpath=//*[@text='Bank statement']
 ${vf_A_bankStmtPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Bank statement']]
@@ -267,9 +269,17 @@ ${vf_A_driverLicenseFsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageVie
 ${vf_A_driverLicenseBsPOAOption} =  xpath=//*[@text=concat('Driver', "'", 's license (back side)')]
 ${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text=concat('Driver', "'", 's license (back side)')]]
 
+#Checking Upload on BS
+${vf_A_hamburgerMenu} =  xpath=//*[@class='android.widget.ImageButton']
+${e_imagesGallery} =  Images
+${e_picturesFolder} =  Pictures
+
+
+
 # Plan Payment screen Locators
-${vf_A_payText} =  Choose a plan that suits you best
-${vf_A_slctBtn} =  xpath=//*[@text='Select']
+${vf_A_basicSelectBtn} =  xpath=//*[@text='Select']
+${vf_A_premSelectBtn} =  xpath=//*[@text='Select' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='₹0']]]
+${vf_A_premSubscribedBtn} =  xpath=//*[@text='Subscribed']
 ${vf_A_chsPlanBtn} =  xpath=//*[@text='Choose Plan']
 ${vf_A_accOpeningTxt} =  xpath=//*[@text='Account Opening Fee']
 ${vf_A_phnTxtFld} =  xpath=//*[@text='Phone']
@@ -282,7 +292,7 @@ ${vf_A_upiPaymentOpt} =  xpath=//*[@text='UPI Instant payment using UPI App']
 ${vf_A_netBankingPaymentOpt} =  xpath=//*[@text='Netbanking All Indian banks']
 ${vf_A_walletPaymentOpt} =  xpath=//*[@text='Wallet Mobikwik & More']
 ${vf_A_skipSavedCardLink} =  xpath=//*[@text='Skip Saved Cards']
-${vf_A_skipSavingCardLink} =  xpath=//*[@//*[@text='Skip saving card']
+${vf_A_skipSavingCardLink} =  xpath=//*[@text='Skip saving card']
 ${vf_A_cardNumTxt} =  xpath=//*[@text='Card Number']
 ${vf_A_cardNumTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[1]
 ${vf_A_nameTxt} =  xpath=//*[@text=concat('Card Holder', "'", 's name')]
@@ -294,9 +304,8 @@ ${vf_A_cvvTxtFld} =  xpath=(//*[@class='android.widget.EditText'])[4]
 ${vf_A_rememberCardCheckbox} =  xpath=//*[@text='Remember Card']
 ${vf_A_pay399Btn} =  xpath=//*[@text='PAY ₹ 399']
 ${vf_A_successBtn} =  xpath=//*[@text='Success']
+${vf_A_payToggleBtn} =  xpath=//*[@class='android.widget.Switch']
 
 # Signature screen Locators
 ${vf_A_terms&ConditionsTxt} =  xpath=//*[@text='Terms & Conditions']
 ${vf_A_privacyCheckbox} =  xpath=//*[@text='']
-
-# Dashboard Card- KYC Completion Locators 
