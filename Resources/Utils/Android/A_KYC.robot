@@ -476,7 +476,7 @@ Verify Description, Upload Options And Images Under POI Popup
     Log To Console  Verified Description, Upload Options and Images under POI Popup!
 
 Click On Close Icon
-    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Wait And Click Element On Android  ${vf_A_closeIcon}
     Log To Console  Clicked on Close icon
     ${isPopupVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_docUploadPOIHeading}
     IF   ${isPopupVisible}  
@@ -1173,7 +1173,7 @@ Verify Tax Form Information Section And Link
     Verify Page Conatin Text  ${e_taxFormInfoDesc}
     Click Text  ${e_taxFormInfoHeading}
     Verify Page Conatin Text  ${e_taxFormInfoPopupHeading}
-    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Wait And Click Element On Android  ${vf_A_closeIcon}
     Log to Console  Verified Tax Form Information Section And Link!
 
 Verify DriveWealths Agreements Section And Link
@@ -1189,7 +1189,7 @@ Verify Esign Agreement Link
     Verify Page Conatin Text  ${e_esignAgreement}
     Click Text  ${e_esignAgreement}
     Verify Page Conatin Text  ${e_esignAgreementPopupHeading}
-    Wait And Click Element On Android  ${vf_A_CloseIcon}
+    Wait And Click Element On Android  ${vf_A_closeIcon}
     Log to Console  Verified Esign Agreement Link!
 
 Verify Advisory Agreement Link
@@ -1200,7 +1200,7 @@ Verify Advisory Agreement Link
     # Verify Page Conatin Text  ${e_advisoryAgreementPdf}
     # Go Back On Android
     Sleep  5s
-    Wait And Click Element On Android  ${vf_A_CloseIconUnderAdvsAggrmnt}
+    Wait And Click Element On Android  ${vf_A_closeIconUnderAdvsAggrmnt}
     Log to Console  Verified Advisory Agreement Link!
 
 Verify DriveWealths Privacy Policy Section And Link
@@ -1208,7 +1208,7 @@ Verify DriveWealths Privacy Policy Section And Link
     Verify Page Conatin Text  ${e_privacyPolicy}
     Click Text  ${e_privacyPolicyLink}
     Sleep  2s
-    Wait And Click Element On Android  ${vf_A_CloseIconUnderAdvsAggrmnt}
+    Wait And Click Element On Android  ${vf_A_closeIconUnderAdvsAggrmnt}
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_privacyCheckbox}
     Log to Console  Clicked on DriveWealths Privacy Policy Checkbox!

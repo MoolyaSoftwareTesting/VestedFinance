@@ -26,6 +26,7 @@ ${e_kycApprovalNeededPopupTxt1} =  You must be KYC approved to initiate a fund t
 ${e_kycApprovalNeededPopupTxt2} =  Investing in US stocks means investing in US dollars. Your bank may charge international wire fees to transfer funds to your Vested account.
 ${e_howMuchDepositTxt} =  HOW MUCH DO YOU WANT TO DEPOSIT?
 ${e_amtToTransferTxt} =  Amount to transfer
+${e_amtToTransfer} =  5
 ${e_$Txt} =  $
 ${e_transferFromTxt} =  Transfer from
 ${e_switchBankLink} =  SWITCH BANK
@@ -41,14 +42,14 @@ ${e_indusIndBankOpt} =  IndusInd Bank
 ${e_kotakBankOpt} =  Kotak Bank
 ${e_nonIndianBankOpt} =  Non-Indian Bank
 ${e_amtDeposited} =  $5.00
-${e_2stepToGo} =  2 step to go
+${e_2stepToGo} =  2 steps to go
 ${e_fundOnlineUsingICICI} =  FUND ONLINE USING ICICI MONEY2WORLD
 ${e_fundOnlineUsingAxis} =  FUND ONLINE USING AXIS NETBANKING
 ${e_fundOnlineUsingHDFC} =  FUND ONLINE USING HDFC NETBANKING
 ${e_fundOnlineUsingIDFC} =  FUND ONLINE USING IDFC NETBANKING
 ${e_fundOnlineUsingIndusInd} =  FUND ONLINE USING INDUSIND NETBANKING
 ${e_fundOnlineUsingKotak} =  FUND ONLINE USING KOTAK NETBANKING
-${e_fundOnlineUsingNonIndian} =  FUND ONLINE USING NON-INDIAN NETBANKING
+${e_fundOnlineUsingNonIndian} =  FUND USING NON-INDIAN BANK
 ${e_selectDiffFundTransfer} =  SELECT A DIFFERENT FUNDS TRANSFER METHOD
 ${e_important} =  Important
 ${e_importantP1} =  Funds from 3rd parties are not accepted.
@@ -61,7 +62,6 @@ ${e_nonIndianBankP2} =  2. Fill in the forms with DriveWealth as the beneficiary
 ${e_nonIndianBankA2} =  Your funds are transferred to our broker-partner DriveWealth before they can be deposited into your Vested account.
 ${e_nonIndianBankAccInfo} =  ACCOUNT INFORMATION
 ${e_nonIndianBankCredit} =  Further Credit To (IMPORTANT!)
-${e_nonIndianBankDriveNum} =  VTFS000001
 ${e_nonIndianBankAccInfoTxt} =  This is your unique DriveWealth Account Number. Add this to the Futher Credit To, Memo, or Additional Notes section.
 ${e_copiedToastMsg} =  Copied
 ${e_nonIndianBankBenInfo} =  BENEFICIARY INFORMATION
@@ -86,8 +86,6 @@ ${e_nonIndianBankInfoSwiftCodeTxt} =  SVBKUS6S
 ${e_nonIndianBankInfoAddrsTxt} =  3003, Tasman Drive, Santa Clara, California, USA, 95054
 ${e_nonIndianBankP3} =  3. Get a wire receipt from your bank
 ${e_nonIndianBankA3} =  Your wire receipt helps us keep track of your deposit.
-
-
 ${e_dwnldInstrctnsBtn} =  DOWNLOAD INSTRUCTIONS
 ${e_uploadWireReceipt} =  UPLOAD THE WIRE RECEIPT YOU RECEIVED FOR THE TRANSFER
 ${e_1stepToGo} =  1 step to go
@@ -97,10 +95,14 @@ ${e_yourFullName} =  Your full name
 ${e_yourDriveWealthTxt} =  Your DriveWealth ID (if you have entered it)
 ${e_bankName} =  Bank Name
 ${e_iciciUnderBankName} =  ICICI BANK
+${e_axisUnderBankName} =  AXIS BANK
+${e_hdfcUnderBankName} =  HDFC BANK
+${e_idfcUnderBankName} =  IDFC FIRST BANK
+${e_indusIndUnderBankName} =  INDUSIND BANK
+${e_kotakUnderBankName} =  KOTAK MAHINDRA BANK
 ${e_amtInUSDTxt} =  Amount Transferred in USD
 ${e_dateOnWireReceiptTxt} =  Date on the wire receipt
 ${e_selectDateTxt} =  Select date
-${e_calenderOkBtn} =  OK
 ${e_pwdForPdfTxt} =  Password for Swift Copy in case of PDF file
 ${e_enterPwdTxt} =  Enter Password
 ${e_leaveBlankTxt} =  Leave Blank if PDF is not password protected
@@ -122,6 +124,9 @@ ${e_spclCharAmtToWithdraw} =  ..
 ${e_spclCharAmtToWithdrawErrMsg} =  Enter valid amount
 ${e_15amtToWithdraw} =  15
 ${e_withdrwlDetails} =  Withdrawal Details
+${e_success} =  Success
+${e_dwnldedSuccessflly} =  Downloaded Successfully
+${e_okBtn} =  OK
 
 # Withdrawal Funds
 ${e_kycApprovalNeededPopupTxt3} =  Investing in US stocks means investing in US dollars. Vested charges an $11 withdrawal fee every time you initiate an withdrawal except for premium subscribers who get one free withdrawal annually.
@@ -159,8 +164,6 @@ ${e_accountNumInput} =  5555522222
 ${e_swiftCodeInput} =  123456
 ${e_bankNameInput} =  ICICI
 ${e_bankAddressInput} =  Bangalore
-${e_bankCountryInput} =  India
-${e_bankStateInput} =  Karnataka
 ${e_bankCityInput} =  Bangalore
 ${e_bankZipCodeInput} =  560100
 ${e_withdrwlConfirmtn} =  Withdrawal Confirmation
@@ -182,7 +185,9 @@ ${vf_A_fundOnlineTxtUnderKotak} =  xpath=//*[@text='Fund online' and (./precedin
 ${vf_A_previousBtn} =  xpath=//*[@text='PREVIOUS']
 ${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
 ${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
-${vf_A_removeBtn} =  xpath=(//*[@text='REMOVE'])[1]
+${vf_A_removeBtn} =  xpath=//*[@text='REMOVE']
+${vf_A_calenderOkBtn} =  xpath=//*[@text='OK']
+${vf_A_allowBtn} =  xpath=//*[@text='Allow']
 ${vf_A_nextBtnUndrFundOnline} =  xpath=//*[@text='NEXT' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]
 ${vf_A_accInfoCopyIcon1} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='FUND USING NON-INDIAN BANK']]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[1]
 ${vf_A_accInfoCopyIcon2} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='FUND USING NON-INDIAN BANK']]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[2]
@@ -194,23 +199,29 @@ ${vf_A_accInfoCopyIcon7} =  xpath=(//*[@class='android.view.ViewGroup' and ./par
 ${vf_A_accInfoCopyIcon8} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[6]
 ${vf_A_accInfoCopyIcon9} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[5]
 ${vf_A_accInfoCopyIcon10} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*[@class='android.view.ViewGroup'])[6]
+${vf_A_bankNameTxtBoxUndrUploadWireRec} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[8]
 
 # Withdrawal Funds 
 
 ${vf_A_withdrawalFundsBtn} =  xpath=//*[@text='WITHDRAW FUNDS']
 ${vf_A_backArrowInWithdrwl} =  xpath=//*[@text='']
-${vf_A_beneficiaryNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[1]
-${vf_A_accNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[2]
-${vf_A_reEtnrAccNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[3]
+${vf_A_beneficiaryNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[2]
+${vf_A_accNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[3]
+${vf_A_reEtnrAccNumTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[4]
 ${vf_A_accTypeDropdown} =  xpath=//*[@text='']
-${vf_A_swiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[4]
-${vf_A_reTypeSwiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
-${vf_A_bankNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[6]
-${vf_A_bankAddrsTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[7]
+${vf_A_swiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
+${vf_A_reTypeSwiftCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[6]
+${vf_A_bankNameTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[3]
+${vf_A_bankAddrsTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[4]
 ${vf_A_selBankCountryTxt} =  xpath=(//*[@text='Select Bank Country'])[1]
-${vf_A_selBankCountryDropdown} =  xpath=(//*[@text='Select Bank Country'])[2]
+${vf_A_selBankCountryDropdown} =  xpath=//*[@text='']
+${vf_A_bankCountryInput} =  xpath=//*[@text='India']
+${vf_A_bankStateInput} =  xpath=//*[@text='Karnataka']
 ${vf_A_selBankStateTxt} =  xpath=(//*[@text='Select Bank State'])[1]
 ${vf_A_selBankStateDropdown} =  xpath=(//*[@text='Select Bank State'])[2]
-${vf_A_bankCityTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[8]
-${vf_A_bankZipCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[9]
+${vf_A_bankCityTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
+${vf_A_bankCityTxtBoxForFilling} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[4]
+${vf_A_bankZipCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
+${vf_A_bankZipCodeTxtBoxForFilling} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
 ${vf_A_continueBtnUndrWithdrwlDet} =  xpath=//*[@text='Continue']
+${vf_A_closeIconUnderWireRecpt} =  xpath=//*[@text='close' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]

@@ -320,8 +320,8 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_riskToleranceOpt1Txt}
     Click Text  ${e_riskToleranceOpt3Txt}
     Click Text  ${e_riskToleranceOpt2Txt}
-    Verify Page Conatin Text  ${e_riskToleranceOpt2Txt}    
-    Click On Back Arrow
+    Verify Page Conatin Text  ${e_riskToleranceOpt2Txt}  
+    Click Text  ${e_saveBtnTxt}  
     Verify Page Conatin Text  ${e_investingFrequencyOpt}
     Click Text  ${e_investingFrequencyOpt}
     Wait For Page Conatin Element  ${e_investingFrequencyOpt1Txt}  5s
@@ -329,7 +329,7 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_investingFrequencyOpt2Txt}
     Click Text  ${e_investingFrequencyOpt3}
     Verify Page Conatin Text  ${e_investingFrequencyOpt3}
-    Click On Back Arrow
+    Click Text  ${e_saveBtnTxt}  
     Wait For Page Conatin Element  ${e_investingExperienceOpt}  5s
     Verify Page Conatin Text  ${e_investingExperienceOpt}
     Click Text  ${e_investingExperienceOpt}
@@ -340,7 +340,7 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_investingExprncOpt4TxtUndrProfile}
     Click Text  ${e_investingExprncOpt5TxtUndrProfile}
     Verify Page Conatin Text  ${e_investingExprncOpt3TxtUndrProfile}
-    Click On Back Arrow
+    Click Text  ${e_saveBtnTxt}  
     Wait For Page Conatin Element  ${e_yearlyIncomeOpt}  5s
     Verify Page Conatin Text  ${e_yearlyIncomeOpt}
     Click Text  ${e_yearlyIncomeOpt}
@@ -350,7 +350,7 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_yearlyIncomeOpt4Txt}
     Click Text  ${e_yearlyIncomeOpt3TxtUndrProfile}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt3TxtUndrProfile}
-    Click On Back Arrow
+    Click Text  ${e_saveBtnTxt}  
     Wait For Page Conatin Element  ${e_liquidNetWorthOpt}  5s
     Verify Page Conatin Text  ${e_liquidNetWorthOpt}
     Click Text  ${e_liquidNetWorthOpt}
@@ -360,7 +360,7 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_liquidNetWorthOpt4Txt}
     Click Text  ${e_liquidNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt3Txt}
-    Click On Back Arrow
+    Click Text  ${e_saveBtnTxt}  
     Wait For Page Conatin Element  ${e_totalNetWorthOpt}  5s
     Verify Page Conatin Text  ${e_totalNetWorthOpt}
     Click Text  ${e_totalNetWorthOpt}
@@ -371,7 +371,7 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_totalNetWorthOpt3TxtUndrProfile}
     Verify Page Conatin Text  ${e_totalNetWorthOpt3TxtUndrProfile}
     Log to Console  Verified all options under Investment Profile!
-    Click On Back Arrow
+    Click Text  ${e_saveBtnTxt}  
     Sleep  3s
     Click On Back Button From Top And Verify Profile Screen
 

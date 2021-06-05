@@ -101,7 +101,7 @@ Signin With Pin Credentials
     Sleep  2s
     Enter Password  ${password}
     Click On Signin Button
-    Sleep  4s
+    Sleep  5s
     Enter Pin  ${pin}
     Click On Continue Button
     Verify Dashboard Screen

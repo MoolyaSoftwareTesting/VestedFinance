@@ -467,7 +467,7 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
 
 # Non KYC Approved Account
 Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  FT1
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Completed Basic Account
@@ -477,7 +477,7 @@ Fund Transfer- Non KYC Approved Account
 
 # KYC Approved Account- No Funding History
 Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  FT2
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New Account- No Funding History
@@ -487,7 +487,7 @@ Fund Transfer For New Account- No Funding History
 
 # FT_97 - FT_101
 Remove Online Fund Transfer
-    [Tags]  FundTransfer  FT3
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
@@ -496,7 +496,7 @@ Remove Online Fund Transfer
 
 # FT_97 - FT_99, FT_102, SL03, SL05
 Submit Online Fund Transfer And Withdrawal Fund
-    [Tags]  FundTransfer  FT4
+    [Tags]  FundTransfer  Test1
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
@@ -509,22 +509,28 @@ Submit Online Fund Transfer And Withdrawal Fund
 
 # Fund Withdrawal: SL04
 Verify Withdrawal Process For First Withdrawal
-    [Tags]  FundTransfer  FT5
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account For 1st Withdrawal
+    Click On Tansfer From Dashboard
     Verify First Withdrawal
 
 Submit Online Fund Transfer
-    [Tags]  FundTransfer  FT6
+    [Tags]  FundTransfer  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
     Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- Axis Bank Online
+    Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- HDFC Bank Online
+    Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- IDFC Bank Online
+    Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- Induslnd Bank Online
+    Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- Kotak Bank Online
+    Click On Tansfer From Dashboard
     Fill And Submit A Fund Transfer- Non Indian Bank
 

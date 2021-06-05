@@ -241,7 +241,7 @@ ${vf_A_upldDoc} =  xpath=//*[@text='UPLOAD DOCUMENT']
 
 # Document Upload Locators
 ${vf_A_uploadDocBtn} =  xpath=//*[@text='UPLOAD DOCUMENT']
-${vf_A_CloseIcon} =  xpath=//*[@text='close']
+${vf_A_closeIcon} =  xpath=//*[@text='close']
 ${vf_A_aadhaarPOIOption} =  xpath=//*[@text='Aadhaar']
 ${vf_A_aadhaarPOIOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_driversLicensePOIOption} =  xpath=//*[@text=concat('Driver', "'", 's license')]
@@ -284,6 +284,8 @@ ${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageVie
 
 #Checking Upload on BS
 ${vf_A_hamburgerMenu} =  xpath=//*[@class='android.widget.ImageButton']
+${vf_A_photosSubMenu} =  xpath=//*[@text='Photos']
+${vf_A_sampleImgOnBS} =  xpath=//*[@class=‘android.view.ViewGroup’][@index=1][contains(@content-desc,‘Photo taken on ’)]
 ${e_imagesGallery} =  Images
 ${e_picturesFolder} =  Pictures
 

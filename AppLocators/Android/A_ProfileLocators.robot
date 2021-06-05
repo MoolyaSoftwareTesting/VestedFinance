@@ -68,6 +68,7 @@ ${e_billingDetails} =  Billing Details
 ${e_billingOptions} =  Billing Options
 ${e_billingYrlyTxt} =  You are currently paying ₹2,500 for the yearly plan.
 ${e_billingQtrlyTxt} =  You are currently paying ₹750 for the quarterly plan.
+${e_saveBtnTxt} =  Save
 ${e_riskToleranceOpt} =  Risk Tolerance
 ${e_investingFrequencyOpt} =  Investing Frequency
 ${e_investingFrequencyOpt3} =  Once every six months
