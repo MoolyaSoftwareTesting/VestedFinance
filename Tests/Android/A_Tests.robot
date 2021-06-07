@@ -450,7 +450,7 @@ Referral Screen For Non Approved KYC User
     KYC Not Approved User Navigates To Referral Page
 
 Referral Screen For KYC Approved User And Links Funtionality
-    [Tags]  Referrals      Test1
+    [Tags]  Referrals      
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -465,72 +465,72 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
     Subscribed User Navigated To Referral Page
     Invite Link Functionality
 
-# Non KYC Approved Account
-Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Completed Basic Account
-    Click On Tansfer From Dashboard
-    Verify Add Funds For Non KYC Approved Account
-    Verify Withdrawal Funds For Non KYC Approved Account
+# # Non KYC Approved Account
+# Fund Transfer- Non KYC Approved Account
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Completed Basic Account
+#     Click On Tansfer From Dashboard
+#     Verify Add Funds For Non KYC Approved Account
+#     Verify Withdrawal Funds For Non KYC Approved Account
 
-# KYC Approved Account- No Funding History
-Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With New Account- No Funding History
-    Click On Tansfer From Dashboard
-    Verify Fund Transfer Screen For New Account With No Funding History
-    Click On Withdraw Funds And Verify Withdrawal Amount Screen
+# # KYC Approved Account- No Funding History
+# Fund Transfer For New Account- No Funding History
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With New Account- No Funding History
+#     Click On Tansfer From Dashboard
+#     Verify Fund Transfer Screen For New Account With No Funding History
+#     Click On Withdraw Funds And Verify Withdrawal Amount Screen
 
-# FT_97 - FT_101
-Remove Online Fund Transfer
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Click On Tansfer From Dashboard
-    Fill And Remove A Fund Transfer
+# # FT_97 - FT_101
+# Remove Online Fund Transfer
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Click On Tansfer From Dashboard
+#     Fill And Remove A Fund Transfer
 
-# FT_97 - FT_99, FT_102, SL03, SL05
-Submit Online Fund Transfer And Withdrawal Fund
-    [Tags]  FundTransfer  Check
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- ICICI Bank Online
-    Click On Tansfer From Dashboard
-    Verify Second Withdrawal
-    Verify Withdrawal Amount Field Validation 
-    Verify Withdrawal Details Feilds Validation
+# # FT_97 - FT_99, FT_102, SL03, SL05
+# Submit Online Fund Transfer And Withdrawal Fund
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- ICICI Bank Online
+#     Click On Tansfer From Dashboard
+#     Verify Second Withdrawal
+#     Verify Withdrawal Amount Field Validation 
+#     Verify Withdrawal Details Feilds Validation
 
-# Fund Withdrawal: SL04
-Verify Withdrawal Process For First Withdrawal
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Premium Account For 1st Withdrawal
-    Click On Tansfer From Dashboard
-    Verify First Withdrawal
+# # Fund Withdrawal: SL04
+# Verify Withdrawal Process For First Withdrawal
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Premium Account For 1st Withdrawal
+#     Click On Tansfer From Dashboard
+#     Verify First Withdrawal
 
-Submit Online Fund Transfer
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- Axis Bank Online
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- HDFC Bank Online
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- IDFC Bank Online
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- Induslnd Bank Online
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- Kotak Bank Online
-    Click On Tansfer From Dashboard
-    Fill And Submit A Fund Transfer- Non Indian Bank
+# Submit Online Fund Transfer
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- Axis Bank Online
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- HDFC Bank Online
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- IDFC Bank Online
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- Induslnd Bank Online
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- Kotak Bank Online
+#     Click On Tansfer From Dashboard
+#     Fill And Submit A Fund Transfer- Non Indian Bank
 
