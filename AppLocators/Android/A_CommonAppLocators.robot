@@ -16,8 +16,8 @@ ${browserstack_userName} =  username
 ${browserstack_accessKey} =  accesskey
 ${remote_URL}    http://${browserstack_userName}:${browserstack_accessKey}@hub.browserstack.com:80/wd/hub
 @{media}
-    ...     media://d11edf0b84008a815459c9fb26f87e91ea2c06ef
-    ...     media://62eb209d80004ea7f2d3cb460900e409f3c8bd45
+    ...     media://79f5782f804639ae8fe84fe36134a4ad2b99098a
+    ...     media://b9a926f86ee4dd196a152afa313a8382a376aca3
     ...     media://ed4bb3732789a0865bbfd823128410825a125a2e
     ...     media://86939c4fdf29d1c4bae6acfff6dfc53f2a4e859e
     ...     media://9795a60473c77f01d2f8f32b57fac6aa075c7c12

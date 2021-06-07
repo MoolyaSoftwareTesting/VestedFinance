@@ -33,7 +33,6 @@ Verify Heading for each point is displayed
     Log Source
     
 Click On Continue Button Under Landing Screen
-    Sleep  5s
     Swipe By Percent  80  70  20  20  5000
     Click On Element If Visibile  ${vf_A_continueBtn}
     ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${vf_A_chromeOption}
@@ -53,43 +52,35 @@ Verify Landing Page On Mobile
 Verify Buy Sell Stock On Mobile
     # Buy
     Log To Console  BUY 
-    Sleep  5s
     Swipe By Percent  70  70  20  20  5000
-    Sleep  1s
     Swipe By Percent  70  70  20  20  5000
-
     Wait For Element Visibility On Android  ${vf_A_stockTwo}
     Click Element  ${vf_A_stockTwo}
-    Sleep  1s
+    Wait For Element Visibility On Android  ${vf_A_buyBtn}
     Wait And Click Element On Android  ${vf_A_buyBtn}
-    Sleep  1s
     Wait For Element Visibility On Android  ${vf_A_shareInputTxt}
     Input Text  ${vf_A_shareInputTxt}  ${e_shareInputTxt}
-    Sleep  1s
+    Wait For Element Visibility On Android  ${vf_A_previewOrderBtn}
     Wait And Click Element On Android  ${vf_A_previewOrderBtn}
     Wait And Click Element On Android  ${vf_A_placeBuyOrderBtn}
-    Sleep  10s
+    Wait For Element Visibility On Android  ${vf_A_noBtn}
     Wait And Click Element On Android  ${vf_A_noBtn}
-    Sleep  1s
+    Wait For Element Visibility On Android  ${vf_A_cancelBtn}
     Wait And Click Element On Android  ${vf_A_cancelBtn}
     Capture Page Screenshot
-    
     # Sell
     Log To Console  SELL
-    Sleep  5s
     Swipe By Percent  70  70  20  20  5000
-    Sleep  1s
     Swipe By Percent  70  70  20  20  5000
     Wait For Element Visibility On Android  ${vf_A_stockOne}
-    Click Element  ${vf_A_stockOne}
-    Sleep  1s
+    Wait And Click Element On Android  ${vf_A_stockOne}
+    Wait For Element Visibility On Android  ${vf_A_sellBtn}
     Wait And Click Element On Android  ${vf_A_sellBtn}
-    Sleep  1s
     Wait For Element Visibility On Android  ${vf_A_shareInputTxt}
     Input Text  ${vf_A_shareInputTxt}  ${e_shareInputTxt}
-    Sleep  1s
+    Wait For Element Visibility On Android  ${vf_A_previewOrderBtn}
     Wait And Click Element On Android  ${vf_A_previewOrderBtn}
-    Sleep  1s
+    Wait For Element Visibility On Android  ${vf_A_placeSellOrderBtn}
     Wait And Click Element On Android  ${vf_A_placeSellOrderBtn}
     Capture Page Screenshot
     Reset Application
@@ -97,7 +88,7 @@ Verify Buy Sell Stock On Mobile
 Logout Of Application
     Wait For Element Visibility On Android  ${vf_A_profile}
     Mouse Over  ${vf_A_profile}
-    Click Element  ${vf_A_Logout}
-    Sleep  5s
+    Wait And Click Element On Android  ${vf_A_Logout}
+    Wait For Element Visibility On Android  ${vf_A_screenHeader}
+    Verify Page Conatin Text  ${e_screenHeader}
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
-    Sleep  5s
