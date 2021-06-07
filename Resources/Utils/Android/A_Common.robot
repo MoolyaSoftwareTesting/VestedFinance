@@ -10,7 +10,10 @@ Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 Resource   ../../../AppLocators/Android/A_SignInLocators.robot
 Resource   ../../../AppLocators/Android/A_SignUpLocators.robot
 Resource   ../../../AppLocators/Android/A_ForgotPasswordLocators.robot
+Resource   ../../../AppLocators/Android/A_KYCLocators.robot
 Resource   ../../../AppLocators/Android/A_DashboardLocators.robot
+Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
+Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
 
 
 *** Keywords ***
