@@ -272,7 +272,7 @@ ${vf_A_driverLicenseBsPOAOptionImg} =  xpath=//*[@class='android.widget.ImageVie
 #Checking Upload on BS
 ${vf_A_hamburgerMenu} =  xpath=//*[@class='android.widget.ImageButton']
 ${e_imagesGallery} =  Images
-${e_picturesFolder} =  Pictures
+${vf_A_picturesFolder} =  xpath=//*[@text='Pictures']
 
 
 

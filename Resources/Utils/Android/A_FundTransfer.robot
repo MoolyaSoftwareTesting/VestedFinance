@@ -344,6 +344,9 @@ Click On Switch Bank Link And Select A Bank For Deposit
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
     Verify Page Conatin Text  ${e_indianBankOpts}
+    Swipe By Percent  90  90  10  10  3000
+    Sleep  5s
+    Wait For Page Conatin Element  ${bank}  5s
     Click Text  ${bank}
     Log To Console  Selected Bank - ${bank}
     Wait For Page Conatin Element  ${bank}  5s
@@ -362,6 +365,23 @@ Verify Fund Online Screen - Visit The Bank
 
 Switch to Fund In-Persom With Bank Method
     Click Text  ${e_selectDiffFundTransfer}
+    Wait For Page Conatin Element   ${e_fundInpersonWithBank}  5s
+    Click Text  ${e_fundInpersonWithBank}
+    Wait For Page Conatin Element   ${e_VTBTxt1}  5s
+    Verify Page Conatin Text   ${e_VTBTxt1}
+    Verify Page Conatin Text   ${e_VTBTxt1}
+
+Verify Fund Online Screen - Visit The Bank - Direct Method
+    Wait For Page Conatin Element  ${e_fundInpersonWithBank}  10s
+    Verify Page Conatin Text  ${e_fundInpersonWithBank}
+    Verify Page Conatin Text  ${e_importantTxt}
+    Verify Page Conatin Text  ${e_importantP1}
+    Verify Page Conatin Text  ${e_importantP2}
+    Verify Page Conatin Text  ${e_feesTxt}
+    Verify Page Conatin Text  ${e_feesP1}
+    Log to Console  Verified Fund Online Screen!
+
+Switch to Fund In-Persom With Bank Method - Direct Method
     Wait For Page Conatin Element   ${e_fundInpersonWithBank}  5s
     Click Text  ${e_fundInpersonWithBank}
     Wait For Page Conatin Element   ${e_VTBTxt1}  5s
@@ -399,6 +419,16 @@ Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank
     # Test_on_Real img on BS device- 
     Log to Console  Verified, Filled & Uploaded the Wire Receipt for Transfer
 
+Verify Success Screen After Transaction Is Submited Successfully
+    Wait For Page Conatin Element  ${e_submitTransferSuccessMsg}  10s
+    Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
+    Verify Page Conatin Text  ${e_amtToTransferTxt}
+    Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
+    Verify Page Conatin Text  ${e_submitTransferSuccessTxt}
+    Verify Page Conatin Text  ${e_backToDashbrdBtnSccsTransfer}
+    Log to Console  Verified Success screen after Transaction is submited successfully!
+
+
 
 User Visits The Bank - Axis Bank
     Click On Tansfer From Dashboard
@@ -412,6 +442,289 @@ User Visits The Bank - Axis Bank
     Email Forms To The Registered Email Id
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
     Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_AxisBank1}
-    
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
 
-    
+
+User Visits The Bank - ICICI Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_ICICIBank}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank
+    Switch to Fund In-Persom With Bank Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_ICICIBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - HDFC Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_HDFCBank}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank
+    Switch to Fund In-Persom With Bank Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_HDFCBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - KOTAK Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit - Kotak Bank
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank
+    Switch to Fund In-Persom With Bank Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_KotakBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+Click On Switch Bank Link And Select A Bank For Deposit - Kotak Bank
+    Click Text  ${e_switchBankLink}
+    Wait For Page Conatin Element  ${e_selectYourBankHeading}  5s
+    Verify Page Conatin Text  ${e_selectYourBankHeading}
+    Verify Page Conatin Text  ${e_selectYourBankDesc1}
+    Verify Page Conatin Text  ${e_selectYourBankDesc2}
+    Verify Page Conatin Text  ${e_indianBankOpts}
+    Click Text  ${e_KotakBank}
+    Log To Console  Selected Bank - ${e_KotakBank}
+    Wait For Page Conatin Element  ${e_KotakBankFull}  5s
+    Verify Page Conatin Text  ${e_KotakBankFull}
+
+User Visits The Bank - Yes Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_YesBank}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_YesBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - Bank Of Baroda
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_BankOfBaroda}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_BankOfBaroda1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - Citi Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit - Citi Bank
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_CitiBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+Click On Switch Bank Link And Select A Bank For Deposit - Citi Bank
+    Click Text  ${e_switchBankLink}
+    Wait For Page Conatin Element  ${e_selectYourBankHeading}  5s
+    Verify Page Conatin Text  ${e_selectYourBankHeading}
+    Verify Page Conatin Text  ${e_selectYourBankDesc1}
+    Verify Page Conatin Text  ${e_selectYourBankDesc2}
+    Verify Page Conatin Text  ${e_indianBankOpts}
+    Swipe By Percent  90  90  10  10  3000
+    Click Text  ${e_CitiBank}
+    Log To Console  Selected Bank - ${e_CitiBank}
+    Wait For Page Conatin Element  ${e_CitiBankFull}  5s
+    Verify Page Conatin Text  ${e_CitiBankFull}
+
+User Visits The Bank - HSBC Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_HSBCBank}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_HSBCBank1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - SBI Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit - SBI Bank
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_SBI1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+Click On Switch Bank Link And Select A Bank For Deposit - SBI Bank
+    Click Text  ${e_switchBankLink}
+    Wait For Page Conatin Element  ${e_selectYourBankHeading}  5s
+    Verify Page Conatin Text  ${e_selectYourBankHeading}
+    Verify Page Conatin Text  ${e_selectYourBankDesc1}
+    Verify Page Conatin Text  ${e_selectYourBankDesc2}
+    Verify Page Conatin Text  ${e_indianBankOpts}
+    Swipe By Percent  90  90  10  10  3000
+    Click Text  ${e_SBI}
+    Log To Console  Selected Bank - ${e_SBI}
+    Wait For Page Conatin Element  ${e_SBIBankFull}  5s
+    Verify Page Conatin Text  ${e_SBIBankFull}
+
+User Visits The Bank - PNB Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_PNB}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Direct Method
+    Switch to Fund In-Persom With Bank Method - Direct Method
+    Email Forms To The Registered Email Id
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank  ${e_PNB1}
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+User Visits The Bank - Other Indian Bank
+    Click On Tansfer From Dashboard
+    Sleep  2s
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_OtherBank}
+    Click On Next Button Under Add Funds Flow
+    Verify Fund Online Screen - Visit The Bank - Other Bank
+    Sleep  5s
+    Other Bank Fund In Person Screen - Next Button
+    Verify And Fill The Upload Wire Receipt Received Screen - Other Bank
+    Wait For Element Visibility On Android  ${vf_A_submit}  
+    Wait And Click Element On Android  ${vf_A_submit}
+    Log to Console  Submit button clicked
+    Verify Success Screen After Transaction Is Submited Successfully
+    Click Text  ${e_backToDashbrdBtnSccsTransfer}
+    Verify Dashboard Screen
+
+Verify Fund Online Screen - Visit The Bank - Other Bank
+    Wait For Page Conatin Element  ${e_fundInpersonWithBank}  10s
+    Verify Page Conatin Text  ${e_fundInpersonWithBank}
+    Verify Page Conatin Text  ${e_OtherBanksDetails1}
+    Verify Page Conatin Text  ${e_OtherBanksTxt1}
+    Verify Page Conatin Text  ${e_OtherBanksDetails2}
+    Verify Page Conatin Text  ${e_OtherBanksTxt2}
+    Verify Page Conatin Text  ${e_accInfo}
+    Verify Page Conatin Text  ${e_furtherCredit}
+    Verify Page Conatin Text  ${e_DWInfoTxt}
+    Verify Page Conatin Text  ${e_accNum}
+    Swipe By Percent  90  90  10  10  3000
+    Verify Page Conatin Text  ${e_beneInfoEmail}
+    Verify Page Conatin Text  ${e_beneInfoPhNo}
+    Verify Page Conatin Text  ${e_bankInfo}
+    Verify Page Conatin Text  ${e_routingNum}
+    Verify Page Conatin Text  ${e_swiftCode}
+    Swipe By Percent  90  90  10  10  3000
+    Verify Page Conatin Text  ${e_OtherBanksDetails3}
+    Verify Page Conatin Text  ${e_OtherBanksTxt3}
+    Verify Page Conatin Text  ${e_importantTxt}
+    Verify Page Conatin Text  ${e_importantP1}
+    Verify Page Conatin Text  ${e_importantP2}
+    Verify Page Conatin Text  ${e_feesTxt}
+    Verify Page Conatin Text  ${e_feesP1}
+    Log to Console  Verified Fund Online Screen!
+
+Other Bank Fund In Person Screen - Next Button
+    Wait For Element Visibility On Android  ${vf_A_nextBtnUndrFundOnline}
+    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+
+Verify And Fill The Upload Wire Receipt Received Screen - Other Bank
+    Verify Page Conatin Text  ${e_uploadWireReceiptNote}
+    Verify Page Conatin Text  ${e_yourReceiptTxt}
+    Verify Page Conatin Text  ${e_yourFullName}
+    Verify Page Conatin Text  ${e_yourDriveWealthTxt}
+    Verify Page Conatin Text  ${e_bankName}
+    Wait For Element Visibility On Android   ${vf_A_enterBankName}
+    Input Text  ${vf_A_enterBankName}  ${e_sampleBank}
+    Verify Page Conatin Text  ${e_amtInUSDTxt}
+    Swipe By Percent  90  90  10  10  3000
+    Verify Page Conatin Text  ${e_dateOnWireReceiptTxt}
+    Click Text  ${e_selectDateTxt}
+    Wait For Page Conatin Element  ${e_calenderOkBtn}  5s
+    Click Text  ${e_calenderOkBtn}
+    Verify Page Conatin Text  ${e_pwdForPdfTxt}
+    Verify Page Conatin Text  ${e_enterPwdTxt}
+    Verify Page Conatin Text  ${e_leaveBlankTxt}
+    Verify Page Conatin Text  ${e_incmpltTransferTxt}
+    Click Text  ${e_uploadWireReceiptBtn}
+    Upload Wire Receipt And Verify Success Message    

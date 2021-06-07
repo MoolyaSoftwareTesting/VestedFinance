@@ -523,6 +523,94 @@ Verify Withdrawal Process For First Withdrawal
     
 Visit the bank - Axis bank
     [Tags]  Axis
+    [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
     User Visits The Bank - Axis Bank
+
+Visit the bank - ICICI bank
+    [Tags]  ICICI
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - ICICI Bank
+
+Visit the bank - HDFC bank
+    [Tags]  HDFC
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - HDFC Bank
+
+Visit the bank - Kotak bank
+    [Tags]  Kotak
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - KOTAK Bank
+
+Visit the bank - Yes bank
+    [Tags]  Yes
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - Yes Bank
+
+Visit the bank - Bank of Baroda
+    [Tags]  BOB
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - Bank Of Baroda
+
+Visit the bank - Citi Bank
+    [Tags]  Citi
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - Citi Bank
+
+Visit the bank - HSBC Bank
+    [Tags]  HSBC
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - HSBC Bank
+
+Visit the bank - SBI Bank
+    [Tags]  SBI
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - SBI Bank
+
+Visit the bank - PNB Bank
+    [Tags]  PNB
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - PNB Bank
+
+Visit the bank - Other Bank
+    [Tags]  Other
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - Other Indian Bank
+
+Visit the bank - All Banks
+    [Tags]  All_Banks
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Visit the bank - Axis bank
+    Visit the bank - ICICI bank
+    Visit the bank - HDFC bank
+    Visit the bank - Kotak bank
+    Visit the bank - Yes bank
+    Visit the bank - Bank of Baroda
+    Visit the bank - Citi Bank
+    Visit the bank - HSBC Bank
+    Visit the bank - SBI Bank
+    Visit the bank - PNB Bank
+    User Visits The Bank - Other Indian Bank
