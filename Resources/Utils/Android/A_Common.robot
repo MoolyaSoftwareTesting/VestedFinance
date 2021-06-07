@@ -23,13 +23,12 @@ Launch Android App
     ...     ELSE IF   '${environmentToRunTest}'=='${e_browserstackDevice}'  Open App On Browserstack
 
 Open App On Browserstack
-    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a     browserstack.uploadMedia=${media} 
+    Open Application  ${remote_URL}  app=${appURL}  name=${sessionName}   build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a    browserstack.uploadMedia=${media} 
     Landing Page Is Loaded Completely
 
 Open App On Real Device
-    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  
-    # appActivity=${app_activity}  appPackage=${app_package}
-    # Landing Page Is Loaded Completely
+    Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
+    Landing Page Is Loaded Completely
 
 Open App On Emulator
     Open Application  ${server}  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
@@ -39,7 +38,7 @@ Verify Element And Text On Android
     [Arguments]  ${element}  ${text}
     Run Keyword And Continue On Failure  Element Should Contain Text  ${element}  ${text}
 
-Wait For Element Visibility On Android 
+Wait For Element Visibility On Android  
     [Arguments]  ${element}
     Wait Until Element Is Visible  ${element}  timeout=20
 
@@ -82,17 +81,18 @@ Verify Widgets And Title
 
 Verify Element Visibility
     [Arguments]  ${element}  
+    Sleep  2s
     Wait For Element Visibility On Android  ${element} 
     Element Should Be Visible  ${element}  
 
-Verify Page Conatin Text 
+Verify Page Conatin Text  
     [Arguments]  ${text}
     Sleep  2s
     Page Should Contain Text  ${text}  
 
 Wait For Page Conatin Element  
-    [Arguments]  ${element}  ${timeout}
-    Wait Until Page Contains  ${element}  ${timeout}
+    [Arguments]  ${text}  ${timeout}
+    Wait Until Page Contains  ${text}  timeout=20
 
 Replace Characters
     [Arguments]  ${text}  ${char1}  ${char2}
@@ -157,22 +157,24 @@ Verify Open With Label
     Element Should Be Visible  ${vf_A_openWithLabel}
 
 Close Android Keyboard
+    Sleep  2s
     ${isKeyboardVisible} =  Run Keyword And Return Status  Is Keyboard Shown
     Run Keyword If   ${isKeyboardVisible}  Hide Keyboard
-    #...    ELSE  Log To Console  Keyboard is hidden
+    Sleep  3s
 
 Open Chrome Browser App
     Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  appActivity=${chrome_activity}  appPackage=${chrome_package}  deviceName=${emulator}  automationName=${appium}   
-    # Open Application  ${remote_URL}  app=${appURL}  build=RobotFramework    platformName=Android    os_version=9.0    device=Google Pixel 3a
 
 Get Current Date On Android
     ${date}=  Get Current Date  time_zone=local  increment=0  result_format=timestamp  exclude_millis=True
     Set Global Variable  ${date}
-    ${convertDate} =      Convert Date      ${date}      result_format=%d
+    ${convertDate} =  Convert Date  ${date}  result_format=%d
     [Return]  ${convertDate} 
 
 Go Back On Android
+    Sleep  2s
     Go Back
+    Sleep  3s
 
 Rest Android Application
     Reset Application

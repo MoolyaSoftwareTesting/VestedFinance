@@ -42,15 +42,13 @@ User Enters Existing Google Account Password To Signup
     Verify Error Message Displayed  ${e_existingGoogleAccErrMsg}
 
 User Enters Valid Email
-    Sleep  5s
     Enter Email  ${e_validEmail}
 
 User Enters Invalid Password
-    Sleep  5s
     Enter Password  ${e_incorrectPassword}
 
 Verify Password Combination Criteria 
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_pwdLowerCaseMsg}
     Verify Error Message Displayed  ${e_pwdLowerCaseMsg}
     Verify Error Message Displayed  ${e_pwdUpperCaseMsg}
     Verify Error Message Displayed  ${e_pwdSpecialCharMsg}

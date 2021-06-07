@@ -14,7 +14,7 @@ Signin With KYC Approved Premium Account For 1st Withdrawal
     Signin With Pin Credentials  ${e_emailKycApprvWithdrwl}  ${e_pwdKycApprvWithdrwl}  ${e_pinKycApprvWithdrwl}
 
 Verify Transfer Landing Screen
-    Wait For Page Conatin Element  ${e_cashBalance}  5s
+    Wait For Page Conatin Element  ${e_cashBalance}
     Verify Page Conatin Text  ${e_cashBalance}
 
 Verify Fund Transfer Screen For New Account With No Funding History
@@ -32,16 +32,18 @@ Verify Fund Transfer Screen For New Account With No Funding History
 # Add Funds
 
 Click On Tansfer From Dashboard
+    Wait For Element Visibility On Android  ${vf_A_transfer}
     Wait And Click Element On Android  ${vf_A_transfer}
     Verify Transfer Landing Screen
     Log to Console  Navigated to Transfer Landing Screen
 
 Click On Next Button Under Add Funds Flow
+    Wait For Element Visibility On Android  ${vf_A_nextBtn}
     Wait And Click Element On Android  ${vf_A_nextBtn}
 
 Verify Add Funds For Non KYC Approved Account
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  5s
+    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  
     Verify Page Conatin Text  ${e_kycApprovalNeededPopup}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupTxt1}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupTxt2}
@@ -53,7 +55,7 @@ Verify Add Funds For Non KYC Approved Account
 Click On Switch Bank Link And Select A Bank
     [Arguments]  ${bank}  ${fundOnlineTxt}
     Click Text  ${e_switchBankLink}
-    Wait For Page Conatin Element  ${e_selectYourBankHeading}  5s
+    Wait For Page Conatin Element  ${e_selectYourBankHeading}  
     Verify Page Conatin Text  ${e_selectYourBankHeading}
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
@@ -61,11 +63,9 @@ Click On Switch Bank Link And Select A Bank
     Verify Element Visibility  ${fundOnlineTxt}
     Click Text  ${bank}
     Log To Console  Selected Bank - ${bank} 
-    Wait For Page Conatin Element  ${bank}  5s
-    Verify Page Conatin Text  ${bank}
 
 Fill Deposit Screen
-    Wait For Page Conatin Element  ${e_howMuchDepositTxt}  5s
+    Wait For Page Conatin Element  ${e_howMuchDepositTxt}  
     Verify Page Conatin Text  ${e_howMuchDepositTxt}
     Verify Page Conatin Text  ${e_amtToTransferTxt}
     Verify Page Conatin Text  ${e_$Txt}
@@ -73,11 +73,11 @@ Fill Deposit Screen
     Verify Page Conatin Text  ${e_transferFromTxt}
 
 Click On Continue Button Under Fund Transfer
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_continueBtnUnderFT}
     Wait And Click Element On Android  ${vf_A_continueBtnUnderFT}
 
 Verify User Is Navigated To Fund Online Using ICICI Screen
-    Wait For Page Conatin Element  ${e_fundOnlineUsingICICI}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingICICI}  
     Verify Page Conatin Text  ${e_fundOnlineUsingICICI}
 
 Verify Fund Online Screen
@@ -93,9 +93,9 @@ Verify Fund Online Screen
     Verify Page Conatin Text  ${e_success}
     Verify Page Conatin Text  ${e_dwnldedSuccessflly}
     Click Text  ${e_okBtn}
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_closeIcon}
     Wait And Click Element On Android  ${vf_A_closeIcon}
-    Wait For Page Conatin Element  ${e_dwnldInstrctnsBtn}  5s
+    Wait For Page Conatin Element  ${e_dwnldInstrctnsBtn}  
     Log to Console  Verified Fund Online Screen!
 
 Verify New Entry Created Under Incomplete Deposits
@@ -105,7 +105,7 @@ Verify New Entry Created Under Incomplete Deposits
     Verify Element Visibility  ${vf_A_removeBtn}
 
 Verify User Is Navigated To Upload The Wire Receipt Screen
-    Wait For Page Conatin Element  ${e_uploadWireReceipt}  5s
+    Wait For Page Conatin Element  ${e_uploadWireReceipt}  
     Verify Page Conatin Text  ${e_uploadWireReceipt}
 
 Upload Wire Receipt And Verify Success Message
@@ -115,14 +115,14 @@ Upload Wire Receipt And Verify Success Message
     #FOR BROWSER STACK
     # Wait And Click Element On Android  ${vf_A_hamburgerMenu}
     # Wait And Click Element On Android  ${vf_A_photosSubMenu}
-    # Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    # Wait For Page Conatin Element  ${e_selectAPhoto}  
     # Wait And Click Element On Android  ${vf_A_picturesFolder}
-    # Wait For Page Conatin Element  ${e_selectAPhoto}  5s
+    # Wait For Page Conatin Element  ${e_selectAPhoto}  
     # Verify Page Conatin Text   ${e_selectAPhoto}
     # Wait And Click Element On Android  ${vf_A_sampleImgOnBS}
-    Sleep  3s
+    Wait For Element Visibility On Android  ${vf_A_passportImg}
     Wait And Click Element On Android  ${vf_A_passportImg}
-    Wait For Page Conatin Element  ${e_receiptUploadSuccessMsg}  10s
+    Wait For Page Conatin Element  ${e_receiptUploadSuccessMsg}  
     Verify Page Conatin Text  ${e_receiptUploadSuccessMsg}
     Verify Page Conatin Text  ${e_reUploadRecTxt}
     Log To Console  Uploaded Wire Receipt
@@ -175,7 +175,7 @@ Remove Existing Incomplete Deposits
         ${isElementVisible} =  Run Keyword And Return Status  Verify Element Visibility  ${vf_A_removeBtn}
         IF   ${isElementVisible}
             Wait And Click Element On Android  ${vf_A_removeBtn}
-            Wait For Page Conatin Element  ${e_removeDepositTxt}  10s
+            Wait For Page Conatin Element  ${e_removeDepositTxt}  
             Verify Page Conatin Text  ${e_removeDepositTxt}
             Click Text  ${e_yesBtn}
             Exit For Loop If    ${isElementVisible}
@@ -190,7 +190,8 @@ Fill And Remove A Fund Transfer
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_iciciBankOpt}  ${vf_A_fundOnlineTxtUnderICICI}
-    Sleep  3s
+    Wait For Page Conatin Element  ${bank}  
+    Verify Page Conatin Text  ${bank}
     Click On Next Button Under Add Funds Flow
     Verify User Is Navigated To Fund Online Using ICICI Screen
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -207,7 +208,6 @@ Fill And Remove A Fund Transfer
     Verify User Is Navigated To Upload The Wire Receipt Screen
     Wait And Click Element On Android  ${vf_A_closeIcon}
     Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
-    Sleep  2s
     Verify Transfer Landing Screen
     Verify Page Conatin Text  ${e_1stepToGo}
     Log to Console  Verified New Entry- 1 steps to go
@@ -216,9 +216,9 @@ Fill And Remove A Fund Transfer
     Verify User Is Navigated To Upload The Wire Receipt Screen
     Wait And Click Element On Android  ${vf_A_closeIconUnderWireRecpt}
     Log to Console  Clicked on Close icon under Upload the Wire Receipt Screen
-    Sleep  3s
+    Wait For Element Visibility On Android  ${vf_A_removeBtn}
     Wait And Click Element On Android  ${vf_A_removeBtn}
-    Wait For Page Conatin Element  ${e_removeDepositTxt}  10s
+    Wait For Page Conatin Element  ${e_removeDepositTxt}  
     Verify Page Conatin Text  ${e_removeDepositTxt}
     Verify Page Conatin Text  ${e_yesBtn}
     Verify Page Conatin Text  ${e_noBtn} 
@@ -226,7 +226,7 @@ Fill And Remove A Fund Transfer
     Log to Console  Removed A Fund Transfer
 
 Verify Success Screen After Transaction Is Submited Successfully
-    Wait For Page Conatin Element  ${e_submitTransferSuccessMsg}  5s
+    Wait For Page Conatin Element  ${e_submitTransferSuccessMsg}  
     Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
     Verify Page Conatin Text  ${e_amtToTransferTxt}
     Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
@@ -238,7 +238,8 @@ Fill And Submit A Fund Transfer- ICICI Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_iciciBankOpt}  ${vf_A_fundOnlineTxtUnderICICI}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_iciciBankOpt}  
+    Verify Page Conatin Text  ${e_iciciBankOpt}
     Click On Next Button Under Add Funds Flow
     Verify User Is Navigated To Fund Online Using ICICI Screen
     Verify Fund Online Screen
@@ -250,14 +251,14 @@ Fill And Submit A Fund Transfer- ICICI Bank Online
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-
 Fill And Submit A Fund Transfer- Axis Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_axisBankOpt}  ${vf_A_fundOnlineTxtUnderAxis}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_axisBankOpt}  
+    Verify Page Conatin Text  ${e_axisBankOpt}
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingAxis}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingAxis}  
     Verify Page Conatin Text  ${e_fundOnlineUsingAxis}
     Verify Fund Online Screen
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -273,9 +274,10 @@ Fill And Submit A Fund Transfer- HDFC Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_hdfcBankOpt}  ${vf_A_fundOnlineTxtUnderHDFC}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_hdfcBankOpt}  
+    Verify Page Conatin Text  ${e_hdfcBankOpt}
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingHDFC}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingHDFC}  
     Verify Page Conatin Text  ${e_fundOnlineUsingHDFC}
     Verify Fund Online Screen
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -291,9 +293,10 @@ Fill And Submit A Fund Transfer- IDFC Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_idfcBankOpt}  ${vf_A_fundOnlineTxtUnderIDFC}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_idfcBankOpt}  
+    Verify Page Conatin Text  ${e_idfcBankOpt}
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingIDFC}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingIDFC}  
     Verify Page Conatin Text  ${e_fundOnlineUsingIDFC}
     Verify Fund Online Screen
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -309,9 +312,10 @@ Fill And Submit A Fund Transfer- Induslnd Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_induslndBankOpt}  ${vf_A_fundOnlineTxtUnderIndusInd}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_induslndBankOpt}  
+    Verify Page Conatin Text  ${e_induslndBankOpt}
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingIndusInd}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingIndusInd}  
     Verify Page Conatin Text  ${e_fundOnlineUsingIndusInd}
     Verify Fund Online Screen
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -327,9 +331,10 @@ Fill And Submit A Fund Transfer- Kotak Bank Online
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_kotakBankOpt}  ${vf_A_fundOnlineTxtUnderKotak}
-    Sleep  3s
+    Wait For Page Conatin Element  ${e_kotakMahindraBankOpt}  
+    Verify Page Conatin Text  ${e_kotakMahindraBankOpt}
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingKotak}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingKotak}  
     Verify Page Conatin Text  ${e_fundOnlineUsingKotak}
     Verify Fund Online Screen
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -396,7 +401,7 @@ Fill And Submit A Fund Transfer- Non Indian Bank
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click Text  ${e_switchBankLink}
-    Wait For Page Conatin Element  ${e_selectYourBankHeading}  5s
+    Wait For Page Conatin Element  ${e_selectYourBankHeading}  
     Verify Page Conatin Text  ${e_selectYourBankHeading}
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
@@ -405,11 +410,10 @@ Fill And Submit A Fund Transfer- Non Indian Bank
     Swipe By Percent  80  70  20  20  5000
     Click Text  ${e_nonIndianBankOpt}
     Log To Console  Selected Bank - ${e_nonIndianBankOpt} 
-    Wait For Page Conatin Element  ${e_nonIndianBankOpt}  5s
+    Wait For Page Conatin Element  ${e_nonIndianBankOpt}  
     Verify Page Conatin Text  ${e_nonIndianBankOpt}
-    Sleep  3s
     Click On Next Button Under Add Funds Flow
-    Wait For Page Conatin Element  ${e_fundOnlineUsingNonIndian}  5s
+    Wait For Page Conatin Element  ${e_fundOnlineUsingNonIndian}  
     Verify Page Conatin Text  ${e_fundOnlineUsingNonIndian}
     Verify Account, Beneficiary And Bank Information
     Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
@@ -428,7 +432,7 @@ Click On Withdrawal Funds Button
 
 Verify Withdrawal Funds For Non KYC Approved Account
     Click On Withdrawal Funds Button
-    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  5s
+    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  
     Verify Page Conatin Text  ${e_kycApprovalNeededPopup}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupTxt1}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupTxt3}
@@ -438,7 +442,7 @@ Verify Withdrawal Funds For Non KYC Approved Account
     Log to Console  Verified Withdrawal Funds For Non KYC Approved Account!
 
 Verify Content In Withdrawal Process Screen
-    Wait For Page Conatin Element  ${e_withdrawalProcess}  5s
+    Wait For Page Conatin Element  ${e_withdrawalProcess}  
     Verify Page Conatin Text  ${e_withdrawalProcess}
     Verify Page Conatin Text  ${e_settledCash}
     Verify Page Conatin Text  ${e_amtToWithdraw}
@@ -462,27 +466,27 @@ Verify First Withdrawal
 Verify Withdrawal Amount Field Validation 
     Verify Element Visibility  ${vf_A_amtTxtBox}
     Click Text  ${e_proceedBtn}
-    Wait For Page Conatin Element  ${e_proceedError}  5s
+    Wait For Page Conatin Element  ${e_proceedError}  
     Verify Page Conatin Text   ${e_proceedError}
     Clear Text  ${vf_A_amtTxtBox}
     Input Text  ${vf_A_amtTxtBox}  ${e_11amtToWithdraw} 
     Click Text  ${e_proceedBtn}
-    Wait For Page Conatin Element  ${e_11amtToWithdrawErrMsg}  5s
+    Wait For Page Conatin Element  ${e_11amtToWithdrawErrMsg}  
     Verify Page Conatin Text  ${e_11amtToWithdrawErrMsg}
     Clear Text  ${vf_A_amtTxtBox}
     Input Text  ${vf_A_amtTxtBox}  ${e_9amtToWithdraw} 
     Click Text  ${e_proceedBtn}
-    Wait For Page Conatin Element  ${e_11amtToWithdrawErrMsg}  5s
+    Wait For Page Conatin Element  ${e_11amtToWithdrawErrMsg}  
     Verify Page Conatin Text  ${e_11amtToWithdrawErrMsg}
     Clear Text  ${vf_A_amtTxtBox}
     Input Text  ${vf_A_amtTxtBox}  ${e_spclCharAmtToWithdraw} 
     Click Text  ${e_proceedBtn}
-    Wait For Page Conatin Element  ${e_spclCharAmtToWithdrawErrMsg}  5s
+    Wait For Page Conatin Element  ${e_spclCharAmtToWithdrawErrMsg}  
     Verify Page Conatin Text  ${e_spclCharAmtToWithdrawErrMsg}
     Clear Text  ${vf_A_amtTxtBox}
     Input Text  ${vf_A_amtTxtBox}  ${e_15amtToWithdraw} 
     Click Text  ${e_proceedBtn}
-    Wait For Page Conatin Element  ${e_withdrwlDetails}  5s
+    Wait For Page Conatin Element  ${e_withdrwlDetails}  
     Verify Page Conatin Text  ${e_withdrwlDetails}
     Log to Console  Verified all Validations for Withdrawal Amount!
 
@@ -535,9 +539,9 @@ Click On Continue Button And Verify Error Messages
 
 Select Bank Country
     [Arguments]  ${option}
-    Sleep  5s
+    Wait For Element Visibility On Android  ${vf_A_selBankCountryDropdown}
     Wait And Click Element On Android  ${vf_A_selBankCountryDropdown}
-    Sleep  3s
+    Wait For Element Visibility On Android  ${option}
     FOR  ${i}  IN RANGE  1  45
         ${isElementVisible} =  Run Keyword And Return Status  Element Should Be Visible  ${option}
         IF   ${isElementVisible}
@@ -551,9 +555,9 @@ Select Bank Country
 
 Select Bank State
     [Arguments]  ${option}
-    Sleep  5s
+    Wait For Element Visibility On Android  ${vf_A_selBankStateDropdown}
     Wait And Click Element On Android  ${vf_A_selBankStateDropdown}
-    Sleep  3s
+    Wait For Element Visibility On Android  ${option}
     FOR  ${i}  IN RANGE  1  10
         ${isElementVisible} =  Run Keyword And Return Status  Element Should Be Visible  ${option}
         IF   ${isElementVisible}
@@ -571,25 +575,24 @@ Fill All The Withdrawal Details And Continue
     Input Text  ${vf_A_accNumTxtBox}  ${e_accountNumInput} 
     Input Text  ${vf_A_reEtnrAccNumTxtBox}  ${e_accountNumInput} 
     Wait And Click Element On Android  ${vf_A_accTypeDropdown}
-    Wait For Page Conatin Element  ${e_accountTypeSavings}  5s
+    Wait For Page Conatin Element  ${e_accountTypeSavings}  
     Verify Page Conatin Text  ${e_accountTypeCurrent}
     Verify Page Conatin Text  ${e_accountTypeSavings}
     Click Text  ${e_accountTypeSavings}
     Input Text  ${vf_A_swiftCodeTxtBox}  ${e_swiftCodeInput} 
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_reTypeSwiftCodeTxtBox}
     Input Text  ${vf_A_reTypeSwiftCodeTxtBox}  ${e_swiftCodeInput} 
     Swipe By Percent  80  90  20  10  5000
     Input Text  ${vf_A_bankNameTxtBox}  ${e_bankNameInput} 
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_bankAddrsTxtBox}
     Input Text  ${vf_A_bankAddrsTxtBox}  ${e_bankAddressInput} 
-    Sleep  2s
     Select Bank Country  ${vf_A_bankCountryInput} 
     Verify Element Visibility  ${vf_A_selBankStateTxt}
     Verify Element Visibility  ${vf_A_selBankStateDropdown}
     Select Bank State  ${vf_A_bankStateInput} 
     Swipe By Percent  80  90  20  10  5000
     Input Text  ${vf_A_bankCityTxtBoxForFilling}  ${e_bankCityInput} 
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_bankZipCodeTxtBoxForFilling}
     Input Text  ${vf_A_bankZipCodeTxtBoxForFilling}  ${e_bankZipCodeInput} 
     Log to Console  Filled all the feilds under Withdrawal Details screen
     Wait And Click Element On Android  ${vf_A_continueBtnUndrWithdrwlDet}

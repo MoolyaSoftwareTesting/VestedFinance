@@ -40,6 +40,7 @@ ${e_hdfcBankOpt} =  HDFC Bank
 ${e_idfcBankOpt} =  IDFC First Bank
 ${e_indusIndBankOpt} =  IndusInd Bank
 ${e_kotakBankOpt} =  Kotak Bank
+${e_kotakMahindraBankOpt} =  Kotak Mahindra Bank
 ${e_nonIndianBankOpt} =  Non-Indian Bank
 ${e_amtDeposited} =  $5.00
 ${e_2stepToGo} =  2 steps to go

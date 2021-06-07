@@ -9,12 +9,12 @@ Signin With KYC Completed Basic Account
 
 # Profile 
 Click On Profile Button
-    Sleep  3s
+    Wait For Element Visibility On Android  ${vf_A_profileBtn}
     Wait And Click Element On Android  ${vf_A_profileBtn}
 
 # PN01-PN10
 Verify Menus And Sub-menus Under Profile
-    Wait For Page Conatin Element  ${e_profileTxt}  5s
+    Wait For Page Conatin Element  ${e_profileTxt}  
     Verify Page Conatin Text   ${e_profileTxt}
     Verify Page Conatin Text   ${e_usrnmDefney}
     Page Should Contain Element   ${vf_A_validEmail}
@@ -44,23 +44,24 @@ Verify Menus And Sub-menus Under Profile
 # History
 
 Verify Profile Screen
+    Wait For Element Visibility On Android  ${vf_A_profileHeading}
     Verify Element Visibility  ${vf_A_profileHeading}
     Log to Console  Verified Profile Screen!
 
 Click On Transactions Under History Section
-    Wait For Page Conatin Element  ${e_transactions}  10s
+    Wait For Page Conatin Element  ${e_transactions}  
     Click Text  ${e_transactions}
 
 Click On Trade Confirmations Under History Section
-    Wait For Page Conatin Element  ${e_tradeConfirmations}  5s
+    Wait For Page Conatin Element  ${e_tradeConfirmations} 
     Click Text  ${e_tradeConfirmations}
 
 Click On Account Statements Under History Section
-    Wait For Page Conatin Element  ${e_accStmts}  10s
+    Wait For Page Conatin Element  ${e_accStmts}  
     Click Text  ${e_accStmts}
 
 Click On Tax Documents Under History Section
-    Wait For Page Conatin Element  ${e_taxDocs}  3s
+    Wait For Page Conatin Element  ${e_taxDocs}  
     Click Text  ${e_taxDocs}
 
 # PN13
@@ -75,49 +76,47 @@ Click On Transactions And Verify
 # PN16
 Click On Trade Confirmations And Verify
     Click On Trade Confirmations Under History Section
-    Wait For Page Conatin Element  ${e_tradeConfirmations}  8s
+    Wait For Page Conatin Element  ${e_tradeConfirmations}  
     Verify Page Conatin Text  ${e_tradeConfirmations}
     Log to Console  Verified Heading under Trade Confirmations screen!
 
 # PN21
 Click On Account Statements And Verify
     Click On Account Statements Under History Section
-    Wait For Page Conatin Element  ${e_accStmts}  10s
+    Wait For Page Conatin Element  ${e_accStmts}  
     Verify Page Conatin Text  ${e_accStmts}
     Log to Console  Verified Heading under Account Statements screen!
 
 # PN26
 Click On Tax Documents And Verify
     Click On Tax Documents Under History Section
-    Wait For Page Conatin Element  ${e_taxDocs}  8s
+    Wait For Page Conatin Element  ${e_taxDocs}  
     Verify Page Conatin Text  ${e_taxDocs}
     Log to Console  Verified Heading under Tax Documents screen!
 
 # PN17
 Click On A Existing Trade Confirmation
     Wait And Click Element On Android  ${vf_A_opt1Navigation}
-    Sleep  3s
     Go Back On Android
     Log to Console  Clicked on a existing Trade Confirmation
 
 # PN23
 Click On A Existing Account Statement
     Wait And Click Element On Android  ${vf_A_opt1Navigation}
-    Sleep  3s
     Go Back On Android
     Log to Console  Clicked on a existing Account Statement
 
 # PN27
 Click On A Existing Tax Document And Verify Current Year Guidelines
     Wait And Click Element On Android  ${vf_A_taxDoc2020}
-    Wait For Page Conatin Element  ${e_2020TaxDoc}  5s
+    Wait For Page Conatin Element  ${e_2020TaxDoc}  
     Verify Page Conatin Text  ${e_2020TaxDoc}
     Log to Console  Clicked on a existing Tax Document!
     Click On Back Arrow
 
 # PN14, PN18, PN24, PN28, PN46
 Click On Back Button From Top And Verify Profile Screen
-    Sleep  3s
+    Wait For Element Visibility On Android  ${vf_A_backArrowUnderPaymentPlan}
     Verify Element Visibility  ${vf_A_backArrowUnderPaymentPlan}
     Wait And Click Element On Android  ${vf_A_backArrowUnderPaymentPlan}
     Verify Profile Screen
@@ -138,7 +137,7 @@ Click On Sub-menus Under History And Verify
     Click On Back Button From Top And Verify Profile Screen
 
 Verify KYC Approval Needed Popup For KYC Finished Account
-    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  5s
+    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  
     Verify Page Conatin Text  ${e_kycApprovalNeededPopup}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupDesc}
     Verify Page Conatin Text  ${e_checkStatusBtn}
@@ -146,7 +145,7 @@ Verify KYC Approval Needed Popup For KYC Finished Account
     Log to Console  Verified KYC Approval Needed Popup for KYC Finished Account
 
 Verify Complete KYC Popup For Incomplete KYC Account
-    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  8s
+    Wait For Page Conatin Element  ${e_kycApprovalNeededPopup}  
     Verify Page Conatin Text  ${e_kycApprovalNeededPopup}
     Verify Page Conatin Text  ${e_kycApprovalNeededPopupDesc}
     Verify Page Conatin Text  ${e_startKyc}
@@ -190,10 +189,10 @@ Click On Tax Documents And Verify Complete KYC Popup
 
 # PF_15
 Verify Tax Documents Yearwise
-    Wait For Page Conatin Element  ${e_taxDocs}  5s
+    Wait For Page Conatin Element  ${e_taxDocs}  
     Click Text  ${e_taxDocs}
     Wait And Click Element On Android  ${vf_A_taxDoc2020}
-    Wait For Page Conatin Element  ${e_forTaxRep}  5s
+    Wait For Page Conatin Element  ${e_forTaxRep}  
     Verify Page Conatin Text   ${e_forTaxRep}
     Verify Page Conatin Text   ${e_supTaxDoc}
     Verify Page Conatin Text   ${e_supTaxDocSH}
@@ -214,13 +213,14 @@ Verify Tax Documents Yearwise
 # PN32
 User Clicks FAQ Under Help
     Wait And Click Element On Android  ${vf_A_faq}
-    Wait For Page Conatin Element  ${e_faq}  5s
+    Wait For Page Conatin Element  ${e_faq}  
     Verify Page Conatin Text   ${e_faq}
     Log to Console  Verified FAQ Page!
     Go Back On Android
     Verify Profile Screen
 
 Navigate To Gmail Compose
+    Wait For Element Visibility On Android  ${vf_A_skipBtn}
     Wait And Click Element On Android  ${vf_A_skipBtn}
     Wait And Click Element On Android  ${vf_A_addEmail}
     Wait And Click Element On Android  ${vf_A_googleOpt}
@@ -229,7 +229,6 @@ Navigate To Gmail Compose
     Wait And Click Element On Android  ${vf_A_agreeBtn}
     Click On Element If Visibile  ${vf_A_moreBtn}
     Wait And Click Element On Android  ${vf_A_acceptBtn}
-    Sleep  2s
     Click On Element If Visibile  ${vf_A_okBtn}
     Wait And Click Element On Android  ${vf_A_takeMeToGmail}
     Click On Element If Visibile  ${vf_A_dismissBtn}
@@ -237,9 +236,8 @@ Navigate To Gmail Compose
 # PN33, PN34
 User Clicks Email Us Under Help
     Wait And Click Element On Android  ${vf_A_emailUs}
-    Sleep  2s
     Run Keyword If    '${environmentToRunTest}'=='${e_browserstackDevice}'  Navigate To Gmail Compose
-    Wait For Page Conatin Element  ${e_gmailCompose}  5s
+    Wait For Page Conatin Element  ${e_gmailCompose}  
     Verify Page Conatin Text   ${e_gmailCompose}
     Click On Element If Visibile  ${vf_A_noThanksBtn}
     Verify Page Conatin Text   ${e_mailTxt1}
@@ -254,29 +252,27 @@ User Clicks Email Us Under Help
 
 # PN35, PN36
 User Clicks Message Us Under Help
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_msgUs}
     Wait And Click Element On Android  ${vf_A_msgUs}
-    Wait For Page Conatin Element  ${e_msgUsHeading}  15s
+    Wait For Page Conatin Element  ${e_msgUsHeading}  
     Verify Page Conatin Text   ${e_msgUsHeading}
     #Cannot open intercom chat screen on BS device
     # Verify Page Conatin Text   ${e_msgRspnd}
     Log to Console  Verified Chat Screen!
     Go Back On Android
-    # Sleep  10s
+    # Wait For Element Visibility On Android  ${vf_A_home}
     # Wait and Click Element On Android  ${vf_A_home}
     # Page Should Contain Element  ${vf_A_chatBoxIcon}
     # Click On Profile Button
-    Sleep  2s
-    #Page Should Contain Element  ${vf_A_chatBoxIcon}
+    # Wait For Element Visibility On Android  ${vf_A_chatBoxIcon}
+    # Page Should Contain Element  ${vf_A_chatBoxIcon}
     # NOTE: Due to delay in reply the scripts are failing
     # Wait And Click Element On Android  ${vf_A_chatBoxIcon}
     # Input Text  ${vf_A_msgInputFld}  ${e_msgInput}
     # Wait And Click Element On Android  ${vf_A_sendBtn}
     # Close Android Keyboard
-    # Sleep  2s
     # Log to Console  Verified Intercom Chat Screen!
     # Go Back On Android
-    # Sleep  3s
     Verify Profile Screen
 
 Click On Sub-menus Under Help And Verify
@@ -289,10 +285,10 @@ Click On Sub-menus Under Help And Verify
 # Account
 # PN37-PN40
 User Clicks Manage Plan Under Account
-    Wait For Page Conatin Element  ${e_mngPln}  5s
+    Wait For Page Conatin Element  ${e_mngPln}  
     Click Text  ${e_mngPln}
     # Plan details section
-    Wait For Page Conatin Element  ${e_planManagement}  5s
+    Wait For Page Conatin Element  ${e_planManagement}  
     Verify Page Conatin Text   ${e_planManagement}
     Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
     Verify Page Contains Element On Android  ${vf_A_downgradePlanBtn}
@@ -307,16 +303,16 @@ User Clicks Manage Plan Under Account
 
 # PN41, PN42
 User Clicks Investment Profile Under Account
-    Wait For Page Conatin Element  ${e_invstmtProfile}  5s
+    Wait For Page Conatin Element  ${e_invstmtProfile}  
     Click Text  ${e_invstmtProfile}
-    Wait For Page Conatin Element  ${e_invstmtProfile}  5s
+    Wait For Page Conatin Element  ${e_invstmtProfile}  
     Verify Page Conatin Text  ${e_invstmtProfile}
     Log to Console  Verified Investment Page Heading!
-    Wait For Page Conatin Element  ${e_riskToleranceOpt}  5s
+    Wait For Page Conatin Element  ${e_riskToleranceOpt}  
     Click Text  ${e_riskToleranceOpt}
-    Wait For Page Conatin Element  ${e_riskToleranceOpt}  5s
+    Wait For Page Conatin Element  ${e_riskToleranceOpt}  
     Verify Page Conatin Text  ${e_riskToleranceOpt}
-    Wait For Page Conatin Element  ${e_riskToleranceOpt1Txt}  5s
+    Wait For Page Conatin Element  ${e_riskToleranceOpt1Txt}  
     Click Text  ${e_riskToleranceOpt1Txt}
     Click Text  ${e_riskToleranceOpt3Txt}
     Click Text  ${e_riskToleranceOpt2Txt}
@@ -324,16 +320,16 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_saveBtnTxt}  
     Verify Page Conatin Text  ${e_investingFrequencyOpt}
     Click Text  ${e_investingFrequencyOpt}
-    Wait For Page Conatin Element  ${e_investingFrequencyOpt1Txt}  5s
+    Wait For Page Conatin Element  ${e_investingFrequencyOpt1Txt}  
     Click Text  ${e_investingFrequencyOpt1Txt}
     Click Text  ${e_investingFrequencyOpt2Txt}
     Click Text  ${e_investingFrequencyOpt3}
     Verify Page Conatin Text  ${e_investingFrequencyOpt3}
     Click Text  ${e_saveBtnTxt}  
-    Wait For Page Conatin Element  ${e_investingExperienceOpt}  5s
+    Wait For Page Conatin Element  ${e_investingExperienceOpt}  
     Verify Page Conatin Text  ${e_investingExperienceOpt}
     Click Text  ${e_investingExperienceOpt}
-    Wait For Page Conatin Element  ${e_investingExprncOpt1TxtUndrProfile}  5s
+    Wait For Page Conatin Element  ${e_investingExprncOpt1TxtUndrProfile}  
     Click Text  ${e_investingExprncOpt1TxtUndrProfile}
     Click Text  ${e_investingExprncOpt2TxtUndrProfile}
     Click Text  ${e_investingExprncOpt3TxtUndrProfile}
@@ -341,30 +337,30 @@ User Clicks Investment Profile Under Account
     Click Text  ${e_investingExprncOpt5TxtUndrProfile}
     Verify Page Conatin Text  ${e_investingExprncOpt3TxtUndrProfile}
     Click Text  ${e_saveBtnTxt}  
-    Wait For Page Conatin Element  ${e_yearlyIncomeOpt}  5s
+    Wait For Page Conatin Element  ${e_yearlyIncomeOpt}  
     Verify Page Conatin Text  ${e_yearlyIncomeOpt}
     Click Text  ${e_yearlyIncomeOpt}
-    Wait For Page Conatin Element  ${e_yearlyIncomeOpt1TxtUndrProfile}  5s
+    Wait For Page Conatin Element  ${e_yearlyIncomeOpt1TxtUndrProfile}  
     Click Text  ${e_yearlyIncomeOpt1TxtUndrProfile}
     Click Text  ${e_yearlyIncomeOpt2TxtUndrProfile}
     Click Text  ${e_yearlyIncomeOpt4Txt}
     Click Text  ${e_yearlyIncomeOpt3TxtUndrProfile}
     Verify Page Conatin Text  ${e_yearlyIncomeOpt3TxtUndrProfile}
     Click Text  ${e_saveBtnTxt}  
-    Wait For Page Conatin Element  ${e_liquidNetWorthOpt}  5s
+    Wait For Page Conatin Element  ${e_liquidNetWorthOpt}  
     Verify Page Conatin Text  ${e_liquidNetWorthOpt}
     Click Text  ${e_liquidNetWorthOpt}
-    Wait For Page Conatin Element  ${e_liquidNetWorthOpt1Txt}  5s
+    Wait For Page Conatin Element  ${e_liquidNetWorthOpt1Txt}  
     Click Text  ${e_liquidNetWorthOpt1Txt}
     Click Text  ${e_liquidNetWorthOpt2Txt}
     Click Text  ${e_liquidNetWorthOpt4Txt}
     Click Text  ${e_liquidNetWorthOpt3Txt}
     Verify Page Conatin Text  ${e_liquidNetWorthOpt3Txt}
     Click Text  ${e_saveBtnTxt}  
-    Wait For Page Conatin Element  ${e_totalNetWorthOpt}  5s
+    Wait For Page Conatin Element  ${e_totalNetWorthOpt}  
     Verify Page Conatin Text  ${e_totalNetWorthOpt}
     Click Text  ${e_totalNetWorthOpt}
-    Wait For Page Conatin Element  ${e_totalNetWorthOpt1TxtUndrProfile}  5s
+    Wait For Page Conatin Element  ${e_totalNetWorthOpt1TxtUndrProfile}  
     Click Text  ${e_totalNetWorthOpt1TxtUndrProfile}
     Click Text  ${e_totalNetWorthOpt2TxtUndrProfile}
     Click Text  ${e_totalNetWorthOpt4Txt}
@@ -372,30 +368,29 @@ User Clicks Investment Profile Under Account
     Verify Page Conatin Text  ${e_totalNetWorthOpt3TxtUndrProfile}
     Log to Console  Verified all options under Investment Profile!
     Click Text  ${e_saveBtnTxt}  
-    Sleep  3s
     Click On Back Button From Top And Verify Profile Screen
 
 # PN43, PN44
 User Clicks Security Under Account
-    Wait For Page Conatin Element  ${e_security}  10s
+    Wait For Page Conatin Element  ${e_security}  
     Click Text  ${e_security}
-    Wait For Page Conatin Element  ${e_security}  5s
+    Wait For Page Conatin Element  ${e_security}  
     Verify Page Conatin Text  ${e_security}
     Log to Console  Verified Security Page Heading!
     Verify Page Conatin Text  ${e_updatePIN}
     Verify Page Conatin Text  ${e_updatePIN}
     Log to Console  Verified Security Text!
     Click Text  ${e_updatePIN}
-    Sleep  2s
     Enter Pin  ${e_validPin}
     Close Android Keyboard
-    Wait For Page Conatin Element  ${e_changePINTxt}  5s
+    Wait For Page Conatin Element  ${e_changePINTxt}  
     Verify Page Conatin Text   ${e_changePINTxt}
     Log to Console  Verified Update Pin Page!
     Click On Back Arrow
     Click On Back Button From Top And Verify Profile Screen
 
 Click On Go Premium
+    Wait For Element Visibility On Android  ${vf_A_goPremium}
     Wait And Click Element On Android  ${vf_A_goPremium}
     Log to Console  Clicked on Go Premium
 
@@ -403,25 +398,22 @@ Click On Go Premium
 User Clicks Go Premium Under Account
     Swipe By Percent  70  70  40  40  5000
     Click On Go Premium
-    Wait For Page Conatin Element  ${e_payText}  2s
+    Wait For Page Conatin Element  ${e_payText}  
     Verify Page Conatin Text   ${e_payText}
-    Sleep  2s
     Swipe By Percent  70  70  50  50  5000
-    Wait For Page Conatin Element  ${e_premiumPlanTxt}  3s
+    Wait For Page Conatin Element  ${e_premiumPlanTxt}  
     Verify Page Conatin Text   ${e_premiumPlanTxt}
     Swipe By Percent  70  70  50  50  5000
-    Sleep  2s
+    Wait For Element Visibility On Android  ${vf_A_basicSelectBtn}
     Wait And Click Element On Android  ${vf_A_basicSelectBtn}
-    Sleep  3s
     #Go Back On Android
     Click On Element If Visibile  ${vf_A_continuePayment}
-    Wait For Page Conatin Element  ${e_premiumPlanAmt}  10s
+    Wait For Page Conatin Element  ${e_premiumPlanAmt}  
     Verify Page Conatin Text   ${e_premiumPlanAmt}
     Wait And Click Element On Android  ${vf_A_closeButton}
     Log to Console  Clicked on Close icon within Payment screen
-    Sleep  3s
     Swipe By Percent  80  70  20  20  5000
-    Wait For Page Conatin Element  ${e_faqTxt}  5s
+    Wait For Page Conatin Element  ${e_faqTxt}  
     Verify Page Conatin Text   ${e_faqTxt}
     Verify Page Conatin Text   ${e_faqQ1}
     Verify Page Conatin Text   ${e_faqA1}
@@ -430,7 +422,7 @@ User Clicks Go Premium Under Account
     Verify Page Conatin Text   ${e_faqQ3}
     Verify Page Conatin Text   ${e_faqA3}
     Swipe By Percent  80  70  20  20  5000
-    Wait For Page Conatin Element  ${e_faqQ4}  5s
+    Wait For Page Conatin Element  ${e_faqQ4}  
     Verify Page Conatin Text   ${e_faqQ4}
     Verify Page Conatin Text   ${e_faqA4}
     Verify Page Conatin Text   ${e_faqQ5}
@@ -454,7 +446,6 @@ Click On Sub-menus Under Account And Verify
     # NOTE- Manage Plan sections is not constant in Indrajit's account
     # User Clicks Manage Plan Under Account
     User Clicks Investment Profile Under Account
-    Sleep  2s
     Swipe By Percent  70  70  40  40  5000
     User Clicks Security Under Account
     User Logs Out From The App
