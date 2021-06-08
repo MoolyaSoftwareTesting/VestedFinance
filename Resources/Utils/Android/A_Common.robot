@@ -40,7 +40,8 @@ Verify Element And Text On Android
 
 Wait For Element Visibility On Android  
     [Arguments]  ${element}
-    Wait Until Element Is Visible  ${element}  timeout=20
+    Sleep  3s
+    Wait Until Element Is Visible  ${element}  timeout=25
 
 Wait And Click Element On Android
     [Arguments]  ${element}
@@ -91,7 +92,7 @@ Verify Page Conatin Text
     Page Should Contain Text  ${text}  
 
 Wait For Page Conatin Element  
-    [Arguments]  ${text}  ${timeout}
+    [Arguments]  ${text}  
     Wait Until Page Contains  ${text}  timeout=20
 
 Replace Characters
