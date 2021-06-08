@@ -15,6 +15,7 @@ Resource   ../../../AppLocators/Android/A_ProfileLocators.robot
 Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
 Resource   ../../../AppLocators/Android/A_ReferralLocators.robot
 Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
+Resource   ../../../AppLocators/Android/A_SuperVestLocators.robot
 
 *** Keywords ***
 

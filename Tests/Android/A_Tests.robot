@@ -345,7 +345,7 @@ Navigations Under History Section For KYC Incomplete Account
 
 # Normal Subscription- KYC Approved Basic Account
 Verify Vest Upsell And Payment Plan Screen For Basic Account
-    [Tags]  Subscription      
+    [Tags]  Subscription  Batch2    
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -358,7 +358,7 @@ Verify Vest Upsell And Payment Plan Screen For Basic Account
 # TBU: After KYC-Doc upload on BS 
 # Basic plan Subscription as part of KYC flow 
 Basic Subscription Using UPI
-    [Tags]  Subscription     
+    [Tags]  Subscription  Batch2
     User Navigates To Signin Screen
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -374,7 +374,7 @@ Basic Subscription Using UPI
 # NOTE: To be executed after 'Basic Subscription Using UPI'
 # Premium Subscription- KYC Completed Basic Account
 Premium Subscription With Card
-    [Tags]  Subscription     
+    [Tags]  Subscription  Batch2  
     [Teardown]  Rest Android Application
     Click On Profile Button
     Click On Go Premium
@@ -384,7 +384,7 @@ Premium Subscription With Card
 # TBU: After KYC-Doc upload on BS 
 # Premium Subscription- Premium Account
 Verify Payment Plan Screen And Downgrade Premium Subscription
-    [Tags]  Subscription     
+    [Tags]  Subscription  Batch2   
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
     Verify Account Status Screen
@@ -403,7 +403,7 @@ Verify Payment Plan Screen And Downgrade Premium Subscription
 
 # Premium Subscription- KYC Approved Premium Account
 Navigate To Vest Upsell And Verify
-    [Tags]  Subscription     
+    [Tags]  Subscription  Batch2   
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
@@ -411,7 +411,7 @@ Navigate To Vest Upsell And Verify
 
 # Basic Subscription Additional Scripts
 Basic User Account - Withdrawal, Vest Upsell
-    [Tags]  Subscription    
+    [Tags]  Subscription  Batch2 
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -420,7 +420,7 @@ Basic User Account - Withdrawal, Vest Upsell
 
 # Premium Subscription Additional Scripts
 Premium User Account - Withdrawal, Vest Upsell, Super Vest
-    [Tags]  Subscription       
+    [Tags]  Subscription  Batch2     
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
@@ -429,28 +429,28 @@ Premium User Account - Withdrawal, Vest Upsell, Super Vest
     Verify Withdrawal With Premium Subscription Account
 
 Referral Screen For New User
-    [Tags]  Referrals    
+    [Tags]  Referrals  Batch2  
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With New KYC Account
     New KYC User Navigates To Referral Page
 
 Referral Screen For Incomplete KYC User
-    [Tags]  Referrals    
+    [Tags]  Referrals   Batch2
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Non KYC Completed Account For Referrals
     KYC Started User Navigates To Referral Page
 
 Referral Screen For Non Approved KYC User
-    [Tags]  Referrals    
+    [Tags]  Referrals   Batch2 
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With Non KYC Account
     KYC Not Approved User Navigates To Referral Page
 
 Referral Screen For KYC Approved User And Links Funtionality
-    [Tags]  Referrals  
+    [Tags]  Referrals  Batch2
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -458,7 +458,7 @@ Referral Screen For KYC Approved User And Links Funtionality
     Open Browser And Paste Copied Invite Link
 
 Referral Screen For KYC Approved User And Invite Button Funtionality
-    [Tags]  Referrals
+    [Tags]  Referrals  Batch2
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Basic Account
@@ -496,7 +496,7 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
 
 # # FT_97 - FT_99, FT_102, SL03, SL05
 # Submit Online Fund Transfer And Withdrawal Fund
-#     [Tags]  FundTransfer  Check
+#     [Tags]  FundTransfer  
 #     [Teardown]  Rest Android Application
 #     User Navigates To Signin Screen
 #     Signin With KYC Approved Account For Online Transfer
@@ -529,10 +529,10 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
 #     Fill And Submit A Fund Transfer- Non Indian Bank
 
 # Submit Visit The Bank- Fund Transfer
-#     [Tags]  FundTransfer  Test
-#     # [Teardown]  Rest Android Application
-#     # User Navigates To Signin Screen
-#     # Signin With KYC Approved Account For Online Transfer
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
 #     User Visits The Bank - Axis Bank
 #     User Visits The Bank - ICICI Bank
 #     User Visits The Bank - HDFC Bank
@@ -546,7 +546,12 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
 #     User Visits The Bank - Other Indian Bank
 
 # Submit Visit The Bank- Fund Transfer
-#     [Tags]  SuperVest  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Premium Account
+#     [Tags]  SuperVest  Test
+#     # [Teardown]  Rest Android Application
+#     # User Navigates To Signin Screen
+#     # Signin With KYC Approved Premium Account
+#     # Verify Super Vest Header And Title Card
+#     Select Any Super Vests And Compare Vests
+#     Verify Super Vest Graph
+
+    

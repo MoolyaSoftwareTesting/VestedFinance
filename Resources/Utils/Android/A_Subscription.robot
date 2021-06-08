@@ -122,7 +122,7 @@ Scroll Down Till Multi-Asset Class Vests
             Wait For Page Conatin Element  ${e_aggMultiAssetVestsTxt}  
             Exit For Loop If    ${isElementVisible}
         ELSE
-            Swipe By Percent  70  70  20  20  5000     
+            Swipe By Percent  80  80  20  20  5000     
         END
     END
 
@@ -548,7 +548,7 @@ Verify Super Vest Upsell With Premium Subscription Account
     Click Text   ${e_conMultiAssetVests}
     Wait For Page Conatin Element  ${e_conMultiAssetClass}  
     Verify Page Conatin Text    ${e_conMultiAssetClass}
-   Wait For Page Conatin Element  ${e_buy}  
+    Wait For Page Conatin Element  ${e_buy}  
     Click Text  ${e_buy}
     Wait For Page Conatin Element  ${e_investAmt}  
     Verify Page Conatin Text   ${e_investAmt0}

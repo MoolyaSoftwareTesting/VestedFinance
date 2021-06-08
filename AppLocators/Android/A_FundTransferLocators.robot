@@ -148,6 +148,13 @@ ${e_routingNum} =  Routing Number (ABA)
 ${e_swiftCode} =  SWIFT Code
 ${e_nextBtn2} =  NEXT
 
+# All banks
+${e_fundInpersonWithBank} =  FUND IN-PERSON WITH BANK VISIT
+${e_emailSentText} =  Forms mailed to
+${e_sendAgain} =  Send again
+
+${e_VTBTxt1} =  1. Print out and fill in the remaining highlighted sections of the forms we have prepared for you.
+${e_VTBTxt2} =  2. Submit the forms at the nearest bank branch and save the wire receipt.
 
 # Withdrawal Funds
 ${e_kycApprovalNeededPopupTxt3} =  Investing in US stocks means investing in US dollars. Vested charges an $11 withdrawal fee every time you initiate an withdrawal except for premium subscribers who get one free withdrawal annually.

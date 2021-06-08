@@ -228,7 +228,7 @@ Fill And Remove A Fund Transfer
 Verify Success Screen After Transaction Is Submited Successfully
     Wait For Page Conatin Element  ${e_submitTransferSuccessMsg}  
     Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
-    Verify Page Conatin Text  ${e_amtToTransferTxt}
+    Verify Page Conatin Text  ${e_amtToTransfer}
     Verify Page Conatin Text  ${e_submitTransferSuccessMsg}
     Verify Page Conatin Text  ${e_submitTransferSuccessTxt}
     Verify Page Conatin Text  ${e_backToDashbrdBtnSccsTransfer}
@@ -445,7 +445,7 @@ Select Bank From Select Your Bank Screen
             Click Element  ${option}
             Exit For Loop If    ${isElementVisible}
         ELSE
-            Swipe By Percent  70  90  40  75  5000
+            Swipe By Percent  70  80  40  75  5000
         END
     END
 
@@ -461,10 +461,10 @@ Click On Switch Bank Link And Select A Bank For Deposit
         ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${bank}
         IF   ${isElementVisible}
             Click Text  ${bank}
-            Exit For Loop If    ${isElementVisible}
             Log To Console  Selected Bank - ${bank}
+            Exit For Loop If    ${isElementVisible}
         ELSE
-            Swipe By Percent  90  90  10  10  3000
+            Swipe By Percent  80  80  20  20  3000
         END
     END
     Wait For Page Conatin Element  ${bank} 
@@ -523,12 +523,12 @@ Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank
     Verify Page Conatin Text  ${e_bankName}
     Verify Page Conatin Text  ${bank}
     Verify Page Conatin Text  ${e_amtInUSDTxt}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  50  3000
     Verify Page Conatin Text  ${e_dateOnWireReceiptTxt}
     Click Text  ${e_selectDateTxt}
-    Wait For Page Conatin Element  ${e_calenderOkBtn}  
-    Click Text  ${e_calenderOkBtn}
+    Wait And Click Element On Android  ${vf_A_calenderOkBtn}
     Verify Page Conatin Text  ${e_pwdForPdfTxt}
+    Swipe By Percent  80  80  20  50  3000
     Verify Page Conatin Text  ${e_enterPwdTxt}
     Verify Page Conatin Text  ${e_leaveBlankTxt}
     Verify Page Conatin Text  ${e_incmpltTransferTxt}
@@ -537,12 +537,12 @@ Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank
     Log to Console  Verified, Filled & Uploaded the Wire Receipt for Transfer
 
 User Visits The Bank - Axis Bank
-    # Click On Tansfer Tab
-    # Wait For Element Visibility On Android  ${vf_A_addFundsBtn}
-    # Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    # Fill Deposit Screen
-    # Click On Switch Bank Link And Select A Bank For Deposit  ${e_AxisBank}
-    # Click On Next Button Under Add Funds Flow
+    Click On Tansfer Tab
+    Wait For Element Visibility On Android  ${vf_A_addFundsBtn}
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Fill Deposit Screen
+    Click On Switch Bank Link And Select A Bank For Deposit  ${e_AxisBank}
+    Click On Next Button Under Add Funds Flow
     Verify Fund Online Screen - Visit The Bank
     Switch to Fund In-Persom With Bank Method
     Email Forms To The Registered Email Id
@@ -554,7 +554,6 @@ User Visits The Bank - Axis Bank
     Verify Success Screen After Transaction Is Submited Successfully
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
-
 
 User Visits The Bank - ICICI Bank
     Click On Tansfer Tab
@@ -689,7 +688,7 @@ Click On Switch Bank Link And Select A Bank For Deposit - Citi Bank
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
     Verify Page Conatin Text  ${e_indianBankOpts}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Click Text  ${e_CitiBank}
     Log To Console  Selected Bank - ${e_CitiBank}
     Wait For Page Conatin Element  ${e_CitiBankFull}  
@@ -740,7 +739,7 @@ Click On Switch Bank Link And Select A Bank For Deposit - SBI Bank
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
     Verify Page Conatin Text  ${e_indianBankOpts}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Click Text  ${e_SBI}
     Log To Console  Selected Bank - ${e_SBI}
     Wait For Page Conatin Element  ${e_SBIBankFull}  
@@ -793,13 +792,13 @@ Verify Fund Online Screen - Visit The Bank - Other Bank
     Verify Page Conatin Text  ${e_furtherCredit}
     Verify Page Conatin Text  ${e_DWInfoTxt}
     Verify Page Conatin Text  ${e_accNum}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Verify Page Conatin Text  ${e_beneInfoEmail}
     Verify Page Conatin Text  ${e_beneInfoPhNo}
     Verify Page Conatin Text  ${e_bankInfo}
     Verify Page Conatin Text  ${e_routingNum}
     Verify Page Conatin Text  ${e_swiftCode}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Verify Page Conatin Text  ${e_OtherBanksDetails3}
     Verify Page Conatin Text  ${e_OtherBanksTxt3}
     Verify Page Conatin Text  ${e_important}
@@ -822,11 +821,10 @@ Verify And Fill The Upload Wire Receipt Received Screen - Other Bank
     Wait For Element Visibility On Android   ${vf_A_enterBankName}
     Input Text  ${vf_A_enterBankName}  ${e_sampleBank}
     Verify Page Conatin Text  ${e_amtInUSDTxt}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Verify Page Conatin Text  ${e_dateOnWireReceiptTxt}
     Click Text  ${e_selectDateTxt}
-    Wait For Page Conatin Element  ${e_calenderOkBtn}  
-    Click Text  ${e_calenderOkBtn}
+    Wait And Click Element On Android  ${vf_A_calenderOkBtn}
     Verify Page Conatin Text  ${e_pwdForPdfTxt}
     Verify Page Conatin Text  ${e_enterPwdTxt}
     Verify Page Conatin Text  ${e_leaveBlankTxt}
@@ -975,7 +973,7 @@ Select Bank State
             Click Element  ${option}
             Exit For Loop If    ${isElementVisible}
         ELSE
-            Swipe By Percent  70  90  40  75  5000
+            Swipe By Percent  70  80  40  75  5000
         END
     END
 
@@ -992,7 +990,7 @@ Fill All The Withdrawal Details And Continue
     Input Text  ${vf_A_swiftCodeTxtBox}  ${e_swiftCodeInput} 
     Wait For Element Visibility On Android  ${vf_A_reTypeSwiftCodeTxtBox}
     Input Text  ${vf_A_reTypeSwiftCodeTxtBox}  ${e_swiftCodeInput} 
-    Swipe By Percent  80  90  20  10  5000
+    Swipe By Percent  80  80  20  10  5000
     Input Text  ${vf_A_bankNameTxtBox}  ${e_bankNameInput} 
     Wait For Element Visibility On Android  ${vf_A_bankAddrsTxtBox}
     Input Text  ${vf_A_bankAddrsTxtBox}  ${e_bankAddressInput} 
@@ -1000,7 +998,7 @@ Fill All The Withdrawal Details And Continue
     Verify Element Visibility  ${vf_A_selBankStateTxt}
     Verify Element Visibility  ${vf_A_selBankStateDropdown}
     Select Bank State  ${vf_A_bankStateInput} 
-    Swipe By Percent  80  90  20  10  5000
+    Swipe By Percent  80  80  20  10  5000
     Input Text  ${vf_A_bankCityTxtBoxForFilling}  ${e_bankCityInput} 
     Wait For Element Visibility On Android  ${vf_A_bankZipCodeTxtBoxForFilling}
     Input Text  ${vf_A_bankZipCodeTxtBoxForFilling}  ${e_bankZipCodeInput} 
@@ -1064,7 +1062,7 @@ Verify All Bank Names
     Verify Page Conatin Text   ${e_IDFCBank}
     Verify Page Conatin Text   ${e_InduslandBank}
     Verify Page Conatin Text   ${e_KotakBank}
-    Swipe By Percent  90  90  10  10  3000
+    Swipe By Percent  80  80  20  20  3000
     Verify Page Conatin Text   ${e_YesBank}
     Verify Page Conatin Text   ${e_BankOfBaroda}
     Verify Page Conatin Text   ${e_CitiBank}
@@ -1074,5 +1072,5 @@ Verify All Bank Names
     Verify Page Conatin Text   ${e_OtherBank}
     Verify Page Conatin Text   ${e_international}
     Verify Page Conatin Text   ${e_nonIndianBank}
-    Swipe By Percent  90  10  10  90  3000
+    Swipe By Percent  80  20  20  80  3000
 
