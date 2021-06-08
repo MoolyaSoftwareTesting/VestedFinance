@@ -465,83 +465,88 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
     Subscribed User Navigated To Referral Page
     Invite Link Functionality
 
-# Non KYC Approved Account
-Fund Transfer- Non KYC Approved Account
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Completed Basic Account
-    Click On Tansfer Tab
-    Verify Add Funds For Non KYC Approved Account
-    Verify Withdrawal Funds For Non KYC Approved Account
+# # Non KYC Approved Account
+# Fund Transfer- Non KYC Approved Account
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Completed Basic Account
+#     Click On Tansfer Tab
+#     Verify Add Funds For Non KYC Approved Account
+#     Verify Withdrawal Funds For Non KYC Approved Account
 
-# KYC Approved Account- No Funding History
-Fund Transfer For New Account- No Funding History
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With New Account- No Funding History
-    Click On Tansfer Tab
-    Verify Fund Transfer Screen For New Account With No Funding History
-    Click On Withdraw Funds And Verify Withdrawal Amount Screen
+# # KYC Approved Account- No Funding History
+# Fund Transfer For New Account- No Funding History
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With New Account- No Funding History
+#     Click On Tansfer Tab
+#     Verify Fund Transfer Screen For New Account With No Funding History
+#     Click On Withdraw Funds And Verify Withdrawal Amount Screen
 
-# FT_97 - FT_101
-Remove Online Fund Transfer
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Click On Tansfer Tab
-    Fill And Remove A Fund Transfer
+# # FT_97 - FT_101
+# Remove Online Fund Transfer
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Click On Tansfer Tab
+#     Fill And Remove A Fund Transfer
 
-# FT_97 - FT_99, FT_102, SL03, SL05
-Submit Online Fund Transfer And Withdrawal Fund
-    [Tags]  FundTransfer  Check
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Click On Tansfer Tab
-    Fill And Submit A Fund Transfer- ICICI Bank Online
-    Click On Tansfer Tab
-    Verify Second Withdrawal
-    Verify Withdrawal Amount Field Validation 
-    Verify Withdrawal Details Feilds Validation
+# # FT_97 - FT_99, FT_102, SL03, SL05
+# Submit Online Fund Transfer And Withdrawal Fund
+#     [Tags]  FundTransfer  Check
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Click On Tansfer Tab
+#     Fill And Submit A Fund Transfer- ICICI Bank Online
+#     Click On Tansfer Tab
+#     Verify Second Withdrawal
+#     Verify Withdrawal Amount Field Validation 
+#     Verify Withdrawal Details Feilds Validation
 
-# Fund Withdrawal: SL04
-Verify Withdrawal Process For First Withdrawal
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Premium Account For 1st Withdrawal
-    Click On Tansfer Tab
-    Verify First Withdrawal
+# # Fund Withdrawal: SL04
+# Verify Withdrawal Process For First Withdrawal
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Premium Account For 1st Withdrawal
+#     Click On Tansfer Tab
+#     Verify First Withdrawal
 
-Submit Online Fund Transfer
-    [Tags]  FundTransfer  
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    Fill And Submit A Fund Transfer- Axis Bank Online
-    Fill And Submit A Fund Transfer- HDFC Bank Online
-    Fill And Submit A Fund Transfer- IDFC Bank Online
-    Fill And Submit A Fund Transfer- Induslnd Bank Online
-    Fill And Submit A Fund Transfer- Kotak Bank Online
-    Fill And Submit A Fund Transfer- Non Indian Bank
+# Submit Online Fund Transfer
+#     [Tags]  FundTransfer  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Account For Online Transfer
+#     Fill And Submit A Fund Transfer- Axis Bank Online
+#     Fill And Submit A Fund Transfer- HDFC Bank Online
+#     Fill And Submit A Fund Transfer- IDFC Bank Online
+#     Fill And Submit A Fund Transfer- Induslnd Bank Online
+#     Fill And Submit A Fund Transfer- Kotak Bank Online
+#     Fill And Submit A Fund Transfer- Non Indian Bank
 
-Submit Visit The Bank- Fund Transfer
-    [Tags]  FundTransfer  Test
-    [Teardown]  Rest Android Application
-    User Navigates To Signin Screen
-    Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Axis Bank
-    User Visits The Bank - ICICI Bank
-    User Visits The Bank - HDFC Bank
-    User Visits The Bank - KOTAK Bank
-    User Visits The Bank - Yes Bank
-    User Visits The Bank - Bank Of Baroda
-    User Visits The Bank - Citi Bank
-    User Visits The Bank - HSBC Bank
-    User Visits The Bank - SBI Bank
-    User Visits The Bank - PNB Bank
-    User Visits The Bank - Other Indian Bank
+# Submit Visit The Bank- Fund Transfer
+#     [Tags]  FundTransfer  Test
+#     # [Teardown]  Rest Android Application
+#     # User Navigates To Signin Screen
+#     # Signin With KYC Approved Account For Online Transfer
+#     User Visits The Bank - Axis Bank
+#     User Visits The Bank - ICICI Bank
+#     User Visits The Bank - HDFC Bank
+#     User Visits The Bank - KOTAK Bank
+#     User Visits The Bank - Yes Bank
+#     User Visits The Bank - Bank Of Baroda
+#     User Visits The Bank - Citi Bank
+#     User Visits The Bank - HSBC Bank
+#     User Visits The Bank - SBI Bank
+#     User Visits The Bank - PNB Bank
+#     User Visits The Bank - Other Indian Bank
 
+# Submit Visit The Bank- Fund Transfer
+#     [Tags]  SuperVest  
+#     [Teardown]  Rest Android Application
+#     User Navigates To Signin Screen
+#     Signin With KYC Approved Premium Account

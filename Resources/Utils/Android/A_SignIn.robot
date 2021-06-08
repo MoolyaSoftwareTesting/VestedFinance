@@ -167,7 +167,7 @@ Signin With Invalid Credentials - Google
     # Close Android Keyboard
     Go Back On Android
     Click On Next Button
-    Wait For Page Conatin Element  ${e_invalidGoogleLoginErrorTxt}  5s
+    Wait For Page Conatin Element  ${e_invalidGoogleLoginErrorTxt}  
     Verify Error Message Displayed  ${e_invalidGoogleLoginErrorTxt}
 
 Signin With Invalid Credentials - Apple

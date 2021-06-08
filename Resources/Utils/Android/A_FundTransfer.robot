@@ -433,6 +433,22 @@ Fill And Submit A Fund Transfer- Non Indian Bank
 
 # Visit The Bank Scenarios
 
+Select Bank From Select Your Bank Screen
+    [Arguments]  ${option}
+    Wait For Element Visibility On Android  ${vf_A_selBankStateDropdown}
+    Wait And Click Element On Android  ${vf_A_selBankStateDropdown}
+    Wait For Element Visibility On Android  ${option}
+    FOR  ${i}  IN RANGE  1  10
+        ${isElementVisible} =  Run Keyword And Return Status  Element Should Be Visible  ${option}
+        IF   ${isElementVisible}
+            Wait For Element Visibility On Android  ${option}
+            Click Element  ${option}
+            Exit For Loop If    ${isElementVisible}
+        ELSE
+            Swipe By Percent  70  90  40  75  5000
+        END
+    END
+
 Click On Switch Bank Link And Select A Bank For Deposit
     [Arguments]  ${bank}
     Click Text  ${e_switchBankLink}
@@ -441,20 +457,26 @@ Click On Switch Bank Link And Select A Bank For Deposit
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
     Verify Page Conatin Text  ${e_indianBankOpts}
-    Swipe By Percent  90  90  10  10  3000
-    Wait For Page Conatin Element  ${bank} 
-    Click Text  ${bank}
-    Log To Console  Selected Bank - ${bank}
+    FOR  ${i}  IN RANGE  1  3
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${bank}
+        IF   ${isElementVisible}
+            Click Text  ${bank}
+            Exit For Loop If    ${isElementVisible}
+            Log To Console  Selected Bank - ${bank}
+        ELSE
+            Swipe By Percent  90  90  10  10  3000
+        END
+    END
     Wait For Page Conatin Element  ${bank} 
     Verify Page Conatin Text  ${bank}
 
 Verify Fund Online Screen - Visit The Bank
     Wait For Page Conatin Element  ${e_selectDiffFundTransfer}  
     Verify Page Conatin Text  ${e_selectDiffFundTransfer}
-    Verify Page Conatin Text  ${e_importantTxt}
+    Verify Page Conatin Text  ${e_important}
     Verify Page Conatin Text  ${e_importantP1}
     Verify Page Conatin Text  ${e_importantP2}
-    Verify Page Conatin Text  ${e_feesTxt}
+    Verify Page Conatin Text  ${e_fees}
     Verify Page Conatin Text  ${e_feesP1}
     Verify Page Conatin Text  ${e_dwnldInstrctnsBtn}
     Log to Console  Verified Fund Online Screen!
@@ -470,10 +492,10 @@ Switch to Fund In-Persom With Bank Method
 Verify Fund Online Screen - Visit The Bank - Direct Method
     Wait For Page Conatin Element  ${e_fundInpersonWithBank}  
     Verify Page Conatin Text  ${e_fundInpersonWithBank}
-    Verify Page Conatin Text  ${e_importantTxt}
+    Verify Page Conatin Text  ${e_important}
     Verify Page Conatin Text  ${e_importantP1}
     Verify Page Conatin Text  ${e_importantP2}
-    Verify Page Conatin Text  ${e_feesTxt}
+    Verify Page Conatin Text  ${e_fees}
     Verify Page Conatin Text  ${e_feesP1}
     Log to Console  Verified Fund Online Screen!
 
@@ -515,12 +537,12 @@ Verify And Fill The Upload Wire Receipt Received Screen - Visit The Bank
     Log to Console  Verified, Filled & Uploaded the Wire Receipt for Transfer
 
 User Visits The Bank - Axis Bank
-    Click On Tansfer Tab
-    Wait For Element Visibility On Android  ${vf_A_addFundsBtn}
-    Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    Fill Deposit Screen
-    Click On Switch Bank Link And Select A Bank For Deposit  ${e_AxisBank}
-    Click On Next Button Under Add Funds Flow
+    # Click On Tansfer Tab
+    # Wait For Element Visibility On Android  ${vf_A_addFundsBtn}
+    # Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    # Fill Deposit Screen
+    # Click On Switch Bank Link And Select A Bank For Deposit  ${e_AxisBank}
+    # Click On Next Button Under Add Funds Flow
     Verify Fund Online Screen - Visit The Bank
     Switch to Fund In-Persom With Bank Method
     Email Forms To The Registered Email Id
@@ -780,10 +802,10 @@ Verify Fund Online Screen - Visit The Bank - Other Bank
     Swipe By Percent  90  90  10  10  3000
     Verify Page Conatin Text  ${e_OtherBanksDetails3}
     Verify Page Conatin Text  ${e_OtherBanksTxt3}
-    Verify Page Conatin Text  ${e_importantTxt}
+    Verify Page Conatin Text  ${e_important}
     Verify Page Conatin Text  ${e_importantP1}
     Verify Page Conatin Text  ${e_importantP2}
-    Verify Page Conatin Text  ${e_feesTxt}
+    Verify Page Conatin Text  ${e_fees}
     Verify Page Conatin Text  ${e_feesP1}
     Log to Console  Verified Fund Online Screen!
 

@@ -121,7 +121,7 @@ Navigate Back To Signin Screen If Element Visible
 
 Verify Error Message Displayed
     [Arguments]  ${errorMsg}
-    Wait For Page Conatin Element  ${errorMsg}  30s
+    Wait For Page Conatin Element  ${errorMsg}  
     Verify Page Conatin Text  ${errorMsg}
     Log To Console  Verified Error Message
 
