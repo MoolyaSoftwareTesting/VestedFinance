@@ -128,6 +128,26 @@ ${e_withdrwlDetails} =  Withdrawal Details
 ${e_success} =  Success
 ${e_dwnldedSuccessflly} =  Downloaded Successfully
 ${e_okBtn} =  OK
+${e_OtherBanksDetails1} =  1. Visit your bank branch and request an A2 and a declaration form.
+${e_OtherBanksTxt1} =  RBI regulation requires you to fill these forms to fund your Vested account.
+${e_OtherBanksDetails2} =  2. Fill in the forms with DriveWealth as the beneficiary.
+${e_OtherBanksTxt2} =  Your funds are transferred to our broker-partner DriveWealth before they can be deposited into your Vested account.
+${e_OtherBanksDetails3} =  3. Get a wire receipt from your bank
+${e_OtherBanksTxt3} =  Your wire receipt helps us keep track of your deposit.
+${e_accInfo} =  ACCOUNT INFORMATION
+${e_furtherCredit} =  Further Credit To (IMPORTANT!)
+${e_DWInfoTxt} =  This is your unique DriveWealth Account Number. Add this to the Futher Credit To, Memo, or Additional Notes section.
+${e_beneInfo} =  BENEFICIARY INFORMATION
+${e_accInfoName} =  Name
+${e_accNum} =  Account Number
+${e_beneInfoAddress} =  Address
+${e_beneInfoEmail} =  Email
+${e_beneInfoPhNo} =  Phone Number
+${e_bankInfo} =  BANK INFORMATION
+${e_routingNum} =  Routing Number (ABA)
+${e_swiftCode} =  SWIFT Code
+${e_nextBtn2} =  NEXT
+
 
 # Withdrawal Funds
 ${e_kycApprovalNeededPopupTxt3} =  Investing in US stocks means investing in US dollars. Vested charges an $11 withdrawal fee every time you initiate an withdrawal except for premium subscribers who get one free withdrawal annually.
@@ -168,6 +188,62 @@ ${e_bankAddressInput} =  Bangalore
 ${e_bankCityInput} =  Bangalore
 ${e_bankZipCodeInput} =  560100
 ${e_withdrwlConfirmtn} =  Withdrawal Confirmation
+
+# From Thiru's Methods
+# general
+${e_cashBalance} =  Cash Balance
+${e_completedTransfers} =  COMPLETED TRANSFERS
+${e_depositSuccess} =  Deposit - Successful
+${e_incompleteDeposits} =  INCOMPLETE DEPOSITS
+${e_continue} =  CONTINUE
+${e_remove} =  REMOVE
+
+# Add funds page
+${e_addFundsHeading} =  HOW MUCH DO YOU WANT TO DEPOSIT?
+${e_amtToTransfer} =  5
+${e_transferFrom} =  Transfer from
+${e_switchBank} =  SWITCH BANK
+
+# Bank Names
+# Switch Bank
+${e_selectYourBank} =  Select your Bank
+${e_slctBankTxt} =  This provides bank instructions to fund your Vested account. You transfer funds to our broker-partner DriveWealth, which will then be added to your Vested account. DriveWealth is a member of FINRA and SIPC. Your account is insured up to $500,000 USD. Check out Vested’s license and DriveWealth’s license with the SEC.
+${e_slctBankNote} =  Note: There are fees to transfer funds overseas. Please check with your bank for actual prices. 
+${e_indian} =  INDIAN
+${e_international} =  INTERNATIONAL
+# Bank names
+${e_AxisBank} =  Axis Bank
+${e_ICICIBank} =  ICICI Bank
+${e_HDFCBank} =  HDFC Bank
+${e_IDFCBank} =  IDFC First Bank
+${e_InduslandBank} =  Indusland Bank
+${e_KotakBank} =  Kotak Bank
+${e_KotakBankFull} =  Kotak Mahindra Bank
+${e_YesBank} =  Yes Bank
+${e_BankOfBaroda} =  Bank of Baroda
+${e_CitiBank} =  Citi Bank
+${e_CitiBankFull} =  Citibank
+${e_HSBCBank} =  HSBC Bank
+${e_SBI} =  SBI Bank
+${e_SBIBankFull} =  State Bank of India
+${e_PNB} =  Punjab National Bank
+${e_OtherBank} =  Other Indian Bank
+${e_nonIndianBank} =  Non-Indian Bank
+${e_sampleBank} =  Sample Bank
+# Bank names in caps - wire receipt
+${e_AxisBank1} =  AXIS BANK
+${e_ICICIBank1} =  ICICI BANK
+${e_HDFCBank1} =  HDFC BANK
+${e_IDFCBank1} =  IDFC FIRST BANK
+${e_InduslandBank1} =  INDUSLAND BANK
+${e_KotakBank1} =  KOTAK MAHINDRA BANK
+${e_YesBank1} =  YES BANK
+${e_BankOfBaroda1} =  BANK OF BARODA
+${e_CitiBank1} =  CITIBANK
+${e_HSBCBank1} =  HSBC BANK
+${e_SBI1} =  STATE BANK OF INDIA
+${e_PNB1} =  PUNJAB NATIONAL BANK
+${e_OtherBank1} =  Other Indian Bank
 
 
 # LOCATORS
@@ -226,3 +302,20 @@ ${vf_A_bankZipCodeTxtBox} =  xpath=(//*[@class='android.view.ViewGroup' and ./pa
 ${vf_A_bankZipCodeTxtBoxForFilling} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[5]
 ${vf_A_continueBtnUndrWithdrwlDet} =  xpath=//*[@text='Continue']
 ${vf_A_closeIconUnderWireRecpt} =  xpath=//*[@text='close' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]
+${vf_A_previousBtn} =  xpath=//*[@text='PREVIOUS']
+${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
+${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
+${vf_A_removeBtn} =  xpath=(//*[@text='REMOVE'])[1]
+${vf_A_nextBtnUndrFundOnline} =  xpath=//*[@text='NEXT' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]
+${vf_A_selctBank} =  xpath=(//*[@class='android.view.ViewGroup'])[36]
+
+# visit the bank
+${vf_A_emailFormsBtn} =  xpath=//*[@text='EMAIL FORMS']
+${vf_A_samplePicturesFolder} =  xpath=//*[@text='6 items']
+${vf_A_imgOnBS} =  xpath=//*[@class='android.view.ViewGroup'][@index=1][contains(@content-desc,'Photo taken on ')]
+${vf_A_submit} =  xpath=//*[@text='Submit']
+${vf_A_enterBankName} =  xpath=(//*[@class='android.widget.EditText'])[2]
+
+# Withdrawal Funds 
+${vf_A_withdrawalFundsBtn} =  xpath=//*[@text='WITHDRAW FUNDS']
+${vf_A_backArrowInWithdrwl} =  xpath=//*[@text='']
