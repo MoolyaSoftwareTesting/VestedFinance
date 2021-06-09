@@ -241,7 +241,7 @@ ${vf_A_upldDoc} =  xpath=//*[@text='UPLOAD DOCUMENT']
 
 # Document Upload Locators
 ${vf_A_uploadDocBtn} =  xpath=//*[@text='UPLOAD DOCUMENT']
-${vf_A_closeIcon} =  xpath=//*[@text='close']
+${vf_A_closeIcon} =  xpath=//*[@text='close' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@contentDescription='Go back']]]
 ${vf_A_aadhaarPOIOption} =  xpath=//*[@text='Aadhaar']
 ${vf_A_aadhaarPOIOptionImg} =  xpath=//*[@class='android.widget.ImageView' and ./parent::*[@class='android.view.ViewGroup'] and (./preceding-sibling::* | ./following-sibling::*)[@text='Aadhaar']]
 ${vf_A_driversLicensePOIOption} =  xpath=//*[@text=concat('Driver', "'", 's license')]

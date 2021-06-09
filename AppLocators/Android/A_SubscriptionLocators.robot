@@ -117,6 +117,7 @@ ${e_QtrlypaymentUPItxt} =  This is a recurring payment and upto ₹ 750 will be 
 # Multi Asset Vests
 ${e_buyingPower} =  Buying Power
 ${e_previewOrdeBtn} =  Preview Order
+${e_buyAggressive} =  Buy Multi-Asset Class - Aggressive
 
 # LOCATORS
 # Normal Subscription Locators

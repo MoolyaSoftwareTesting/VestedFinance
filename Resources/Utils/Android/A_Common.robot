@@ -94,7 +94,7 @@ Verify Page Conatin Text
 
 Wait For Page Conatin Element  
     [Arguments]  ${text}  
-    Wait Until Page Contains  ${text}  timeout=20
+    Wait Until Page Contains  ${text}  timeout=25
 
 Replace Characters
     [Arguments]  ${text}  ${char1}  ${char2}

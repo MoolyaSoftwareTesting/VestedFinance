@@ -236,10 +236,11 @@ Navigate To Payment Plan Screen And Verify Premium Account For Yearly
     Click On Manage Plan Under Profile
     Verify Plan Details Section  ${e_planDetailsYrlyTxt1}
     Log to Console  Verified Plan Details for Yearly Plan!
-    Wait For Element Visibility On Android  ${vf_A_downgradePlanBtn}
-    Wait And Click Element On Android  ${vf_A_downgradePlanBtn}
-    Log to Console  Clicked on Downgrade Plan button
-    Verify Fields Under Premium Plan Downgrade Screen
+    #Downgrade section is removed
+    # Wait For Element Visibility On Android  ${vf_A_downgradePlanBtn}
+    # Wait And Click Element On Android  ${vf_A_downgradePlanBtn}
+    # Log to Console  Clicked on Downgrade Plan button
+    # Verify Fields Under Premium Plan Downgrade Screen
     Verify Values Under Basic Plan For Premium Account
     Verify Values Under Premium Plan For Premium Account  ${e_subsChrgsYearlyUnderPremium}
 
@@ -390,14 +391,14 @@ Subscribe Premium Plan With UPI
 
 Click On Buy Button And Verify Buy Order Screen
     Wait And Click Element On Android  ${vf_A_buyBtn}
-    Log to Console  Clicked on Buy Button
     Wait For Page Conatin Element  ${e_buyingPower}  
     Verify Page Conatin Text   ${e_buyingPower}
+    Verify Page Conatin Text   ${e_buyAggressive} 
     Verify Page Conatin Text   ${e_previewOrdeBtn}
     Log to Console  Verified Buying Power Screen!
 
 # SB_10
-Verify Vest Upsell- Buy Vest From Premium Account
+Verify Super Vest Upsell- Buy Vest From Premium Account
     Scroll Down Till Multi-Asset Class Vests
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}  
     Verify Page Conatin Text   ${e_multiAssetVestsTxt}
@@ -524,7 +525,7 @@ Verify Vest With No Subscription Account
 
 
 Verify Withdrawal With No Subscription Account
-    Click On Tansfer From Dashboard
+    Click On Tansfer Tab
     Wait Until Page Contains  ${e_withdrawFunds}  
     Click Text  ${e_withdrawFunds}
     Log to Console  Clicked on Withdraw funds!

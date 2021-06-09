@@ -11,10 +11,10 @@ Suite Teardown  Quit Android Application
 # robot --variable environmentToRunTest:Local --variable platform:Android --variable platform_version:10 --variable device:7cd17526 -d Results -i Welcome Tests/Android/A_Tests.robot
 
 # To run All test on browserstack: 
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://986c2eb932067988b618c33a70bb6144485e6877 --variable sessionName:ML03_AK -d Results Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://372ecd9a55ec796f8ef391993d5570b6c7e42bd7 --variable sessionName:ML03_AK -d Results Tests/Android/A_Tests.robot
 
 # To run specific test on browserstack:    
-# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://986c2eb932067988b618c33a70bb6144485e6877 --variable sessionName:ML03_AK -d Results -i E2E1 Tests/Android/A_Tests.robot
+# robot --variable environmentToRunTest:Browserstack --variable browserstack_userName:browserstackmool1 --variable browserstack_accessKey:fbqx1hqxFBNeHGEfH1tW --variable appURL:bs://372ecd9a55ec796f8ef391993d5570b6c7e42bd7 --variable sessionName:ML03_AK -d Results -i E2E1 Tests/Android/A_Tests.robot
 
 
 *** Test Cases ***
@@ -29,8 +29,8 @@ Points on Security, Compliance and Recommendations in Landing Screen
     Verify 3 points on Security, Compliance and Recommendations with icons are displayed
     Verify Heading for each point is displayed
 
-# Verify Start Investing Button 
-Start Investing button is redirects to Sigin screen
+# Verify Continue Button 
+Continue button is redirects to Sigin screen
     [Tags]  SL03  Welcome     
     User Navigates To Signin Screen
 
@@ -300,7 +300,7 @@ KYC: Passport- POI & Bank Statement- POA
     Verify Steps Under Account Status Screen After KYC Completion
 
 # Profile- Premium Account - Indrajit credentials
-Verify Navigations Under Profile Screen
+Verify Navigations Under Profile Screen For Funded Account
     [Tags]  Profile      
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
@@ -383,7 +383,7 @@ Premium Subscription With Card
 
 # TBU: After KYC-Doc upload on BS 
 # Premium Subscription- Premium Account
-Verify Payment Plan Screen And Downgrade Premium Subscription
+Verify Payment Plan Screen- Premium Subscription
     [Tags]  Subscription  Batch2   
     [Teardown]  Rest Android Application
     Signup And Signin For KYC
@@ -399,7 +399,7 @@ Verify Payment Plan Screen And Downgrade Premium Subscription
     Verify Steps Under Account Status Screen After KYC Completion
     Click On Profile Button
     Navigate To Payment Plan Screen And Verify Premium Account For Yearly
-    Downgrade Premium Plan To Basic
+    # Downgrade Premium Plan To Basic
 
 # Premium Subscription- KYC Approved Premium Account
 Navigate To Vest Upsell And Verify
@@ -407,7 +407,7 @@ Navigate To Vest Upsell And Verify
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Premium Account
-    Verify Vest Upsell- Buy Vest From Premium Account 
+    Verify Super Vest Upsell- Buy Vest From Premium Account 
 
 # Basic Subscription Additional Scripts
 Basic User Account - Withdrawal, Vest Upsell
@@ -465,93 +465,96 @@ Referral Screen For KYC Approved User And Invite Button Funtionality
     Subscribed User Navigated To Referral Page
     Invite Link Functionality
 
-# # Non KYC Approved Account
-# Fund Transfer- Non KYC Approved Account
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Completed Basic Account
-#     Click On Tansfer Tab
-#     Verify Add Funds For Non KYC Approved Account
-#     Verify Withdrawal Funds For Non KYC Approved Account
+# Non KYC Approved Account
+Fund Transfer- Non KYC Approved Account
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Completed Basic Account
+    Click On Tansfer Tab
+    Verify Add Funds For Non KYC Approved Account
+    Verify Withdrawal Funds For Non KYC Approved Account
 
-# # KYC Approved Account- No Funding History
-# Fund Transfer For New Account- No Funding History
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With New Account- No Funding History
-#     Click On Tansfer Tab
-#     Verify Fund Transfer Screen For New Account With No Funding History
-#     Click On Withdraw Funds And Verify Withdrawal Amount Screen
+# KYC Approved Account- No Funding History
+Fund Transfer For New Account- No Funding History
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With New Account- No Funding History
+    Click On Tansfer Tab
+    Verify Fund Transfer Screen For New Account With No Funding History
+    Click On Withdraw Funds And Verify Withdrawal Amount Screen
 
-# # FT_97 - FT_101
-# Remove Online Fund Transfer
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Account For Online Transfer
-#     Click On Tansfer Tab
-#     Fill And Remove A Fund Transfer
+# FT_97 - FT_101
+Remove Online Fund Transfer
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Click On Tansfer Tab
+    Fill And Remove A Fund Transfer
 
-# # FT_97 - FT_99, FT_102, SL03, SL05
-# Submit Online Fund Transfer And Withdrawal Fund
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Account For Online Transfer
-#     Click On Tansfer Tab
-#     Fill And Submit A Fund Transfer- ICICI Bank Online
-#     Click On Tansfer Tab
-#     Verify Second Withdrawal
-#     Verify Withdrawal Amount Field Validation 
-#     Verify Withdrawal Details Feilds Validation
+# FT_97 - FT_99, FT_102, SL03, SL05
+Submit Online Fund Transfer And Withdrawal Fund
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Click On Tansfer Tab
+    Fill And Submit A Fund Transfer- ICICI Bank Online
+    Click On Tansfer Tab
+    Verify Second Withdrawal
+    Verify Withdrawal Amount Field Validation 
+    Verify Withdrawal Details Fields Validation
 
-# # Fund Withdrawal: SL04
-# Verify Withdrawal Process For First Withdrawal
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Premium Account For 1st Withdrawal
-#     Click On Tansfer Tab
-#     Verify First Withdrawal
+# Fund Withdrawal: SL04
+Verify Withdrawal Process For First Withdrawal
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account For 1st Withdrawal
+    Click On Tansfer Tab
+    Verify First Withdrawal
 
-# Submit Online Fund Transfer
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Account For Online Transfer
-#     Fill And Submit A Fund Transfer- Axis Bank Online
-#     Fill And Submit A Fund Transfer- HDFC Bank Online
-#     Fill And Submit A Fund Transfer- IDFC Bank Online
-#     Fill And Submit A Fund Transfer- Induslnd Bank Online
-#     Fill And Submit A Fund Transfer- Kotak Bank Online
-#     Fill And Submit A Fund Transfer- Non Indian Bank
+Submit Online Fund Transfer For All Banks
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    Fill And Submit A Fund Transfer- Axis Bank Online
+    Fill And Submit A Fund Transfer- HDFC Bank Online
+    Fill And Submit A Fund Transfer- IDFC Bank Online
+    Fill And Submit A Fund Transfer- Induslnd Bank Online
+    Fill And Submit A Fund Transfer- Kotak Bank Online
+    Fill And Submit A Fund Transfer- Non Indian Bank
 
-# Submit Visit The Bank- Fund Transfer
-#     [Tags]  FundTransfer  
-#     [Teardown]  Rest Android Application
-#     User Navigates To Signin Screen
-#     Signin With KYC Approved Account For Online Transfer
-#     User Visits The Bank - Axis Bank
-#     User Visits The Bank - ICICI Bank
-#     User Visits The Bank - HDFC Bank
-#     User Visits The Bank - KOTAK Bank
-#     User Visits The Bank - Yes Bank
-#     User Visits The Bank - Bank Of Baroda
-#     User Visits The Bank - Citi Bank
-#     User Visits The Bank - HSBC Bank
-#     User Visits The Bank - SBI Bank
-#     User Visits The Bank - PNB Bank
-#     User Visits The Bank - Other Indian Bank
+Submit Visit The Bank- Fund Transfer
+    [Tags]  FundTransfer  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Account For Online Transfer
+    User Visits The Bank - Axis Bank
+    User Visits The Bank - ICICI Bank
+    User Visits The Bank - HDFC Bank
+    User Visits The Bank - KOTAK Bank
+    User Visits The Bank - Yes Bank
+    User Visits The Bank - Bank Of Baroda
+    User Visits The Bank - Citi Bank
+    User Visits The Bank - HSBC Bank
+    User Visits The Bank - SBI Bank
+    User Visits The Bank - PNB Bank
+    User Visits The Bank - Other Indian Bank
 
-# Submit Visit The Bank- Fund Transfer
-#     [Tags]  SuperVest  Test
-#     # [Teardown]  Rest Android Application
-#     # User Navigates To Signin Screen
-#     # Signin With KYC Approved Premium Account
-#     # Verify Super Vest Header And Title Card
-#     Select Any Super Vests And Compare Vests
-#     Verify Super Vest Graph
+Submit Visit The Bank- Fund Transfer
+    [Tags]  SuperVest  
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Premium Account
+    Verify Super Vest Header And Title Card
+    Select Any Super Vests And Compare Vests
+    Verify Super Vest Graph
+    Verify Purchased Super Vest
+    Verify Your Positions And Allocations Section
+    Verify About- Description
 
     

@@ -116,7 +116,7 @@ ${e_yesBtn} =  Yes
 ${e_noBtn} =  No
 ${e_submitBtn} =  Submit
 ${e_submitTransferSuccessMsg} =  Thank you for completing your transfer!
-${e_submitTransferSuccessTxt} =  will be deposited in your bank in 3-5 business days.
+${e_submitTransferSuccessTxt} =  will be deposited in your Vested account in 3-5 business days.
 ${e_backToDashbrdBtnSccsTransfer} =  BACK TO DASHBOARD
 ${e_11amtToWithdraw} =  11
 ${e_9amtToWithdraw} =  9
@@ -125,7 +125,6 @@ ${e_spclCharAmtToWithdraw} =  ..
 ${e_spclCharAmtToWithdrawErrMsg} =  Enter valid amount
 ${e_15amtToWithdraw} =  15
 ${e_withdrwlDetails} =  Withdrawal Details
-${e_success} =  Success
 ${e_dwnldedSuccessflly} =  Downloaded Successfully
 ${e_okBtn} =  OK
 ${e_OtherBanksDetails1} =  1. Visit your bank branch and request an A2 and a declaration form.
@@ -284,7 +283,7 @@ ${vf_A_accInfoCopyIcon8} =  xpath=(//*[@class='android.view.ViewGroup' and ./par
 ${vf_A_accInfoCopyIcon9} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*/*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup']])[5]
 ${vf_A_accInfoCopyIcon10} =  xpath=((//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView' and (./preceding-sibling::* | ./following-sibling::*)[./*[./*[@text='chevron_left']]]]]]/*[@class='android.view.ViewGroup'])[1]/*[@class='android.view.ViewGroup'])[6]
 ${vf_A_bankNameTxtBoxUndrUploadWireRec} =  xpath=(//*[@class='android.view.ViewGroup' and ./parent::*[@class='android.view.ViewGroup' and ./parent::*[@class='android.widget.ScrollView']]]/*[@class='android.widget.EditText'])[8]
-
+${vf_A_success} =  xpath=//*[@text='Success']
 # Withdrawal Funds 
 
 ${vf_A_withdrawalFundsBtn} =  xpath=//*[@text='WITHDRAW FUNDS']

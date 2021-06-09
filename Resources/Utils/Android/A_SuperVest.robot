@@ -4,7 +4,7 @@ Library     AppiumLibrary
 
 ***Keywords***
 
-Swip And Click On Aggressive
+Swip Left And Click On Aggressive
     FOR  ${i}  IN RANGE  1  4
         ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_aggMultiAssetVests}
         IF   ${isElementVisible}
@@ -27,9 +27,9 @@ Verify User Is Navigated To Multi-Asset Class - Moderate
     Verify Page Conatin Text   ${e_modMultiAssetClass}
     Log to Console  Navigated to Multi-Asset Class - Moderate
 
-Verify Super Vest Header & Title Card
+Verify Super Vest Header And Title Card
     Scroll Down Till Multi-Asset Class Vests
-    Swip And Click On Aggressive
+    Swip Left And Click On Aggressive
     Verify User Is Navigated To Multi-Asset Class - Aggressive
     Click On Back Arrow
     Wait For Page Conatin Element  ${e_multiAssetVestsTxt}
@@ -41,6 +41,7 @@ Verify Super Vest Header & Title Card
     Verify Page Conatin Text  ${e_multiAssetClassTxt}
     Wait And Click Element On Android  ${vf_A_multiAssetClassCloseIcon}
     Log to Console  Verified Info Icon next to Super Vest name!
+    Swipe By Percent   70  70   30   30  5000 
     Verify Element Visibility  ${vf_A_aggMeterImg}
     Verify Element Visibility  ${vf_A_aggReturnsTxt}
     Verify Element Visibility  ${vf_A_aggVolatilityTxt}
@@ -126,31 +127,6 @@ Select Any Super Vests And Compare Vests
     Wait And Click Element On Android  ${vf_A_multiAssetClassCloseIcon}
     Log to Console  Verified Compare Vests!
 
-Verify Y Axis Values
-    Verify Page Conatin Text  ${e_minus5%}
-    Verify Page Conatin Text  ${e_0%}
-    Verify Page Conatin Text  ${e_5%}
-    Verify Page Conatin Text  ${e_10%}
-    Verify Page Conatin Text  ${e_15%}
-    Verify Page Conatin Text  ${e_20%}
-    Log to Console  Verified Y axis values!
-
-Verify X Axis Values
-    Verify Page Conatin Text  ${e_jun20}
-    Verify Page Conatin Text  ${e_sep20}
-    Verify Page Conatin Text  ${e_dec20}
-    Verify Page Conatin Text  ${e_mar20}
-    Log to Console  Verified X axis values!
-
-Click On Max And Verify Graph
-    Click Text  ${e_max}
-    Verify Y Axis Values
-    Verify X Axis Values
-
-Click On 5Y And Verify Graph
-    Click Text  ${e_5y}
-
-
 Verify Super Vest Graph
     Verify Page Conatin Text  ${e_max}
     Verify Page Conatin Text  ${e_5y}
@@ -158,6 +134,107 @@ Verify Super Vest Graph
     Verify Page Conatin Text  ${e_3m}
     Verify Page Conatin Text  ${e_1m}
     Verify Page Conatin Text  ${e_1w}
+    Click Text  ${e_max}
+    Click Text  ${e_5y}
+    Click Text  ${e_1y}
+    Click Text  ${e_3m}
+    Click Text  ${e_1m}
+    Click Text  ${e_1w}
     Log to Console  Verified Graph values at Top!
-    Click On Max And Verify Graph
-    Click On 5Y And Verify Graph
+    Swipe By Percent  70  70  50  50  5000
+    Verify Page Conatin Text  ${e_comparing}
+    Verify Page Conatin Text  ${e_vest}
+    Verify Page Conatin Text  ${e_vbinx}
+    Wait For Element Visibility On Android  ${vf_A_vbinxInfoIcon}
+    Verify Element Visibility  ${vf_A_vbinxInfoIcon}
+    Wait And Click Element On Android  ${vf_A_vbinxInfoIcon}
+    Wait For Page Conatin Element  ${e_vestPerformnceChart}  
+    Verify Page Conatin Text  ${e_vestPerformnceChart}  
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt1}  
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt2}
+    Swipe By Percent  70  70  30  30  5000
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt3}
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt4}
+    Swipe By Percent  70  70  30  30  5000
+    Swipe By Percent  70  70  30  30  5000
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt5}
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt6}
+    Wait And Click Element On Android  ${vf_A_multiAssetClassCloseIcon}
+    Click On Back Arrow
+    Log to Console  Verified Legenend Components & Info text!
+
+Swip Right And Click On Aggressive
+    FOR  ${i}  IN RANGE  1  4
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_aggMultiAssetVests}
+        IF   ${isElementVisible}
+            Verify Page Conatin Text   ${e_aggMultiAssetVests}
+            Verify Page Conatin Text   ${e_aggMultiAssetVestsTxt}
+            Click Text  ${e_aggMultiAssetVests}
+            Exit For Loop If   ${isElementVisible}
+        ELSE
+            Swipe By Percent  20  50  80  50  5000
+        END
+    END
+
+Click On Sell Button And Verify Sell Screen
+    Wait And Click Element On Android  ${vf_A_sellBtn}
+    Wait For Page Conatin Element  ${e_sellAggressive} 
+    Verify Page Conatin Text   ${e_sellAggressive} 
+    Verify Page Conatin Text   ${e_currentInvstmt}
+    Verify Page Conatin Text   ${e_previewOrdeBtn}
+    Log to Console  Verified Buying Power Screen!
+
+Verify Purchased Super Vest
+    Swip Right And Click On Aggressive
+    Click On Buy Button And Verify Buy Order Screen
+    Click On Back Arrow
+    Click On Sell Button And Verify Sell Screen
+    Click On Back Arrow
+
+Verify Your Positions And Allocations Section
+    Swipe By Percent  80  80  20  20  5000
+    Wait For Page Conatin Element  ${e_yourPosition} 
+    Verify Page Conatin Text   ${e_yourPosition}
+    Verify Element Visibility  ${vf_A_yourPositionInfoIcon}
+    Wait And Click Element On Android  ${vf_A_yourPositionInfoIcon}
+    Wait For Page Conatin Element  ${e_yourPosition} 
+    Verify Page Conatin Text  ${e_yourPosition}  
+    Verify Page Conatin Text  ${e_currentValue}  
+    Verify Page Conatin Text  ${e_currentValueTxt}
+    Verify Page Conatin Text  ${e_totalInvested}  
+    Verify Page Conatin Text  ${e_totalInvestedTxt}
+    Verify Page Conatin Text  ${e_totalReturn}  
+    Verify Page Conatin Text  ${e_totalReturnTxt1}
+    Swipe By Percent  70  70  30  30  5000
+    Verify Page Conatin Text  ${e_totalReturnTxt2}
+    Swipe By Percent  70  70  30  30  5000
+    Verify Page Conatin Text  ${e_dividendYield}  
+    Verify Page Conatin Text  ${e_dividendYieldTxt}
+    Wait And Click Element On Android  ${vf_A_multiAssetClassCloseIcon}
+    Wait For Page Conatin Element  ${e_currentValue} 
+    Verify Page Conatin Text  ${e_currentValue} 
+    Verify Page Conatin Text  ${e_totalReturn}  
+    Verify Page Conatin Text  ${e_totalInvested}  
+    Verify Page Conatin Text  ${e_incomeYield}  
+    Log to Console  Verified Your Position section!
+    Swipe By Percent  70  70  50  50  5000
+    Wait For Page Conatin Element  ${e_allocations} 
+    Verify Page Conatin Text  ${e_allocations}  
+    Verify Page Conatin Text  ${e_vestPerformnceChartTxt2}
+    Verify Element Visibility  ${vf_A_allocationsInfoIcon}
+    Wait And Click Element On Android  ${vf_A_allocationsInfoIcon}
+    Wait For Page Conatin Element  ${e_superVestAllocations} 
+    Verify Page Conatin Text  ${e_superVestAllocations}  
+    Verify Page Conatin Text  ${e_superVestAllocationsTxt}  
+    Wait And Click Element On Android  ${vf_A_multiAssetClassCloseIcon}
+    Verify Page Conatin Text  ${e_usStock}  
+    Verify Page Conatin Text  ${e_gold}  
+    Verify Page Conatin Text  ${e_bonds}
+    Log to Console  Verified Allocations section!
+
+Verify About- Description
+    Swipe By Percent  70  70  30  30  5000
+    Verify Page Conatin Text  ${e_aboutAggressive}
+
+            
+

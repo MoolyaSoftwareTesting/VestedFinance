@@ -90,11 +90,13 @@ Verify Fund Online Screen
     Verify Page Conatin Text  ${e_dwnldInstrctnsBtn}
     Click Text  ${e_dwnldInstrctnsBtn}
     Click On Element If Visibile  ${vf_A_allowBtn}
-    Verify Page Conatin Text  ${e_success}
+    Wait For Element Visibility On Android  ${vf_A_success}
+    Verify Element Visibility  ${vf_A_success}
     Verify Page Conatin Text  ${e_dwnldedSuccessflly}
     Click Text  ${e_okBtn}
     Wait For Element Visibility On Android  ${vf_A_closeIcon}
     Wait And Click Element On Android  ${vf_A_closeIcon}
+    Log to Console  Closed Instructions screen 
     Wait For Page Conatin Element  ${e_dwnldInstrctnsBtn}  
     Log to Console  Verified Fund Online Screen!
 
@@ -190,8 +192,8 @@ Fill And Remove A Fund Transfer
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Fill Deposit Screen
     Click On Switch Bank Link And Select A Bank  ${e_iciciBankOpt}  ${vf_A_fundOnlineTxtUnderICICI}
-    Wait For Page Conatin Element  ${bank}  
-    Verify Page Conatin Text  ${bank}
+    Wait For Page Conatin Element  ${e_iciciBankOpt}  
+    Verify Page Conatin Text  ${e_iciciBankOpt}
     Click On Next Button Under Add Funds Flow
     Verify User Is Navigated To Fund Online Using ICICI Screen
     Wait And Click Element On Android  ${vf_A_CloseIcon}
@@ -235,18 +237,18 @@ Verify Success Screen After Transaction Is Submited Successfully
     Log to Console  Verified Success screen after Transaction is submited successfully!
 
 Fill And Submit A Fund Transfer- ICICI Bank Online
-    Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    Fill Deposit Screen
-    Click On Switch Bank Link And Select A Bank  ${e_iciciBankOpt}  ${vf_A_fundOnlineTxtUnderICICI}
-    Wait For Page Conatin Element  ${e_iciciBankOpt}  
-    Verify Page Conatin Text  ${e_iciciBankOpt}
-    Click On Next Button Under Add Funds Flow
-    Verify User Is Navigated To Fund Online Using ICICI Screen
-    Verify Fund Online Screen
-    Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
-    Verify User Is Navigated To Upload The Wire Receipt Screen
-    Verify And Fill The Upload Wire Receipt Received Screen  ${e_iciciUnderBankName}
-    Click Text  ${e_submitBtn}
+    # Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    # Fill Deposit Screen
+    # Click On Switch Bank Link And Select A Bank  ${e_iciciBankOpt}  ${vf_A_fundOnlineTxtUnderICICI}
+    # Wait For Page Conatin Element  ${e_iciciBankOpt}  
+    # Verify Page Conatin Text  ${e_iciciBankOpt}
+    # Click On Next Button Under Add Funds Flow
+    # Verify User Is Navigated To Fund Online Using ICICI Screen
+    # Verify Fund Online Screen
+    # Wait And Click Element On Android  ${vf_A_nextBtnUndrFundOnline}
+    # Verify User Is Navigated To Upload The Wire Receipt Screen
+    # Verify And Fill The Upload Wire Receipt Received Screen  ${e_iciciUnderBankName}
+    # Click Text  ${e_submitBtn}
     Verify Success Screen After Transaction Is Submited Successfully
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
@@ -1006,7 +1008,7 @@ Fill All The Withdrawal Details And Continue
     Wait And Click Element On Android  ${vf_A_continueBtnUndrWithdrwlDet}
     Verify Page Conatin Text  ${e_withdrwlConfirmtn}
 
-Verify Withdrawal Details Feilds Validation
+Verify Withdrawal Details Fields Validation
     Verify All The Fields Under Withdrawal Details Screen
     Click On Continue Button And Verify Error Messages
     Fill All The Withdrawal Details And Continue
