@@ -16,6 +16,7 @@ Resource   ../../../AppLocators/Android/A_SubscriptionLocators.robot
 Resource   ../../../AppLocators/Android/A_ReferralLocators.robot
 Resource   ../../../AppLocators/Android/A_FundTransferLocators.robot
 
+
 *** Keywords ***
 
 Launch Android App

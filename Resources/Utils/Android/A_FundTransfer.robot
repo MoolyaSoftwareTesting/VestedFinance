@@ -29,6 +29,117 @@ Verify Fund Transfer Screen For New Account With No Funding History
     Verify Element Visibility  ${vf_A_imgInTransfer}
     Log to Console  Verified Fund Transfer Screen For New Account With No Funding History!
 
+
+Swipe Until Completed Transfer Section
+    FOR  ${i}  IN RANGE  1  50
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_completedTransfers}
+        IF   ${isElementVisible}
+            Exit For Loop If   ${isElementVisible}
+        ELSE
+            Swipe By Percent  80  80   20   20  2000
+        END
+    END
+
+Swipe Until Pending Transfer Section
+    FOR  ${i}  IN RANGE  1  50
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${e_pendingTransfers}
+        IF   ${isElementVisible}
+            Exit For Loop If   ${isElementVisible}
+        ELSE
+            Swipe By Percent  80  80   20   20  2000
+        END
+    END
+
+
+User Navigates To Fund Transfer Page
+    Click On Tansfer From Dashboard
+    Log to Console  Transfer Clicked
+    Element Should Be Visible   ${vf_A_addFundsBtn}
+    Log to Console  Add funds button verified
+    Verify Page Conatin Text   ${e_withdrawFunds}
+    Log to Console  Withdraw funds button verified
+    Verify Page Conatin Text   ${e_cashBalance}
+    Log to Console  Cash balance text verified
+    # Incomplete deposits
+    Verify Page Conatin Text   ${e_incompleteDeposits}
+    Log to Console  Incomplete deposits text verified
+    Verify Page Conatin Text   ${e_continue}
+    Log to Console  Continue text verified
+    Verify Page Conatin Text   ${e_remove}
+    Log to Console  Remove text verified
+    Swipe Until Pending Transfer Section
+    Swipe By Percent  80  80   20   20  2000
+    # Pending transaction
+    Verify Page Conatin Text   ${e_pendingTransfers}
+    Log to Console  Pending Transfers text verified
+    Verify Page Conatin Text   ${e_deposit}
+    Log to Console  Deposit text verified
+    Verify Page Conatin Text   ${e_pendingTransfersTxt}
+    Log to Console  Pending Transfers processing text verified
+    Swipe Until Completed Transfer Section
+    Swipe By Percent  80  80   20   20  2000
+    # Completed transfer
+    Verify Page Conatin Text   ${e_completedTransfers}
+    Log to Console  Completed transfers text verified
+    Verify Page Conatin Text   ${e_depositCancelled}
+    Log to Console  Deposit Cancelled text verified
+    
+
+User Adds Funds With Pre-selected Bank
+    Click On Tansfer From Dashboard
+    Element Should Be Visible   ${vf_A_addFundsBtn}
+    Log to Console  Add funds button verified
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Wait For Page Conatin Element  ${e_addFundsHeading}  5s
+    Verify Page Conatin Text   ${e_amtToTransfer}
+    Verify Page Conatin Text   ${e_transferFrom}
+    Verify Page Conatin Text   ${e_switchBank}
+    Click Text  ${e_switchBank}
+    Wait For Page Conatin Element  ${e_selectYourBank}  5s
+    Verify Page Conatin Text   ${e_slctBankTxt}
+    Verify Page Conatin Text   ${e_slctBankNote}
+    Verify Page Conatin Text   ${e_indian}
+    Verify All Bank Names In The List
+
+User Adds Funds By Choosing A Bank From List
+    Click On Tansfer From Dashboard
+    Element Should Be Visible   ${vf_A_addFundsBtn}
+    Log to Console  Add funds button verified
+    Wait And Click Element On Android  ${vf_A_addFundsBtn}
+    Wait For Page Conatin Element  ${e_addFundsHeading}  5s
+    Verify Page Conatin Text   ${e_amtToTransfer}
+    Verify Page Conatin Text   ${e_transferFrom}
+    Verify Page Conatin Text   ${e_switchBank}
+    Click Text  ${e_switchBank}
+    Wait For Page Conatin Element  ${e_selectYourBank}  15s
+    Verify Page Conatin Text   ${e_slctBankTxt}
+    Verify Page Conatin Text   ${e_slctBankNote}
+    Verify Page Conatin Text   ${e_indian}
+    Verify All Bank Names In The List
+    Click Text  ${e_HSBCBank}
+    
+
+Verify All Bank Names In The List
+    Verify Page Conatin Text   ${e_AxisBank}
+    Verify Page Conatin Text   ${e_ICICIBank}
+    Verify Page Conatin Text   ${e_HDFCBank}
+    Verify Page Conatin Text   ${e_IDFCBank}
+    Verify Page Conatin Text   ${e_InduslandBank}
+    Verify Page Conatin Text   ${e_KotakBank}
+    Swipe By Percent  90  90  10  10  3000
+    Verify Page Conatin Text   ${e_YesBank}
+    Verify Page Conatin Text   ${e_BankOfBaroda}
+    Verify Page Conatin Text   ${e_CitiBank}
+    Verify Page Conatin Text   ${e_HSBCBank}
+    Verify Page Conatin Text   ${e_SBI}
+    Verify Page Conatin Text   ${e_PNB}
+    Verify Page Conatin Text   ${e_OtherBank}
+    Verify Page Conatin Text   ${e_international}
+    Verify Page Conatin Text   ${e_nonIndianBank}
+    Swipe By Percent  90  10  10  90  3000
+
+
+
 # Add Funds
 
 Click On Tansfer From Dashboard
@@ -330,7 +441,6 @@ Verify All Bank Names
     Verify Page Conatin Text   ${e_OtherBank}
     Verify Page Conatin Text   ${e_international}
     Verify Page Conatin Text   ${e_nonIndianBank}
-    Swipe By Percent  90  10  10  90  3000
 
 
 
@@ -344,11 +454,16 @@ Click On Switch Bank Link And Select A Bank For Deposit
     Verify Page Conatin Text  ${e_selectYourBankDesc1}
     Verify Page Conatin Text  ${e_selectYourBankDesc2}
     Verify Page Conatin Text  ${e_indianBankOpts}
-    Swipe By Percent  90  90  10  10  3000
-    Sleep  5s
-    Wait For Page Conatin Element  ${bank}  5s
-    Click Text  ${bank}
-    Log To Console  Selected Bank - ${bank}
+    FOR  ${i}  IN RANGE  1  3
+        ${isElementVisible} =  Run Keyword And Return Status  Verify Page Conatin Text  ${bank}
+        IF   ${isElementVisible}
+            Click Text  ${bank}
+            Log To Console  Selected Bank - ${bank}
+            Exit For Loop If    ${isElementVisible}
+        ELSE
+            Swipe By Percent  80  80  20  20  3000
+        END
+    END
     Wait For Page Conatin Element  ${bank}  5s
     Verify Page Conatin Text  ${bank}
 
@@ -430,7 +545,7 @@ Verify Success Screen After Transaction Is Submited Successfully
 
 
 
-User Visits The Bank - Axis Bank
+User Visits Axis Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -450,7 +565,7 @@ User Visits The Bank - Axis Bank
     Verify Dashboard Screen
 
 
-User Visits The Bank - ICICI Bank
+User Visits ICICI Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -469,7 +584,7 @@ User Visits The Bank - ICICI Bank
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - HDFC Bank
+User Visits HDFC Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -488,7 +603,7 @@ User Visits The Bank - HDFC Bank
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - KOTAK Bank
+User Visits Kotak Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -519,7 +634,7 @@ Click On Switch Bank Link And Select A Bank For Deposit - Kotak Bank
     Wait For Page Conatin Element  ${e_KotakBankFull}  5s
     Verify Page Conatin Text  ${e_KotakBankFull}
 
-User Visits The Bank - Yes Bank
+User Visits Yes Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -538,7 +653,7 @@ User Visits The Bank - Yes Bank
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - Bank Of Baroda
+User Visits Bank Of Baroda For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -557,7 +672,7 @@ User Visits The Bank - Bank Of Baroda
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - Citi Bank
+User Visits Citi Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -589,7 +704,7 @@ Click On Switch Bank Link And Select A Bank For Deposit - Citi Bank
     Wait For Page Conatin Element  ${e_CitiBankFull}  5s
     Verify Page Conatin Text  ${e_CitiBankFull}
 
-User Visits The Bank - HSBC Bank
+User Visits HSBC Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -608,7 +723,7 @@ User Visits The Bank - HSBC Bank
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - SBI Bank
+User Visits State Bank Of India For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -640,7 +755,7 @@ Click On Switch Bank Link And Select A Bank For Deposit - SBI Bank
     Wait For Page Conatin Element  ${e_SBIBankFull}  5s
     Verify Page Conatin Text  ${e_SBIBankFull}
 
-User Visits The Bank - PNB Bank
+User Visits Punjab National Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
@@ -659,7 +774,7 @@ User Visits The Bank - PNB Bank
     Click Text  ${e_backToDashbrdBtnSccsTransfer}
     Verify Dashboard Screen
 
-User Visits The Bank - Other Indian Bank
+User Visits Other Indian Bank For Funding
     Click On Tansfer From Dashboard
     Sleep  2s
     Wait And Click Element On Android  ${vf_A_addFundsBtn}

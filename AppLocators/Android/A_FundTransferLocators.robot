@@ -83,7 +83,7 @@ ${e_yesBtn} =  Yes
 ${e_noBtn} =  No
 ${e_submitBtn} =  Submit
 ${e_submitTransferSuccessMsg} =  Thank you for completing your transfer!
-${e_submitTransferSuccessTxt} =  will be deposited in your bank in 3-5 business days.
+${e_submitTransferSuccessTxt} =  will be deposited in your Vested account in 3-5 business days.
 ${e_backToDashbrdBtnSccsTransfer} =  BACK TO DASHBOARD
 ${e_11amtToWithdraw} =  11
 ${e_9amtToWithdraw} =  9
@@ -126,8 +126,13 @@ ${e_proceedBtn} =  Proceed
 # general
 ${e_cashBalance} =  Cash Balance
 ${e_completedTransfers} =  COMPLETED TRANSFERS
+${e_depositCancelled} =  Deposit - Cancelled
+${e_depositReturned} =  Deposit - Returned
 ${e_depositSuccess} =  Deposit - Successful
 ${e_incompleteDeposits} =  INCOMPLETE DEPOSITS
+${e_pendingTransfers} =  PENDING TRANSFERS
+${e_pendingTransfersTxt} =  Processing (3-5 business days)
+${e_deposit} =  DEPOSIT
 ${e_continue} =  CONTINUE
 ${e_remove} =  REMOVE
 
@@ -139,7 +144,7 @@ ${e_switchBank} =  SWITCH BANK
 
 # Bank Names
 # Switch Bank
-${e_selectYourBank} =  Select your Bank
+${e_selectYourBank} =  Select your bank
 ${e_slctBankTxt} =  This provides bank instructions to fund your Vested account. You transfer funds to our broker-partner DriveWealth, which will then be added to your Vested account. DriveWealth is a member of FINRA and SIPC. Your account is insured up to $500,000 USD. Check out Vested’s license and DriveWealth’s license with the SEC.
 ${e_slctBankNote} =  Note: There are fees to transfer funds overseas. Please check with your bank for actual prices. 
 ${e_indian} =  INDIAN
@@ -149,7 +154,7 @@ ${e_AxisBank} =  Axis Bank
 ${e_ICICIBank} =  ICICI Bank
 ${e_HDFCBank} =  HDFC Bank
 ${e_IDFCBank} =  IDFC First Bank
-${e_InduslandBank} =  Indusland Bank
+${e_InduslandBank} =  IndusInd Bank
 ${e_KotakBank} =  Kotak Bank
 ${e_KotakBankFull} =  Kotak Mahindra Bank
 ${e_YesBank} =  Yes Bank
@@ -192,7 +197,6 @@ ${vf_A_nextBtn} =  xpath=//*[@text='NEXT']
 ${vf_A_continueBtnUnderFT} =  xpath=(//*[@text='CONTINUE'])[1]
 ${vf_A_removeBtn} =  xpath=(//*[@text='REMOVE'])[1]
 ${vf_A_nextBtnUndrFundOnline} =  xpath=//*[@text='NEXT' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[./*[@text='chevron_left']]]]
-${vf_A_selctBank} =  xpath=(//*[@class='android.view.ViewGroup'])[36]
 
 # visit the bank
 ${vf_A_emailFormsBtn} =  xpath=//*[@text='EMAIL FORMS']

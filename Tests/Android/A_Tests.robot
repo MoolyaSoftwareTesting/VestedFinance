@@ -521,96 +521,119 @@ Verify Withdrawal Process For First Withdrawal
     Signin With KYC Approved Premium Account For 1st Withdrawal
     Verify First Withdrawal
     
+Verify Transactions By User
+    [Tags]  FT04
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Basic Account
+    User Navigates To Fund Transfer Page
+
+Verify Transactions By User
+    [Tags]  FT06
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Basic Account
+    User Adds Funds By Choosing A Bank From List
+
+
+Verify Add Funds By User
+    [Tags]  FT05
+    [Teardown]  Rest Android Application
+    User Navigates To Signin Screen
+    Signin With KYC Approved Basic Account
+    User Adds Funds With Pre-selected Bank
+
+# Add Funds - Visit The Bank Scenarios
 Visit the bank - Axis bank
     [Tags]  Axis
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Axis Bank
+    User Visits Axis Bank For Funding
 
 Visit the bank - ICICI bank
     [Tags]  ICICI
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - ICICI Bank
+    User Visits ICICI Bank For Funding
 
 Visit the bank - HDFC bank
     [Tags]  HDFC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - HDFC Bank
+    User Visits HDFC Bank For Funding
 
 Visit the bank - Kotak bank
     [Tags]  Kotak
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - KOTAK Bank
+    User Visits Kotak Bank For Funding
 
 Visit the bank - Yes bank
     [Tags]  Yes
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Yes Bank
+    User Visits Yes Bank For Funding
 
 Visit the bank - Bank of Baroda
     [Tags]  BOB
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Bank Of Baroda
+    User Visits Bank Of Baroda For Funding
 
 Visit the bank - Citi Bank
     [Tags]  Citi
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Citi Bank
+    User Visits Citi Bank For Funding
 
 Visit the bank - HSBC Bank
     [Tags]  HSBC
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - HSBC Bank
+    User Visits HSBC Bank For Funding
 
 Visit the bank - SBI Bank
     [Tags]  SBI
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - SBI Bank
+    User Visits State Bank Of India For Funding
 
 Visit the bank - PNB Bank
     [Tags]  PNB
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - PNB Bank
+    User Visits Punjab National Bank For Funding
 
 Visit the bank - Other Bank
     [Tags]  Other
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    User Visits The Bank - Other Indian Bank
+    User Visits Other Indian Bank For Funding
 
 Visit the bank - All Banks
     [Tags]  All_Banks
     [Teardown]  Rest Android Application
     User Navigates To Signin Screen
     Signin With KYC Approved Account For Online Transfer
-    Visit the bank - Axis bank
-    Visit the bank - ICICI bank
-    Visit the bank - HDFC bank
-    Visit the bank - Kotak bank
-    Visit the bank - Yes bank
-    Visit the bank - Bank of Baroda
-    Visit the bank - Citi Bank
-    Visit the bank - HSBC Bank
-    Visit the bank - SBI Bank
-    Visit the bank - PNB Bank
-    User Visits The Bank - Other Indian Bank
+    User Visits Axis Bank For Funding
+    User Visits ICICI Bank For Funding
+    User Visits HDFC Bank For Funding
+    User Visits Kotak Bank For Funding
+    User Visits Yes Bank For Funding
+    User Visits Bank Of Baroda For Funding
+    User Visits Citi Bank For Funding
+    User Visits HSBC Bank For Funding
+    User Visits State Bank Of India For Funding
+    User Visits Punjab National Bank For Funding
+    User Visits Other Indian Bank For Funding
