@@ -51,7 +51,7 @@ Swipe Until Pending Transfer Section
     END
 
 
-User Navigates To Fund Transfer Page
+User Navigates To Fund Transfer Page And Check Deposit Status
     Click On Tansfer From Dashboard
     Log to Console  Transfer Clicked
     Element Should Be Visible   ${vf_A_addFundsBtn}
@@ -99,7 +99,7 @@ User Adds Funds With Pre-selected Bank
     Verify Page Conatin Text   ${e_slctBankTxt}
     Verify Page Conatin Text   ${e_slctBankNote}
     Verify Page Conatin Text   ${e_indian}
-    Verify All Bank Names In The List
+    Verify All Bank Names
 
 User Adds Funds By Choosing A Bank From List
     Click On Tansfer From Dashboard
@@ -115,29 +115,9 @@ User Adds Funds By Choosing A Bank From List
     Verify Page Conatin Text   ${e_slctBankTxt}
     Verify Page Conatin Text   ${e_slctBankNote}
     Verify Page Conatin Text   ${e_indian}
-    Verify All Bank Names In The List
+    Verify All Bank Names
+    Swipe By Percent  20  20   80   80  2000
     Click Text  ${e_HSBCBank}
-    
-
-Verify All Bank Names In The List
-    Verify Page Conatin Text   ${e_AxisBank}
-    Verify Page Conatin Text   ${e_ICICIBank}
-    Verify Page Conatin Text   ${e_HDFCBank}
-    Verify Page Conatin Text   ${e_IDFCBank}
-    Verify Page Conatin Text   ${e_InduslandBank}
-    Verify Page Conatin Text   ${e_KotakBank}
-    Swipe By Percent  90  90  10  10  3000
-    Verify Page Conatin Text   ${e_YesBank}
-    Verify Page Conatin Text   ${e_BankOfBaroda}
-    Verify Page Conatin Text   ${e_CitiBank}
-    Verify Page Conatin Text   ${e_HSBCBank}
-    Verify Page Conatin Text   ${e_SBI}
-    Verify Page Conatin Text   ${e_PNB}
-    Verify Page Conatin Text   ${e_OtherBank}
-    Verify Page Conatin Text   ${e_international}
-    Verify Page Conatin Text   ${e_nonIndianBank}
-    Swipe By Percent  90  10  10  90  3000
-
 
 
 # Add Funds
@@ -376,60 +356,19 @@ Verify Withdrawal Amount Field Validation
     Wait For Page Conatin Element  ${e_withdrwlDetails}  5s
     Verify Page Conatin Text  ${e_withdrwlDetails}
     Log to Console  Verified all Validations for Withdrawal Amount!
-
-Verify Withdrawal Details Validation
     
-
 Verify Second Withdrawal
     Click On Withdrawal Funds Button
     Verify Content In Withdrawal Process Screen
     Verify Page Conatin Text   ${e_withdrawProcessNote}
     Log to Console  Verified Second Withdrawal Amount Screen!
 
-
-User Adds Funds With Already Selected Bank
-    Wait And Click Element On Android  ${vf_A_transfer}
-    Verify Page Conatin Text   ${vf_A_transfer}
-    Element Should Be Visible   ${vf_A_addFundsBtn}
-    Log to Console  Add funds button verified
-    Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    Wait For Page Conatin Element  ${e_addFundsHeading}  5s
-    Verify Page Conatin Text   ${e_amtToTransfer}
-    Verify Page Conatin Text   ${e_transferFrom}
-    Verify Page Conatin Text   ${e_switchBank}
-    Click Text  ${e_switchBank}
-    Wait For Page Conatin Element  ${e_selectYourBank}  5s
-    Verify Page Conatin Text   ${e_slctBankTxt}
-    Verify Page Conatin Text   ${e_slctBankNote}
-    Verify Page Conatin Text   ${e_slctBanikNote}
-    Verify Page Conatin Text   ${e_indian}
-    Verify All Bank Names
-
-User Adds Funds By Choosing A Bank
-    Wait And Click Element On Android  ${vf_A_transfer}
-    Verify Page Conatin Text   ${vf_A_transfer}
-    Element Should Be Visible   ${vf_A_addFundsBtn}
-    Log to Console  Add funds button verified
-    Wait And Click Element On Android  ${vf_A_addFundsBtn}
-    Wait For Page Conatin Element  ${e_addFundsHeading}  5s
-    Verify Page Conatin Text   ${e_amtToTransfer}
-    Verify Page Conatin Text   ${e_transferFrom}
-    Verify Page Conatin Text   ${e_switchBank}
-    Element Should Be Visible   ${vf_A_selctBank}
-    Wait And Click Element On Android  ${vf_A_selctBank}
-    Wait For Page Conatin Element  ${e_selectYourBank}  5s
-    Verify Page Conatin Text   ${e_slctBankTxt}
-    Verify Page Conatin Text   ${e_slctBankNote}
-    Verify Page Conatin Text   ${e_indian}
-    Verify All Bank Names
-    Click Text  ${e_HDFCBank}
-
 Verify All Bank Names
     Verify Page Conatin Text   ${e_AxisBank}
     Verify Page Conatin Text   ${e_ICICIBank}
     Verify Page Conatin Text   ${e_HDFCBank}
     Verify Page Conatin Text   ${e_IDFCBank}
-    Verify Page Conatin Text   ${e_InduslandBank}
+    Verify Page Conatin Text   ${e_InduslndBank}
     Verify Page Conatin Text   ${e_KotakBank}
     Swipe By Percent  90  90  10  10  3000
     Verify Page Conatin Text   ${e_YesBank}
@@ -441,7 +380,6 @@ Verify All Bank Names
     Verify Page Conatin Text   ${e_OtherBank}
     Verify Page Conatin Text   ${e_international}
     Verify Page Conatin Text   ${e_nonIndianBank}
-
 
 
 # Visit The Bank Scenarios
