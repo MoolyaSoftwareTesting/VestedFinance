@@ -53,42 +53,33 @@ Swipe Until Pending Transfer Section
 
 User Navigates To Fund Transfer Page And Check Deposit Status
     Click On Tansfer From Dashboard
-    Log to Console  Transfer Clicked
     Element Should Be Visible   ${vf_A_addFundsBtn}
-    Log to Console  Add funds button verified
     Verify Page Conatin Text   ${e_withdrawFunds}
-    Log to Console  Withdraw funds button verified
     Verify Page Conatin Text   ${e_cashBalance}
-    Log to Console  Cash balance text verified
+    Log to Console  Transfer screen verified
     # Incomplete deposits
     Verify Page Conatin Text   ${e_incompleteDeposits}
-    Log to Console  Incomplete deposits text verified
     Verify Page Conatin Text   ${e_continue}
-    Log to Console  Continue text verified
     Verify Page Conatin Text   ${e_remove}
-    Log to Console  Remove text verified
+    Log to Console  Incomplete Deopsits verified
     Swipe Until Pending Transfer Section
     Swipe By Percent  80  80   20   20  2000
     # Pending transaction
     Verify Page Conatin Text   ${e_pendingTransfers}
-    Log to Console  Pending Transfers text verified
     Verify Page Conatin Text   ${e_deposit}
-    Log to Console  Deposit text verified
     Verify Page Conatin Text   ${e_pendingTransfersTxt}
-    Log to Console  Pending Transfers processing text verified
+    Log to Console  Pending Transfers verified
     Swipe Until Completed Transfer Section
     Swipe By Percent  80  80   20   20  2000
     # Completed transfer
     Verify Page Conatin Text   ${e_completedTransfers}
-    Log to Console  Completed transfers text verified
     Verify Page Conatin Text   ${e_depositCancelled}
-    Log to Console  Deposit Cancelled text verified
+    Log to Console  Completed transfers text verified
     
 
 User Adds Funds With Pre-selected Bank
     Click On Tansfer From Dashboard
     Element Should Be Visible   ${vf_A_addFundsBtn}
-    Log to Console  Add funds button verified
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Wait For Page Conatin Element  ${e_addFundsHeading}  5s
     Verify Page Conatin Text   ${e_amtToTransfer}
@@ -104,7 +95,6 @@ User Adds Funds With Pre-selected Bank
 User Adds Funds By Choosing A Bank From List
     Click On Tansfer From Dashboard
     Element Should Be Visible   ${vf_A_addFundsBtn}
-    Log to Console  Add funds button verified
     Wait And Click Element On Android  ${vf_A_addFundsBtn}
     Wait For Page Conatin Element  ${e_addFundsHeading}  5s
     Verify Page Conatin Text   ${e_amtToTransfer}
